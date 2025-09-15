@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_header.css') }}">
+{% endblock %}
+
+{% block header %}
+    <div class="ellipse"></div>
+    <span class="slogan">
+        <p>ТЕХНОЛОГІЇ</p>
+        <p>ЯКІ ЗМІНЮЮТЬ РЕАЛЬНІСТЬ</p>
+    </span>
+    <img class="drones" src="{{ url_for('home.static', filename= 'icon/drones.svg') }}" alt="">
+{% endblock %}
+
+{% block content %}
+    <h1>Home page</h1>
+{% endblock %}

@@ -1,0 +1,33 @@
+:root{
+    --sizeImageDrone: 115vh;
+}
+header{
+    height: 100vh;
+    background-color: #CDD5DD;
+}
+
+.ellipse{
+    /*  */
+    position: absolute;
+    top: 60vh;
+    /*  */
+    width: 110%;
+    height: 90vh;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+.drones{
+    position: absolute;
+    top: 11vh;
+    width: var(--sizeImageDrone);
+    height: var(--sizeImageDrone);
+}
+.slogan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35vh;
+    font-size: 8.24vh;
+    color: #FFFFFF;
+}

@@ -1,0 +1,66 @@
+:root{
+    --sizeImageProfile: 2.75vh;
+}
+
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.nav-header{
+    position: fixed;
+    top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 7vh;
+    padding: 10px 40px 10px 40px;
+    border: 1px solid #E4E4E7;
+    border-radius: 62px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15vw;
+}
+.links a{
+    font-size: 1.75vh;
+    color: #9EA0AA;
+}
+.links a:hover{
+    color: #0C122A;
+}
+.profile{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2vw;
+    width: 15vw;
+}
+.profile a div{
+    width: var(--sizeImageProfile);
+    height: var(--sizeImageProfile);
+    background-repeat: no-repeat;
+    background-size: var(--sizeImageProfile);
+}
+.cart{
+    background-image: url('/static/icon/cart.svg');
+}
+.img-profile{
+    background-image: url('/static/icon/profile.svg');
+}
+.cart:hover{
+    background-image: url('/static/icon/cart_black.svg');
+}
+.img-profile:hover{
+    background-image: url('/static/icon/profile_black.svg');
+}

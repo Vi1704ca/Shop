@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Authorization
+{% endblock %}
+
+{% block links %}
+    <link rel = "stylesheet" href = "{{ url_for('user.static', filename='css/login.css' ) }}">
+{% endblock %}
+
+{% block content %}
+
+    <h1> Authorization page</h1>
+
+    <div class = "authorization">
+        <h2> Форма авторизації користувача </h2>
+        <form action = "" method = "post">
+
+            <input type = "text" name = "username" placeholder = "Задайте ваше ім'я">
+            <input type = "password" name = "password" placeholder = "Створіть ваш пароль">
+
+            <button type = "submit">Авторизуватися</button>
+        </form>
+    </div>
+{% endblock %}

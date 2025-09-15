@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registration 
+{% endblock %}
+
+{% block content %}
+    <div class="registration">
+            <form action="" method="post">
+
+                <input type="text" name="username" placeholder="Enter your username">
+                <input type="email" name="email" placeholder="Enter your email">
+                <input type="password" name="password" placeholder="Enter your password">
+                <input type="password" name="confirm_password" placeholder="Confirm your password">
+
+                <button type="submit">Send</button>
+            </form>
+            {% if message %}
+                <p>{{message}}</p>
+            {% endif %}
+    </div>
+{% endblock %}

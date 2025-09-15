@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename='css/shop.css' ) }}">
+{% endblock %}
+
+
+{% block content %}
+    <h1>Shop</h1>
+    <!-- Якщо користувач є адміном то він може додавати новий продукт до БД -->
+    {% if current_user.is_admin %}
+        <div>
+            <!-- форма створення нового товару -->
+            <form action="/shop?type=add" method="post" enctype="multipart/form-data">
+                <input type="text" name="product_name" placeholder="">
+                <input type="number" name="price" placeholder="">
+                <input type="number" name="discount" placeholder="">
+                <input type="number" name="count" placeholder="">
+
+                <textarea name="description" id="" placeholder=""></textarea>
+                <input type="file" name="image" accept="image/*">
+
+                <button type="submit">SEND</button>
+            </form>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+    <!-- Фільтрування по типу продукта -->
+    <form action="/shop?type=filter" method="post">
+        <select name="type_product" id="">
+            <option value="all">Всі</option>
+            {% for type in list_types %}
+                <option value="{{ type }}">{{ type }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Фільтрувати</button>
+    </form>    
+    <!-- Відображення продукту і його зображення  -->
+    {% if list_product %}
+        {% for product in list_product %}
+            <div>
+                <hr>
+                <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                <p>Назва продукту: {{product.product_name}}</p>
+                <p>Вартість продукту: {{product.price}}</p>
+                <p>Знижка на одиницю продукту: {{product.discount}}</p>
+                <p>Кількість продукту: {{product.count}}</p>
+                <p>Опис продукту: {{product.description}}</p>
+                
+                <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
+                <button type="button" class="buy" id="{{product.id}}">BUY</button>
+
+                {% if current_user.is_admin %}  
+                    <a href="/delete_product?id={{product.id}}">DELETE</a>
+                {% endif %}
+                <hr>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
+{% endblock %}

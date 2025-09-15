@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    display: flex;
+    /* головнв вісь */
+    flex-direction: column;
+    /* позиціонування по головній вісі */
+    justify-content: start;
+    /* позиціонування по другорядній вісі */
+    align-items: center;
+    background-color: #FFFFFF;
+}

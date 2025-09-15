@@ -1,0 +1,57 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}  {% endblock %}</title>
+        {% block links %}  {% endblock %}
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logo.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
+    </head>
+    <body>
+        <header>
+            <nav class="nav-header">
+                <span class="links">
+                    <a href="/shop">КАТАЛОГ</a>
+                    <a href="/about">ПРО НАС</a>
+                    <a href="/contacts">КОНТАКТИ</a>
+                </span>
+
+                <div class="logo">
+                    <a href = "/">
+                        <img src="{{ url_for('static', filename= 'icon/logo.svg') }}" alt="">
+                    </a>
+                </div>
+
+                <span class="profile">
+                    <a href="/cart"> 
+                        <div class="cart"></div>
+                    </a>
+                    {% if current_user.is_authenticated %}
+                        <p>{{ current_user.username }}</p>
+                        <!--logout username-->
+                        <a href = "/logout">Logout</a>
+                        <!-- -->
+                    {% else %}
+                        <a href="/profile">
+                            <div class="img-profile"></div>
+                        </a>
+                        
+                    {% endif %}
+                </span>
+            </nav>
+            {% block header %}
+                
+            {% endblock %}
+            
+        </header>
+
+        <main>
+            {% block content %}  {% endblock %}
+        </main>
+        {% block scripts %}
+            
+        {% endblock %}
+    </body>
+</html>
