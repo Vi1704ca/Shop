@@ -1,10 +1,11 @@
-import flask, flask_login
+import flask
 from .models import Product
 from os.path import abspath, join
 import os, traceback
 
 from Project.db import DATABASE
 from Project.config_page import config_page
+from flask_login import current_user
 
 from .admin import is_admin
 
@@ -43,29 +44,31 @@ def render_shop():
                 message = "Продукт успішно додано"
             else:
                 message = "Продукт з таокю назвою вже існує"
-        elif type == 'filter':
-            type_product_form = flask.request.form['type_product']
-            if type_product_form != 'all':
-                list_products = Product.query.filter_by(type_product = type_product_form)
-            else:
-                list_products = Product.query.all()
+        # elif type == 'filter':
+        #     type_product_form = flask.request.form['type_product']
+        #     if type_product_form != 'all':
+        #         list_products = Product.query.filter_by(type_product = type_product_form)
+        #     else:
+        #         list_products = Product.query.all()
     return {
         'message': message,
         'list_product': list_products,
         'list_types': list_types
     }
     
-@is_admin(redirect_url= '/shop')
-def delete_product():
-    product_id = int(flask.request.args.get('id'))
-    model_product : Product = Product.query.get(product_id) # object_sqlite_product | None
+# @is_admin(redirect_url= '/shop')
+# def delete_product():
+#     product_id = int(flask.request.args.get('id'))
+#     model_product : Product = Product.query.get(product_id) # object_sqlite_product | None
     
-    if model_product is not None:
-        DATABASE.session.delete(model_product)
-        DATABASE.session.commit()
-        os.remove(path= abspath(join(__file__, "..", "static", "images", "products", f"{model_product.product_name}.png")))
-        
+#     if model_product is not None:
+#         DATABASE.session.delete(model_product)
+#         DATABASE.session.commit()
+#         os.remove(path= abspath(join(__file__, "..", "static", "images", "products", f"{model_product.product_name}.png")))
 
+# Створити нову функцію видалення продукту для AJAX 
+# тут пишемо код
+# 
 def add_product_id_cookies():
     try:
         # Отримуємо по запросу користувача id продукту, який додамо до cookie файлів
@@ -89,4 +92,38 @@ def add_product_id_cookies():
     finally:
         return response
 
-        
+def filter():
+    data_type = flask.request.get_data(as_text= True)
+    if data_type != "all":
+        list_filter = []
+        list_products = Product.query.filter_by(type_product = data_type).all()
+        for product in list_products:
+            dict_product = {
+                'product_name': product.product_name,
+                'product_price': product.price,
+                'product_discount': product.discount,
+                'product_count': product.count,
+                'product_description': product.description,
+                'product_id': product.id
+            }
+            list_filter.append(dict_product)
+        return {
+            'products': list_filter,
+            'is_admin': current_user.is_admin if current_user.is_authenticated else False,
+        }
+    else:
+        # Написати віправку всіх продуктів якщо фільтр був "all" 
+        pass
+
+def delete():
+    data_type = flask.request.get_data(as_text = True)
+    # model_product : Product = Product.query.get(int(data_type)) # object_sqlite_product | None
+    print(data_type)
+    # if model_product is not None:
+        # DATABASE.session.delete(model_product)
+        # DATABASE.session.commit()
+        # os.remove(path= abspath(join(__file__, "..", "static", "images", "products", f"{model_product.product_name}.png")))
+
+    return {
+        'success': True
+    }

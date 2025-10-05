@@ -32,7 +32,7 @@
         </div>
     {% endif %}
     <!-- Фільтрування по типу продукта -->
-    <form action="/shop?type=filter" method="post">
+    <!-- <form action="/shop?type=filter" method="post">
         <select name="type_product" id="">
             <option value="all">Всі</option>
             {% for type in list_types %}
@@ -40,31 +40,45 @@
             {% endfor %}
         </select>
         <button type="submit">Фільтрувати</button>
-    </form>    
-    <!-- Відображення продукту і його зображення  -->
-    {% if list_product %}
-        {% for product in list_product %}
-            <div>
-                <hr>
-                <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                <p>Назва продукту: {{product.product_name}}</p>
-                <p>Вартість продукту: {{product.price}}</p>
-                <p>Знижка на одиницю продукту: {{product.discount}}</p>
-                <p>Кількість продукту: {{product.count}}</p>
-                <p>Опис продукту: {{product.description}}</p>
-                
-                <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
-                <button type="button" class="buy" id="{{product.id}}">BUY</button>
-
-                {% if current_user.is_admin %}  
-                    <a href="/delete_product?id={{product.id}}">DELETE</a>
-                {% endif %}
-                <hr>
-            </div>
+    </form>     -->
+    <select name="type_product" id="select">
+        <option value="all">Всі</option>
+        {% for type in list_types %}
+            <option value="{{ type }}">{{ type }}</option>
         {% endfor %}
-    {% endif %}
+    </select>
+    <button id="filter" type="button">Фільтрувати</button>
+    <!-- Відображення продукту і його зображення  -->
+    <div id="products">
+        {% if list_product %}
+            {% for product in list_product %}
+            <!--  <div id="product-1">  -->
+                <div id="product-{{product.id}}"> 
+                    <hr>
+                    <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                    <p>Назва продукту: {{product.product_name}}</p>
+                    <p>Вартість продукту: {{product.price}}</p>
+                    <p>Знижка на одиницю продукту: {{product.discount}}</p>
+                    <p>Кількість продукту: {{product.count}}</p>
+                    <p>Опис продукту: {{product.description}}</p>
+                    
+                    <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
+                    <button type="button" class="buy" id="{{product.id}}">Купити</button>
+    
+                    {% if current_user.is_admin %}  
+                        <!-- <a href="/delete_product?id={{product.id}}">DELETE</a> -->
+                        <button type="button" id="delete" value="{{product.id}}">Видалити</button>
+                    {% endif %}
+                    <hr>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block scripts %}
+    <script src="{{ url_for('shop.static', filename= 'js/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
+    <script src="{{ url_for('shop.static', filename= 'js/filter.js') }}"></script>
+    <script src="{{ url_for('shop.static', filename= 'js/deleteProduct.js') }}"></script>
 {% endblock %}
