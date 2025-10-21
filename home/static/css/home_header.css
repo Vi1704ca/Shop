@@ -30,4 +30,28 @@ header{
     margin-bottom: 35vh;
     font-size: 8.24vh;
     color: #FFFFFF;
+    font-family: "font";
+}
+
+.catalog{
+    position: absolute;
+    top: 85vh;
+    right: 10vw;
+    z-index: 10;
+}
+
+.button_catalog {
+    display: flex;
+    justify-content: right;
+    color: #ffffff;
+    background-color: black;
+    margin-top: 5vh;
+    padding: 1.5vh 3vw 1.5vh 3vw; 
+    border: none;
+    border-radius: 3vw;
+}
+
+@font-face {
+    font-family: "font";
+    src: url("../fonts/GTWalsheimPro-UltraBold.ttf");
 }
