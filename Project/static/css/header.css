@@ -24,6 +24,7 @@ header{
     border: 1px solid #E4E4E7;
     border-radius: 62px;
     background-color: rgba(255, 255, 255, 50%);
+    z-index: 10;
 }
 
 .links{

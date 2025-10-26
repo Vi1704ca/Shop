@@ -1,6 +1,7 @@
 :root{
     --sizeImageDrone: 115vh;
 }
+
 header{
     height: 100vh;
     background-color: #CDD5DD;
@@ -16,12 +17,19 @@ header{
     border-radius: 50%;
     background-color: #FFFFFF;
 }
+
 .drones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35vh;
     position: absolute;
     top: 11vh;
     width: var(--sizeImageDrone);
     height: var(--sizeImageDrone);
 }
+
 .slogan{
     display: flex;
     flex-direction: column;
@@ -37,11 +45,10 @@ header{
     position: absolute;
     top: 85vh;
     right: 10vw;
-    z-index: 10;
 }
 
 .button_catalog {
-    display: flex;
+    position: absolute;
     justify-content: right;
     color: #ffffff;
     background-color: black;
