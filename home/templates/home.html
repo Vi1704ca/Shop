@@ -16,53 +16,83 @@
     </span>
     <img class="drones" src="{{ url_for('home.static', filename= 'icon/drones.svg') }}" alt="">
     <div class="catalog">
-        <p>Передові технології в одному місці.
+        <p class="catalog_text">Передові технології в одному місці.
             <br>
             Обирай найкраще для найважливішого.</p>
-            <button class="button_catalog">До каталогу</button>
-    </div>
+            <button class="button_catalog">ДО КАТАЛОГУ</button>
+    </div>        
+    
     
 
 {% endblock %}
 
 {% block content %}
+    <div class="about_us">
+        <h1>ПРО НАС</h1>
+        <p class= "about_us_p"> Ми — команда, що об'єднує технології та надійність. 
+            <br>
+            Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах. 
+            <br>
+            Обираємо тільки те, чому довіряємо самі</p>
+        <button class = "button_read" type = "button">ЧИТАТИ БІЛЬШЕ ⭢</button>
+    </div>
 
-    <div class = "abt_us">Про нас</div>
 
-    <p style = "color : rgb(80, 80, 80)">Ми — команда, що об'єднує технології та надійність.  Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах.  Обираємо тільки те, чому довіряємо самі</p>
-    
-    <div class = "nove_na_saiti">Нове на сайті</div> 
+    <div class = "news-in-website">
 
-    <p style = "color : rgb(110, 110, 110)">Крутой классный дрон </p>
+        <h1> Нове на сайті </h1>
+        <div class="card-drones">
+            <img src="kartinka.jpg" alt="drone"> 
+            <h2> DJI Mini 4K </h2>
+            <p>Easy-To-Use Mini Camera Drone</p> <!-- расинхрона терь нету -->
+            <p class = "price">from to $299</p>
+            <button>Купити <img src = "arrow.svg"> </button>
+        </div>
+    </div>
 
-    <img src="kartinka.jpg" alt="картинка з крутим дроном"> 
 
-    <p style = "color : green">Від 200$</p>
-
-    <button type = "button">Читати більше</button>
+    <!-- Тут илья пиш ет -->
+    <div class = "menu_drones"> 
+        <h1>Каталог</h1>
+        <div class = "catalog_drones">
+            <h1>DJI Mini 4K</h1>
+            <p>29 900 ₴</p>
+            <img src="kartinka.jpg" alt="Дрон для розвитки">
+            <button class="button_catalog_drones" > Дивитись всі <img src = "arrow.svg"> </button>
+        </div>
+    </div>
+  
 
 {% endblock %}
 
 {% block footer %}
-    <h1 style = "color : #0C122A">1k
-    <br>
-    Успішних відправок
-    </h1>
-    <h1 style = "color : #0C122A">
-        1.5K
-        <br>
-        Задоволених клієнтів
-    </h1>
-    <h1 style = "color : #0C122A">
-        24/7
-        <br>
-        Підтримка клієнтів
-    </h1>
-    <p style = "color : #0C122A">DRONES</p>
-    <p style = "color : #0C122A">КАТАЛОГ</p>
-    <p style = "color : #0C122A">ПРО_НАС</p>
-    <p style = "color : #0C122A">КОНТАКТИ</p>
-    <p style = "color : #0C122A">КОШИК</p>
-    <p style = "color : #0C122A">КАБІНЕТ</p>
+    <div class="futer">
+    <!-- <div class="ellipse"></div> -->
+        <div class="comment">
+            <h1>
+            1k
+            <br>
+            Успішних відправок
+            </h1>
 
+            <h1>
+            1.5K
+            <br>
+            Задоволених клієнтів
+            </h1>
+
+            <h1>
+            24/7
+            <br>
+            Підтримка клієнтів
+            </h1>
+        </div>
+        <p>DRONES</p>
+        <p>КАТАЛОГ</p>
+        <p>ПРО_НАС</p>
+        <p>КОНТАКТИ</p>
+        <p>КОШИК</p>
+        <p>КАБІНЕТ</p>
+    </div>
+   
 {% endblock %}

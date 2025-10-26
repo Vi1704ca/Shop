@@ -1,9 +1,36 @@
+*{
+    font-family: var(--fontTitle);
+}
+
+@font-face {
+    font-family: "font";
+    src: url("../fonts/GTWalsheimPro-UltraBold.ttf");
+}
+
+@font-face {
+    font-family: --fontParagraph;
+    src: url("../fonts/GTWalsheimPro-Light.ttf");
+}
+
+p {
+    font-family: --fontParagraph;
+}
+
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
 :root{
     --sizeImageDrone: 115vh;
+    --fontTitle: "font";
+    --fontParagraph: "fontforp";
 }
+
 header{
     height: 100vh;
-    background-color: #CDD5DD;
+    background-color: hsl(210, 19%, 84%);
+    margin-bottom: 200px;
 }
 
 .ellipse{
@@ -30,41 +57,84 @@ header{
     margin-bottom: 35vh;
     font-size: 8.24vh;
     color: #FFFFFF;
-    font-family: "font";
+    font-family: var(--fontTitle);
+}
+
+.slogan p{
+    font-family: var(--fontTitle);
 }
 
 .catalog{
-    position: absolute;
+    /*position: absolute;
     top: 85vh;
-    right: 10vw;
-    z-index: 10;
+    right: 10vw;*/
+
+    position: absolute;
+    width: 22vw;
+    height: 3.2vh;
+    margin: 50vh 0vw 0vh 64vw;  
+}
+
+
+.catalog_text{
+    font-size: 2.5vh; 
+    font-weight: 500;
+    color: #0C122A;
+    text-align: left;
+    font-family: var(--fontParagraph);
 }
 
 .button_catalog {
-    display: flex;
+    /*display: flex;
     justify-content: right;
     color: #ffffff;
     background-color: black;
     margin-top: 5vh;
     padding: 1.5vh 3vw 1.5vh 3vw; 
     border: none;
-    border-radius: 3vw;
+    border-radius: 3vw;*/
+
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5vh;
+    background-color: #0C122A;
+    margin-top: 3.5vh; 
+    border: none;
+    color: #ffffff;
+    
 }
-.abt_us{
-    font-size: 40px;        
+
+.about_us{
+    font-size: 27px;        
     font-weight: 900;     
-    color: #656565;       
-    text-align: center;     
-    margin-top: 60px; 
+    color: hsl(210, 19%, 84%);      
+    text-align: center;      
 }
-.nove_na_saiti{
+
+.about_us_p{
+    margin-top: 10px;
+    font-size: 22px;        
+    font-weight: 400;     
+    color: rgb(0, 0, 0);       
+    text-align: center;     
+    margin-top: 20px; 
+}
+
+.button_read{
+    width: 13vw;
+    height: 6vh;
+    padding: 0%;
+    border-radius: 7vh;
+    border-color: black;
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 30px;
+}
+
+.news_on_site{
     font-size: 40px;        
     font-weight: 900;     
     color: #656565;       
     text-align: center;     
     margin-top: 40px; 
-}
-@font-face {
-    font-family: "font";
-    src: url("../fonts/GTWalsheimPro-UltraBold.ttf");
 }
