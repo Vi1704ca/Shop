@@ -1,0 +1,47 @@
+
+.about_us, .news-in-website h1 { 
+    font-size: 4vh;        
+    font-weight: 900;     
+    color: hsl(210, 19%, 84%);      
+    text-align: center;      
+}
+
+.about_us_p{
+    margin-top: 10px;
+    font-size: 22px;        
+    font-weight: 400;     
+    color: rgb(0, 0, 0);       
+    text-align: center;     
+    margin-top: 20px; 
+}
+
+.news_on_site{
+    font-size: 40px;        
+    font-weight: 900;     
+    color: #656565;       
+    text-align: center;     
+    margin-top: 40px; 
+}
+
+.news-in-website p{
+    color: white;
+    font-family: var(--fontParagraph);
+}
+
+.news-in-website h2{
+    color: white;
+    font-family: var(--fontParagraph);
+}
+
+
+.card-drones{
+    width: 250px;
+    height: 300px;
+    background: #154669;
+    border-radius: 15px;
+  }
+
+.news-drones-text{
+    margin-top: 180px;
+    margin-left: 10px;
+}

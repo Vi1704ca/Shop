@@ -35,8 +35,9 @@ header{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .links a{
+    font-family: 'links';
     font-size: 1.75vh;
-    color: #9EA0AA;
+    color: #0C122A;;
 }
 .links a:hover{
     color: #0C122A;

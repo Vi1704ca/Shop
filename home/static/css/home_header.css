@@ -8,23 +8,28 @@
 }
 
 @font-face {
-    font-family: --fontParagraph;
+    font-family: "fontforp";
     src: url("../fonts/GTWalsheimPro-Light.ttf");
 }
 
-p {
-    font-family: --fontParagraph;
+@font-face {
+    font-family: 'links';
+    src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
 }
-
-button {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 
 :root{
     --sizeImageDrone: 115vh;
     --fontTitle: "font";
     --fontParagraph: "fontforp";
+    --fontButton: 'links';
+}
+
+p {
+    font-family: var(--fontParagraph);
+}
+
+button {
+    font-family: var(--fontButton);
 }
 
 header{
@@ -72,7 +77,7 @@ header{
     position: absolute;
     width: 22vw;
     height: 3.2vh;
-    margin: 50vh 0vw 0vh 64vw;  
+    margin: 55vh 0vw 0vh 64vw;  
 }
 
 
@@ -93,60 +98,31 @@ header{
     padding: 1.5vh 3vw 1.5vh 3vw; 
     border: none;
     border-radius: 3vw;*/
-
-    width: 10vw;
-    height: 5vh;
+    width: 12vw;
+    height: 6vh;
     border-radius: 5vh;
     background-color: #0C122A;
-    margin-top: 3.5vh; 
+    margin-top: 4.5vh; 
     border: none;
     color: #ffffff;
-    
-}
 
-.about_us{
-    font-size: 27px;        
-    font-weight: 900;     
-    color: hsl(210, 19%, 84%);      
-    text-align: center;      
-}
-
-.about_us_p{
-    margin-top: 10px;
-    font-size: 22px;        
-    font-weight: 400;     
-    color: rgb(0, 0, 0);       
-    text-align: center;     
-    margin-top: 20px; 
 }
 
 .button_read{
-    width: 13vw;
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    width: 12vw;
     height: 6vh;
-    padding: 0%;
     border-radius: 7vh;
     border-color: black;
     background-color: #ffffff;
     color: #000000;
     margin-top: 30px;
+    padding: 10px 20px;
 }
 
-.news_on_site{
-    font-size: 40px;        
-    font-weight: 900;     
-    color: #656565;       
-    text-align: center;     
-    margin-top: 40px; 
-}
-
-.card-drones{
-    width: 250px;
-    height: 300px;
-    background: #154669;
-    border-radius: 15px;
-  }
-
-.news-drones-text{
-    margin-top: 180px;
-    margin-left: 10px;
+.arrow {
+    width: 1.5vh;
+    height: 1.5vh;
 }

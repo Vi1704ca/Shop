@@ -6,6 +6,9 @@
 
 {% block links %}
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_footer.css') }}">
+    <!-- vau kruto afigenno --> 
 {% endblock %}
 
 {% block header %}
@@ -34,8 +37,8 @@
             Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах. 
             <br>
             Обираємо тільки те, чому довіряємо самі</p>
-        <button class = "button_read" type = "button">ЧИТАТИ БІЛЬШЕ ⭢</button>
-    </div>
+        <button class = "button_read" type = "button">ЧИТАТИ БІЛЬШЕ <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow.svg') }}"></button>
+    </div> 
 
 
     <div class = "news-in-website">
@@ -47,8 +50,8 @@
             <h2> DJI Mini 4K </h2>
             <p>Easy-To-Use Mini Camera Drone</p> 
             <p class = "price">from to $299</p>
-            <button>Купити <img src = "arrow.svg"> </button>
-        </div>
+            <button>Купити <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow.png') }}"></button>
+       </div>
         </div>
     </div>
 
@@ -59,36 +62,33 @@
         <div class = "catalog_drones">
             <h1>DJI Mini 4K</h1>
             <p>29 900 ₴</p>
-            <img src="kartinka.jpg" alt="Дрон для розвитки">
-            <button class="button_catalog_drones" > Дивитись всі <img src = "arrow.svg"> </button>
+            <img src="{{ url_for('home.static', filename= 'media/images/drones/drone3.png') }}" alt="Дрон для розвитки">
+            <button class="button_catalog_drones" > Дивитись всі <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow.svg') }}"> </button>
         </div>
-    </div>
+    </div> 
   
 
 {% endblock %}
 
 {% block footer %}
-    <div class="futer">
     <!-- <div class="ellipse"></div> -->
-        <div class="comment">
-            <h1>
-            1k
-            <br>
-            Успішних відправок
-            </h1>
-
-            <h1>
-            1.5K
-            <br>
-            Задоволених клієнтів
-            </h1>
-
-            <h1>
-            24/7
-            <br>
-            Підтримка клієнтів
-            </h1>
+    <div class="review">
+        <div class="successful-shipments">
+            <h1>1K</h1>
+            <p>Успішних відправок</p>
         </div>
+
+        <div class="satisfied-clients">
+            <h1>1.5K</h1>
+            <p>Задоволених клієнтів</p>
+        </div>
+
+        <div class="clients-support">
+            <h1>24/7</h1>
+            <p>Підтримка клієнтів</p>
+        </div>
+    </div>
+    <div class="navigation-footer">
         <p>DRONES</p>
         <p>КАТАЛОГ</p>
         <p>ПРО_НАС</p>
