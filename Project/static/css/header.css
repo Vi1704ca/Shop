@@ -2,7 +2,7 @@
     --sizeImageProfile: 2.75vh;
 }
 
-header{
+header, main, footer{
     position: relative;
     display: flex;
     flex-direction: column;

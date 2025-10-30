@@ -82,8 +82,8 @@ header{
 
 
 .catalog_text{
+    display: flex;
     font-size: 2.5vh; 
-    font-weight: 500;
     color: #0C122A;
     text-align: left;
     font-family: var(--fontParagraph);
@@ -98,6 +98,9 @@ header{
     padding: 1.5vh 3vw 1.5vh 3vw; 
     border: none;
     border-radius: 3vw;*/
+    align-items: center;
+    justify-content: center;
+    display: flex;
     width: 12vw;
     height: 6vh;
     border-radius: 5vh;
@@ -105,6 +108,7 @@ header{
     margin-top: 4.5vh; 
     border: none;
     color: #ffffff;
+    font-size: 2.5vh; 
 
 }
 
