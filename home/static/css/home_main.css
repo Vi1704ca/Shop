@@ -1,19 +1,54 @@
 
-.about_us, .news-in-website h1 { 
-    font-size: 4vh;        
-    font-weight: 900;     
+.about_us { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;         
     color: hsl(210, 19%, 84%);      
     text-align: center;      
 }
 
+.news-in-website h1{
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 7.5vh;         
+    color: hsl(210, 19%, 84%);      
+    text-align: center;     
+}
+
 .about_us_p{
-    margin-top: 10px;
-    font-size: 22px;        
-    font-weight: 400;     
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2vh;
+    font-size: 2.5vh;            
     color: rgb(0, 0, 0);       
     text-align: center;     
     margin-top: 20px; 
 }
+
+.button_read{
+    font-size: 2vh;  
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1.5vw;
+    width: 16vw;
+    height: 8vh;
+    border-radius: 5vh;
+    border: 0.2vw solid black;
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 30px;
+    padding: 1.5vh 3vw 1.5vh 3vw; 
+}
+
 
 .news_on_site{
     font-size: 40px;        
@@ -33,15 +68,89 @@
     font-family: var(--fontParagraph);
 }
 
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94.5vw;
+    gap: 2vw;
+}
 
 .card-drones{
-    width: 250px;
-    height: 300px;
-    background: #154669;
-    border-radius: 15px;
-  }
+    position: relative;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 1vh;
+    overflow: hidden;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2vh;
+    z-index: -1;
+}
+
+.card-drones[data-card-type="brown"] .card-bg {
+    background-color: bisque;
+}
+
+.news-drones-text {
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+}
+
 
 .news-drones-text{
     margin-top: 180px;
     margin-left: 10px;
+}
+
+.menu_drones h1{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 7.5vh;         
+    color: hsl(210, 19%, 84%);      
+    text-align: center; 
+}
+
+.menu_drones h2{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: center; 
+    font-family: var(--fontParagraph);
+}
+
+.drone{
+    width: 10vw;
+    height: 20vh;
+    margin-top: 5vh;
+}
+ 
+.button_catalog_drones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;  
+    gap: 1.2vw;
+    width: 16vw;
+    height: 8vh;
+    border-radius: 5vh;
+    padding: 1.5vh 3vw 1.5vh 3vw; 
+    background-color: #0C122A;
+    margin: 4.5vh auto 0;
+    border: none;
+    color: #ffffff;
 }
