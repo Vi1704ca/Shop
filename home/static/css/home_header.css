@@ -22,12 +22,14 @@
     src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
 }
 
+
+
 :root{
     --sizeImageDrone: 115vh;
     --fontTitle: "font";
     --fontParagraph: "fontforp";
     --fontLinks: 'links';
-    --fontButton: 'button';
+    --fontButton: 'links';
 }
 
 p {
@@ -35,7 +37,8 @@ p {
 }
 
 button {
-    font-family: var(--fontLinks);
+    font-family: var(--fontButton); 
+    font-weight: bold;
 }
 
 button:hover {

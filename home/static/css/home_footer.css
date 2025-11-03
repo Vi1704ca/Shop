@@ -1,0 +1,60 @@
+
+
+.navigation-footer{
+    color: black;
+    font-family: "font"
+}
+
+.footer-logo{
+    color: black;
+    font-family : "font"
+}
+
+.footer-square{
+    color:rgb(70, 150, 150);
+    width: 100px;
+    height: 75px
+}
+.successful-shipments{
+    color: black;
+}
+
+.review{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    margin-top: 40vh;
+    margin-bottom: 40vh; 
+    gap: 2.5vw;
+
+}
+
+.review h1{
+    font-family: var(--fontParagraph);
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+.successful-shipments-text, .clients-support-text, .satisfied-clients-text{
+    display: flex;
+    position: relative;
+    margin-top: 5vh;
+    align-items: center;
+}
+
+.navigation-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw; 
+    margin-bottom: 40vh; 
+    gap: 0.5vw; 
+    font-family: var(--fontLinks);
+    font-size: 1.75vh;
+    color: #0C122A;
+}
+
+footer {
+    background-color: #CDD5DD; 
+}
