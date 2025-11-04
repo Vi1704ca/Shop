@@ -22,7 +22,10 @@
     src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
 }
 
-
+@font-face {
+    font-family: 'review';
+    src: url("../fonts/GTWalsheimPro-Regular.ttf");
+}
 
 :root{
     --sizeImageDrone: 115vh;
@@ -30,6 +33,7 @@
     --fontParagraph: "fontforp";
     --fontLinks: 'links';
     --fontButton: 'links';
+    --fontReview: 'review';
 }
 
 p {
@@ -53,21 +57,21 @@ header{
 }
 
 .ellipse{
-    /*  */
     position: absolute;
     top: 60vh;
-    /*  */
     width: 110%;
     height: 90vh;
     border-radius: 50%;
     background-color: #FFFFFF;
 }
+
 .drones{
     position: absolute;
     top: 11vh;
     width: var(--sizeImageDrone);
     height: var(--sizeImageDrone);
 }
+
 .slogan{
     display: flex;
     flex-direction: column;

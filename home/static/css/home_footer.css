@@ -1,12 +1,40 @@
+.ellipse_footer{
+    position: absolute;
+    bottom: 50vh;
+    width: 180%;
+    height: 300vh;
+    border-radius: 80%;
+    background-color: #FFFFFF;
+    z-index: 0;
+}
 
+.ellipse_drones{
+    position: absolute;
+    bottom: 45vh;
+    width: 180%;
+    height: 280vh;
+    border-radius: 50%;
+    background-color: hsl(210, 19%, 84%);;
+    z-index: -1;
+}
+
+.footer_drones{
+    position: absolute;
+    bottom: 25vh;
+    font-family: var(--fontParagraph);
+    font-size: 30vh;
+    color:#BAC2CB; 
+    z-index: -2;
+}
 
 .navigation-footer{
+    margin-top: 15vh;
     color: black;
     font-family: "font"
 }
 
 .footer-logo{
-    color: black;
+    color: rgb(165, 118, 118);
     font-family : "font"
 }
 
@@ -27,19 +55,33 @@
     margin-top: 40vh;
     margin-bottom: 40vh; 
     gap: 2.5vw;
+    z-index: 1;
 
 }
 
 .review h1{
-    font-family: var(--fontParagraph);
+    font-family: var(--fontReview);
     font-size: 5vh;
+    color: #0C122A;
     font-weight: bold;
 }
 
 .successful-shipments-text, .clients-support-text, .satisfied-clients-text{
     display: flex;
     position: relative;
+    margin-top: 7vh;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vh;
+    color: #0C122A;
+}
+
+.successful-shipments, .clients-support, .satisfied-clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .navigation-footer{
@@ -61,7 +103,9 @@
 }
 
 footer {
-    background-color: #CDD5DD; 
+    height: 100vh;
+    background-color: hsl(210, 19%, 84%);
+    z-index: -3;
 }
 
 .navigation-footer p:hover {

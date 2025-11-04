@@ -10,7 +10,7 @@
 
 .news-in-website h1{
     margin-top: 25vh;
-    margin-bottom: 10vh;
+    margin-bottom: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,15 +54,17 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    gap: 1.5vw;
-    width: 16vw;
-    height: 8vh;
+    gap: 1vw;
+    width: 8vw;
+    height: 6vh;
     border-radius: 5vh;
-    border: 0.2vw solid white;
+    border: 0.3vh solid white;
     background-color: transparent;
     color: white;
     margin-top: 30px;
-    padding: 1.5vh 3vw 1.5vh 3vw; 
+    font-family: var(--fontParagraph);
+    margin-right:30px;
+    
 }
 
 
@@ -97,7 +99,6 @@
     width: 50vw;
     height: 50vh;
     border-radius: 1vh;
-    overflow: hidden;
 }
 
 .card-bg {
@@ -111,7 +112,12 @@
 }
 /* import turtle */
 .card-drones[data-card-type="brown"] .card-bg {
-    background-image: linear-gradient(to top, rgb(214, 146, 63), 30%, transparent 95%);
+    background-image: 
+        linear-gradient(to top, #e4b34d 3%, transparent 95%),
+        url('/home/static/icon/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
 }
 
 .card-drones[data-card-type="black"] .card-bg {
@@ -119,18 +125,56 @@
 }
 
 .card-drones[data-card-type="blue"] .card-bg {
-    background-image: linear-gradient(to top, rgb(0, 64, 255), 30%, transparent 95%);
+    background-image: linear-gradient(to top, #5d9cab, 30%, transparent 95%);
 }
-.news-drones-text {
+
+
+.drone-image{
+    position: absolute; 
+    width: 20.6vw;
+    height: 45vh;
+    bottom: 27vh;
+    left: 5vw;
+    z-index: 2;
+}
+
+.card-content{
     position: absolute;
     bottom: 0;
+    width: 100%;
+    height: 40vh;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 2vh;
 }
 
-
 .news-drones-text{
-    margin-top: 180px;
-    margin-left: 10px;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}
+
+.drone-name{
+    font-size: 5vh;
+    font-weight: bold; /*bald */
+}
+
+.drone-description{
+    margin-top: 0.5vh;
+    font-size: 2vh;
+}
+
+.drone-price{
+    font-size: 2vh;
+    
+}
+
+.card-buy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .menu_drones {
@@ -141,7 +185,6 @@
 }
 
 .menu_drones h1{
-    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -197,20 +240,16 @@
 }
 
 .catalog_drones .sale {
-    margin-top: 0.5vh;
-    margin-bottom: 7vh;
-    display: inline-block;
-    margin-right: 1vw;
     font-size: 2vh;         
     color: hsl(0, 0%, 0%);      
     text-align: left; 
     font-family: var(--fontParagraph);
     font-weight: 700;
     text-decoration: line-through;
+    margin-right: 1vw;
 }
 
-.catalog_drones .red_sale{
-    display: inline-block;
+.catalog_drones .red_sale {
     font-size: 2vh;         
     color: rgb(255, 0, 0);      
     text-align: left; 
@@ -224,7 +263,6 @@
     margin-top: 4.5vh;
     margin-bottom: 2.7vh;
 }
-
 .button_catalog_drones {
     display: flex;
     justify-content: center;

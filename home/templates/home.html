@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_header.css') }}">
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_main.css') }}">
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_footer.css') }}">
-    <!-- vau kruto afigenno --> 
 {% endblock %}
 
 {% block header %}
@@ -47,58 +46,72 @@
         <div class="cards-container">
             <div class="card-drones" data-card-type="brown">
                 <div class="card-bg"> </div>
-                <img src="{{ url_for('home.static', filename= 'media/images/drones/drone2.png') }}" alt="drone"> 
-                <div class="news-drones-text">
-                    <h2 class="drone-name"> DJI Mini 4K </h2>
-                    <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
-                    <p class = "drone-price">from to $299</p> 
-                    <button class="buy-button">
-                                Купити 
-                        <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}">
-                    </button>
+                <img class = "drone-image" src="{{ url_for('home.static', filename= 'media/images/drones/drone3.png') }}" alt="drone"> 
+                <div class = "card-content">
+                    <div class="news-drones-text">
+                        <h2 class="drone-name"> DJI Mini 4K </h2>
+                        <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
+                        <div class="card-buy">
+                            <p class = "drone-price">from to $299</p> 
+                            <button class="buy-button">
+                                        КУПИТИ
+                                <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}">
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="card-drones" data-card-type="black">
                 <div class="card-bg"> </div>
-                <img src="{{ url_for('home.static', filename= 'media/images/drones/drone4.png') }}" alt="drone"> 
-                <div class="news-drones-text">
-                    <h2 class="drone-name"> DJI Mini 4K </h2>
-                    <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
-                    <p class = "drone-price">from to $299</p>
-                    <button class="buy-button">
-                                Купити 
-                        <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}">
-                    </button>
+                <img class = "drone-image" src="{{ url_for('home.static', filename= 'media/images/drones/drone4.png') }}" alt="drone"> 
+                <div class = "card-content">
+                    <div class="news-drones-text">
+                        <h2 class="drone-name"> DJI Mini 4K </h2>
+                        <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
+                        <div class="card-buy">
+                            <p class = "drone-price">from to $299</p>
+                            <button class="buy-button">
+                                        КУПИТИ
+                                <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}">
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="card-drones" data-card-type="blue">
                 <div class="card-bg"> </div>
-                <img src="{{ url_for('home.static', filename= 'media/images/drones/drone3.png') }}" alt="drone"> 
-                <div class="news-drones-text">
-                    <h2 class="drone-name"> DJI Mini 4K </h2>
-                    <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
-                    <p class = "drone-price">from to $299</p>
-                    <button class="buy-button">
-                                Купити 
-                        <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}">
-                    </button>
+                <img class = "drone-image" src="{{ url_for('home.static', filename= 'media/images/drones/drone3.png') }}" alt="drone"> 
+                <div class = "card-content">
+                    <div class="news-drones-text">
+                        <h2 class="drone-name"> DJI Mini 4K </h2>
+                        <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
+                        <div class="card-buy">
+                            <p class = "drone-price">from to $299</p>
+                            <button class="buy-button">
+                                    КУПИТИ
+                                <img class = "arrow" src = "{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}">
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
         </div>
     </div>
 
 
-    <!-- Тут соня пишет -->
+    
     <div class="menu_drones"> 
         <h1>КАТАЛОГ</h1>
         <div class="catalog_drones">
             <div class="catalog_drone">
                 <img class="drone" src="{{ url_for('home.static', filename= 'media/images/drones/drone4.png') }}" alt="Дрон для розвитки">
                 <h2>DJI Mini 4K</h2>
-                <p class = sale>29 900 ₴</p><p class = red_sale>29 000 ₴</p>
+                <div class="price">
+                    <span class="sale">29 900 ₴</span>
+                    <span class="red_sale">29 000 ₴</span>
+                </div>
             </div>
             <div class="catalog_drone">
                 <img class="drone" src="{{ url_for('home.static', filename= 'media/images/drones/drone2.png') }}" alt="Дрон для розвитки">
@@ -119,11 +132,12 @@
         <button class="button_catalog_drones">ДИВИТИСЬ ВСІ <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}"></button>
     </div>
   
-
 {% endblock %}
 
 {% block footer %}
-
+    <div class="ellipse_footer"></div>
+    <div class="ellipse_drones"></div>
+    <h1 class="footer_drones">DRONES</h1>
     <div class="review">
         <div class="successful-shipments">
             <h1>1K+</h1>
@@ -133,7 +147,7 @@
         </div>
 
         <div class="satisfied-clients">
-            <h1>1.5K+</h1>
+            <h1>1,5K+</h1>
             <div class="satisfied-clients-text">
                 <p>Задоволених клієнтів</p>
             </div>
