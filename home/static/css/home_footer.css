@@ -39,7 +39,6 @@
 .successful-shipments-text, .clients-support-text, .satisfied-clients-text{
     display: flex;
     position: relative;
-    margin-top: 5vh;
     align-items: center;
 }
 
@@ -48,13 +47,47 @@
     justify-content: space-between;
     align-items: center;
     width: 25vw; 
-    margin-bottom: 40vh; 
-    gap: 0.5vw; 
+    margin-bottom: 25vh; 
     font-family: var(--fontLinks);
-    font-size: 1.75vh;
+    color: #0C122A;
+}
+
+.navigation-footer p{
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--fontLinks);
+    font-size: 2vh;
     color: #0C122A;
 }
 
 footer {
     background-color: #CDD5DD; 
+}
+
+.navigation-footer p:hover {
+    cursor: pointer;
+    color: #9EA0AA;
+}
+
+.copyright {
+    text-align: center;
+    padding: 3vh;
+    color: #9EA0AA;
+    font-family: var(--fontLinks);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.copyright p {
+    margin: 0;
+    padding: 5px 0;
+    user-select: none;
+}
+
+.line {
+    width: 85vw;
+    color: #F4F4F4;
+    height: 1px;
+    background-color: #F4F4F4;
+    border: none;
 }

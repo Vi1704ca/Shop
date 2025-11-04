@@ -2,6 +2,11 @@
     --sizeImageProfile: 2.75vh;
 }
 
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
 header, main, footer{
     position: relative;
     display: flex;
