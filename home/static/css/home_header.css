@@ -27,6 +27,11 @@
     src: url("../fonts/GTWalsheimPro-Regular.ttf");
 }
 
+@font-face {
+    font-family: 'drones';
+    src: url("../fonts/GTWalsheimPro-UltraLight.ttf");
+}
+
 :root{
     --sizeImageDrone: 115vh;
     --fontTitle: "font";
@@ -34,6 +39,7 @@
     --fontLinks: 'links';
     --fontButton: 'links';
     --fontReview: 'review';
+    --fontDrones: 'drones';
 }
 
 p {
@@ -55,7 +61,7 @@ header{
     background-color: hsl(210, 19%, 84%);
     margin-bottom: 200px;
 }
-
+/* */
 .ellipse{
     position: absolute;
     top: 60vh;
@@ -134,3 +140,20 @@ header{
     width: 2vh;
     height: 2vh;
 }
+
+/* 
+
+Тир-лист HTML тегов 
+
+S - <h> <p> <div> <body> <!-- -->
+
+A - <a> <br> <hr> <img> <script> <link> <button>
+
+C - <title> <font> <header> <footer> <i> <b>
+
+B - <span> <video> <code> <input> <option>
+
+D - <audio> <abbr> <center> <mark>
+
+*\
+

@@ -1,0 +1,147 @@
+.ellipse_footer{
+    position: absolute;
+    bottom: 64vh;
+    width: 110vw;
+    height: 90vh;
+    border-radius: 80%;
+    background-color: #ffffff;
+    z-index: 0;
+}
+
+
+.footer_drones{
+    position: absolute;
+    bottom: 45vh;
+    font-family: var(--fontDrones);
+    width: 60vw;
+    color:#BAC2CB; 
+    z-index: -2;
+    user-select: none;
+}
+
+.navigation-footer{
+    margin-top: 1.5vh;
+    color: black;
+    font-family: "font"
+}
+
+.footer-logo{
+    color: rgb(165, 118, 118);
+    font-family : "font"
+}
+
+.footer-square{
+    color:rgb(70, 150, 150);
+    width: 100px;
+    height: 75px
+}
+.successful-shipments{
+    color: black;
+}
+
+.review{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    margin-top: 0vh;
+    margin-bottom: 60vh; 
+    gap: 2.5vw;
+    z-index: 1;
+
+}
+
+.review h1{
+    font-family: var(--fontReview);
+    font-size: 5vh;
+    color: #0C122A;
+    font-weight: bold;
+}
+
+.successful-shipments-text, .clients-support-text, .satisfied-clients-text{
+    display: flex;
+    position: relative;
+    margin-top: 7vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vh;
+    color: #0C122A;
+}
+
+.successful-shipments, .clients-support, .satisfied-clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+}
+
+.navigation-footer{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw; 
+    margin-top: 50vh; 
+    font-family: var(--fontLinks);
+    color: #0C122A;
+    user-select: none;
+}
+
+.navigation-footer p {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--fontLinks);
+    font-size: 2vh;
+    color: #0C122A;
+}
+
+
+.navigation-footer p:hover {
+    cursor: pointer;
+    color: #9EA0AA;
+}
+
+
+.copyright {
+    position: absolute;
+    text-align: center;
+    color: #9EA0AA;
+    font-family: var(--fontLinks);
+    font-size: 1.75vh;
+    bottom: 4vh;
+}
+
+.copyright p {
+    margin: 0;
+    padding: 5px 0;
+    user-select: none;
+}
+
+.copyright p:hover {
+    cursor: pointer;
+    color: #0C122A;
+}
+
+
+.line {
+    position: absolute;
+    width: 85vw;
+    color: #F4F4F4;
+    height: 1px;
+    background-color: #F4F4F4;
+    border: none;
+    bottom: 10vh;
+}
+
+footer {
+    display: flex;
+    align-content: center;
+    position: relative;
+    flex-direction: column;
+    background-color: hsl(210, 19%, 84%);
+    z-index: 1;
+    height:100vh;
+}
