@@ -182,6 +182,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 80px;
 }
 
 .menu_drones h1{
@@ -201,6 +202,7 @@
     width: 90%;
     margin: 0;
     padding: 0 2vw;
+    margin-bottom: 20px;
 }
 
 .catalog_drone {
@@ -210,6 +212,7 @@
     width: 15%;
     flex: 0 1 5vw;
     margin: 0 4vw;
+    margin-bottom: 100px;
 }
 
 .menu_drones h2{
