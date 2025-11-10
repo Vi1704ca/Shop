@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block links %}
-    <link rel="stylesheet" href="{{ url_for('shop.static', filename='css/shop.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename= 'css/shop.css') }}">
 {% endblock %}
 
 
 {% block content %}
-    <h1>Shop</h1>
+    <h1 class="catalog">КАТАЛОГ</h1>
     <!-- Якщо користувач є адміном то він може додавати новий продукт до БД -->
     {% if current_user.is_admin %}
         <div>
@@ -41,39 +41,51 @@
         </select>
         <button type="submit">Фільтрувати</button>
     </form>     -->
-    <select name="type_product" id="select">
+    <!-- <select name="type_product" id="select">
         <option value="all">Всі</option>
         {% for type in list_types %}
             <option value="{{ type }}">{{ type }}</option>
         {% endfor %}
-    </select>
-    <button id="filter" type="button">Фільтрувати</button>
+    </select> 
+    <button id="filter" type="button">Фільтрувати</button>-->
     <!-- Відображення продукту і його зображення  -->
-    <div id="products">
+
+
+    <div class = "sorting">
+        <button class = "all-select">Всі</button>
+        <button class = "drones-select">
+            <img src="drone" alt="Дрон">
+        </button>
+        <button class = "thermalImager-select">
+            <img src="teplovisor" alt="Тепловізор">
+        </button>
+    </div>
+
+    <!-- ТУТ ПИШЕТ МАСТЕР ЦСС -->
+    <div class = 'products' id="products">
         {% if list_product %}
             {% for product in list_product %}
             <!--  <div id="product-1">  -->
-                <div id="product-{{product.id}}"> 
-                    <hr>
+                <div class = 'product-card' id = "product-{{product.id}}"> 
                     <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                    <p>Назва продукту: {{product.product_name}}</p>
-                    <p>Вартість продукту: {{product.price}}</p>
-                    <p>Знижка на одиницю продукту: {{product.discount}}</p>
-                    <p>Кількість продукту: {{product.count}}</p>
-                    <p>Опис продукту: {{product.description}}</p>
+                    <p class = 'product_name'>{{product.product_name}}</p>
+                    <p class = 'product_price'>{{product.price}} ₴</p>
+                    <!-- <p>Кількість продукту: {{product.count}}</p> -->
+                    <!-- <p>Знижка на одиницю продукту: {{product.discount}}</p> -->
+                    <!-- <p>Опис продукту: {{product.description}}</p>  -->
                     
                     <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
-                    <button type="button" class="buy" id="{{product.id}}">Купити</button>
+                    <!-- <button type="button" class="buy" id="{{product.id}}">Купити</button>-->
     
                     {% if current_user.is_admin %}  
                         <!-- <a href="/delete_product?id={{product.id}}">DELETE</a> -->
                         <button type="button" id="delete" value="{{product.id}}">Видалити</button>
                     {% endif %}
-                    <hr>
                 </div>
             {% endfor %}
         {% endif %}
     </div>
+
 {% endblock %}
 
 {% block scripts %}
