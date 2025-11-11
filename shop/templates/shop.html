@@ -54,10 +54,14 @@
     <div class = "sorting">
         <button class = "all-select">Всі</button>
         <button class = "drones-select">
-            <img src="drone" alt="Дрон">
+            <div class = "image-select">
+                <img src="{{ url_for('shop.static', filename='images/products/DJl Mini 4K.png') }}" alt="Дрон" style = "width:75px; height:75px;">
+            </div>
         </button>
         <button class = "thermalImager-select">
-            <img src="teplovisor" alt="Тепловізор">
+            <div class = "image-select">
+                <img src="{{ url_for('shop.static', filename='images/products/Тепловізор ATN OTS-XLT 160 2.5-10X.png') }}" alt="Тепловізор" style="width:75px; height:75px;">
+            </div>
         </button>
     </div>
 
