@@ -17,40 +17,55 @@ main{
 .products {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 1vw;
+    margin-left: 2vw;
+    margin-top: 5vh;                           
 }
 
 .product-card {
-    width: calc(25% - 1vw);
+    flex: 0 1 calc((100% - 96px - 2vw) / 4);
+    min-width: 140px;
     background: white;
-    padding: 10px;
+    padding: 10px; 
     border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.product-card img{
+    display: block;
+    margin: 0 auto 8px auto;
+    max-width: 100%;
+    height: 30vh;
+    width: 30vh;
 }
 
 .product_name{
-    margin-top: 0.5vh;
-    margin-bottom: 4.5vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 3vh;         
-    color: hsl(0, 0%, 0%);      
-    text-align: left; 
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+    font-size: 3vh;
+    color: hsl(0, 0%, 0%);
+    text-align: left;
     font-family: var(--fontParagraph);
     font-weight: 800;
 }
 
+.product_name::first-line{
+    font-size: 1.8vh;
+}
+
 .product_price{
-    margin-top: 0.5vh;
-    margin-bottom: 7vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 2vh;         
-    color: hsl(0, 0%, 0%);      
-    text-align: left; 
+    margin-top: 3.5vh;
+    margin-bottom: 0;
+    font-size: 2vh;
+    color: hsl(0, 0%, 0%);
+    text-align: left;
     font-weight: 700;
 }
 
@@ -94,7 +109,7 @@ button:hover {
     padding: 0vh;
     font-size: 2vh;
     background-color: #F4F4F4;
-    border: none;
+    border: 0.15vw solid #E7E7EA; /*display-flex : */
     border-radius: 50%;
     margin: 1vh;
 }
@@ -107,8 +122,43 @@ button:hover {
     height: 7vh;
     padding: 0vh;
     font-size: 2vh; 
-    background-color: #F4F4F4;
-    border: none;
+    background-color: #ffffff;
+    border: 0.15vw solid #E7E7EA; 
     border-radius: 50%;
     margin: 1vh; 
+}
+
+.image-select img{
+    width: 3vw;
+    height: 3vh;
+    object-fit: cover;
+} 
+
+
+.pages{
+    position: relative; /* илья пришел мстить */
+    display: flex; /* display-flex: */
+    align-items: center; 
+    bottom: 2vh;
+    left: 30vw; 
+    margin: 10vh;
+    gap: 1vw;
+}
+
+.page-number, .page-return, .page-next {
+    width: 5vh; 
+    height: 5vh;
+    border-radius: 50%;
+    border: none; 
+    background-color: transparent;
+    font-size: 2vh;
+    color: #0C122A;
+}
+
+.page-number:hover, .page-return:hover, .page-next:hover{
+    background-color: #F4F4F4;
+}
+
+#first{
+    background-color: #F4F4F4; 
 }

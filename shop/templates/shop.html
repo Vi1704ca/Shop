@@ -41,6 +41,8 @@
         </select>
         <button type="submit">Фільтрувати</button>
     </form>     -->
+
+    
     <!-- <select name="type_product" id="select">
         <option value="all">Всі</option>
         {% for type in list_types %}
@@ -54,10 +56,14 @@
     <div class = "sorting">
         <button class = "all-select">Всі</button>
         <button class = "drones-select">
-            <img src="drone" alt="Дрон">
+            <div class = "image-select">
+                <img src="{{ url_for('shop.static', filename='images/icon/drone-select-icon.png') }}" alt="Дрон">
+            </div>
         </button>
         <button class = "thermalImager-select">
-            <img src="teplovisor" alt="Тепловізор">
+            <div class = "image-select">
+                <img src="{{ url_for('shop.static', filename='images/icon/thermal-select-icon.png') }}" alt="Тепловізор">
+            </div>
         </button>
     </div>
 
@@ -69,7 +75,7 @@
                 <div class = 'product-card' id = "product-{{product.id}}"> 
                     <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                     <p class = 'product_name'>{{product.product_name}}</p>
-                    <p class = 'product_price'>{{product.price}} ₴</p>
+                    <p class = 'product_price'>{{product.price}}</p>
                     <!-- <p>Кількість продукту: {{product.count}}</p> -->
                     <!-- <p>Знижка на одиницю продукту: {{product.discount}}</p> -->
                     <!-- <p>Опис продукту: {{product.description}}</p>  -->
@@ -84,6 +90,36 @@
                 </div>
             {% endfor %}
         {% endif %}
+    </div>
+
+    <div class = "pages">
+        <button class = "page-return">
+            <img src="h1" alt="B"> 
+        </button>
+        <button class = "page-number" id = "first"> 
+            1
+        </button>
+        <button class = "page-number"> 
+            2
+        </button>
+        <button class = "page-number">
+            3
+        </button>
+        <button class = "page-number">
+            4
+        </button>
+        <button class = "page-number">
+            5
+        </button>
+        <button class = "page-number">
+            6
+        </button>
+        <button class = "page-number">
+            7
+        </button>
+        <button class = "page-next">
+            <img src="h2" alt="V">
+        </button>
     </div>
 
 {% endblock %}
