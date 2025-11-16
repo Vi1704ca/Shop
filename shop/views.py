@@ -3,6 +3,8 @@ from .models import Product
 from os.path import abspath, join
 import os, traceback
 
+from flask import request, jsonify
+
 from Project.db import DATABASE
 from Project.config_page import config_page
 from flask_login import current_user
@@ -92,28 +94,51 @@ def add_product_id_cookies():
     finally:
         return response
 
+
 def filter():
-    data_type = flask.request.get_data(as_text= True)
+    try:
+        data = request.get_json(force=True) or {}
+    except Exception:
+        data = {}
+
+    # Берем тип продукта, по умолчанию 'all'
+    data_type = data.get('type_product', 'all')
+
+    # Получаем список продуктов по фильтру
     if data_type != "all":
-        list_filter = []
-        list_products = Product.query.filter_by(type_product = data_type).all()
-        for product in list_products:
-            dict_product = {
-                'product_name': product.product_name,
-                'product_price': product.price,
-                'product_discount': product.discount,
-                'product_count': product.count,
-                'product_description': product.description,
-                'product_id': product.id
-            }
-            list_filter.append(dict_product)
-        return {
-            'products': list_filter,
-            'is_admin': current_user.is_admin if current_user.is_authenticated else False,
-        }
+        products_q = Product.query.filter_by(type_product=data_type).all()
     else:
-        # Написати віправку всіх продуктів якщо фільтр був "all" 
-        pass
+        products_q = Product.query.all()
+
+    list_filter = []
+    for product in products_q:
+        # Защита от AttributeError для count
+        prod_count = getattr(product, 'count', None)
+        if prod_count is None:
+            for alt in ('quantity', 'stock', 'amount', 'product_count'):
+                prod_count = getattr(product, alt, None)
+                if prod_count is not None:
+                    break
+        if prod_count is None:
+            prod_count = 0
+
+        # Формируем словарь продукта
+        dict_product = {
+            'product_name': getattr(product, 'product_name', ''),
+            'product_price': getattr(product, 'price', 0),
+            'product_discount': getattr(product, 'discount', 0),
+            'product_count': prod_count,
+            'product_description': getattr(product, 'description', ''),
+            'product_id': getattr(product, 'id', None)
+        }
+        list_filter.append(dict_product)
+
+    return jsonify({
+        'products': list_filter,
+        'is_admin': current_user.is_authenticated and getattr(current_user, 'is_admin', False)
+    })
+
+
 
 def delete():
     data_type = flask.request.get_data(as_text = True)

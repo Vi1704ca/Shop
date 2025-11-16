@@ -54,13 +54,13 @@
 
 
     <div class = "sorting">
-        <button class = "all-select">Всі</button>
-        <button class = "drones-select">
+        <button class = "all-select" data-type="all">Всі</button>
+        <button class = "drones-select" data-type="drone">
             <div class = "image-select">
                 <img src="{{ url_for('shop.static', filename='images/icon/drone-select-icon.png') }}" alt="Дрон">
             </div>
         </button>
-        <button class = "thermalImager-select">
+        <button class = "thermalImager-select" data-type="thermal imager">
             <div class = "image-select">
                 <img src="{{ url_for('shop.static', filename='images/icon/thermal-select-icon.png') }}" alt="Тепловізор">
             </div>

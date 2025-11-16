@@ -113,3 +113,22 @@ header, main, footer{
 .img-profile:hover{
     background-image: url('/static/icon/profile_black.svg');
 }
+
+.VAY{
+    background-color: #B62D11;
+    /*background-image: url('/static/icon/not.png'); */
+    width: 0.3vh;
+    height: 0.3vh;
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    /*display-flex : - так пишется */
+    bottom: 0.7vh;
+    margin-left: 0.7vw;
+    z-index: 1;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 1.75vh; /* Я не дебил, хотя лан могу им быть */
+    font-family: var(--fontParagraph)
+}
