@@ -18,8 +18,8 @@ $(document).ready(function () {
 
                     productCard.append($('<img>', {
                         src: `/shop/static/images/products/${product.product_name}.png`,
-                        width: "200px",
-                        height: '200px',
+                        width: "32vh",
+                        height: '32vh',
                         class: 'product-image',
                         alt: product.product_name 
                     }));

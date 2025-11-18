@@ -67,17 +67,27 @@
         </button>
     </div>
 
-    <!-- ТУТ ПИШЕТ МАСТЕР ЦСС -->
+    <!-- ТУТ ПИШЕТ МАСТЕР ЦСС, или же просто Иван -->
     <div class = 'products' id="products">
         {% if list_product %}
             {% for product in list_product %}
             <!--  <div id="product-1">  -->
                 <div class = 'product-card' id = "product-{{product.id}}"> 
-                    <img id="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
+                    <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                     <p class = 'product_name'>{{product.product_name}}</p>
-                    <p class = 'product_price'>{{product.price}}</p>
+                    
+                    {% if product.id == 8 %}
+                    <div>
+                        <span class = 'product_sale'>29 900 ₴</span>
+                        <span class = 'product_discount'>{{product.discount}} 29 000 ₴</span>
+                    </div>
+                    {% else %}
+                        <p class = 'product_price'>{{product.price}}</p>
+                    {% endif %}
+                    <button class =  "cart-buy">
+                        <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+                    </button>
                     <!-- <p>Кількість продукту: {{product.count}}</p> -->
-                    <!-- <p>Знижка на одиницю продукту: {{product.discount}}</p> -->
                     <!-- <p>Опис продукту: {{product.description}}</p>  -->
                     
                     <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
@@ -94,7 +104,7 @@
 
     <div class = "pages">
         <button class = "page-return">
-            <img src="{{ url_for('shop.static', filename='images/icon/return.svg') }}"> 
+            <img src="{{ url_for('shop.static', filename='images/icon/return.png') }}"> 
         </button>
         <button class = "page-number" id = "first"> 
             1

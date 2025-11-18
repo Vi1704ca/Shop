@@ -42,7 +42,7 @@ main{
     background-color: #f4f4f4;
 }
 
-.product-card img {
+.product-image {
     display: flex;
     margin: 0 auto 3vh auto;
     width: 32vh; 
@@ -64,13 +64,31 @@ main{
 }
 
 .product_price {
-    display: flex;
+    position: relative;
     margin-top: auto;
     margin-bottom: 0;
     color: #0C122A;
     text-align: left;
     font-weight: 700;
     font-size: 2vh;
+}
+
+.product_sale {
+    font-size: 2vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+    text-decoration: line-through;
+    margin-right: 1vw;
+}
+
+.product_discount {
+    font-size: 2vh;         
+    color: rgb(255, 0, 0);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
 }
 
 :root{
@@ -105,7 +123,6 @@ button:hover {
 .sorting button.active {
   background-color: #F4F4F4;
   color: #000;
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03);
 }
 
 .sorting button:focus {
@@ -113,7 +130,6 @@ button:hover {
   background-color: #F4F4F4;
   color: #000;
   border-color: #d9d9d9;
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
 }
 
 .all-select{
@@ -150,6 +166,10 @@ button:hover {
     object-fit: cover;
 }
 
+.sorting button:hover {
+    background-color: #F4F4F4;
+    cursor: pointer;
+}
 
 .pages{
     position: relative; /* илья пришел мстить */
@@ -160,6 +180,8 @@ button:hover {
     margin: 10vh;
     gap: 1vw;
 }
+
+
 
 .page-number, .page-return, .page-next {
     width: 5vh; 
@@ -179,6 +201,44 @@ button:hover {
     background-color: #F4F4F4; 
 }
 
+.page-next img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0.75vw;
+    height: 1.5vh;
+    margin-left: 0.85vw;
+}
+
 .page-return img {
-    fill: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0.75vw;
+    height: 1.5vh;
+    margin-left: 0.85vw;
+    opacity: 50%;
+}
+
+.cart-buy{
+    display/*-flex:*/: flex;
+    width: 2vh;
+    height: 2vh;
+    background-color: transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.15vw solid #0C122A;  
+    padding: 1.25vw;
+    /* не готово по сути */
+    /* ЪАЫЗЫВФЗЩЫВЩЩ */
+} 
+
+
+.img-cart {
+    position: relative;
+    object-fit: contain; 
+    width: 2vh; 
+    height: 2vh;
+    
 }
