@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.sorting button').on('click', function () {
-        let type = $(this).data('type'); // сразу получаем тип продукта
+        let type = $(this).data('type');
 
         $.ajax({
             contentType: 'application/json',
@@ -9,22 +9,42 @@ $(document).ready(function () {
             data: JSON.stringify({ type_product: type }),
             success: function (response) {
                 $("#products").empty();
+                
                 for (let product of response['products']) {
-                    let productDiv = $('<div>', { id: `product-${product.product_id}`, class: 'product-item' });
+                    let productCard = $('<div>', { 
+                        id: `product-${product.product_id}`, 
+                        class: 'product-card'
+                    });
 
-                    productDiv.append($('<img>', {
+                    productCard.append($('<img>', {
                         src: `/shop/static/images/products/${product.product_name}.png`,
                         width: "200px",
-                        height: '200px'
+                        height: '200px',
+                        class: 'product-image',
+                        alt: product.product_name 
                     }));
-                    productDiv.append($('<p>', { text: product.product_name, class: 'product_name' }));
-                    productDiv.append($('<p>', { text: product.product_price, class: 'product_price' }));
+                    
+                    productCard.append($('<p>', { 
+                        text: product.product_name, 
+                        class: 'product_name' 
+                    }));
+                    
+                    productCard.append($('<p>', { 
+                        text: `$${product.product_price}`,
+                        class: 'product_price' 
+                    }));
 
                     if (response['is_admin']) {
-                        productDiv.append($("<a>", { text: "DELETE", href: `/delete_product?id=${product.product_id}` }));
+                        productCard.append(
+                            $("<a>", { 
+                                text: "DELETE", 
+                                href: `/delete_product?id=${product.product_id}`,
+                                class: 'delete-btn' 
+                            })
+                        );
                     }
 
-                    $("#products").append(productDiv);
+                    $("#products").append(productCard);
                 }
             }
         });

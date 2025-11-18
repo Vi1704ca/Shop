@@ -73,7 +73,7 @@
             {% for product in list_product %}
             <!--  <div id="product-1">  -->
                 <div class = 'product-card' id = "product-{{product.id}}"> 
-                    <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                    <img id="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                     <p class = 'product_name'>{{product.product_name}}</p>
                     <p class = 'product_price'>{{product.price}}</p>
                     <!-- <p>Кількість продукту: {{product.count}}</p> -->
@@ -94,7 +94,7 @@
 
     <div class = "pages">
         <button class = "page-return">
-            <img src="h1" alt="B"> 
+            <img src="{{ url_for('shop.static', filename='images/icon/return.svg') }}"> 
         </button>
         <button class = "page-number" id = "first"> 
             1
@@ -118,7 +118,7 @@
             7
         </button>
         <button class = "page-next">
-            <img src="h2" alt="V">
+            <img src="{{ url_for('shop.static', filename='images/icon/next.png') }}">
         </button>
     </div>
 
