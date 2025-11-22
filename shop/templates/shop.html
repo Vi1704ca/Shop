@@ -84,7 +84,7 @@
                     {% else %}
                         <p class = 'product_price'>{{product.price}}</p>
                     {% endif %}
-                    <button class =  "cart-buy">
+                    <button class =  "cart-buy" id="{{product.id}}">
                         <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
                     </button>
                     <!-- <p>Кількість продукту: {{product.count}}</p> -->

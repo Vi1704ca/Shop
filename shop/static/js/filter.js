@@ -34,6 +34,18 @@ $(document).ready(function () {
                         class: 'product_price' 
                     }));
 
+                    productCard.append(
+                        $('<button>', {
+                            class: 'cart-buy',
+                            id: product.id
+                        }).append(
+                            $('<img>', {
+                                src: `/shop/static/images/icon/cart-img.svg`,
+                                class: 'img-cart',
+                            })
+                        )
+                    );
+
                     if (response['is_admin']) {
                         productCard.append(
                             $("<a>", { 

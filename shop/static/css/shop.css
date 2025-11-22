@@ -220,8 +220,8 @@ button:hover {
     opacity: 50%;
 }
 
-.cart-buy{
-    display/*-flex:*/: flex;
+.cart-buy {
+    display: flex;
     width: 2vh;
     height: 2vh;
     background-color: transparent;
@@ -230,15 +230,21 @@ button:hover {
     justify-content: center;
     border: 0.15vw solid #0C122A;  
     padding: 1.25vw;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
     /* не готово по сути */
     /* ЪАЫЗЫВФЗЩЫВЩЩ */
-} 
+}
 
+.product-card:hover .cart-buy {
+    opacity: 1;
+    visibility: visible;
+}
 
 .img-cart {
     position: relative;
     object-fit: contain; 
     width: 2vh; 
     height: 2vh;
-    
 }
