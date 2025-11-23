@@ -171,6 +171,14 @@ button:hover {
     cursor: pointer;
 }
 
+.sorting .all-select.active,
+.sorting .drones-select.active,
+.sorting .thermalImager-select.active {
+    background-color: #F4F4F4;
+    color: #000;
+    border-color: #d9d9d9;
+}
+
 .pages{
     position: relative; /* илья пришел мстить */
     display: flex; /* display-flex: */
@@ -197,8 +205,9 @@ button:hover {
     background-color: #F4F4F4;
 }
 
-#first{
-    background-color: #F4F4F4; 
+.page-number.active {
+    background-color: #F4F4F4;
+    color: #000;
 }
 
 .page-next img {
@@ -233,13 +242,13 @@ button:hover {
     opacity: 0;
     visibility: hidden; 
     transition: opacity 0.3s ease, visibility 0.3s ease; 
-    margin-left:260px;
-    /* не готово по сути */
-    /* ЪАЫЗЫВФЗЩЫВЩЩ */
+    margin-left: 17vw; 
+    margin-top: -6vh;
+    margin-bottom: 2vh;
 }
 
 .cart-buy:hover{
-    color: grey
+    color: grey;
 }
 .product-card:hover .cart-buy {
     opacity: 1;

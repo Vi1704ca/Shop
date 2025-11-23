@@ -50,6 +50,35 @@
         </header>
 
         <main>
+            <div class = 'cart-page-page'>
+
+                <h1>Кошик</h1>
+                <img class = "cross" src="" alt="Крестик">
+
+                <div class = 'card-cart'>
+
+                    <img class = "drone-img-cart" src="" alt="Дрон">
+                    <h1 class = "name-of-drone">Назва дрону</h1>
+                    <p class = "price">Ціна</p>
+                    <img class = "minus" src="" alt="Минус">
+                    <h1>Кількість</h1>
+                    <img class = "plus" src="" alt="Плюс">
+                    <img class = "trash-can" src="" alt="Урна">
+
+                </div>
+                <div class = "order-sum"> 
+                    <p>Загальна сумма</p>
+                    <p class = "full-amount">29900 гривень</p>
+                    <p class = "save-discount">- 1105 гривень</p> <!--Конклюзия - В философии: это логическое умозаключение, сделанное на основе анализа данных или рассуждений. -->
+                    <p class = "price-with-discount">289858 гривень</p>
+                </div>
+
+                <button class = "move-to-bin">Перейти до кошика</button>
+                <button class = "make-an-order">Оформити замовлення</button>
+                <img class = "arrow" src="" alt="Стрелацька">
+
+            </div>
+        
             {% block content %}  {% endblock %}
         </main>
         <footer>
