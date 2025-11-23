@@ -233,10 +233,14 @@ button:hover {
     opacity: 0;
     visibility: hidden; 
     transition: opacity 0.3s ease, visibility 0.3s ease; 
+    margin-left:260px;
     /* не готово по сути */
     /* ЪАЫЗЫВФЗЩЫВЩЩ */
 }
 
+.cart-buy:hover{
+    color: grey
+}
 .product-card:hover .cart-buy {
     opacity: 1;
     visibility: visible;
