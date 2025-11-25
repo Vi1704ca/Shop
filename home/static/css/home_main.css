@@ -110,22 +110,32 @@
     border-radius: 2vh;
     z-index: -1;
 }
-/* import turtle */
+
 .card-drones[data-card-type="brown"] .card-bg {
     background-image: 
         linear-gradient(to top, #e4b34d 3%, transparent 95%),
-        url('/home/static/icon/bg.jpg');
+        url('/home/static/media/landspace/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
 }
 
 .card-drones[data-card-type="black"] .card-bg {
-    background-image: linear-gradient(to top, rgb(0, 0, 0), 30%, transparent 95%);
+    background-image: 
+        linear-gradient(to top, rgb(0, 0, 0), 30%, transparent 95%),
+        url('/home/static/media/landspace/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card-drones[data-card-type="blue"] .card-bg {
-    background-image: linear-gradient(to top, #5d9cab, 30%, transparent 95%);
+    background-image: 
+        linear-gradient(to top, #5d9cab, 30%, transparent 95%),
+        url('/home/static/media/landspace/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -285,8 +295,17 @@
 
 /*
 
+Тир-лист HTML тегов By Ivan (next vladika css)
 
+S - <h> <p> <div> <body> <!-- -->
 
+A - <a> <br> <hr> <img> <script> <link> <button>
 
+C - <title> <font> <header> <footer> <i> <b>
 
+B - <span> <video> <code> <input> <option>
+
+D - <audio> <abbr> <center> <mark>
+
+поменяй тир лист тогда хз
 */

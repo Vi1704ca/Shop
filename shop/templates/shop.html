@@ -41,6 +41,8 @@
         </select>
         <button type="submit">Фільтрувати</button>
     </form>     -->
+
+    
     <!-- <select name="type_product" id="select">
         <option value="all">Всі</option>
         {% for type in list_types %}
@@ -52,6 +54,7 @@
 
 
     <div class = "sorting">
+<<<<<<< HEAD
         <button class = "all-select">Всі</button>
         <button class = "drones-select">
             <div class = "image-select">
@@ -61,21 +64,42 @@
         <button class = "thermalImager-select">
             <div class = "image-select">
                 <img src="{{ url_for('shop.static', filename='images/products/Тепловізор ATN OTS-XLT 160 2.5-10X.png') }}" alt="Тепловізор" style="width:75px; height:75px;">
+=======
+        <button class = "all-select" data-type="all">Всі</button>
+        <button class = "drones-select" data-type="drone">
+            <div class = "image-select">
+                <img src="{{ url_for('shop.static', filename='images/icon/drone-select-icon.png') }}" alt="Дрон">
+            </div>
+        </button>
+        <button class = "thermalImager-select" data-type="thermal imager">
+            <div class = "image-select">
+                <img src="{{ url_for('shop.static', filename='images/icon/thermal-select-icon.png') }}" alt="Тепловізор">
+>>>>>>> 32beb82fc91b5967d596118d09d1c6cf51f5cebc
             </div>
         </button>
     </div>
 
-    <!-- ТУТ ПИШЕТ МАСТЕР ЦСС -->
+    <!-- ТУТ ПИШЕТ МАСТЕР ЦСС, или же просто Иван -->
     <div class = 'products' id="products">
         {% if list_product %}
             {% for product in list_product %}
             <!--  <div id="product-1">  -->
                 <div class = 'product-card' id = "product-{{product.id}}"> 
-                    <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                    <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                     <p class = 'product_name'>{{product.product_name}}</p>
-                    <p class = 'product_price'>{{product.price}} ₴</p>
+                    
+                    {% if product.id == 8 %}
+                    <div>
+                        <span class = 'product_sale'>29 900 ₴</span>
+                        <span class = 'product_discount'>{{product.discount}} 29 000 ₴</span>
+                    </div>
+                    {% else %}
+                        <p class = 'product_price'>{{product.price}}</p>
+                    {% endif %}
+                    <button class =  "cart-buy" id="{{product.id}}">
+                        <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+                    </button>
                     <!-- <p>Кількість продукту: {{product.count}}</p> -->
-                    <!-- <p>Знижка на одиницю продукту: {{product.discount}}</p> -->
                     <!-- <p>Опис продукту: {{product.description}}</p>  -->
                     
                     <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
@@ -88,6 +112,36 @@
                 </div>
             {% endfor %}
         {% endif %}
+    </div>
+
+    <div class = "pages">
+        <button class = "page-return">
+            <img src="{{ url_for('shop.static', filename='images/icon/return.png') }}"> 
+        </button>
+        <button class = "page-number" id = "first"> 
+            1
+        </button>
+        <button class = "page-number"> 
+            2
+        </button>
+        <button class = "page-number">
+            3
+        </button>
+        <button class = "page-number">
+            4
+        </button>
+        <button class = "page-number">
+            5
+        </button>
+        <button class = "page-number">
+            6
+        </button>
+        <button class = "page-number">
+            7
+        </button>
+        <button class = "page-next">
+            <img src="{{ url_for('shop.static', filename='images/icon/next.png') }}">
+        </button>
     </div>
 
 {% endblock %}

@@ -25,8 +25,10 @@
                 </div>
 
                 <span class="profile">
-                    <a href="/cart"> 
-                        <div class="cart"></div>
+                        <a href="/cart"> 
+                        <div class="cart">
+                            <div class="VAY">1</div>
+                        </div>
                     </a>
                     {% if current_user.is_authenticated %}
                         <p>{{ current_user.username }}</p>
@@ -48,6 +50,41 @@
         </header>
 
         <main>
+            <div class = 'cart-page-page'>
+
+                <h1 class = "cart-title">Кошик</h1>
+                <img class = "cross" src="{{ url_for('home.static', filename='/icon/Cross.png') }}" alt="Крестик">
+
+                <div class = 'card-cart'>
+
+                    <h1 class = "name-of-drone">DJI MINI 4K</h1>
+                    <img class = "drone-img-cart" src="{{ url_for('shop.static', filename='images/products/DJI MINI 4K.png') }}" alt="Дрон">
+                    <p class = "price">29 990₴</p>
+                    <button class = "minus-button">
+                        <img class = "minus" src="{{ url_for('home.static', filename='/icon/minus.png') }}" alt="Минус">
+                    </button>
+                    <h1 class = "amount">1</h1>
+                    <button class = "plus-button">
+                        <img class = "plus" src="{{ url_for('home.static', filename='/icon/plus.png') }}" alt="Плюс">
+                    </button>
+                    <button class = "trash-can-button">
+                        <img class = "trash-can" src="{{ url_for('home.static', filename='/icon/trashcan.png') }}" alt="Урна">
+                    </button>
+
+                </div>
+                <div class = "order-sum"> 
+                    <p class = "full-amount-title">Загальна сумма</p>
+                    <p class = "full-amount">29900 гривень</p>
+                    <p class = "save-discount">- 1105 гривень</p> <!--Конклюзия - В философии: это логическое умозаключение, сделанное на основе анализа данных или рассуждений. -->
+                    <p class = "price-with-discount">289858 гривень</p>
+                </div>
+
+                <button class = "move-to-bin">Перейти до кошика</button>
+                <button class = "make-an-order">Оформити замовлення</button>
+                <img class = "arrow" src="" alt="Стрелацька">
+
+            </div>
+        
             {% block content %}  {% endblock %}
         </main>
         <footer>

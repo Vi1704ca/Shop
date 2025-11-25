@@ -113,3 +113,83 @@ header, main, footer{
 .img-profile:hover{
     background-image: url('/static/icon/profile_black.svg');
 }
+
+.VAY{
+    background-color: #B62D11;
+    /*background-image: url('/static/icon/not.png'); */
+    width: 0.3vh;
+    height: 0.3vh;
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    /*display-flex : - так пишется */
+    bottom: 0.7vh;
+    margin-left: 0.7vw;
+    z-index: 1;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 1.75vh; /* Я не дебил, хотя лан могу им быть */
+    font-family: var(--fontParagraph)
+}
+
+.cart-title{
+    position: relative;
+    margin-right: 80vw;
+    top: 8vh;
+    margin-top: 5vh;
+    font-family: var(--fontTitle)
+}
+
+.cross{
+    position:relative;
+    width: 3.5vw;
+    height: 8.5vh;
+    margin-left: 80vh;
+    bottom: 6vh;
+}
+
+.drone-img-cart{
+    width: 10vw;
+    height: 20vh;
+}
+
+.name-of-drone{
+    position: relative;
+    font-family: var(--fontParagraph);
+}
+
+.price{
+    position:relative;
+    left: 6vw;
+    font-family: var(--fontParagraph);
+    font-size: 3vh;
+    bottom: 3.5vh;
+}
+
+.minus-button{
+    position: relative;
+    border-radius: 50%;
+    left: 30vw;
+    bottom: 7.5vw;
+}
+
+.plus-button{
+    position: relative;
+    border-radius: 50%;
+    left: 35vw;
+    bottom: 12.3vw;
+}
+
+.amount{
+    position: relative;
+    font-family:var(--fontParagraph);
+    bottom:20.9vh;
+    left:70.5vh;
+}
+
+.trash-can-button{
+    position: relative;
+    left: 75vh;
+    top: -26.5vh;
+}
