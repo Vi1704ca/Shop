@@ -16,5 +16,87 @@ body{
 }
 
 
+.cart-title{
+    margin-right: 80vw;
+    top: 8vh;
+    margin-top: 5vh;
+    font-family: var(--fontParagraph);
+    font-weight:bold;
+    
+}
 
+.cross{
+    width: 1.75vh;
+    height: 1.75vh;
+    margin-left: 80vh;
+    bottom: 6vh;
+}
 
+.drone-img-cart{
+    width: 10vw;
+    height: 20vh;
+    background-color: #F4F4F4;
+    padding: 3vh;
+}
+
+.name-of-drone{
+    font-family: var(--fontParagraph);
+}
+
+.price{
+    left: 6vw;
+    font-family: var(--fontParagraph);
+    font-size: 3vh;
+    bottom: 3.5vh;
+    font-weight: bold;
+}
+
+.amount{
+    font-family:var(--fontParagraph);
+    font-size: 2.5vh;
+}
+
+.trash-can-button{
+    left: 75vh;
+    top: -26.5vh;
+    background-color: transparent;
+    border: none;
+
+}
+
+#mark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vh; 
+    height: 5vh;
+    padding: 0vh;
+    font-size: 3vh; 
+    background-color: #ffffff;
+    border: 0.15vw solid #E7E7EA; /*display-flex : */
+    border-radius: 50%;
+    margin: 1vh; 
+    font-family: var(--fontParagraph);
+}
+
+.order-sum{
+    font-family: var(--fontParagraph);
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.order-sum-result{
+    font-family: var(--fontParagraph);
+    font-weight: bold;
+    font-size: 2.5vh;
+}
+
+.price-with-discount{
+    color: #B62D11;
+    font-size: 3.5vh;
+} 
+
+.cart-page{
+    width: 40vw;
+    height: 40vw;
+}

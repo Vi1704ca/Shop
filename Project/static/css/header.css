@@ -67,8 +67,10 @@ header, main, footer{
     padding: 10px 40px 10px 40px;
     border: 1px solid #E4E4E7;
     border-radius: 62px;
-    background-color: rgba(255, 255, 255, 50%);
-    z-index: 100
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px) saturate(115%);
+    -webkit-backdrop-filter: blur(8px) saturate(115%);
+    z-index: 100;
 }
 
 .links{
@@ -132,3 +134,4 @@ header, main, footer{
     font-size: 1.75vh; /* Я не дебил, хотя лан могу им быть */
     font-family: var(--fontParagraph)
 }
+

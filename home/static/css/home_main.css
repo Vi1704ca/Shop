@@ -67,6 +67,22 @@
     
 }
 
+@keyframes buyPop {
+    0% { transform: scale(0.985); opacity: 0.95; }
+    60% { transform: scale(1.01); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.buy-button{
+    transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease, background-color 180ms ease;
+    animation: buyPop 560ms ease both;
+}
+.buy-button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(12,18,42,0.12);
+    cursor: pointer;
+}
+
 
 .news_on_site{
     font-size: 40px;        
@@ -99,6 +115,29 @@
     width: 50vw;
     height: 50vh;
     border-radius: 1vh;
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), background-color 220ms ease;
+}
+
+@keyframes cardAppear {
+    from { opacity: 0; transform: translateY(18px) scale(0.995); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes tinyBob {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+.card-drones{ opacity: 0; transform: translateY(18px); animation: cardAppear 720ms cubic-bezier(.22,.9,.3,1) forwards; }
+.cards-container .card-drones:nth-child(1){ animation-delay: 0.12s; }
+.cards-container .card-drones:nth-child(2){ animation-delay: 0.28s; }
+.cards-container .card-drones:nth-child(3){ animation-delay: 0.44s; }
+
+.drone-image{ animation: tinyBob 5.5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+    .card-drones, .drone-image { animation: none !important; }
 }
 
 .card-bg {
@@ -148,6 +187,55 @@
     z-index: 2;
 }
 
+@keyframes cardFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-6px) rotate(-0.2deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(6px) rotate(0.2deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes backgroundPan {
+    0% { background-position: 10% 40%; }
+    50% { background-position: 90% 60%; }
+    100% { background-position: 10% 40%; }
+}
+
+@keyframes contentSway {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+.card-drones{
+    animation: cardAppear 720ms cubic-bezier(.22,.9,.3,1) forwards, cardFloat 8.5s ease-in-out 1.2s infinite;
+}
+.cards-container .card-drones:nth-child(1){ animation-delay: 0.12s, 0s; }
+.cards-container .card-drones:nth-child(2){ animation-delay: 0.28s, 0.36s; }
+.cards-container .card-drones:nth-child(3){ animation-delay: 0.44s, 0.72s; }
+
+.card-bg{
+    animation: backgroundPan 22s linear infinite;
+    background-size: cover;
+}
+
+.card-content{ animation: contentSway 6s ease-in-out 1.4s infinite; }
+
+.drone-image{ animation: tinyBob 5.5s ease-in-out 0.6s infinite; }
+
+.card-drones:hover{ 
+    transform: translateY(-5px);
+    background-color: #f4f4f4;
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), background-color 220ms ease;
+}
+.card-drones:hover .card-content{
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-drones, .card-bg, .card-content, .drone-image { animation: none !important; transition: none !important; transform: none !important; }
+}
+
 .card-content{
     position: absolute;
     bottom: 0;
@@ -167,7 +255,7 @@
 
 .drone-name{
     font-size: 5vh;
-    font-weight: bold; /*bald */
+    font-weight: bold;
 }
 
 .drone-description{
@@ -211,19 +299,35 @@
     flex-direction: row;
     justify-content: flex-start;
     width: 90%;
+    gap: 4vw;
     margin: 0;
     padding: 0 2vw;
-    margin-bottom: 20px;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
 }
 
 .catalog_drone {
     display: flex;
+    background: white;
+    padding: 1.2vw;
+    border-radius: 12px;
+    box-sizing: border-box;
     flex-direction: column;
-    align-items: flex-start;
-    width: 15%;
-    flex: 0 1 5vw;
-    margin: 0 4vw;
-    margin-bottom: 100px;
+    justify-content: space-between;
+    height: 54vh; 
+    width: 23%;
+
+}
+
+.catalog_drone:hover{
+    transform: translateY(-6px);
+    box-shadow: none;
+    background-color: #f4f4f4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catalog_drone { transition: none !important; }
+    .catalog_drone:hover { transform: none !important; }
 }
 
 .menu_drones h2{
@@ -293,19 +397,18 @@
     margin-bottom: 25vh;
 }
 
-/*
+ .button_catalog_drones{
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+}
 
-Тир-лист HTML тегов By Ivan (next vladika css)
+ .button_catalog_drones:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(12,18,42,0.12);
+    cursor: pointer;
+}
 
-S - <h> <p> <div> <body> <!-- -->
+@media (prefers-reduced-motion: reduce) {
+    .button_catalog_drones, .buy-button { animation: none !important; transition: none !important; }
+}
 
-A - <a> <br> <hr> <img> <script> <link> <button>
 
-C - <title> <font> <header> <footer> <i> <b>
-
-B - <span> <video> <code> <input> <option>
-
-D - <audio> <abbr> <center> <mark>
-
-поменяй тир лист тогда хз
-*/

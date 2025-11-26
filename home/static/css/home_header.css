@@ -61,7 +61,7 @@ header{
     background-color: hsl(210, 19%, 84%);
     margin-bottom: 200px;
 }
-/* */
+
 .ellipse{
     position: absolute;
     top: 60vh;
@@ -94,10 +94,6 @@ header{
 }
 
 .catalog{
-    /*position: absolute;
-    top: 85vh;
-    right: 10vw;*/
-
     position: absolute;
     width: 22vw;
     height: 3.2vh;
@@ -114,14 +110,6 @@ header{
 }
 
 .button_catalog {
-    /*display: flex;
-    justify-content: right;
-    color: #ffffff;
-    background-color: black;
-    margin-top: 5vh;
-    padding: 1.5vh 3vw 1.5vh 3vw; 
-    border: none;
-    border-radius: 3vw;*/
     align-items: center;
     justify-content: center;
     display: flex;
@@ -141,19 +129,77 @@ header{
     height: 2vh;
 }
 
-/* 
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
-Тир-лист HTML тегов 
+@keyframes floatSlow {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(-1deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
 
-S tier - <h> <p> <div> <body> <!-- -->
+@keyframes pulseScale {
+    0% { transform: scale(1); opacity: 0.95; }
+    50% { transform: scale(1.02); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.95; }
+}
 
-A tier - <a> <br> <hr> <img> <script> <link> <button>
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(18px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
 
-C tier - <title> <font> <header> <footer> <i> <b>
+@keyframes dronesFlyin {
+    0% { opacity: 0; transform: translateY(-80px) scale(0.8) rotate(-15deg); }
+    60% { opacity: 1; transform: translateY(8px) scale(1.05) rotate(2deg); }
+    100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+}
 
-B tier - <span> <video> <code> <input> <option>
+.slogan{
+    animation: fadeUp 700ms cubic-bezier(.22,.9,.3,1) both;
+}
 
-D tier - <audio> <abbr> <center> <mark>
+.drones{
+    animation: dronesFlyin 900ms cubic-bezier(.34,.1,.68,.55) both;
+    transform-origin: center;
+}
 
-*\
+.ellipse{
+    animation: pulseScale 10s ease-in-out infinite;
+    transform-origin: center;
+}
 
+.catalog{
+    animation: slideInRight 850ms cubic-bezier(.22,.9,.3,1) both;
+}
+
+.button_catalog{
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+}
+.button_catalog:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(12,18,42,0.12); }
+
+@media (prefers-reduced-motion: reduce) {
+    .slogan, .drones, .ellipse, .catalog, .button_catalog { animation: none !important; transition: none !important; }
+}
+
+@keyframes readPop {
+    0% { transform: translateY(6px) scale(.995); opacity: 0.9; }
+    60% { transform: translateY(-2px) scale(1.01); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.button_read{
+    animation: readPop 640ms cubic-bezier(.22,.9,.3,1) both;
+    transition: transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease;
+}
+.button_read:hover{
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 26px rgba(12,18,42,0.12);
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button_read { animation: none !important; transition: none !important; }
+}
