@@ -14,3 +14,32 @@ body{
     align-items: center;
     background-color: #FFFFFF;
 }
+
+iframe {
+    border-radius: 2.7%;
+    width: 29.5vw;
+    height: 64.2vh;
+    display: flex;
+}
+
+iframe {
+    scrollbar-width: thin;
+    scrollbar-color: #565656 #f1f1f1;
+}
+
+iframe::-webkit-scrollbar {
+    width: 8px;
+}
+
+iframe::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+iframe::-webkit-scrollbar-thumb {
+    background: #565656;
+    border-radius: 4px;
+}
+
+iframe::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+}

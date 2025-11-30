@@ -87,7 +87,7 @@
                     <div class="news-drones-text">
                         <h2 class="drone-name"> DJI Mini 4K </h2>
                         <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
-                        <div class="card-buy-cart">
+                        <div class="card-buy">
                             <p class = "drone-price">from to $299</p>
                             <button class="buy-button">
                                     КУПИТИ
@@ -132,7 +132,7 @@
                 {% endfor %}
             {% endif %}
         </div>
-        <button class="button_catalog_drones">ДИВИТИСЬ ВСІ <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}"></button>
+        <button class="button_catalog_drones"><a href="/shop">ДИВИТИСЬ ВСІ</a><img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}"></button>
     </div>
   
 {% endblock %}

@@ -378,13 +378,17 @@
     color: #ffffff;
     margin-bottom: 25vh;
     margin-top: 7vh;
-}
-
- .button_catalog_drones{
     transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
 }
 
- .button_catalog_drones:hover {
+.button_catalog_drones a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: var(--fontParagraph);
+    font-weight: 600;
+}
+
+.button_catalog_drones:hover {
     transform: translateY(-8px);
     box-shadow: 0 16px 36px rgba(12,18,42,0.12);
     cursor: pointer;
@@ -472,8 +476,8 @@
     opacity: 0;
     visibility: hidden; 
     transition: opacity 0.3s ease, visibility 0.3s ease; 
-    margin-left: 17vw; 
-    margin-top: -6vh;
+    margin-left: 13vw; 
+    margin-top: -10vh;
     margin-bottom: 2vh;
 }
 
