@@ -1,33 +1,15 @@
 from flask_login import current_user
-import flask
-import traceback
-import linecache
+import flask, traceback
 
 
-import colorama
-colorama.init(autoreset= True)
+def is_admin(function: object) -> float: # функція що приймає параметри для редіректу на сторінку
+    def handler(*args, **kwargs): # Функція обробник фунції параметру із wrapper
+        try:
+            if current_user.is_authenticated and current_user.is_admin:
+                function(*args, **kwargs)
+        except Exception as ERROR:
+            traceback.print_exc()
+        finally:
+            return flask.redirect('/shop')
+    return handler
 
-RED = colorama.Fore.RED
-YELLOW = colorama.Fore.YELLOW
-MAGNETA = colorama.Fore.MAGENTA
-
-
-
-def is_admin(redirect_url: str = '/'):
-    def wrapper(function: object):
-        def inner(*args, **kwars):
-            try:
-                if current_user.is_admin and current_user.is_authenticated:
-                    function(*args, **kwars)
-            except Exception as error:
-                # 1.
-                traceback.print_exc()
-                # 2.
-                ERROR = traceback.extract_tb(tb= error.__traceback__)[-1]
-                print(f'{YELLOW}File: {RED}{ERROR.filename}\n{YELLOW}line: {ERROR.lineno}\n{YELLOW}Function: {RED}{ERROR.name}')
-                print(linecache.getline(ERROR.filename, ERROR.lineno))
-                print(f'{MAGNETA}{error.__class__.__name__}: {error}')
-            finally:
-                return flask.redirect(redirect_url)
-        return inner
-    return wrapper

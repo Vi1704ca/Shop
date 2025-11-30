@@ -2,7 +2,7 @@ import flask
 from Project.config_page import config_page
 from shop.models import Product
 
-@config_page(template_name= 'cart.html')
+@config_page(rule_name= 'cart.html')
 def render_cart():
     # 
     list_products = [] #

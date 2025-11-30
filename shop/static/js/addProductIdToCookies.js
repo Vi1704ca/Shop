@@ -58,7 +58,7 @@
 //     )
 // }
 
-const listButton = document.querySelectorAll('.buy')
+const listButton = document.querySelectorAll('.cart-buy')
 
 for (let count= 0; count < listButton.length; count++){
     let button = listButton[count]

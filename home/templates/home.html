@@ -7,7 +7,7 @@
 {% block links %}
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_header.css') }}">
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_animations.css') }}">
 {% endblock %}
 
 {% block header %}
@@ -87,7 +87,7 @@
                     <div class="news-drones-text">
                         <h2 class="drone-name"> DJI Mini 4K </h2>
                         <p class="drone-description">Easy-To-Use Mini Camera Drone</p> 
-                        <div class="card-buy">
+                        <div class="card-buy-cart">
                             <p class = "drone-price">from to $299</p>
                             <button class="buy-button">
                                     КУПИТИ
@@ -104,30 +104,33 @@
     
     <div class="menu_drones"> 
         <h1>КАТАЛОГ</h1>
-        <div class="catalog_drones">
-            <div class="catalog_drone">
-                <img class="drone" src="{{ url_for('home.static', filename= 'media/images/drones/drone4.png') }}" alt="Дрон для розвитки">
-                <h2>DJI Mini 4K</h2>
-                <div class="price_sale">
-                    <span class="sale">29 900 ₴</span>
-                    <span class="red_sale">29 000 ₴</span>
-                </div>
-            </div>
-            <div class="catalog_drone">
-                <img class="drone" src="{{ url_for('home.static', filename= 'media/images/drones/drone2.png') }}" alt="Дрон для розвитки">
-                <h2>DJI Mini 4K</h2>
-                <p>29 900 ₴</p>
-            </div>
-            <div class="catalog_drone">
-                <img class="drone" src="{{ url_for('home.static', filename= 'media/images/drones/drone1.png') }}" alt="Дрон для розвитки">
-                <h2>DJI Mini 4 Pro</h2>
-                <p>29 900 ₴</p>
-            </div>
-            <div class="catalog_drone">
-                <img class="drone" src="{{ url_for('home.static', filename= 'media/images/drones/drone0.png') }}" alt="Дрон для розвитки">
-                <h2>DJI Flip</h2>
-                <p>29 900 ₴</p>
-            </div>
+            <div class = 'products' id="products">
+            {% if list_product %}
+                {% for product in list_product %}
+                <!--  <div id="product-1">  -->
+                    <div class = 'product-card' id = "product-{{product.id}}"> 
+                        <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
+                        <h2 class = 'product-name'>{{product.product_name}}</h2>
+
+                        {% if product.id == 8 %}
+                        <div>
+                            <span class = 'product_sale'>29 900 ₴</span>
+                            <span class = 'product_discount'>{{product.discount}} 29 000 ₴</span>
+                        </div>
+                        {% else %}
+                            <span class = 'product-price'>{{product.price}}</span>
+                        {% endif %}
+                        <button class =  "cart-buy" id="{{product.id}}">
+                            <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+                        </button>
+                        <!-- <p>Кількість продукту: {{product.count}}</p> -->
+                        <!-- <p>Опис продукту: {{product.description}}</p>  -->
+
+                        <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
+                        <!-- <button type="button" class="buy" id="{{product.id}}">Купити</button>-->
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
         <button class="button_catalog_drones">ДИВИТИСЬ ВСІ <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}"></button>
     </div>

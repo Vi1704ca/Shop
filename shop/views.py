@@ -11,7 +11,7 @@ from flask_login import current_user
 
 from .admin import is_admin
 
-@config_page(template_name= 'shop.html')
+@config_page(rule_name='shop.html')
 def render_shop():
     message = ''
     # 
@@ -33,9 +33,6 @@ def render_shop():
                 product = Product(
                     product_name = product_name_form,
                     price= flask.request.form["price"],
-                    discount = flask.request.form["discount"],
-                    count= flask.request.form["count"],
-                    description= flask.request.form["description"]
                 )
                 DATABASE.session.add(product)
                 DATABASE.session.commit()

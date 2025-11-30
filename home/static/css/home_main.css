@@ -357,24 +357,6 @@
     font-weight: 700;
 }
 
-.catalog_drones .sale {
-    font-size: 2vh;         
-    color: hsl(0, 0%, 0%);      
-    text-align: left; 
-    font-family: var(--fontParagraph);
-    font-weight: 700;
-    text-decoration: line-through;
-    margin-right: 1vw;
-}
-
-.catalog_drones .red_sale {
-    font-size: 2vh;         
-    color: rgb(255, 0, 0);      
-    text-align: left; 
-    font-family: var(--fontParagraph);
-    font-weight: 700;
-}
-
 .drone {
     width: 15vw;
     height: auto;
@@ -395,6 +377,7 @@
     border: none;
     color: #ffffff;
     margin-bottom: 25vh;
+    margin-top: 7vh;
 }
 
  .button_catalog_drones{
@@ -412,3 +395,99 @@
 }
 
 
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75vw;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 1vw;
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+.product-card {
+    display: flex;
+    background: white;
+    padding: 1.2vw;
+    border-radius: 12px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 54vh; 
+    width: 23%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    background-color: #f4f4f4;
+}
+
+.product-image {
+    display: flex;
+    margin: 0 auto 3vh auto;
+    width: 32vh; 
+    height: 32vh;
+    object-fit: contain; 
+    border-radius: 8px;
+}
+
+.product-price {
+    font-size: 2vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+    margin-right: 1vw;
+}
+
+.product_sale {
+    font-size: 2vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+    text-decoration: line-through;
+    margin-right: 1vw;
+}
+
+.product_discount {
+    font-size: 2vh;         
+    color: rgb(255, 0, 0);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+}
+
+.cart-buy {
+    display: flex;
+    width: 2vh;
+    height: 2vh;
+    background-color: transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.15vw solid #0C122A;  
+    padding: 1.25vw;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+    margin-left: 17vw; 
+    margin-top: -6vh;
+    margin-bottom: 2vh;
+}
+
+.cart-buy:hover{
+    color: grey;
+}
+.product-card:hover .cart-buy {
+    opacity: 1;
+    visibility: visible;
+}
+
+.img-cart {
+    position: relative;
+    object-fit: contain; 
+    width: 2vh; 
+    height: 2vh;
+}

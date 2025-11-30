@@ -7,7 +7,7 @@ from Project.config_page import config_page
 
 from .models import User
 
-@config_page(template_name= 'registration.html')
+@config_page(rule_name= 'registration.html')
 def render_registration() -> dict:
     message = ''
     if flask.request.method == "POST":

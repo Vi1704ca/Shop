@@ -25,7 +25,7 @@
                 </div>
 
                 <span class="profile">
-                        <a href="/cart"> 
+                        <a id="open-cart"> 
                         <div class="cart">
                             <div class="VAY">1</div>
                         </div>
@@ -49,61 +49,15 @@
             
         </header>
 
-        <main>
-            <div class = 'cart-page'> 
-
-                <h1 class = "cart-title">Кошик</h1>
-                <img class = "cross" src="{{ url_for('static', filename='/icon/cross.png') }}" alt="Крестик">
-
-                <div class = 'card-cart'>
-
-                    <h1 class = "name-of-drone">DJI MINI 4K</h1>
-                    <img class = "drone-img-cart" src="{{ url_for('shop.static', filename='images/products/DJI MINI 4K.png') }}" alt="Дрон">
-                    <p class = "price">29 990₴</p>
-                    <button class = "minus-button" id = "mark">
-                        -
-                    </button>
-                    <h1 class = "amount">1</h1>
-                    <button id = "mark" class = "plus-button">
-                        +
-                    </button>
-                    <button class = "trash-can-button">
-                        <img class = "trash-can" src="{{ url_for('static', filename='icon/trashcan.png') }}" alt="Урна"> 
-                    </button>
-
-                </div>
-                <hr class = "cart-line"> 
-                <br>
-                <hr class = "cart-line"> 
-                <div class = "order-sum"> 
-                    <p class = "full-amount-title">Загальна сумма</p> 
-                    <p class = "discounted">Заощаджено</p>
-                    <p class = "with-discount">Зі знижкою </p>
-                </div>
-
-                <div class = "order-sum-result">
-                    <p class = "full-amount">29900 ₴</p>
-                    <p class = "save-discount">- 1105 ₴</p> <!--Конклюзия - В философии: это логическое умозаключение, сделанное на основе анализа данных или рассуждений. -->
-                    <p class = "price-with-discount">289858 ₴</p> 
-                </div>
-                
-
-                <button class = "move-to-bin">Перейти до кошика</button>
-                <button class = "make-an-order">Оформити замовлення</button>
-                <img class = "arrow" src="" alt="Стрелацька">
-
-            </div>
-        
-            <div class = "empty_catalog">
-                <p>Кошик</p>
-                <img class = "cross" src="{{ url_for('static', filename='/icon/cross.png') }}" alt="Крестик">
-                <p>Ваш кошик порожній.</p>
-                <p>Почніть вибирати товари, щоб вони з’явилися тут</p>
-                <button class="continue_shopping">Продовжити покупки</button>
-            </div>
-        
-            {% block content %}  {% endblock %}
+        <main>       
+            {% block content %} {% endblock %}
         </main>
+
+        <div id="cart-modal">
+            <iframe id="cart-frame" src=""></iframe>
+        </div>
+
+
         <footer>
             <div class="ellipse_footer"></div>
             <img class="footer_drones" src="{{ url_for('home.static', filename= 'icon/text_drones.png') }}">
@@ -145,7 +99,8 @@
         </footer>
 
         {% block scripts %}
-            
+            <script src="{{ url_for('static', filename= 'js/cartCount.js') }}"> </script>
+            <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
         {% endblock %}
     </body>
 </html>
