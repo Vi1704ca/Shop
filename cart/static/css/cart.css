@@ -1,5 +1,5 @@
-/*слегонца да не работает*/
 
+/* Илья, я знаю что ты запустился в катку запустился. */
 
 @font-face {
     font-family: "fontforp";
@@ -12,179 +12,187 @@
 }
 
 
-
-.cart-title{
-    margin-right: 80vw;
-    top: 8vh;
-    margin-top: 5vh;
-    font-family: var(--fontParagraph);
-    font-weight:bold;
-    
-}
-
-.cross{
-    position:relative;
-    width: 1.75vh;
-    height: 1.75vh;
-    margin-left: 80vh;
-    bottom: 10vh;
-}
-
-.drone-img-cart{
-    width: 10vw;
-    height: 20vh;
-    background-color: #F4F4F4;
-    padding: 3vh;
-}
-
-.name-of-drone{
-    font-family: var(--fontParagraph);
-}
-
-.price{
-    position: relative;
-    bottom: 4vh;
-    font-family: var(--fontParagraph);
-    font-size: 3vh;
-    font-weight: bold;
-}
-
-.amount{
-    font-family:var(--fontParagraph);
-    font-size: 2.5vh;
-}
-
-.trash-can-button{
-    position:relative;
-    left: 60vh;
-    bottom: 40vh;
-    background-color: transparent;
-    border: none;
-
-}
-
-.plus-button{
-    position:relative;
-    left:50vh;
-    bottom: 40vh;
-}
-.minus-button{
-    position:relative;
-    left:50vh;
-    bottom:40vh;
-}
-
-#mark{
+.cart-page {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 5vh; 
-    height: 5vh;
-    padding: 0vh;
-    font-size: 3vh; 
-    background-color: #ffffff;
-    border: 0.15vw solid #E7E7EA; /*display-flex : */
-    border-radius: 50%;
-    margin: 1vh; 
-    font-family: var(--fontParagraph);
+    width: 100%;
+    height: 100%;
 }
 
-.order-sum{
-    font-family: var(--fontParagraph);
-    font-weight: bold;
-    font-size: 3vh;
-}
-
-.order-sum-result{
-    font-family: var(--fontParagraph);
-    font-weight: bold;
-    font-size: 2.5vh;
-}
-
-.price-with-discount{
-    color: #B62D11;
-    font-size: 3.5vh;
-} 
-
-.cart-page{
-    width: 40vw;
-    height: 40vw;
-}
-
-
-
-
-
-
-
-
-
-
-.modal-epmty{
-    position: fixed;
-    width: 100;
-    height: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    font-family: sans-serif;
-}
-
-.empty-catalog{
-    border-radius: 8px;
-    width: 90%;
-    max-width: 450px;
-    padding: 0 20px 20px;
+.modal-cart {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    padding: 2vh 1vw;
+    overflow-y: auto;
+    font-family: var(--fontParagraph);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
+    margin-bottom: 3vh;
+    position: sticky;
+    top: 0;
+    background: white;
+    padding-bottom: 1vh;
+    z-index: 10;
 }
 
-.empty-catalog::before{
-    display: block;
-    width: calc(100% + 40p);
-    height: 1px;
-    margin: 0 -20px 0 -20px;
-    order: 1;
+.modal-header h2 {
+    font-size: 4vh;
+    font-weight: 700;
+    margin: 0;
 }
 
-.empty-catalog::after{
-    display: block;
-    width: calc(100% + 40px);
-    height: 1px;
-    margin: 30 -20px 0 -20px;
-    order: 4;
-}
-
-.continue-shopping{
-    padding: 10px 20px;
-    color: #333;
-    border: 1px solid #333;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-    text-transform: uppercase;
+.close-cart img {
+    width: 2.5vh;
     cursor: pointer;
-    transition: background-color 0.2s;
-    align-self: flex-end; 
-    margin-top: 20px;
-    order: 5;
 }
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+    padding-bottom: 2vh;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.product-img {
+    width: 12vw;
+    height: auto;
+    background: #F4F4F4;
+    border-radius: 1vh;
+    padding: 1vh;
+}
+
+.text-block h3 {
+    margin: 0 0 1vh 0;
+    font-size: 3vh;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #A6A6A6;
+}
+
+.new-price {
+    color: #B62D11;
+    font-weight: 700;
+    font-size: 2.7vh;
+}
+
+.edit-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5vh;
+}
+
+.round-btn {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: 0.2vw solid #E7E7EA;
+    background: #fff;
+    font-size: 2.5vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount {
+    font-size: 2.7vh;
+    font-weight: 600;
+}
+
+.trash-btn img {
+    width: 3vh;
+    cursor: pointer;
+}
+
+.separator {
+    height: 1px;
+    background: #E0E0E0;
+    border: none;
+    margin: 2vh 0;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.4vh;
+    font-weight: 600;
+}
+
+.summary .discount {
+    color: #B62D11;
+    font-size: 3vh;
+}
+
+.buttons-cart {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.move-to-bin, .make-an-order {
+    width: 100%;
+    height: 6vh;
+    border-radius: 5vh;
+    font-size: 2.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.move-to-bin {
+    background: #fff;
+    border: 0.2vw solid #0C122A;
+    color: #0C122A;
+    font-weight: 600;
+}
+
+.make-an-order {
+    background: #0C122A;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+}
+
+.arrow {
+    width: 1.3vh;
+    margin-left: 1vw;
+}
+
 
 /*
 
-Тир лист CSS-свойств by Подмастерье CSS
+Тир лист CSS-свойств by Подмастерье CSS или Иван
 
-S - 
+S - position, left, right, bottom, top, display, width, heigth, color
 
-A - 
+A - font-size, font-family, margin, gap, padding 
 
-B - 
+B - border-radius, border,
 
 D - 
 
 F - 
 
-*/
+*/ 
