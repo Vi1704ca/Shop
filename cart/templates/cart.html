@@ -23,7 +23,7 @@
                         <img class="product-img" src="{{ url_for('shop.static', filename='images/products/DJI MINI 4K.png') }}" alt="">
 
                         <div class="text-block">
-                            <h3>DJI Mini 4K</h3>
+                            <h3 class = "drone-name">DJI Mini 4K</h3>
                             <div class="price-row">
                                 <span class="old-price">29 990 ₴</span>
                                 <span class="new-price">28 985 ₴</span>
@@ -42,27 +42,31 @@
                 </div>
             
                 <hr class="separator">
-            
-                <div class="summary">
-                    <div class="left">
-                        <p>Загальна сумма</p>
-                        <p>Заощаджено</p>
-                        <p>Зі знижкою</p>
-                    </div>
-                
-                    <div class="right">
-                        <p>29 990 ₴</p>
-                        <p>- 1 005 ₴</p>
-                        <p class="discount">28 985 ₴</p>
+
+                <hr class="separator">
+
+                <div class="cart-footer">
+                    <div class="summary">
+                        <div class="left">
+                            <p>Загальна сумма</p>
+                            <p>Заощаджено</p>
+                            <p>Зі знижкою</p>
+                        </div>
+                    
+                        <div class="right">
+                            <p>29 990 ₴</p>
+                            <p>- 1 005 ₴</p>
+                            <p class="discount">28 985 ₴</p>
+                        </div>
                     </div>
                 </div>
-            
-                <div class="buttons-cart">
-                    <button class="move-to-bin">ПЕРЕЙТИ ДО КОШИКА</button>
-                    <button class="make-an-order">ОФОРМИТИ ЗАМОВЛЕННЯ 
-                        <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
-                    </button>
-                </div>
+                    <hr class="separator">
+                    <div class="buttons-cart">
+                        <button class="move-to-bin">ПЕРЕЙТИ ДО КОШИКА</button>
+                        <button class="make-an-order">ОФОРМИТИ ЗАМОВЛЕННЯ 
+                            <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
+                        </button>
+                    </div>
             
             </div>
         </div>
@@ -103,7 +107,6 @@
     <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
     <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
     <script>
-        // Notify parent to close cart modal when cross is clicked
         document.addEventListener('DOMContentLoaded', function () {
             var closeBtn = document.getElementById('close-cart');
             if (!closeBtn) return;
@@ -111,7 +114,6 @@
                 try {
                     window.parent.postMessage({ type: 'close-cart' }, '*');
                 } catch (e) {
-                    // fallback: try to set top.location if allowed
                     try { window.top.postMessage({ type: 'close-cart' }, '*'); } catch (err) {}
                 }
             });
