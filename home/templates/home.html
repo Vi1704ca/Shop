@@ -112,10 +112,10 @@
                         <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                         <h2 class = 'product-name'>{{product.product_name}}</h2>
 
-                        {% if product.id == 8 %}
+                        {% if product.discount != None %}
                         <div>
-                            <span class = 'product_sale'>29 900 ₴</span>
-                            <span class = 'product_discount'>{{product.discount}} 29 000 ₴</span>
+                            <span class = 'product_sale'>{{product.price}}</span>
+                            <span class = 'product_discount'>{{product.discount}}</span>
                         </div>
                         {% else %}
                             <span class = 'product-price'>{{product.price}}</span>

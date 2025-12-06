@@ -18,31 +18,40 @@
                     </button>
                 </div>
             
-                <div class="cart-item">
-                    <div class="product-info">
-                        <img class="product-img" src="{{ url_for('shop.static', filename='images/products/DJI MINI 4K.png') }}" alt="">
-
-                        <div class="text-block">
-                            <h3 class = "drone-name">DJI Mini 4K</h3>
-                            <div class="price-row">
-                                <span class="old-price">29 990 ₴</span>
-                                <span class="new-price">28 985 ₴</span>
+                 {% if list_products %}
+                    {% for product, count in list_products %}
+                        <div class="product-{{product.id}}"> 
+                            <div class="cart-item">
+                                <div class="product-info">
+                                    <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
+                                
+                                    <div class="text-block">
+                                        <h3 class = "drone-name">{{ product.product_name }}</h3>
+                                        <div class="price-row">
+                                            {% if product.discount == None %}
+                                                <span class="old-price">{{ product.price }}</span>
+                                            {% else %}
+                                                <span class="old-price">{{ product.price }}</span>
+                                                <span class="new-price">{{ product.discount }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="edit-block">
+                                    <button type="button" class="minus" id="{{product.id}}">-</button>
+                                    <span class="count-{{product.id}}" id="amount">{{ count }}</span>
+                                    <button type="button" class="plus" id="{{product.id}}">+</button>
+                                    <button type = "button" id="{{product.id}}" class="trash-btn">
+                                        <img src="{{ url_for('static', filename='icon/trashcan.png') }}" alt="">
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                
-                    <div class="edit-block">
-                        <button class="round-btn">-</button>
-                        <span class="amount">1</span>
-                        <button class="round-btn">+</button>
-                        <button class="trash-btn">
-                            <img src="{{ url_for('static', filename='icon/trashcan.png') }}" alt="">
-                        </button>
-                    </div>
-                </div>
+                        <hr class="separator">
+                    {% endfor %}
+                {% endif %}
             
-                <hr class="separator">
-
                 <hr class="separator">
 
                 <div class="cart-footer">
@@ -82,7 +91,7 @@
              </div>       
             -->
 
-
+ <!--
     {% if list_products %}
         {% for product, count in list_products %}
             <div class="product-{{product.id}}">
@@ -92,14 +101,14 @@
                 <!--  -->
                 <!-- <form action="/delete_product_to_cart" method="post">
                     <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
-                </form> -->
+                </form> 
                 <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
                 <button type="button" class="plus" id="{{product.id}}">+</button>
                 <button type="button" class="minus" id="{{product.id}}">-</button>
                 <hr>
-            </div>
+            </div> 
         {% endfor %}
-    {% endif %}
+    {% endif %}  -->
 
 
 </main>
