@@ -58,7 +58,7 @@ header, main, footer{
 
 .nav-header{
     position: fixed;
-    top: 3vh;
+    top: 6.5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;

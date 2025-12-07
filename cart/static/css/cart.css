@@ -203,6 +203,7 @@
 }
 
 .price-row{
+    font-family: var(--fontParagraph);
     position:relative;
     top: 3vh;
 }
@@ -224,6 +225,39 @@
 .cart-footer {
     margin-bottom: 0vh; 
 }
+
+.continue_shopping{
+    font-family: var(--fontParagraph);
+    font-weight: bold;
+    width: 30vw;
+    height: 6vh;
+    border-radius: 5vh;
+    font-size: 2.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 0.3vw solid #0C122A;
+    color: #0C122A;
+    flex-direction: row; 
+    margin-left: 64vw;
+    margin-top: 0.5vh;
+}
+
+
+.empty-cart { 
+    margin:0;
+    text-align: center;
+    color:#6D717F;
+    font-weight: bold;
+    font-family: var(--fontParagraph);
+    font-size: 3vh;
+}
+
+
+
+
+
 
 /*
 

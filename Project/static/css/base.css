@@ -26,7 +26,7 @@ body{
 #cart-modal iframe {
     position: fixed;
     right: 7vw;
-    top: 10vh;
+    top: 15vh;
     width: 40vw;
     height: 80vh;
     background: #ffffff;
@@ -56,4 +56,20 @@ body{
 
 #cart-modal iframe::-webkit-scrollbar-thumb:hover {
     background: #333333;
+}
+
+.notification{
+    display: block;
+    z-index: 5; 
+    position: fixed;
+    background-color: #488047;
+    width:100%;
+}
+
+.added-to-cart-text{
+    display:flex;
+    justify-content: center;
+    color: black;
+    padding:1.5vh; 
+    font-size: 3vh;
 }

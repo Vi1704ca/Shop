@@ -18,7 +18,7 @@
                     </button>
                 </div>
             
-                 {% if list_products %}
+                {% if list_products %}
                     {% for product, count in list_products %}
                         <div class="product-{{product.id}}"> 
                             <div class="cart-item">
@@ -50,33 +50,40 @@
                         </div>
                         <hr class="separator">
                     {% endfor %}
-                {% endif %}
-            
-                <hr class="separator">
+               
+                        
+                    <hr class="separator">
 
-                <div class="cart-footer">
-                    <div class="summary">
-                        <div class="left">
-                            <p>Загальна сумма</p>
-                            <p>Заощаджено</p>
-                            <p>Зі знижкою</p>
+                    <div class="cart-footer">
+                        <div class="summary">
+                            <div class="left">
+                                <p>Загальна сумма</p>
+                                <p>Заощаджено</p>
+                                <p>Зі знижкою</p>
+                            </div>
+                        
+                            <div class="right">
+                                <p>29 990 ₴</p>
+                                <p>- 1 005 ₴</p>
+                                <p class="discount">28 985 ₴</p>
+                            </div>
+                        </div>
+                    </div>
+                        <hr class="separator">
+                        <div class="buttons-cart">
+                            <button class="move-to-bin">ПЕРЕЙТИ ДО КОШИКА</button>
+                            <button class="make-an-order">ОФОРМИТИ ЗАМОВЛЕННЯ 
+                                <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
+                            </button>
                         </div>
                     
-                        <div class="right">
-                            <p>29 990 ₴</p>
-                            <p>- 1 005 ₴</p>
-                            <p class="discount">28 985 ₴</p>
-                        </div>
-                    </div>
-                </div>
-                    <hr class="separator">
-                    <div class="buttons-cart">
-                        <button class="move-to-bin">ПЕРЕЙТИ ДО КОШИКА</button>
-                        <button class="make-an-order">ОФОРМИТИ ЗАМОВЛЕННЯ 
-                            <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
-                        </button>
-                    </div>
-            
+                {% else %}
+                    <hr class = "separator">
+                    <p class = "empty-cart">Ваш кошик порожній.</p>                                                                   
+                    <p class = "empty-cart">Почніть вибирати товари, щоб вони з’явилися тут</p>
+                    <hr class = "separator">
+                    <button class="continue_shopping">ПРОДОВЖИТИ ПОКУПКИ</button>
+                {% endif %}
             </div>
         </div>
 
@@ -98,7 +105,6 @@
                 <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                 <h4>{{ product.product_name }}</h4>
                 <p>Кількість: <span class="count-{{product.id}}">{{ count }}</span></p>
-                <!--  -->
                 <!-- <form action="/delete_product_to_cart" method="post">
                     <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
                 </form> 
@@ -140,4 +146,30 @@ As if I could ever make such a mistake.
 Never. 
 Never! 
 I just - I just couldn't prove it.
- He - he covered his tracks, he got that idiot at the copy shop to lie for him. You think this is something? You think this is bad? This? This chicanery? He's done worse. That billboard! Are you telling me that a man just happens to fall like that? No! He orchestrated it! Jimmy! He defecated through a sunroof! And I saved him! And I shouldn't have. I took him into my own firm! What was I thinking? He'll never change. He'll never change! Ever since he was 9, always the same! Couldn't keep his hands out of the cash drawer! But not our Jimmy! Couldn't be precious Jimmy! Stealing them blind! And he gets to be a lawyer!? What a sick joke! I should've stopped him when I had the chance! And you - you have to stop him!
+He - he covered his tracks, he got that idiot at the copy shop to lie for him. 
+You think this is something? 
+You think this is bad? 
+This?
+This chicanery? 
+He's done worse.
+That billboard!
+Are you telling me that a man just happens to fall like that? 
+No! 
+He orchestrated it! 
+Jimmy! 
+He defecated through a sunroof! 
+And I saved him! 
+And I shouldn't have. 
+I took him into my own firm! 
+What was I thinking? 
+He'll never change. 
+He'll never change! 
+Ever since he was 9, always the same! 
+Couldn't keep his hands out of the cash drawer! 
+But not our Jimmy! 
+Couldn't be precious Jimmy! 
+Stealing them blind! 
+And he gets to be a lawyer!? 
+What a sick joke! 
+I should've stopped him when I had the chance! 
+And you - you have to stop him!
