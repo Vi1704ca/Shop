@@ -1,16 +1,24 @@
-
-/* Илья, я знаю что ты запустился в катку запустился. */
-
 @font-face {
     font-family: "fontforp";
     src: url("/static/fonts/GTWalsheimPro-Light.ttf");
 }
 
-
 :root{
     --fontParagraph: "fontforp";
+    --fontReview: 'review';
 }
 
+@font-face {
+    font-family: 'review';
+    src: url("/static/fonts/GTWalsheimPro-Regular.ttf");
+}
+
+button{
+    font-family:'review'; 
+}
+button:hover{ 
+    cursor: pointer;
+}
 
 .cart-page {
     font-family: var(--fontParagraph);
@@ -39,11 +47,12 @@
     background: white;
     padding-bottom: 1vh;
     z-index: 10;
+    padding: 2vw;
 }
 
 .modal-header h2 {
     font-size: 4vh;
-    font-weight: 700;
+    font-weight: bolder;
     margin: 0;
 }
 
@@ -58,6 +67,7 @@
     align-items: center;
     gap: 2vw;
     padding-bottom: 2vh;
+    padding: 2vw;
 }
 
 .product-info {
@@ -84,11 +94,18 @@
     display: flex;
     align-items: center;
     gap: 2vw;
+    font-family: var(--fontParagraph);
+}
+
+.current-price {
+    color: #000000;
+    font-size: 2.7vh;
+    font-weight: 700;
 }
 
 .old-price {
     text-decoration: line-through;
-    color: #A6A6A6;
+    color: #000000;
 }
 
 .new-price {
@@ -100,16 +117,16 @@
 .edit-block {
     display: flex;
     align-items: center;
-    gap: 1.5vh;
+    gap: 2.8vh;
 }
 
 .minus, .plus {
-    width: 5vh;
-    height: 5vh;
+    width: 6vh;
+    height: 6vh;
     border-radius: 50%;
     border: 0.2vw solid #E7E7EA;
     background: #fff;
-    font-size: 2.5vh;
+    font-size: 2.75vh;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -117,8 +134,9 @@
 }
 
 #amount {
-    font-size: 2.7vh;
+    font-size: 3.2vh;
     font-weight: 600;
+    
 }
 
 .trash-btn img {
@@ -137,7 +155,14 @@
     display: flex;
     justify-content: space-between;
     font-size: 2.4vh;
-    font-weight: 600;
+    font-weight: 700; 
+}
+
+.left{
+    font-weight: 500; 
+    margin: 0;
+    font-size: 2.6vh;
+    font-family: var(--fontReview);
 }
 
 .summary .discount {
@@ -154,7 +179,7 @@
 }
 
 .move-to-bin, .make-an-order {
-    font-family: var(--fontParagraph);
+    font-family: var(--fontReview);
     font-weight: 900;
     width: 100%;
     height: 6vh;
@@ -176,9 +201,9 @@
     width: 40vw;
     background: #0C122A;
     color: #fff;
-    font-weight: 500;
     border: none;
     padding: 0;
+    font-weight: 500;
 }
 
 .arrow {
@@ -224,6 +249,7 @@
 
 .cart-footer {
     margin-bottom: 0vh; 
+    padding: 2vw;
 }
 
 .continue_shopping{
@@ -245,8 +271,9 @@
 }
 
 
-.empty-cart { 
-    margin:0;
+.empty-cart {
+    margin-bottom: 0;
+    margin-top:15vh;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
@@ -254,23 +281,12 @@
     font-size: 3vh;
 }
 
-
-
-
-
-
-/*
-
-Тир лист CSS-свойств by Подмастерье CSS или Иван
-
-S - position, left, right, bottom, top, display, width, heigth, color
-
-A - font-size, font-family, margin, gap, padding 
-
-B - border-radius, border,
-
-D - 
-
-F - 
-
-*/ 
+.start-to-buy{
+    margin-top: 0;
+    margin-bottom:15vh;;
+    text-align: center;
+    color:#6D717F;
+    font-weight: bold;
+    font-family: var(--fontParagraph);
+    font-size: 3vh;
+}

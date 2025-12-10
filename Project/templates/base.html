@@ -35,7 +35,7 @@
                 <span class="profile">
                         <a id="open-cart"> 
                         <div class="cart">
-                            <div class="VAY">1</div>
+                            <div class="VAY"></div>
                         </div>
                     </a>
                     {% if current_user.is_authenticated %}
@@ -106,9 +106,8 @@
 
         </footer>
 
-        {% block scripts %}
-            <script src="{{ url_for('static', filename= 'js/cartCount.js') }}"> </script>
-            <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
-        {% endblock %}
+        <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
+        <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
+        {% block scripts %}{% endblock %}
     </body>
 </html>

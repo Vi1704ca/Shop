@@ -26,13 +26,13 @@
                                     <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
                                 
                                     <div class="text-block">
-                                        <h3 class = "drone-name">{{ product.product_name }}</h3>
+                                        <h3 class="drone-name">{{ product.product_name }}</h3>
                                         <div class="price-row">
-                                            {% if product.discount == None %}
-                                                <span class="old-price">{{ product.price }}</span>
-                                            {% else %}
+                                            {% if product.discount %}
                                                 <span class="old-price">{{ product.price }}</span>
                                                 <span class="new-price">{{ product.discount }}</span>
+                                            {% else %}
+                                                <span class="current-price">{{ product.price }}</span>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -79,10 +79,12 @@
                     
                 {% else %}
                     <hr class = "separator">
+                <div class = "empty-cart-div">
                     <p class = "empty-cart">Ваш кошик порожній.</p>                                                                   
-                    <p class = "empty-cart">Почніть вибирати товари, щоб вони з’явилися тут</p>
+                    <p class = "start-to-buy">Почніть вибирати товари, щоб вони з’явилися тут</p>
                     <hr class = "separator">
-                    <button class="continue_shopping">ПРОДОВЖИТИ ПОКУПКИ</button>
+                    <button class="continue_shopping" id ="close-cart">ПРОДОВЖИТИ ПОКУПКИ</button>
+                </div>
                 {% endif %}
             </div>
         </div>

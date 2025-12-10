@@ -60,17 +60,88 @@
 
 const listButton = document.querySelectorAll('.cart-buy')
 
-for (let count= 0; count < listButton.length; count++){
-    let button = listButton[count]
-    button.addEventListener(
-        type= 'click',
-        listener= function (event){
-            listIdProduct = document.cookie.split('=')[1]
-            if (document.cookie == '' || !listIdProduct){
-                document.cookie = `list_products = |${button.id}|; path = /`
-            }else{
-                document.cookie = `list_products = ${listIdProduct}|${button.id}|; path = /`
+//for (let count= 0; count < listButton.length; count++){
+//    let button = listButton[count]
+//    button.addEventListener(
+//        type= 'click',
+//        listener= function (event){
+//            listIdProduct = document.cookie.split('=')[1]
+//            if (document.cookie == '' || !listIdProduct){
+//                document.cookie = `list_products = |${button.id}|; path = /`
+//            }else{
+//                document.cookie = `list_products = ${listIdProduct}|${button.id}|; path = /`
+//            }
+//        }
+//    )
+//}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const notification = document.querySelector('.notification');
+    const counter = document.querySelector('.VAY');
+    
+    function showNotification(type = 'success') {
+        if (!notification) return;
+        notification.className = 'notification';
+        notification.style.display = 'block';
+        
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+    
+    function updateCounter() {
+        if (!counter) return;
+        
+        let count = 0;
+        const cookies = document.cookie.split(';');
+        
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith('list_products=')) {
+                const products = cookie.split('=')[1];
+                if (products) {
+                    count = products.split('|').filter(p => p).length;
+                }
+                break;
             }
         }
-    )
-}
+        
+        counter.textContent = count;
+        counter.style.visibility = count > 0 ? 'visible' : 'hidden';
+    }
+    
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.cart-buy')) {
+            e.preventDefault();
+            const button = e.target.closest('.cart-buy');
+            const productId = button.id;
+            
+            if (!productId) return;
+            
+            let current = '';
+            const cookies = document.cookie.split(';');
+            
+            for (let cookie of cookies) {
+                cookie = cookie.trim();
+                if (cookie.startsWith('list_products=')) {
+                    current = cookie.split('=')[1];
+                    break;
+                }
+            }
+            
+            if (current) {
+                const items = current.split('|').filter(p => p);
+                if (items.includes(productId)) {
+                    showNotification('Товар уже в корзине!', 'warning');
+                    return;
+                }
+            }
+            
+            document.cookie = `list_products=${current || '|'}|${productId}|; path=/`;
+            updateCounter();
+            showNotification('Товар добавлен!', 'success');
+        }
+    });
+    updateCounter();
+});

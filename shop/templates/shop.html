@@ -76,10 +76,10 @@
                     <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                     <p class = 'product_name'>{{product.product_name}}</p>
                     
-                    {% if product.id == 8 %}
+                    {% if product.discount != None %}
                     <div>
-                        <span class = 'product_sale'>29 900 ₴</span>
-                        <span class = 'product_discount'>{{product.discount}} 29 000 ₴</span>
+                        <span class = 'product_sale'>{{product.price}}</span>
+                        <span class = 'product_discount'>{{product.discount}}</span>
                     </div>
                     {% else %}
                         <p class = 'product_price'>{{product.price}}</p>
@@ -136,9 +136,7 @@
 
 {% block scripts %}
     <script src="{{ url_for('shop.static', filename= 'js/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
+    <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script> 
     <script src="{{ url_for('shop.static', filename= 'js/filter.js') }}"></script>
     <script src="{{ url_for('shop.static', filename= 'js/deleteProduct.js') }}"></script>
-    <script src="{{ url_for('static', filename= 'js/cartCount.js') }}"> </script>
-    <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
 {% endblock %}

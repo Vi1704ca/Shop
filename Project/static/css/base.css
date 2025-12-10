@@ -59,7 +59,7 @@ body{
 }
 
 .notification{
-    display: block;
+    display: none;
     z-index: 5; 
     position: fixed;
     background-color: #488047;
