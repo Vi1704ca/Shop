@@ -23,7 +23,7 @@
                         <div class="product-{{product.id}}"> 
                             <div class="cart-item">
                                 <div class="product-info">
-                                    <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
+                                    <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}"> <!--alt="{{product.product_name}}"-->
                                 
                                     <div class="text-block">
                                         <h3 class="drone-name">{{ product.product_name }}</h3>

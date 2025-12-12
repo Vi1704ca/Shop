@@ -130,17 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            if (current) {
-                const items = current.split('|').filter(p => p);
-                if (items.includes(productId)) {
-                    showNotification('Товар уже в корзине!', 'warning');
-                    return;
-                }
-            }
-            
             document.cookie = `list_products=${current || '|'}|${productId}|; path=/`;
             updateCounter();
-            showNotification('Товар добавлен!', 'success');
+            showNotification('success');
+            document.getElementById("cart-frame").contentWindow.location.reload()
         }
     });
     updateCounter();
