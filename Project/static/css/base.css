@@ -58,18 +58,4 @@ body{
     background: #333333;
 }
 
-.notification{
-    display: none;
-    z-index: 5; 
-    position: fixed;
-    background-color: #488047;
-    width:100%;
-}
-
-.added-to-cart-text{
-    display:flex;
-    justify-content: center;
-    color: black;
-    padding:1.5vh; 
-    font-size: 3vh;
-}
+/* Тут НЕ ПИШЕТ подмастерье CSS либо же Иван. */

@@ -59,6 +59,65 @@
 
         <main>       
             {% block content %} {% endblock %}
+            <div class="authorization">
+                <div class = "titles">
+                    <a class="authorization-title">Авторизація</a>
+                    <a class="registration-title">/ Регістрація</a>
+                </div>
+                <div class="authorization-input">
+                    <p>Email</p>
+                    <input class="email" type="text" placeholder="Введіть email" name="email">
+                    <p>Пароль</p>
+                    <input class="password" type="password" placeholder="Введіть пароль" name="password">
+                    <button class="reset-password">Забули пароль?</button>
+                </div>
+                <div class="button-authorization">
+                    <button class="cancel">Скасувати</button>
+                    <button class="log-in">Увійти</button>
+                </div>
+            </div>
+            
+            
+            
+            <div class = "registration">
+                
+                <div class = "titles">
+                    <a class = "authorization-title">Авторизація </a>
+                    <a class = "registration-title">/ Регістрація</a>
+                </div>
+
+                <div class = "write-name">
+                    <p class = "name"> Ім'я </p> 
+                    <input class = "username" placeholder="Введіть ім'я"> 
+                </div> 
+
+                <div class = "write-password">
+                    <p class = "password"> Пароль </p> 
+                    <input class = "password" placeholder="Введіть пароль"> 
+                </div> 
+
+                <div class = "confpass">
+                    <p class = "conf-pass"> Підтвердження пароля </p> 
+                    <input class = "conf-pass" placeholder="Повторіть пароль"> 
+                </div> 
+                
+                <a class = "have-account"> Вже є аккаунт? Увійти </a>
+
+                <button class = "decline"> Скасувати </button>
+                <button class = "register"> Зареєструватися </button>
+
+                <p class = "public-agreement"> При вході або реєстрації, я підтверджую згоду з умовами публічного договору </p>
+                
+
+            </div>
+
+            <div class="registration-complete">
+                <p class="">Реестрація</p>
+                <!-- Тут крестик -->
+                <p class="account-created">Акаунт успішно створено!</p>
+                <button class="visit-website">Перейти на сайт</button>
+            </div>
+
         </main>
 
         <div id="cart-modal">

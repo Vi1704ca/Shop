@@ -40,7 +40,9 @@
                             
                                 <div class="edit-block">
                                     <button type="button" class="minus" id="{{product.id}}">-</button>
-                                    <span class="count-{{product.id}}" id="amount">{{ count }}</span>
+                                    <span class="count-{{product.id}}">
+                                        {{ count }}
+                                    </span>
                                     <button type="button" class="plus" id="{{product.id}}">+</button>
                                     <button type = "button" id="{{product.id}}" class="trash-btn">
                                         <img src="{{ url_for('static', filename='icon/trashcan.png') }}" alt="">
@@ -61,14 +63,15 @@
                                 <p>Заощаджено</p>
                                 <p>Зі знижкою</p>
                             </div>
-                        
+
                             <div class="right">
-                                <p>29 990 ₴</p>
-                                <p>- 1 005 ₴</p>
+                                <p class="old-price">29 990 ₴</p>
+                                <p class="saved">- 1 005 ₴</p>
                                 <p class="discount">28 985 ₴</p>
                             </div>
                         </div>
                     </div>
+
                         <hr class="separator">
                         <div class="buttons-cart">
                             <button class="move-to-bin">ПЕРЕЙТИ ДО КОШИКА</button>
@@ -108,7 +111,7 @@
                 <h4>{{ product.product_name }}</h4>
                 <p>Кількість: <span class="count-{{product.id}}">{{ count }}</span></p>
                 <!-- <form action="/delete_product_to_cart" method="post">
-                    <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
+                   <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
                 </form> 
                 <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
                 <button type="button" class="plus" id="{{product.id}}">+</button>
@@ -120,7 +123,7 @@
 
 
 </main>
-    <script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
     <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
     <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
     <script>
