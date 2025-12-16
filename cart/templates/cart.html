@@ -124,21 +124,9 @@
 
 </main>
     <script src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
-    <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
     <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var closeBtn = document.getElementById('close-cart');
-            if (!closeBtn) return;
-            closeBtn.addEventListener('click', function () {
-                try {
-                    window.parent.postMessage({ type: 'close-cart' }, '*');
-                } catch (e) {
-                    try { window.top.postMessage({ type: 'close-cart' }, '*'); } catch (err) {}
-                }
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"></script>
 </body>
 </html>
 
