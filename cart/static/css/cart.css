@@ -51,13 +51,13 @@ button:hover{
 }
 
 .modal-header h2 {
-    font-size: 4vh;
+    font-size: 1.5rem;
     font-weight: bolder;
     margin: 0;
 }
 
 .close-cart img {
-    width: 2.5vh;
+    width: 0.9rem;
     cursor: pointer;
 }
 
@@ -285,38 +285,38 @@ button:hover{
     font-family: var(--fontParagraph);
     font-weight: bold;
     width: 30vw;
-    height: 6vh;
+    height: 2.5rem;
     border-radius: 5vh;
-    font-size: 2.2vh;
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fff;
-    border: 0.3vw solid #0C122A;
+    border: 0.15rem solid #0C122A;
     color: #0C122A;
     flex-direction: row; 
     margin-left: 64vw;
-    margin-top: 0.5vh;
+    margin-top: 6vh;
 }
 
 
 .empty-cart {
     margin-bottom: 0;
-    margin-top:15vh;
+    margin-top: 6rem;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
     font-family: var(--fontParagraph);
-    font-size: 3vh;
+    font-size: 1.2rem;
 }
 
 .start-to-buy{
     margin-top: 0;
-    margin-bottom:15vh;;
+    margin-bottom: 6rem;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
     font-family: var(--fontParagraph);
-    font-size: 3vh;
+    font-size: 1.2rem;
 }
 

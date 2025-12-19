@@ -36,6 +36,16 @@ body{
     z-index: 1000;
 }
 
+#cart-modal.empty iframe {
+    font-size: 16px;
+    height: 55vh;
+}
+
+/* если корзина с товарами */
+#cart-modal.filled iframe {
+    height: 80vh;
+}
+
 #cart-modal iframe {
     scrollbar-width: thin;
     scrollbar-color: #565656 #f1f1f1;
