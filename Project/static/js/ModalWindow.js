@@ -4,7 +4,7 @@ let frame = document.getElementById("cart-frame");
 let closeBtn = document.getElementById("close-cart");
 let continueBtn = document.querySelector(".continue_shopping");
 let isIframe = window.self !== window.top;
-
+let catalogfooterBtn = document.getElementById("catalog")
 
 function closeCart() {
     try {
@@ -76,4 +76,8 @@ window.addEventListener('message', (event) => {
         modal.classList.remove('active');
         frame.src = '';
     }
+});
+
+catalogfooterBtn.addEventListener("click", function() {
+    window.location.href = "/shop";
 });

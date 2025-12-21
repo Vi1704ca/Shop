@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.cookie = `list_products=${current || '|'}|${productId}|; path=/`;
         updateCounter();
         showNotification();
+        document.getElementById("cart-frame").contentWindow.location.reload()
     });
 
     let lastCount = getProductsFromCookie().length;

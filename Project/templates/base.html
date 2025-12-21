@@ -2,12 +2,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}  {% endblock %}</title>
+        <title>Drones</title>
         {% block links %}  {% endblock %}
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logo.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename= 'icon/drone_logo.png') }}">
     </head>
     <body>
 
@@ -59,15 +60,24 @@
 
         <main>       
             {% block content %} {% endblock %}
+
+            <!-- authorization -->
+
             <div class="authorization">
                 <div class = "titles">
                     <a class="title-authorization">Авторизація /</a>
                     <a class="title-registration"> Реєстрація</a>
                 </div>
+
+                <button class="close-authorization" id="close-registration">
+                    <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+                </button>
+
                 <div class="authorization-input">
                     <label>Email</label>
                     <input class="email" type="text" placeholder="Введіть email" name="email" required>
                     <label>Пароль</label>
+                    <button class = "eye"></button>
                     <input class="password" type="password" placeholder="Введіть пароль" name="password"required>
                     <a href = "#" class="reset-password">Забули пароль?</a>
                 </div>
@@ -77,13 +87,17 @@
                 </div>
             </div>
             
-             <!--
+            <!-- registration -->
+
             <div class = "registration">
-                
                 <div class = "titles">
                     <a class = "authorization-title">Авторизація </a>
                     <a class = "registration-title">/ Реєстрація</a>
                 </div>
+
+                <button class="close-registration" id="close-registration">
+                        <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+                </button>
 
                 <div class = "write-name">
                     <label class = "name"> Ім'я </label> 
@@ -108,19 +122,26 @@
                 
                 <a class = "have-account"> Вже є аккаунт? Увійти </a>
 
-                <button class = "decline"> Скасувати </button>
-                <button class = "register"> Зареєструватися </button>
-
-                <p class = "public-agreement"> При вході або реєстрації, я підтверджую згоду з умовами публічного договору </p>
+                <div class = "button-registration">
+                    <button class = "decline"> СКАСУВАТИ </button>
+                    <button class = "register"> ЗАРЕЄСТРУВАТИСЯ </button>
+                </div>
                 
-
+                <div class = "public-agreement">
+                    <p class = "public-agreement-1">При вході або реєстрації, я підтверджую згоду</p>
+                    <p class = "public-agreement-2">з умовами <a href="#">публічного договору</a></p>
+                </div>
             </div>
-        -->
+            
+            <!-- registration complete -->
+
             <div class="registration-complete">
-                <p class="">Реестрація</p>
-                <!-- Тут крестик -->
+                <p class="titles">Реєстрація</p>
+                <button class="close-registration-complete" id="close-registration">
+                        <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+                </button>
                 <p class="account-created">Акаунт успішно створено!</p>
-                <button class="visit-website">Перейти на сайт</button>
+                <button class="visit-website">ПЕРЕЙТИ НА САЙТ</button>
             </div>
 
         </main>
@@ -129,6 +150,37 @@
             <iframe id="cart-frame" src=""></iframe>
         </div>
 
+        <div class="password_reset">
+            <p>Відновлення пароля</p>
+            <!--Тут крестик-->
+            <label>Email</label>
+            <input type="text" placeholder="Введіть email" name="Email" required>
+            <button class="cancel">Скасувати</button>
+            <button class="send_an_email">Надіслати лист</button>
+        </div>
+
+        <div class="password_reset_2">
+            <p>Новий пароль</p>
+            <!--КРЕСТ-->
+            <label>Пароль</label>
+            <input type="password" placeholder="Введіть пароль" name="Пароль" required>
+            <!--Глаз-->
+            <label>Підтвердження пароля</label>
+            <input type="password" placeholder="Введіть пароль" name="Підтвердження пароля" required>
+            <button>
+                <img src="{{ url_for('static', filename='/icon/eye.png') }}" alt="chocolate glaz"> 
+            </button>
+            <button class="cancel_1">Скасувати</button>
+            <button class="save_password">Зберегти новий пароль</button>
+        </div>
+
+        <div class="password_reset_final">
+            <p>Новий пароль</p>
+            <!--КРЕСТ-->
+            <p>Пароль успішно змінено! </p>
+            <p>Тепер ви можете увійти з новим паролем.</p>
+            <button class="save_password_final">Увійти</button>
+        </div>
 
         <footer>
             <div class="ellipse_footer"></div>
@@ -157,7 +209,7 @@
             
             </div>
             <div class="navigation-footer">
-                <p>КАТАЛОГ</p>
+                <p id = "catalog">КАТАЛОГ</p>
                 <p>ПРО НАС</p>
                 <p>КОНТАКТИ</p>
                 <p>КОШИК</p>

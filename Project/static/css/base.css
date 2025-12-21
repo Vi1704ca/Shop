@@ -4,9 +4,10 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
 body{
     display: flex;
-    /* головнв вісь */
+    /* головна вісь */
     flex-direction: column;
     /* позиціонування по головній вісі */
     justify-content: start;
@@ -68,12 +69,17 @@ body{
     background: #333333;
 }
 
-/* тут пишет мастер цсс */
+/* authorization */
 
 .authorization {
     position:relative;
-    width: 58vw;
+    width: 30.5vw;
     height: 43vh;
+    background-color: #ffffff;
+    padding: 2vh;
+    padding-left: 1.4vw;
+    border-radius: 1.7vh;
+    margin-bottom: 3vh;
 }
 
 .titles{
@@ -116,9 +122,10 @@ body{
     margin-bottom: 2.4vh;
     padding: 1.2vh;
     padding-left: 0.9vw;
-    border-color: #CED0D4;
-    border-radius: 0.3vh;
+    border-radius: 0.7vh;
+    border: 0.2vh solid #CED0D4;
     color: #9EA0AA;
+    width: 27vw;
 }
 
 .reset-password{
@@ -148,7 +155,6 @@ body{
     height: 5.5vh;
     border-radius: 5vh;
     font-size: 2vh;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -170,11 +176,17 @@ body{
 }
 
 
-/* Тут ПИШЕТ подмастерье CSS либо же Иван. */ 
+/* registration */ 
 
 .registration{
     position:relative;
-    left:1vh;
+    width: 30.5vw;
+    height: 67.5vh;
+    background-color: rgb(255, 255, 255);
+    padding: 2vh;
+    padding-left: 1.4vw;
+    border-radius: 1.7vh;
+    margin-bottom: 3vh;
 }
 
 .authorization-title{
@@ -190,47 +202,19 @@ body{
     margin-left: 0.5vw;
 }
 
-.write-name{
+.write-name, .write-email, .write-password, .confpass{
     display: flex;
     flex-direction:column;
     font-family: var(--fontReview);
     font-weight: 300;
     font-size: 1.7vh;
-    margin-bottom: 0.7vh;
-}
-
-.write-email{
-    display: flex;
-    flex-direction:column;
-    font-family: var(--fontReview);
-    font-weight: 300;
-    font-size: 1.7vh;
-    margin-bottom: 0.7vh;
-}
-
-.write-password{
-    display: flex;
-    flex-direction:column;
-    font-family: var(--fontReview);
-    font-weight: 300;
-    font-size: 1.7vh;
-    margin-bottom: 0.7vh;
-}
-
-.confpass{
-    display: flex;
-    flex-direction:column;
-    font-family: var(--fontReview);
-    font-weight: 300;
-    font-size: 1.7vh;
-    margin-bottom: 0.7vh;
 }
 
 .registration label{
     font-family: var(--fontReview);
     font-weight: 300;
     font-size: 1.7vh;
-    margin-bottom: 0.8vh;
+    margin-bottom: 0.7vh;
 }
 
 .registration input{
@@ -240,12 +224,13 @@ body{
     font-family: var(--fontReview);
     font-weight: 400;
     font-size: 1.8vh;
-    margin-bottom: 2.4vh;
+    margin-bottom: 2vh;
     padding: 1.2vh;
     padding-left: 0.9vw;
-    border-color: #CED0D4;
-    border-radius: 0.3vh;
+    border-radius: 0.7vh;
+    border: 0.2vh solid #CED0D4;
     color: #9EA0AA;
+    width: 27vw;
 }
 
 .have-account {
@@ -260,6 +245,13 @@ body{
 
 .have-account:hover{
     color: #0C122A;
+}
+
+.button-registration {
+    margin-top: 5.5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
 }
 
 .decline, .register {
@@ -281,10 +273,99 @@ body{
 }
 
 .register {
-    width: 6vw;
+    width: 11vw;
     background: #0C122A;
     color: #fff;
     border: none;
     padding: 0;
     font-weight: 500;
+}
+
+.public-agreement p{  
+    font-size:1.5vh;
+    color: #9EA0AA;
+    font-family: var(--fontReview);
+    font-weight: 400;
+    font-size: 1.7vh;
+}
+
+.public-agreement a{
+    color: #B62D11;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--fontReview);
+    font-weight: 400;
+    font-size: 1.7vh;
+}
+
+
+.public-agreement{
+    margin-top: 2.5vh;
+}
+
+/* registration complete */
+
+.registration-complete{
+    position:relative;
+    width: 30.5vw;
+    height: 23vh;
+    background-color: #ffffff;
+    padding: 2vh;
+    padding-left: 1.4vw;
+    border-radius: 1.7vh;
+    margin-bottom: 3vh;
+}
+
+.close-registration img, .close-registration-complete img,  .close-authorization img {
+    width: 1.3vh;
+    cursor: pointer;
+}
+
+.close-registration, .close-registration-complete,  .close-authorization{ 
+    position: absolute;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    left: 28.8vw;
+    top: 2vh;
+}
+
+.registration-complete .titles{
+    color:black;
+    font-family: var(--fontReview);
+    font-weight: 500;
+}
+
+.registration-complete .account-created {
+    margin-top: 2vh;
+    position:relative;  
+    font-size:1.7vh;
+    font-family: var(--fontReview);
+    font-weight: 500;
+    margin-bottom: 4.8vh;
+    color: #9EA0AA;
+}
+
+.visit-website {
+    font-family: var(--fontReview);
+    font-weight: 500;
+    height: 5.5vh;
+    border-radius: 5vh;
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 11vw;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+}
+
+.eye{ /* ЛЯЯЯЯ МНЕ ПЛОХО, С ТТ ПРИХОДИТ ПО 15 УВЕДОВ ЗА МИНУТУ, МЕНЯ В НОВОСТЯХ ПОКАЖУТ. ДА, ЕСТЕВСТВЕННО.*/
+    width: 5vh;
+    height: 5vh;
+    background-image: url("/static/icon/eye.png");
+    background-repeat: no-repeat;
 }
