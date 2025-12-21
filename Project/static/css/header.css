@@ -56,9 +56,36 @@ header, main, footer{
     overflow: hidden;
 }
 
+.notification{
+    display: none;
+    z-index: 5; 
+    position: fixed;
+    background-color: #488047;
+    width:100%;
+    transform : translateY(-3vh);
+    animation: notification 0.3s ease-out forwards; 
+}
+
+@keyframes notification {
+    100%{
+        transform: translateY(0);
+    }
+    /* position-fixed : */
+}
+
+
+.added-to-cart-text{
+    display:flex;
+    justify-content: center;
+    color: black;
+    padding:1.5vh; 
+    font-size: 3vh;
+    
+}
+
 .nav-header{
     position: fixed;
-    top: 3vh;
+    top: 6.5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;

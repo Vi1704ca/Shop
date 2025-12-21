@@ -1,4 +1,5 @@
 // 
+alert
 $(document).ready(function (){
     let arrayButtonDelete = document.querySelectorAll('#delete')
     $(arrayButtonDelete).each(function(index){

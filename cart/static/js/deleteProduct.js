@@ -1,4 +1,4 @@
-const listButtonDelete = document.querySelectorAll('.delete')
+const listButtonDelete = document.querySelectorAll('.trash-btn')
 
 for (let button of listButtonDelete){
     button.addEventListener(
@@ -9,6 +9,7 @@ for (let button of listButtonDelete){
             // let product = document.querySelector(`product-${button.id}`)
             // product.remove()
             document.querySelector(`.product-${button.id}`).remove()
+            location.reload()
         }
     )
 }

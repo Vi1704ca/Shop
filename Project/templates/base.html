@@ -8,9 +8,18 @@
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logo.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename= 'icon/drone_logo.png') }}">
     </head>
     <body>
+
+        <div class = "notification">
+            <div class = "added-to-cart-frame">
+                <p class = "added-to-cart-text">Товар додано до кошику!</p>
+            </div>
+        </div>
+
         <header>
+
             <nav class="nav-header">
                 <span class="links">
                     <a href="/shop">КАТАЛОГ</a>
@@ -27,7 +36,7 @@
                 <span class="profile">
                         <a id="open-cart"> 
                         <div class="cart">
-                            <div class="VAY">1</div>
+                            <div class="VAY"></div>
                         </div>
                     </a>
                     {% if current_user.is_authenticated %}
@@ -51,6 +60,70 @@
 
         <main>       
             {% block content %} {% endblock %}
+            <div class="authorization">
+                <div class = "titles">
+                    <a class="title-authorization">Авторизація /</a>
+                    <a class="title-registration"> Реєстрація</a>
+                </div>
+                <div class="authorization-input">
+                    <label>Email</label>
+                    <input class="email" type="text" placeholder="Введіть email" name="email" required>
+                    <label>Пароль</label>
+                    <input class="password" type="password" placeholder="Введіть пароль" name="password"required>
+                    <a href = "#" class="reset-password">Забули пароль?</a>
+                </div>
+                <div class="button-authorization">
+                    <button class="cancel">СКАСУВАТИ</button>
+                    <button class="log-in">УВІЙТИ</button>
+                </div>
+            </div>
+            
+             <!--
+            <div class = "registration">
+                
+                <div class = "titles">
+                    <a class = "authorization-title">Авторизація </a>
+                    <a class = "registration-title">/ Реєстрація</a>
+                </div>
+
+                <div class = "write-name">
+                    <label class = "name"> Ім'я </label> 
+                    <input class = "username" placeholder="Введіть ім'я"> 
+                </div> 
+
+                <div class = "write-email">
+                    <label class = "email"> Email </label> 
+                    <input class = "email" placeholder="Ввведіть Email"> 
+                </div> 
+
+
+                <div class = "write-password">
+                    <label class = "password"> Пароль </label> 
+                    <input class = "password" placeholder="Введіть пароль"> 
+                </div> 
+
+                <div class = "confpass">
+                    <label class = "conf-pass"> Підтвердження пароля </label> 
+                    <input class = "conf-pass" placeholder="Повторіть пароль"> 
+                </div> 
+                
+                <a class = "have-account"> Вже є аккаунт? Увійти </a>
+
+                <button class = "decline"> Скасувати </button>
+                <button class = "register"> Зареєструватися </button>
+
+                <p class = "public-agreement"> При вході або реєстрації, я підтверджую згоду з умовами публічного договору </p>
+                
+
+            </div>
+        -->
+            <div class="registration-complete">
+                <p class="">Реестрація</p>
+                <!-- Тут крестик -->
+                <p class="account-created">Акаунт успішно створено!</p>
+                <button class="visit-website">Перейти на сайт</button>
+            </div>
+
         </main>
 
         <div id="cart-modal">
@@ -85,7 +158,7 @@
             
             </div>
             <div class="navigation-footer">
-                <p>КАТАЛОГ</p>
+                <p id = "catalog">КАТАЛОГ</p>
                 <p>ПРО НАС</p>
                 <p>КОНТАКТИ</p>
                 <p>КОШИК</p>
@@ -98,9 +171,8 @@
 
         </footer>
 
-        {% block scripts %}
-            <script src="{{ url_for('static', filename= 'js/cartCount.js') }}"> </script>
-            <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
-        {% endblock %}
+        <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
+        <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
+        {% block scripts %}{% endblock %}
     </body>
 </html>

@@ -8,49 +8,91 @@
 </head>
 <body>
     <main>
-        <div class = 'cart-page'> 
-
-                <h1 class = "cart-title">Кошик</h1>
-                <img class = "cross" src="{{ url_for('static', filename='/icon/cross.png') }}" alt="Крестик">
-
-                <div class = 'card-cart'>
-
-                    <h1 class = "name-of-drone">DJI MINI 4K</h1>
-                    <img class = "drone-img-cart" src="{{ url_for('shop.static', filename='images/products/DJI MINI 4K.png') }}" alt="Дрон">
-                    <p class = "price">29 990₴</p>
-                    <button class = "minus-button" id = "mark">
-                        -
+        <div class="cart-page">
+            <div class="modal-cart">
+            
+                <div class="modal-header">
+                    <h2>Кошик</h2>
+                    <button class="close-cart" id="close-cart">
+                        <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
                     </button>
-                    <h1 class = "amount">1</h1>
-                    <button id = "mark" class = "plus-button">
-                        +
-                    </button>
-                    <button class = "trash-can-button">
-                        <img class = "trash-can" src="{{ url_for('static', filename='icon/trashcan.png') }}" alt="Урна"> 
-                    </button>
-
                 </div>
-                <hr class = "cart-line"> 
-                <br>
-                <hr class = "cart-line"> 
-                <div class = "order-sum"> 
-                    <p class = "full-amount-title">Загальна сумма</p> 
-                    <p class = "discounted">Заощаджено</p>
-                    <p class = "with-discount">Зі знижкою </p>
+            
+                {% if list_products %}
+                    {% for product, count in list_products %}
+                        <div class="product-{{product.id}}"> 
+                            <div class="cart-item">
+                                <div class="product-info">
+                                    <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}"> <!--alt="{{product.product_name}}"-->
+                                
+                                    <div class="text-block">
+                                        <h3 class="drone-name">{{ product.product_name }}</h3>
+                                        <div class="price-row">
+                                            {% if product.discount %}
+                                                <span class="old-price">{{ product.price }}</span>
+                                                <span class="new-price">{{ product.discount }}</span>
+                                            {% else %}
+                                                <span class="current-price">{{ product.price }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="edit-block">
+                                    <button type="button" class="minus" id="{{product.id}}">-</button>
+                                    <span class="count-{{product.id}}">
+                                        {{ count }}
+                                    </span>
+                                    <button type="button" class="plus" id="{{product.id}}">+</button>
+                                    <button type = "button" id="{{product.id}}" class="trash-btn">
+                                        <img src="{{ url_for('static', filename='icon/trashcan.png') }}" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                    {% endfor %}
+               
+                        
+                    <hr class="separator">
+
+                    <div class="cart-footer">
+                        <div class="summary">
+                            <div class="left">
+                                <p>Загальна сумма</p>
+                                <p>Заощаджено</p>
+                                <p>Зі знижкою</p>
+                            </div>
+
+                            <div class="right">
+                                <p class="old-price">29 990 ₴</p>
+                                <p class="saved">- 1 005 ₴</p>
+                                <p class="discount">28 985 ₴</p>
+                            </div>
+                        </div>
+                    </div>
+
+                        <hr class="separator">
+                        <div class="buttons-cart">
+                            <button class="move-to-bin">ПЕРЕЙТИ ДО КОШИКА</button>
+                            <button class="make-an-order">ОФОРМИТИ ЗАМОВЛЕННЯ 
+                                <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
+                            </button>
+                        </div>
+                    
+                {% else %}
+                    <hr class = "separator">
+                <div class = "empty-cart-div">
+                    <p class = "empty-cart">Ваш кошик порожній.</p>                                                                   
+                    <p class = "start-to-buy">Почніть вибирати товари, щоб вони з’явилися тут</p>
+                    <hr class = "separator">
+                    <button class="continue_shopping" id ="close-cart">ПРОДОВЖИТИ ПОКУПКИ</button>
                 </div>
-
-                <div class = "order-sum-result">
-                    <p class = "full-amount">29900 ₴</p>
-                    <p class = "save-discount">- 1105 ₴</p> <!--Конклюзия - В философии: это логическое умозаключение, сделанное на основе анализа данных или рассуждений. -->
-                    <p class = "price-with-discount">289858 ₴</p> 
-                </div>
-                
-
-                <button class = "move-to-bin">Перейти до кошика</button>
-                <button class = "make-an-order">Оформити замовлення</button>
-                <img class = "arrow" src="" alt="Стрелацька">
-
+                {% endif %}
             </div>
+        </div>
+
+
         
             <!-- <div class = "epmty_catalog">                                                                    
                  <p>Кошик</p>
@@ -61,30 +103,66 @@
              </div>       
             -->
 
-        </div>
-
+ <!--
     {% if list_products %}
         {% for product, count in list_products %}
             <div class="product-{{product.id}}">
                 <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                 <h4>{{ product.product_name }}</h4>
                 <p>Кількість: <span class="count-{{product.id}}">{{ count }}</span></p>
-                <!--  -->
                 <!-- <form action="/delete_product_to_cart" method="post">
-                    <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
-                </form> -->
+                   <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
+                </form> 
                 <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
                 <button type="button" class="plus" id="{{product.id}}">+</button>
                 <button type="button" class="minus" id="{{product.id}}">-</button>
                 <hr>
-            </div>
+            </div> 
         {% endfor %}
-    {% endif %}
+    {% endif %}  -->
 
 
 </main>
-    <script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
-    <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
     <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"></script>
 </body>
 </html>
+
+<!--
+I am not crazy! 
+I know he swapped those numbers! 
+I knew it was 1216. 
+One after Magna Carta. 
+As if I could ever make such a mistake. 
+Never. 
+Never! 
+I just - I just couldn't prove it.
+He - he covered his tracks, he got that idiot at the copy shop to lie for him. 
+You think this is something? 
+You think this is bad? 
+This?
+This chicanery? 
+He's done worse.
+That billboard!
+Are you telling me that a man just happens to fall like that? 
+No! 
+He orchestrated it! 
+Jimmy! 
+He defecated through a sunroof! 
+And I saved him! 
+And I shouldn't have. 
+I took him into my own firm! 
+What was I thinking? 
+He'll never change. 
+He'll never change! 
+Ever since he was 9, always the same! 
+Couldn't keep his hands out of the cash drawer! 
+But not our Jimmy! 
+Couldn't be precious Jimmy! 
+Stealing them blind! 
+And he gets to be a lawyer!? 
+What a sick joke! 
+I should've stopped him when I had the chance! 
+And you - you have to stop him!

@@ -1,35 +1,150 @@
-/*слегонца да не работает*/
-
-
 @font-face {
     font-family: "fontforp";
     src: url("/static/fonts/GTWalsheimPro-Light.ttf");
 }
 
-
 :root{
     --fontParagraph: "fontforp";
+    --fontReview: 'review';
 }
 
+@font-face {
+    font-family: 'review';
+    src: url("/static/fonts/GTWalsheimPro-Regular.ttf");
+}
 
+button{
+    font-family:'review'; 
+}
+button:hover{ 
+    cursor: pointer;
+}
 
-.cart-title{
-    margin-right: 80vw;
-    top: 8vh;
-    margin-top: 5vh;
+.cart-page {
     font-family: var(--fontParagraph);
-    font-weight:bold;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-cart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 1vw;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vh;
+    position: sticky;
+    top: 0;
+    background: white;
+    padding-bottom: 1vh;
+    z-index: 10;
+    padding: 2vw;
+}
+
+.modal-header h2 {
+    font-size: 4vh;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.close-cart img {
+    width: 2.5vh;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+    padding-bottom: 2vh;
+    padding: 2vw;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.product-img {
+    width: 12vw;
+    height: auto;
+    background: #F4F4F4;
+    border-radius: 1vh;
+    padding: 1vh;
+}
+
+.text-block h3 {
+    margin: 0 0 1vh 0;
+    font-weight: bold;
+    font-size: 3.75vh;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    font-family: var(--fontParagraph);
+}
+
+.current-price {
+    color: #000000;
+    font-size: 2.7vh;
+    font-weight: 700;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #000000;
+}
+
+.new-price {
+    color: #B62D11;
+    font-weight: 700;
+    font-size: 2.7vh;
+}
+
+.edit-block {
+    display: flex;
+    align-items: center;
+    gap: 2.8vh;
+}
+
+.minus, .plus {
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: 0.2vw solid #E7E7EA;
+    background: #fff;
+    font-size: 2.75vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#amount {
+    font-size: 3.2vh;
+    font-weight: 600;
     
 }
 
-.cross{
-    position:relative;
-    width: 1.75vh;
-    height: 1.75vh;
-    margin-left: 80vh;
-    bottom: 10vh;
+.trash-btn img {
+    width: 3vh;
+    cursor: pointer;
 }
 
+<<<<<<< HEAD
 .drone-img-cart{
     position: relative;
     bottom:15vh;
@@ -51,10 +166,58 @@
     position: relative;
     bottom: 17vh;
     font-family: var(--fontParagraph);
-    font-size: 3vh;
-    font-weight: bold;
+=======
+.separator {
+    height: 1px;
+    background: #E0E0E0;
+    border: none;
+    margin: 2vh 0;
 }
 
+.cart-footer {
+    margin-bottom: 0vh; 
+    padding: 0 2vw;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.4vh;
+    font-weight: 600;
+    padding:0;
+}
+
+.summary .left p {
+    color: #000;
+}
+
+.summary .right {
+    margin-top: 0.5vh;
+    text-align: right;
+}
+
+.summary .right .old-price {
+    color: #000;
+    text-decoration: line-through;
+    font-weight: 600;
+    font-size: 2.8vh;
+}
+
+.summary .right .saved {
+    color: #8E8E8E;
+    font-weight: 600;
+    font-size: 2.8vh;
+}
+
+.summary .right .discount {
+    color: #B62D11;
+    font-size: 3vh;
+    font-weight: 800;
+>>>>>>> 04d1f0eaa67ab0476ed5956118d38a7ad34d0883
+    font-size: 3vh;
+}
+
+<<<<<<< HEAD
 .amount{
     position:relative;
     left:65vh;
@@ -68,13 +231,80 @@
     position:relative;
     left: 75vh;
     bottom: 60vh;
-    background-color: transparent;
-    border: none;
-
+=======
+.left{
+    font-weight: 500; 
+    font-size: 3vh;
+    font-family: var(--fontReview);
 }
 
-.plus-button{
+.summary .discount {
+    color: #B62D11;
+    font-size: 3vh;
+}
+
+.buttons-cart {
+    margin-top: auto;
+    margin-left: 23.5vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+}
+
+.move-to-bin, .make-an-order {
+    font-family: var(--fontReview);
+    font-weight: 900;
+    width: 100%;
+    height: 6vh;
+    border-radius: 5vh;
+    font-size: 2.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.move-to-bin {
+    width: 30vw;
+    background: #fff;
+    border: 0.2vw solid #0C122A;
+    color: #0C122A;
+}
+
+.make-an-order {
+    width: 40vw;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+}
+
+.arrow {
+    width: 1.8vh;
+    margin-left: 3vw;
+}
+
+.trash-btn{
+>>>>>>> 04d1f0eaa67ab0476ed5956118d38a7ad34d0883
+    background-color: transparent;
+    border: none;
+}
+
+.close-cart{ 
+    background-color: transparent;
+    border: none;
+}
+
+.drone-name{/* а если хочу? */
+    position: relative;
+    bottom: 3vh;
+    
+}
+
+.price-row{
+    font-family: var(--fontParagraph);
     position:relative;
+<<<<<<< HEAD
     left:67vh;
     bottom: 53.7vh;
 }
@@ -82,35 +312,65 @@
     position:relative;
     left:57vh;
     bottom:42.5vh;
+=======
+    top: 3vh;
+>>>>>>> 04d1f0eaa67ab0476ed5956118d38a7ad34d0883
 }
 
-#mark{
+.new-price{
+    position:relative;
+    left: 2vh;
+}
+
+.product-img{
+    width: 14.5vh;
+    height: 13vh;
+}
+
+.cart-item .summary{
+    padding: 2vh;
+}
+
+.continue_shopping{
+    font-family: var(--fontParagraph);
+    font-weight: bold;
+    width: 30vw;
+    height: 6vh;
+    border-radius: 5vh;
+    font-size: 2.2vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5vh; 
-    height: 5vh;
-    padding: 0vh;
-    font-size: 3vh; 
-    background-color: #ffffff;
-    border: 0.15vw solid #E7E7EA; /*display-flex : */
-    border-radius: 50%;
-    margin: 1vh; 
-    font-family: var(--fontParagraph);
+    background: #fff;
+    border: 0.3vw solid #0C122A;
+    color: #0C122A;
+    flex-direction: row; 
+    margin-left: 64vw;
+    margin-top: 0.5vh;
 }
 
-.order-sum{
-    font-family: var(--fontParagraph);
+
+.empty-cart {
+    margin-bottom: 0;
+    margin-top:15vh;
+    text-align: center;
+    color:#6D717F;
     font-weight: bold;
+    font-family: var(--fontParagraph);
     font-size: 3vh;
 }
 
-.order-sum-result{
-    font-family: var(--fontParagraph);
+.start-to-buy{
+    margin-top: 0;
+    margin-bottom:15vh;;
+    text-align: center;
+    color:#6D717F;
     font-weight: bold;
-    font-size: 2.5vh;
+    font-family: var(--fontParagraph);
+    font-size: 3vh;
 }
 
+<<<<<<< HEAD
 .price-with-discount{
     color: #B62D11;
     font-size: 3.5vh;
@@ -202,3 +462,5 @@ D -
 F - 
 
 */
+=======
+>>>>>>> 04d1f0eaa67ab0476ed5956118d38a7ad34d0883

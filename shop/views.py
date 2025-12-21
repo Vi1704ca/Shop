@@ -33,6 +33,8 @@ def render_shop():
                 product = Product(
                     product_name = product_name_form,
                     price= flask.request.form["price"],
+                    discount= flask.request.form["discount"],
+                    count= flask.request.form["count"],
                 )
                 DATABASE.session.add(product)
                 DATABASE.session.commit()

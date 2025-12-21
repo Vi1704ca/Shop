@@ -116,6 +116,14 @@
     height: 50vh;
     border-radius: 1vh;
     transition: transform 220ms cubic-bezier(.2,.9,.2,1), background-color 220ms ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.card-drones.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes cardAppear {
