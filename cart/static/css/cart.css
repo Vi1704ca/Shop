@@ -34,7 +34,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     padding: 2vh 1vw;
-    overflow-y: auto;
+    position: relative;
 }
 
 .modal-header {
@@ -51,13 +51,13 @@ button:hover{
 }
 
 .modal-header h2 {
-    font-size: 1.5rem;
+    font-size: 5vh;
     font-weight: bolder;
     margin: 0;
 }
 
 .close-cart img {
-    width: 0.9rem;
+    width: 2vw;
     cursor: pointer;
 }
 
@@ -205,7 +205,7 @@ button:hover{
 }
 
 .buttons-cart {
-    margin-top: auto;
+    margin-top: 2vh;
     margin-left: 23.5vw;
     display: flex;
     flex-direction: row;
@@ -284,39 +284,39 @@ button:hover{
 .continue_shopping{
     font-family: var(--fontParagraph);
     font-weight: bold;
-    width: 30vw;
-    height: 2.5rem;
+    width: 35vw;
+    height: 9.5vh;
     border-radius: 5vh;
-    font-size: 0.9rem;
+    font-size: 3.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fff;
-    border: 0.15rem solid #0C122A;
+    border: 0.5vh solid #0C122A;
     color: #0C122A;
     flex-direction: row; 
-    margin-left: 64vw;
-    margin-top: 6vh;
+    margin-left: 60vw;
+    margin-top: 3.5vh;
 }
 
 
 .empty-cart {
     margin-bottom: 0;
-    margin-top: 6rem;
+    margin-top: 22vh;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
     font-family: var(--fontParagraph);
-    font-size: 1.2rem;
+    font-size: 5vh;
 }
 
 .start-to-buy{
     margin-top: 0;
-    margin-bottom: 6rem;
+    margin-bottom: 22vh;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
     font-family: var(--fontParagraph);
-    font-size: 1.2rem;
+    font-size: 5vh;
 }
 

@@ -40,7 +40,7 @@
                             
                                 <div class="edit-block">
                                     <button type="button" class="minus" id="{{product.id}}">-</button>
-                                    <span class="count-{{product.id}}">
+                                    <span class="count-{{product.id}}" id="amount">
                                         {{ count }}
                                     </span>
                                     <button type="button" class="plus" id="{{product.id}}">+</button>
@@ -123,8 +123,8 @@
 
 
 </main>
-    <script src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
-    <script src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}" type="module"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}" type="module"></script>
     <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
     <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"></script>
 </body>

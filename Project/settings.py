@@ -1,5 +1,8 @@
 import flask 
 import os
+import mimetypes
+
+mimetypes.add_type("text/javascript", ".js", True)
 
 project = flask.Flask(
     import_name = "Project",

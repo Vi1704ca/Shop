@@ -158,6 +158,6 @@ header, main, footer{
     justify-content: center;
     font-size: 1.75vh;
     font-family: var(--fontParagraph);
-    visibility: hidden;
+    
 }
 
