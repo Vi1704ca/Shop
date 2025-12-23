@@ -1,4 +1,6 @@
 import { countProduct } from "./countProduct.js"
+import {recalcCart} from "./PriceConsider.js"
+
 const listButtonMinus = document.querySelectorAll('.minus')
 
 for (let button of listButtonMinus){
@@ -14,6 +16,7 @@ for (let button of listButtonMinus){
             }
             countProduct(button.id)
             //window.location.reload()
+            recalcCart()
         }
     )
 }

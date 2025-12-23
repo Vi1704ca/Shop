@@ -17,7 +17,6 @@
                         <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
                     </button>
                 </div>
-            
                 {% if list_products %}
                     {% for product, count in list_products %}
                         <div class="product-{{product.id}}"> 
@@ -29,10 +28,10 @@
                                         <h3 class="drone-name">{{ product.product_name }}</h3>
                                         <div class="price-row">
                                             {% if product.discount %}
-                                                <span class="old-price">{{ product.price }}</span>
-                                                <span class="new-price">{{ product.discount }}</span>
+                                                <span class="old-price">{{ product.price }} ₴</span>
+                                                <span class="new-price">{{ product.discount }} ₴</span>
                                             {% else %}
-                                                <span class="current-price">{{ product.price }}</span>
+                                                <span class="current-price">{{ product.price }} ₴</span>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -65,9 +64,9 @@
                             </div>
 
                             <div class="right">
-                                <p class="old-price">29 990 ₴</p>
-                                <p class="saved">- 1 005 ₴</p>
-                                <p class="discount">28 985 ₴</p>
+                                <p class="old-price" id="total-original">29 990 ₴</p>
+                                <p class="saved" id="total-saved">- 1 005 ₴</p>
+                                <p class="discount" id="total-discount">28 985 ₴</p>
                             </div>
                         </div>
                     </div>
@@ -127,6 +126,7 @@
     <script src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}" type="module"></script>
     <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
     <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename= 'js/PriceConsider.js') }}"></script>
 </body>
 </html>
 

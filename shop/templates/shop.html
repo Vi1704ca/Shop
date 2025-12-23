@@ -78,11 +78,11 @@
                     
                     {% if product.discount != None %}
                     <div>
-                        <span class = 'product_sale'>{{product.price}}</span>
-                        <span class = 'product_discount'>{{product.discount}}</span>
+                        <span class = 'product_sale'>{{product.price}} ₴</span>
+                        <span class = 'product_discount'>{{product.discount}} ₴</span>
                     </div>
                     {% else %}
-                        <p class = 'product_price'>{{product.price}}</p>
+                        <p class = 'product_price'>{{product.price}} ₴</p>
                     {% endif %}
                     <button class =  "cart-buy" id="{{product.id}}">
                         <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
