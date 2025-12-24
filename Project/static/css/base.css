@@ -363,9 +363,15 @@ body{
     font-weight: 500;
 }
 
-.eye{ /* ЛЯЯЯЯ МНЕ ПЛОХО, С ТТ ПРИХОДИТ ПО 15 УВЕДОВ ЗА МИНУТУ, МЕНЯ В НОВОСТЯХ ПОКАЖУТ. ДА, ЕСТЕВСТВЕННО.*/
-    width: 5vh;
-    height: 5vh;
-    background-image: url("/static/icon/eye.png");
+.eye{ 
+    position:relative;
+    width: 2vh;
+    height: 2vh;
+    background-image: url("/static/icon/eye.svg");
+    background-color: transparent;
     background-repeat: no-repeat;
+    border: 0;
+    left: 54vh;
+    top: 3.5vh;
+
 }

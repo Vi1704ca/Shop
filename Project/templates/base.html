@@ -77,8 +77,8 @@
                     <label>Email</label>
                     <input class="email" type="text" placeholder="Введіть email" name="email" required>
                     <label>Пароль</label>
-                    <button class = "eye"></button>
-                    <input class="password" type="password" placeholder="Введіть пароль" name="password"required>
+                    <button id = "eye" class = "eye"></button>
+                    <input id = "pass" class="password" type="password" placeholder="Введіть пароль" name="password"required>
                     <a href = "#" class="reset-password">Забули пароль?</a>
                 </div>
                 <div class="button-authorization">
@@ -112,12 +112,14 @@
 
                 <div class = "write-password">
                     <label class = "password"> Пароль </label> 
-                    <input class = "password" placeholder="Введіть пароль"> 
+                    <button id = "eye" class = "eye"></button>
+                    <input type = "password" id = "pass" class = "password" placeholder="Введіть пароль"> 
                 </div> 
 
                 <div class = "confpass">
                     <label class = "conf-pass"> Підтвердження пароля </label> 
-                    <input class = "conf-pass" placeholder="Повторіть пароль"> 
+                    <button id = "eye" class = "eye"></button> 
+                    <input type = "password" id = "pass" class = "conf-pass" placeholder="Повторіть пароль"> 
                 </div> 
                 
                 <a class = "have-account"> Вже є аккаунт? Увійти </a>
@@ -163,13 +165,11 @@
             <p>Новий пароль</p>
             <!--КРЕСТ-->
             <label>Пароль</label>
-            <input type="password" placeholder="Введіть пароль" name="Пароль" required>
-            <!--Глаз-->
+            <input id = "pass"type="password" placeholder="Введіть пароль" name="Пароль" required>
+            <button id = "eye" class = "eye"></button>
             <label>Підтвердження пароля</label>
-            <input type="password" placeholder="Введіть пароль" name="Підтвердження пароля" required>
-            <button>
-                <img src="{{ url_for('static', filename='/icon/eye.png') }}" alt="chocolate glaz"> 
-            </button>
+            <button id = "eye" class = "eye"></button>
+            <input id = "pass" type="password" placeholder="Введіть пароль" name="Підтвердження пароля" required>
             <button class="cancel_1">Скасувати</button>
             <button class="save_password">Зберегти новий пароль</button>
         </div>
@@ -224,6 +224,7 @@
 
         <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
         <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
+        <script src="{{ url_for('shop.static', filename= 'js/eye.js') }}" ></script>
         {% block scripts %}{% endblock %}
     </body>
 </html>
