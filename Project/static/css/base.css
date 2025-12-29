@@ -367,7 +367,7 @@ body{
     position:relative;
     width: 2vh;
     height: 2vh;
-    background-image: url("/static/icon/eye.svg");
+    background-image: url("/static/icon/eye_off.svg");
     background-color: transparent;
     background-repeat: no-repeat;
     border: 0;

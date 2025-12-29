@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logo.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
-        <link rel="icon" href="{{ url_for('static', filename= 'icon/drone_logo.png') }}">
+        <link rel="icon" href="{{ url_for('static', filename= 'icon/Favicon.svg') }}">
     </head>
     <body>
 
@@ -152,6 +152,10 @@
             <iframe id="cart-frame" src=""></iframe>
         </div>
 
+        <!--<div id = "user-modal">
+            <iframe id = "user_frame"src=""><iframe>
+        </div> -->
+
         <div class="password_reset">
             <p>Відновлення пароля</p>
             <!--Тут крестик-->
@@ -224,7 +228,7 @@
 
         <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
         <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
-        <script src="{{ url_for('shop.static', filename= 'js/eye.js') }}" ></script>
+        <script src="{{ url_for('static', filename= 'js/eye.js') }}" ></script>
         {% block scripts %}{% endblock %}
     </body>
 </html>

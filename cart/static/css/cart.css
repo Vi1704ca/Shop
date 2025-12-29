@@ -1,3 +1,7 @@
+*{
+    box-sizing:border-box; 
+}
+
 @font-face {
     font-family: "fontforp";
     src: url("/static/fonts/GTWalsheimPro-Light.ttf");
@@ -70,6 +74,14 @@ button:hover{
     padding: 2vw;
 }
 
+.cart-objects{
+    display:flex;
+    height: 42vh;
+    flex-direction: column;
+    /*margin-bottom: 10.65vh;*/
+    overflow-y:auto;
+}
+
 .product-info {
     display: flex;
     align-items: center;
@@ -118,6 +130,7 @@ button:hover{
     display: flex;
     align-items: center;
     gap: 2.8vh;
+    margin-bottom: 5vh; /*просто это выглядит так, что я чекаю тг каждую секунду и пишу чето. это не так.*/ 
 }
 
 .minus, .plus {
@@ -169,7 +182,7 @@ button:hover{
 }
 
 .summary .right {
-    margin-top: 0.5vh;
+    margin-top: 0.2vh;
     text-align: right;
 }
 
@@ -177,13 +190,13 @@ button:hover{
     color: #000;
     text-decoration: line-through;
     font-weight: 600;
-    font-size: 2.8vh;
+    font-size: 2.6vh;
 }
 
 .summary .right .saved {
     color: #8E8E8E;
     font-weight: 600;
-    font-size: 2.8vh;
+    font-size: 2.6vh;
 }
 
 .summary .right .discount {
@@ -195,7 +208,7 @@ button:hover{
 
 .left{
     font-weight: 500; 
-    font-size: 3vh;
+    font-size: 2.6vh;
     font-family: var(--fontReview);
 }
 
@@ -205,7 +218,7 @@ button:hover{
 }
 
 .buttons-cart {
-    margin-top: 2vh;
+    margin-top: 1.5vh;
     margin-left: 23.5vw;
     display: flex;
     flex-direction: row;

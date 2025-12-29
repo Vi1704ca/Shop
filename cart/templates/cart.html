@@ -17,6 +17,7 @@
                         <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
                     </button>
                 </div>
+                <div class = "cart-objects">                
                 {% if list_products %}
                     {% for product, count in list_products %}
                         <div class="product-{{product.id}}"> 
@@ -48,14 +49,13 @@
                                     </button>
                                 </div>
                             </div>
+                            <hr class="separator">
                         </div>
-                        <hr class="separator">
                     {% endfor %}
-               
-                        
-                    <hr class="separator">
+                </div>
 
                     <div class="cart-footer">
+                        <hr class="separator">
                         <div class="summary">
                             <div class="left">
                                 <p>Загальна сумма</p>

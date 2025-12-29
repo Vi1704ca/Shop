@@ -16,10 +16,12 @@ eyes.forEach(eye => {
     eye.addEventListener("click", () => {
         let pass = eye.nextElementSibling;
         if (pass.type === "text") {
-            pass.type = "password"
+            pass.type = "password";
+            eye.style.backgroundImage = "url('/static/icon/eye_off.svg')"; 
         }
         else{
-            pass.type = "text"
+            pass.type = "text";
+            eye.style.backgroundImage = "url('/static/icon/eye_on.svg')"; 
         }
     });
 });
