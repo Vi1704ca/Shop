@@ -58,20 +58,68 @@ header, main, footer{
 
 .notification{
     display: none;
-    z-index: 5; 
+    z-index: 1050; 
     position: fixed;
+    top: 0;
+    left: 0;
     background-color: #488047;
     width:100%;
-    transform : translateY(-3vh);
-    animation: notification 0.3s ease-out forwards; 
+    transform: translateY(-4vh) scale(0.98);
+    opacity: 0;
+    will-change: transform, opacity, filter;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
-@keyframes notification {
-    100%{
+.notification.show {
+    display: block;
+    animation: notification-in 320ms cubic-bezier(.55,.06,.68,.19) forwards;
+}
+
+.notification.hide {
+    display: block;
+    animation: notification-out 320ms cubic-bezier(.55,.06,.68,.19) forwards;
+}
+
+.notification .added-to-cart-text{
+    transition: opacity 320ms cubic-bezier(.55,.06,.68,.19), transform 320ms cubic-bezier(.55,.06,.68,.19);
+    opacity: 0;
+    transform: translateY(-4px);
+}
+
+.notification.show .added-to-cart-text{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes notification-in {
+    0% {
+        transform: translateY(-6vh);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(0.6vh);
+        opacity: 1;
+    }
+    100% {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
+@keyframes notification-out {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        transform: translateY(-6vh) scale(0.98);
+        opacity: 0;
+        filter: blur(4px);
+    }
+}
 
 .added-to-cart-text{
     display:flex;
@@ -121,7 +169,7 @@ header, main, footer{
     justify-content: end;
     align-items: center;
     gap: 2vw;
-    width: 15vw;
+    width: 20vw;
 }
 .profile a div{
     width: var(--sizeImageProfile);
@@ -160,3 +208,40 @@ header, main, footer{
     
 }
 
+.burger-menu{
+    display: none;
+}
+
+@media(max-width:768px){
+    .links{
+        display:none;
+    }
+    .img-profile{
+        position:relative;
+        right:9vh;
+    }
+    .cart{
+        position:relative;
+    }
+    .burger-menu{
+        display: block; 
+        position:absolute;
+        width: auto;
+        height: auto;
+
+    } 
+}
+
+/*
+Джордж Оруэлл - 1984 (Вручную)
+
+Часть 1
+Глава 1
+
+    Был холодный ясный апрельский день, и часы пробили тринадцать. Уткнув подбородок в грудь, чтобы спастись от злого ветра,
+Уинстон Смит торопливо шмыгнул за стеклянную дверь жилого дома "Победа", но все-таки впустил за собой вихрь зернистой пыли.
+    В вестибюле пахло вареной капустой и старыми половиками. Против входа на стене висел цветной плакат, слишком большой для помещения.
+На плакате было изображено громадное, больше метра в ширину, лицо, - лицо человека лет сорока пяти, с густыми черными усами, грубое,
+по мужски привлекательное. Уинстон направился к лестнице. К лифту не стоило и подходить. Он даже в лучшие времена редко работал,
+
+*/

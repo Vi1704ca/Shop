@@ -50,6 +50,9 @@
                         </a>
                         
                     {% endif %}
+                    <div class = "burger-menu">
+                        <img src="{{ url_for('static', filename= '/icon/burger.svg') }}" alt="">
+                    </div>
                 </span>
             </nav>
             {% block header %}
@@ -61,7 +64,7 @@
         <main>       
             {% block content %} {% endblock %}
 
-            <!-- authorization -->
+            <!-- authorization
 
             <div class="authorization">
                 <div class = "titles">
@@ -84,10 +87,10 @@
                 <div class="button-authorization">
                     <button class="cancel">СКАСУВАТИ</button>
                     <button class="log-in">УВІЙТИ</button>
-                </div>
+                </div> 
             </div>
-            
-            <!-- registration -->
+             -->
+            <!-- registration 
 
             <div class = "registration">
                 <div class = "titles">
@@ -134,7 +137,7 @@
                     <p class = "public-agreement-2">з умовами <a href="#">публічного договору</a></p>
                 </div>
             </div>
-            
+            -->
             <!-- registration complete -->
 
             <div class="registration-complete">
@@ -152,39 +155,73 @@
             <iframe id="cart-frame" src=""></iframe>
         </div>
 
-        <!--<div id = "user-modal">
-            <iframe id = "user_frame"src=""><iframe>
-        </div> -->
+        <div id="user-modal">
+            <iframe id="user-frame" src=""></iframe>
+        </div>
+
+            <!-- reset password -->
 
         <div class="password_reset">
-            <p>Відновлення пароля</p>
-            <!--Тут крестик-->
-            <label>Email</label>
-            <input type="text" placeholder="Введіть email" name="Email" required>
-            <button class="cancel">Скасувати</button>
-            <button class="send_an_email">Надіслати лист</button>
+            <p class="titles">Відновлення пароля</p>
+            <button class="close-password-reset" id="close-registration">
+                <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+            </button>
+
+            <div class = "write-email">
+                <label class = "email"> Email </label> 
+                <input class = "email" placeholder="Ввведіть Email" required> 
+            </div> 
+
+            <div class="button-password-reset">
+                <button class="cancel">СКАСУВАТИ</button>
+                <button class="send_an_email">НАДІСЛАТИ ЛИСТ</button>
+            </div>
         </div>
 
+        <!-- -->
+    
         <div class="password_reset_2">
-            <p>Новий пароль</p>
-            <!--КРЕСТ-->
-            <label>Пароль</label>
-            <input id = "pass"type="password" placeholder="Введіть пароль" name="Пароль" required>
-            <button id = "eye" class = "eye"></button>
-            <label>Підтвердження пароля</label>
-            <button id = "eye" class = "eye"></button>
-            <input id = "pass" type="password" placeholder="Введіть пароль" name="Підтвердження пароля" required>
-            <button class="cancel_1">Скасувати</button>
-            <button class="save_password">Зберегти новий пароль</button>
+            <p class = "titles">Новий пароль</p>
+            <button class="close-password-reset" id="close-registration">
+                <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+            </button>
+
+            <div class = "write-password">
+                <label>Пароль</label>
+                <input id = "pass"type="password" placeholder="Введіть пароль" name="Пароль" required>
+                <button id = "eye" class = "eye"></button>
+            </div>
+            <div class = "confpass">
+                <label>Підтвердження пароля</label>
+                <input id = "pass" type="password" placeholder="Повторіть пароль" name="Підтвердження пароля" required>
+                <button id = "eye" class = "eye"></button>
+            </div>
+
+            <div class="button-password-reset-2">
+                <button class="cancel">СКАСУВАТИ</button>
+                <button class="save_password">ЗБЕРЕГТИ НОВИЙ ПАРОЛЬ</button>
+            </div>
         </div>
+
+        <!-- -->
 
         <div class="password_reset_final">
-            <p>Новий пароль</p>
-            <!--КРЕСТ-->
-            <p>Пароль успішно змінено! </p>
-            <p>Тепер ви можете увійти з новим паролем.</p>
-            <button class="save_password_final">Увійти</button>
+            <p class = "titles">Новий пароль</p>
+            <button class="close-password-reset-final" id="close-registration">
+                <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+            </button>
+            
+            <div class = "password-reset-complete-message">
+                <p class = "password-reset-complete-1">Пароль успішно змінено! </p>
+                <p class = "password-reset-complete-2">Тепер ви можете увійти з новим паролем.</p>
+            </div>
+
+            <div class="button-password-reset-final">
+                <button class="save_password_final">УВІЙТИ</button>
+            </div>
         </div>
+
+    <!-- -->
 
         <footer>
             <div class="ellipse_footer"></div>

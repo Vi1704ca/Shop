@@ -1,3 +1,306 @@
-main{
-    margin-top: 20vh;
+main {
+    margin-top: 0;
 }
+
+/* ================== FONTS ================== */
+
+@font-face {
+    font-family: 'review';
+    src: url("/static/fonts/GTWalsheimPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "fontforp";
+    src: url("/static/fonts/GTWalsheimPro-Light.ttf");
+}
+
+:root{
+    --fontParagraph: "fontforp";
+    --fontReview: 'review';
+}
+
+/* ================== BASE ================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fontReview);
+    font-size: 16px;
+}
+
+/* ================== MODAL CONTENT ================== */
+
+.modal_user {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 24px;
+}
+
+/* ================== TITLES ================== */
+
+.titles {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+}
+
+.title-registration {
+    color: grey;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.title-authorization {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* ================== AUTHORIZATION ================== */
+
+.authorization,
+.registration {
+    width: 100%;
+    height: 100%;
+}
+
+/* ================== INPUTS ================== */
+
+.authorization-input,
+.write-name,
+.write-email,
+.write-password,
+.confpass {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 2px solid #CED0D4;
+    color: #333;
+    font-family: var(--fontReview);
+}
+
+/* ================== LINKS ================== */
+
+.reset-password,
+.have-account {
+    font-size: 0.9rem;
+    color: #9EA0AA;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reset-password:hover,
+.have-account:hover {
+    color: #0C122A;
+}
+
+/* ================== BUTTONS ================== */
+
+.button-authorization,
+.button-registration {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    height: 44px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-family: var(--fontReview);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cancel,
+.decline {
+    background: #fff;
+    border: 2px solid #0C122A;
+    color: #0C122A;
+    padding: 0 24px;
+}
+
+.log-in,
+.register {
+    background: #0C122A;
+    border: none;
+    color: #fff;
+    padding: 0 32px;
+}
+
+/* ================== TEXT ================== */
+
+.public-agreement p {
+    font-size: 0.85rem;
+    color: #9EA0AA;
+    margin-top: 16px;
+}
+
+.public-agreement a {
+    color: #B62D11;
+    text-decoration: none;
+}
+
+/* ================== COMMON MODAL BLOCKS ================== */
+
+.registration-complete,
+.password_reset,
+.password_reset_2,
+.password_reset_final {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+
+/* ================== CLOSE BUTTON ================== */
+
+.close-registration,
+.close-registration-complete,
+.close-authorization,
+.close-password-reset,
+.close-password-reset-final {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.close-registration img,
+.close-registration-complete img,
+.close-authorization img,
+.close-password-reset img,
+.close-password-reset-final img {
+    width: 14px;
+    height: 14px;
+}
+
+/* ================== TITLES ================== */
+
+.registration-complete .titles {
+    font-family: var(--fontReview);
+    font-weight: 500;
+    color: black;
+}
+
+/* ================== TEXT ================== */
+
+.registration-complete .account-created {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    font-family: var(--fontReview);
+    font-weight: 500;
+    color: #9EA0AA;
+}
+
+.password-reset-complete-message {
+    margin-top: 24px;
+}
+
+.password-reset-complete-message p {
+    font-size: 0.95rem;
+    color: #9EA0AA;
+    font-family: var(--fontReview);
+}
+
+/* ================== INPUTS ================== */
+
+.password_reset label,
+.password_reset_2 label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-family: var(--fontReview);
+}
+
+.password_reset input,
+.password_reset_2 input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 2px solid #CED0D4;
+    font-family: var(--fontReview);
+}
+
+/* ================== BUTTON GROUPS ================== */
+
+.button-password-reset,
+.button-password-reset-2,
+.button-password-reset-final {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+}
+
+/* ================== BUTTONS ================== */
+
+.visit-website,
+.send_an_email,
+.save_password,
+.save_password_final {
+    height: 44px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-family: var(--fontReview);
+    font-weight: 500;
+    padding: 0 32px;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* ================== EYE ICON ================== */
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 44px; /* место под глаз */
+}
+
+.eye {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+
+    background-image: url("/static/icon/eye_off.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+

@@ -145,3 +145,20 @@ footer {
     z-index: 1;
     height:100vh;
 }
+
+@media (max-width:768px){
+    .review{
+        flex-direction: column;
+        gap: 3vh;
+    }
+    .clients-support-text{
+        margin:1vh;
+    }
+    .successful-shipments-text{
+        margin:1vh;
+    }
+    .satisfied-clients-text{
+        margin:1vh;
+    }
+    
+}

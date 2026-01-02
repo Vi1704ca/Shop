@@ -1,22 +1,60 @@
-{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('user.static', filename= 'css/login.css') }}">
+</head>
+<body>
+    <div class = "registration">
+                <div class = "titles">
+                    <a href = "/authorization" class="title-authorization">Авторизація /</a>
+                    <a href = "/registration" class="title-registration"> Реєстрація</a>
+                </div>
 
-{% block title %}
-    Registration 
-{% endblock %}
+                <button class="close-registration" id="close-user">
+                        <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+                </button>
 
-{% block content %}
-    <div class="registration">
-            <form action="" method="post">
+                <div class = "write-name">
+                    <label class = "name"> Ім'я </label> 
+                    <input class = "username" placeholder="Введіть ім'я"> 
+                </div> 
 
-                <input type="text" name="username" placeholder="Enter your username">
-                <input type="email" name="email" placeholder="Enter your email">
-                <input type="password" name="password" placeholder="Enter your password">
-                <input type="password" name="confirm_password" placeholder="Confirm your password">
+                <div class = "write-email">
+                    <label class = "email"> Email </label> 
+                    <input class = "email" placeholder="Ввведіть Email"> 
+                </div> 
 
-                <button type="submit">Send</button>
-            </form>
+
+                <div class = "write-password">
+                    <label class = "password"> Пароль </label> 
+                    <button id = "eye" class = "eye"></button>
+                    <input type = "password" id = "pass" class = "password" placeholder="Введіть пароль"> 
+                </div> 
+
+                <div class = "confpass">
+                    <label class = "conf-pass"> Підтвердження пароля </label> 
+                    <button id = "eye" class = "eye"></button> 
+                    <input type = "password" id = "pass" class = "conf-pass" placeholder="Повторіть пароль"> 
+                </div> 
+                
+                <a class = "have-account"> Вже є аккаунт? Увійти </a>
+
+                <div class = "button-registration">
+                    <button class = "decline"> СКАСУВАТИ </button>
+                    <button class = "register"> ЗАРЕЄСТРУВАТИСЯ </button>
+                </div>
+                
+                <div class = "public-agreement">
+                    <p class = "public-agreement-1">При вході або реєстрації, я підтверджую згоду</p>
+                    <p class = "public-agreement-2">з умовами <a href="#">публічного договору</a></p>
+                </div>
+            </div>
             {% if message %}
                 <p>{{message}}</p>
             {% endif %}
-    </div>
-{% endblock %}
+     <script src="{{ url_for('static', filename= 'js/eye.js') }}" ></script>
+     <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
+</body>
+</html>

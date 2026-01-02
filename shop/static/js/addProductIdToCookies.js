@@ -82,10 +82,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showNotification() {
         if (!notification) return;
-        notification.style.display = 'block';
+
+        // clear inline display if present so CSS classes control visibility
+        notification.style.display = '';
+
+        // restart animations if already showing
+        notification.classList.remove('hide');
+        // Force reflow to restart animation if needed
+        void notification.offsetWidth;
+        notification.classList.add('show');
+
+        // After visible duration, start hide animation
         setTimeout(() => {
-            notification.style.display = 'none';
+            notification.classList.remove('show');
+            notification.classList.add('hide');
         }, 3000);
+    }
+
+    // When hide animation ends, fully hide the element (remove classes and set display none)
+    if (notification) {
+        notification.addEventListener('animationend', (e) => {
+            // Only act on our out animation
+            if (e.animationName === 'notification-out' && notification.classList.contains('hide')) {
+                notification.classList.remove('hide');
+                // ensure it's removed from flow
+                notification.style.display = 'none';
+            }
+        });
     }
 
     function getProductsFromCookie() {
