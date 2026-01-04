@@ -52,3 +52,10 @@ def render_authorization():
 def logout():
     flask.session.clear()
     return flask.redirect("/")    
+
+def render_resetPassword():
+    
+    if flask.request.method == "POST":
+        email_form = flask.request.form["email"]
+
+    return flask.render_template("reset_password.html")

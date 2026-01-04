@@ -17,15 +17,17 @@
             </button>
             <div class="authorization-input">
                 <label>Email</label>
-                <input class="email" type="text" placeholder="Введіть email" name="email" required>
+                <input class="email" type="email" placeholder="Введіть email" name="email" required>
                 <label>Пароль</label>
-                <button id = "eye" class = "eye"></button>
-                <input id = "pass" class="password" type="password" placeholder="Введіть пароль" name="password"required>
-                <a href = "#" class="reset-password">Забули пароль?</a>
+                <div class="password-field">
+                    <button id = "eye" class = "eye" type="button"></button>
+                    <input id = "pass" class="password" type="password" placeholder="Введіть пароль" name="password" required>
+                </div>
+                <a href = "/reset_password_email" class="reset-password">Забули пароль?</a>
             </div>
             <div class="button-authorization">
                 <button class="cancel" id="close-user">СКАСУВАТИ</button>
-                <button class="log-in" id="close-user">УВІЙТИ</button>
+                <button class="log-in" type="submit">УВІЙТИ</button>
             </div> 
         </div>
     </div>

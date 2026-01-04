@@ -87,13 +87,16 @@ body {
 #cart-modal iframe::-webkit-scrollbar-thumb:hover {
     background: #333333;
 }
-/*
+
 #user-modal.authorization iframe {
-    width: 600px;
+    width: 447px;
+    height: 357px;
 }
-*/
+
 #user-modal.registration iframe {
-    width: 600px;
+    width: 447px;
+    height: 580px;
+    padding: 16px 40px 16px 24px;
 }
 
 

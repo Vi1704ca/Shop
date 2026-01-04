@@ -18,6 +18,12 @@ user.user.add_url_rule(
 )
 
 user.user.add_url_rule(
+    rule = "/reset_password_email",
+    view_func = user.render_resetPassword,
+    methods = ['GET','POST']
+)
+
+user.user.add_url_rule(
     rule = "/logout",
     view_func = user.logout
 

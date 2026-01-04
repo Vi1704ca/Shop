@@ -290,17 +290,81 @@ button {
 
 .eye {
     position: absolute;
-    right: 14px;
+    right: 12px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 5px));
     width: 18px;
     height: 18px;
 
     background-image: url("/static/icon/eye_off.svg");
     background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
+.authorization-input .password-field .eye,
+.authorization .password-field .eye {
+    transform: translateY(calc(-50% - 8px));
+}
+
+
+
+.password_reset {
+    position:relative;
+    width: 30.5vw;
+    height: 29.4vh;
+    background-color: #ffffff;
+    padding: 2vh;
+    padding-left: 1.4vw;
+    border-radius: 1.7vh;
+    margin-bottom: 3vh;
+}
+
+.password_reset label{
+    font-family: var(--fontReview);
+    font-weight: 300;
+    font-size: 1.7vh;
+    margin-bottom: 0.7vh;
+}
+
+.password_reset input{
+    display: flex;
+    flex-direction:column;
+    font-weight: 300;
+    font-family: var(--fontReview);
+    font-weight: 400;
+    font-size: 1.8vh;
+    padding: 1.2vh;
+    padding-left: 0.9vw;
+    border-radius: 0.7vh;
+    border: 0.2vh solid #CED0D4;
+    color: #9EA0AA;
+    width: 27vw;
+}
+
+.button-password-reset {
+    margin-top: 5.5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.send_an_email {
+    font-family: var(--fontReview);
+    font-weight: 500;
+    height: 5.5vh;
+    border-radius: 5vh;
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+}

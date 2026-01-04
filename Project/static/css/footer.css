@@ -160,5 +160,10 @@ footer {
     .satisfied-clients-text{
         margin:1vh;
     }
+
+    .navigation-footer{
+        orientation: landscape
+    }
     
 }
+

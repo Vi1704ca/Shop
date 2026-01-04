@@ -503,3 +503,45 @@
     width: 2vh; 
     height: 2vh;
 }
+
+@media(max-width:768px){
+    .cards-container{
+        flex-direction: column;
+        margin-bottom: 10vh;
+}
+    .products{
+        flex-direction: column;
+        gap: 20vh;
+    }
+    .product-sale .product-discount{
+        position:absolute;
+        bottom:10vh;
+    }
+    .drone-image{
+        width:35vh;
+        height:35vh;
+        top:-15vh;
+        /* о, имба, спасибо*/
+        left: 1.5vw; 
+
+    }
+    .card-drones{
+        margin-bottom: 10vh;
+    }
+    .product-price{
+        position:absolute;
+        top:45vh;
+    }
+    .product-name{
+        position:absolute;
+        bottom:10vh; 
+    }
+    .cart-buy{
+        width:5vh;
+        height:5vh; 
+    }
+    .product_discount{
+        position:relative;
+        left:10vh;
+    }
+}
