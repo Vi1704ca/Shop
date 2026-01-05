@@ -58,4 +58,4 @@ def render_resetPassword():
     if flask.request.method == "POST":
         email_form = flask.request.form["email"]
 
-    return flask.render_template("reset_password.html")
+    return flask.render_template("password_reset.html")

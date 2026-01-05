@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class = "registration">
+        <form action="" method="post">
                 <div class = "titles">
                     <a href = "/authorization" class="title-authorization">Авторизація /</a>
                     <a href = "/registration" class="title-registration"> Реєстрація</a>
@@ -18,25 +19,25 @@
 
                 <div class = "write-name">
                     <label class = "name"> Ім'я </label> 
-                    <input class = "username" placeholder="Введіть ім'я"> 
+                    <input class = "username" placeholder="Введіть ім'я" name="username"> 
                 </div> 
 
                 <div class = "write-email">
                     <label class = "email"> Email </label> 
-                    <input class = "email" placeholder="Ввведіть Email"> 
+                    <input type="email"  class = "email" placeholder="Ввведіть Email" name="email"> 
                 </div> 
 
 
                 <div class = "write-password password-field">
                     <label class = "password"> Пароль </label> 
                     <button id = "eye" class = "eye" type="button"></button>
-                    <input type = "password" id = "pass" class = "password" placeholder="Введіть пароль"> 
+                    <input type = "password" id = "pass" class = "password" placeholder="Введіть пароль" name="password"> 
                 </div> 
 
                 <div class = "confpass password-field">
                     <label class = "conf-pass"> Підтвердження пароля </label> 
                     <button id = "eye" class = "eye" type="button"></button> 
-                    <input type = "password" id = "pass" class = "conf-pass" placeholder="Повторіть пароль"> 
+                    <input type = "password" id = "pass" class = "conf-pass" placeholder="Повторіть пароль" name="confirm_password"> 
                 </div> 
                 
                 <a href = "/authorization" class = "have-account"> Вже є аккаунт? Увійти </a>
@@ -51,6 +52,8 @@
                     <p class = "public-agreement-2">з умовами <a href="#">публічного договору</a></p>
                 </div>
             </div>
+        </form>
+    </div>
             {% if message %}
                 <p>{{message}}</p>
             {% endif %}

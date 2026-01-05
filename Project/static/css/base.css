@@ -16,9 +16,6 @@ body{
     background-color: #FFFFFF;
 }
 
-body {
-    cursor: url('/static/icon/scotland.png'), auto;
-}
 
 #cart-modal, #user-modal {
     display: none;
@@ -44,17 +41,32 @@ body {
 /* user modal styles */
 #user-modal iframe {
     position: fixed;
-    inset: 0;
-    margin: auto;
-    width: 420px;
-    height: 560px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: 50vh;
     border: none;
-    border-radius: 16px;
+    border-radius: 2vh;
     background: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    box-shadow: 0 0 1.25rem rgba(0,0,0,.2);
     z-index: 1000;
 }
 
+#user-modal.authorization iframe {
+    width: 30vw;
+    height: 50vh;
+}
+
+#user-modal.registration iframe {
+    width: 30vw;
+    height: 90vh;
+    padding: 3vh;
+}
+
+#user-modal.forgot-password iframe {
+   height: 40vh;
+}
 
 #cart-modal.empty iframe {
     font-size: 2.5vh;
@@ -88,16 +100,6 @@ body {
     background: #333333;
 }
 
-#user-modal.authorization iframe {
-    width: 447px;
-    height: 357px;
-}
-
-#user-modal.registration iframe {
-    width: 447px;
-    height: 580px;
-    padding: 16px 40px 16px 24px;
-}
 
 
 /* authorization */

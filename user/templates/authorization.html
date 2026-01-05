@@ -15,20 +15,22 @@
             <button class="close-authorization" id="close-user">
                 <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
             </button>
-            <div class="authorization-input">
-                <label>Email</label>
-                <input class="email" type="email" placeholder="Введіть email" name="email" required>
-                <label>Пароль</label>
-                <div class="password-field">
-                    <button id = "eye" class = "eye" type="button"></button>
-                    <input id = "pass" class="password" type="password" placeholder="Введіть пароль" name="password" required>
+            <form action="" method="post">
+                <div class="authorization-input">
+                    <label>Email</label>
+                    <input class="email" type="email" placeholder="Введіть email" name="email" required>
+                    <label>Пароль</label>
+                    <div class="password-field">
+                        <button id = "eye" class = "eye" type="button"></button>
+                        <input id = "pass" class="password" type="password" placeholder="Введіть пароль" name="password" required>
+                    </div>
+                    <a href = "/forgot-password" class="reset-password">Забули пароль?</a>
                 </div>
-                <a href = "/reset_password_email" class="reset-password">Забули пароль?</a>
-            </div>
-            <div class="button-authorization">
-                <button class="cancel" id="close-user">СКАСУВАТИ</button>
-                <button class="log-in" type="submit">УВІЙТИ</button>
-            </div> 
+                <div class="button-authorization">
+                    <button class="cancel" id="close-user">СКАСУВАТИ</button>
+                    <button class="log-in" type="submit">УВІЙТИ</button>
+                </div> 
+            </form>
         </div>
     </div>
     <script src="{{ url_for('static', filename= 'js/eye.js') }}" ></script>

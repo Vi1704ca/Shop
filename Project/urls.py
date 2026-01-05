@@ -18,7 +18,7 @@ user.user.add_url_rule(
 )
 
 user.user.add_url_rule(
-    rule = "/reset_password_email",
+    rule = "/forgot-password",
     view_func = user.render_resetPassword,
     methods = ['GET','POST']
 )
