@@ -513,10 +513,6 @@
         flex-direction: column;
         gap: 20vh;
     }
-    .product-sale .product-discount{
-        position:absolute;
-        bottom:10vh;
-    }
     .drone-image{
         width:35vh;
         height:35vh;
@@ -534,14 +530,28 @@
     }
     .product-name{
         position:absolute;
-        bottom:10vh; 
+        top:30vh;
+        left:2vh;
     }
     .cart-buy{
-        width:5vh;
-        height:5vh; 
-    }
-    .product_discount{
         position:relative;
-        left:10vh;
+        width:5.5vh;
+        height:5.5vh; 
+        left:33vh;
+        bottom:2.5vh;
     }
+    .buy-button{
+        position:relative;
+        width:14vh;
+        height:5vh;
+    }
+    .product-card{
+        width:75vw;
+    }
+    .product_sale .product_discount{
+        position:absolute;
+        left:2vh;
+    }
+
 }
+

@@ -10,6 +10,7 @@
 :root{
     --fontParagraph: "fontforp";
     --fontReview: 'review';
+    --ModalHeight: 42vh;
 }
 
 @font-face {
@@ -76,10 +77,14 @@ button:hover{
 
 .cart-objects{
     display:flex;
-    height: 42vh;
+    height: var(--ModalHeight); 
     flex-direction: column;
     /*margin-bottom: 10.65vh;*/
     overflow-y:auto;
+}
+
+.cart-objects:has(.empty-cart-div) {
+    --ModalHeight: auto !important;
 }
 
 .product-info {
@@ -312,10 +317,15 @@ button:hover{
     margin-top: 3.5vh;
 }
 
+.empty-cart-div {
+    box-sizing: border-box;
+    overflow: hidden;
+    height: auto;
+}
 
 .empty-cart {
     margin-bottom: 0;
-    margin-top: 22vh;
+    margin-top: 20vh;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
@@ -325,7 +335,7 @@ button:hover{
 
 .start-to-buy{
     margin-top: 0;
-    margin-bottom: 22vh;
+    margin-bottom: 20vh;
     text-align: center;
     color:#6D717F;
     font-weight: bold;
