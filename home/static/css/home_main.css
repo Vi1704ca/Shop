@@ -544,13 +544,11 @@
         position:relative;
         width:14vh;
         height:5vh;
+        top:2.5vh;
+        left:1vh;
     }
     .product-card{
         width:75vw;
-    }
-    .product_sale .product_discount{
-        position:absolute;
-        left:2vh;
     }
 
 }
