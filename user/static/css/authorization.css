@@ -1,0 +1,40 @@
+.titles {
+    gap: 1.5vw;
+    margin-bottom: 4vh;
+    font-size: 6vh;
+}
+
+label {
+    font-size: 4vh;
+    margin-bottom: 2.5vh;
+}
+
+input {
+    font-size: 4vh;
+    padding: 2.75vw;
+    margin-bottom: 5vh;
+}
+
+.reset-password {
+    font-size: 4vh;
+}
+
+.button-authorization {
+    margin-top: 10vh;
+    gap: 2.5vw;
+}
+
+button {
+    height: 12vh;
+    border-radius: 10vw;
+    font-size: 5vh;
+}
+
+.cancel,
+.decline {
+    padding: 0 3.5vw;
+}
+
+.log-in {
+    padding: 0 4vw;
+}

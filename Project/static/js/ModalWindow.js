@@ -21,6 +21,10 @@ const USER_STATUSES = [
     "password-reset-success"
 ];
 
+const passwordResetBlock = document.querySelector('.password_reset');
+const newPasswordBlock = document.querySelector('.new-password');
+const passwordResetFinalBlock = document.querySelector('.password_reset_final');
+
 function removeAllUserStatuses() {
     USER_STATUSES.forEach(status => userModal.classList.remove(status));
 }
@@ -29,8 +33,25 @@ function setUserStatus(status) {
     removeAllUserStatuses();
     if (status) {
         userModal.classList.add(status);
+        
+        if (status === 'forgot-password') {
+            hideAllPasswordBlocks();
+            if (passwordResetBlock) passwordResetBlock.style.display = 'block';
+        } else if (status === 'new-password') {
+            hideAllPasswordBlocks();
+            if (newPasswordBlock) newPasswordBlock.style.display = 'block';
+        } else if (status === 'password-reset-success') {
+            hideAllPasswordBlocks();
+            if (passwordResetFinalBlock) passwordResetFinalBlock.style.display = 'block';
+        }
     }
-} 
+}
+
+function hideAllPasswordBlocks() {
+    if (passwordResetBlock) passwordResetBlock.style.display = 'none';
+    if (newPasswordBlock) newPasswordBlock.style.display = 'none';
+    if (passwordResetFinalBlock) passwordResetFinalBlock.style.display = 'none';
+}
 
 function closeCart() {
     try {
@@ -50,6 +71,28 @@ function closeUser() {
             window.top.postMessage({type:"close-user"}, "*"); 
         } catch (error) {}
     }
+    hideAllPasswordBlocks();
+}
+
+function showPasswordReset() {
+    hideAllPasswordBlocks();
+    if (passwordResetBlock) {
+        passwordResetBlock.style.display = 'block';
+    }
+}
+
+function showNewPassword() {
+    hideAllPasswordBlocks();
+    if (newPasswordBlock) {
+        newPasswordBlock.style.display = 'block';
+    }
+}
+
+function showPasswordResetFinal() {
+    hideAllPasswordBlocks();
+    if (passwordResetFinalBlock) {
+        passwordResetFinalBlock.style.display = 'block';
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -59,11 +102,47 @@ document.addEventListener("DOMContentLoaded", function() {
     if (continueBtn){ 
         continueBtn.addEventListener("click", closeCart);
     }
+    
     if (closeUserBtn){
         closeUserBtn.forEach(btn => {
             btn.addEventListener("click", closeUser);
         });
     }
+    
+    const sendEmailBtn = document.querySelector('.send_an_email');
+    if (sendEmailBtn) {
+        sendEmailBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNewPassword();
+        });
+    }
+    
+    const savePasswordBtn = document.querySelector('.save_password');
+    if (savePasswordBtn) {
+        savePasswordBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPasswordResetFinal();
+        });
+    }
+    
+    const loginFinalBtn = document.querySelector('.save_password_final');
+    if (loginFinalBtn) {
+        loginFinalBtn.addEventListener('click', function() {
+            closeUser();
+        });
+    }
+    
+    const cancelBtns = document.querySelectorAll('.cancel');
+    cancelBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            showPasswordReset();
+        });
+    });
+    
+    const passwordCloseBtns = document.querySelectorAll('.close-password-reset, .close-password-reset-final');
+    passwordCloseBtns.forEach(btn => {
+        btn.addEventListener('click', closeUser);
+    });
     
     if (isIframe) {
         function sendCartStatus() {
@@ -97,25 +176,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         sendCartStatus();
-        sendUserStatus(); 
+        sendUserStatus();
         
         document.addEventListener("cart-updated", sendCartStatus);
     }
     
+
     else {
-        openBtn.addEventListener("click", () => {
-            if (modal.classList.contains("active")) {
-                modal.classList.remove("active");
-                frame.src = "";
-            } else {
-                if (userModal.classList.contains("active")) {
-                    userModal.classList.remove("active");
-                    userFrame.src = "";
+        if (openBtn) {
+            openBtn.addEventListener("click", () => {
+                if (modal.classList.contains("active")) {
+                    modal.classList.remove("active");
+                    frame.src = "";
+                } else {
+                    if (userModal.classList.contains("active")) {
+                        userModal.classList.remove("active");
+                        userFrame.src = "";
+                        hideAllPasswordBlocks();
+                    }
+                    frame.src = "/cart";
+                    modal.classList.add("active");
                 }
-                frame.src = "/cart";
-                modal.classList.add("active");
-            }
-        });
+            });
+        }
         
         if (openUserBtn) {
             openUserBtn.forEach(openUserBtn => {
@@ -123,6 +206,7 @@ document.addEventListener("DOMContentLoaded", function() {
                    if (userModal.classList.contains("active")) {
                        userModal.classList.remove("active");
                        userFrame.src = "";
+                       hideAllPasswordBlocks();
                    } else {
                        if (modal.classList.contains("active")) {
                            modal.classList.remove("active");
@@ -130,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
                        }
                        userFrame.src = "/authorization";
                        userModal.classList.add("active");
+                       hideAllPasswordBlocks();
                    }
                });
             });
@@ -140,45 +225,70 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!data) return;
             
             if (data.type === 'close-cart') {
-                modal.classList.remove('active');
-                frame.src = '';
+                if (modal) {
+                    modal.classList.remove('active');
+                    frame.src = '';
+                }
             }
             
             if (data.type === 'close-user') { 
-                userModal.classList.remove('active');
-                userFrame.src = '';
-                removeAllUserStatuses();
+                if (userModal) {
+                    userModal.classList.remove('active');
+                    userFrame.src = '';
+                    removeAllUserStatuses();
+                    hideAllPasswordBlocks();
+                }
             }
             
             if (data.type === "cart-status") {
-                modal.classList.toggle("empty", data.empty);
-                modal.classList.toggle("filled", !data.empty);
+                if (modal) {
+                    modal.classList.toggle("empty", data.empty);
+                    modal.classList.toggle("filled", !data.empty);
+                }
             }
             
             if (data.type === "user-status") {
                 setUserStatus(data.status);
             }
+            
+            if (data.type === "show-password-reset") {
+                showPasswordReset();
+            }
+            
+            if (data.type === "show-new-password") {
+                showNewPassword();
+            }
+            
+            if (data.type === "show-password-reset-final") {
+                showPasswordResetFinal();
+            }
+        });
+    }
+    
+    if (catalogfooterBtn) {
+        catalogfooterBtn.addEventListener("click", function() {
+            window.location.href = "/shop";
         });
     }
 });
-
 
 window.addEventListener('message', (event) => {
     const data = event && event.data;
     if (!data) return;
     
     if (data.type === 'close-cart') {
-        modal.classList.remove('active');
-        frame.src = '';
+        if (modal) {
+            modal.classList.remove('active');
+            frame.src = '';
+        }
     }
     
     if (data.type === 'close-user') { 
-        userModal.classList.remove('active');
-        userFrame.src = '';
-        removeAllUserStatuses();
+        if (userModal) {
+            userModal.classList.remove('active');
+            userFrame.src = '';
+            removeAllUserStatuses();
+            hideAllPasswordBlocks();
+        }
     }
-});
-
-catalogfooterBtn.addEventListener("click", function() {
-    window.location.href = "/shop";
 });

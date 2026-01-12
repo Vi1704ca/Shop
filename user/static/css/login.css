@@ -1,14 +1,3 @@
-main {
-    margin-top: 0;
-    min-width: 420px;
-}
-
-html, body {
-    min-width: 420px;
-}
-
-/* ================== FONTS ================== */
-
 @font-face {
     font-family: 'review';
     src: url("/static/fonts/GTWalsheimPro-Regular.ttf");
@@ -24,8 +13,6 @@ html, body {
     --fontReview: 'review';
 }
 
-/* ================== BASE ================== */
-
 * {
     box-sizing: border-box;
 }
@@ -33,25 +20,18 @@ html, body {
 body {
     margin: 0;
     font-family: var(--fontReview);
-    font-size: 16px !important;
 }
 
-/* ================== MODAL CONTENT ================== */
 
 .modal_user {
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 1.5rem;
+    padding: 6vw;
 }
-
-/* ================== TITLES ================== */
 
 .titles {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.6rem;
 }
 
 .title-registration {
@@ -78,15 +58,11 @@ body {
     text-decoration: none;
 }
 
-/* ================== AUTHORIZATION ================== */
-
 .authorization,
 .registration {
     width: 100%;
     height: 100%;
 }
-
-/* ================== INPUTS ================== */
 
 .authorization-input,
 .write-name,
@@ -97,27 +73,16 @@ body {
     flex-direction: column;
 }
 
-label {
-    font-size: 0.9rem;
-    margin-bottom: 0.375rem;
-}
-
 input {
     width: 100%;
-    font-size: 1rem;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border-radius: 0.625rem;
-    border: 0.125rem solid #CED0D4;
+    border-radius: 0.7vw;
+    border: 0.4vw solid #CED0D4;
     color: #333;
     font-family: var(--fontReview);
 }
 
-/* ================== LINKS ================== */
-
 .reset-password,
 .have-account {
-    font-size: 0.9rem;
     color: #9EA0AA;
     text-decoration: underline;
     cursor: pointer;
@@ -128,19 +93,12 @@ input {
     color: #0C122A;
 }
 
-/* ================== BUTTONS ================== */
-
 .button-authorization,
 .button-registration {
-    margin-top: 2rem;
     display: flex;
-    gap: 0.75rem;
 }
 
 button {
-    height: 2.75rem;
-    border-radius: 999px;
-    font-size: 1rem;
     font-family: var(--fontReview);
     font-weight: 500;
     cursor: pointer;
@@ -149,9 +107,8 @@ button {
 .cancel,
 .decline {
     background: #fff;
-    border: 0.125rem solid #0C122A;
+    border: 0.5vh solid #0C122A;
     color: #0C122A;
-    padding: 0 1.5rem;
 }
 
 .log-in,
@@ -159,23 +116,7 @@ button {
     background: #0C122A;
     border: none;
     color: #fff;
-    padding: 0 2rem;
 }
-
-/* ================== TEXT ================== */
-
-.public-agreement p {
-    font-size: 0.85rem;
-    color: #9EA0AA;
-    margin-top: 1rem;
-}
-
-.public-agreement a {
-    color: #B62D11;
-    text-decoration: none;
-}
-
-/* ================== COMMON MODAL BLOCKS ================== */
 
 .registration-complete,
 .password_reset,
@@ -188,8 +129,6 @@ button {
     border-radius: 1rem;
     background-color: #ffffff;
 }
-
-/* ================== CLOSE BUTTON ================== */
 
 .close-registration,
 .close-registration-complete,
@@ -213,15 +152,11 @@ button {
     height: 0.875rem;
 }
 
-/* ================== TITLES ================== */
-
 .registration-complete .titles {
     font-family: var(--fontReview);
     font-weight: 500;
     color: black;
 }
-
-/* ================== TEXT ================== */
 
 .registration-complete .account-created {
     margin-top: 1rem;
@@ -242,8 +177,6 @@ button {
     font-family: var(--fontReview);
 }
 
-/* ================== INPUTS ================== */
-
 .password_reset label,
 .password_reset_2 label {
     font-size: 0.9rem;
@@ -262,8 +195,6 @@ button {
     font-family: var(--fontReview);
 }
 
-/* ================== BUTTON GROUPS ================== */
-
 .button-password-reset,
 .button-password-reset-2,
 .button-password-reset-final {
@@ -271,8 +202,6 @@ button {
     display: flex;
     gap: 0.75rem;
 }
-
-/* ================== BUTTONS ================== */
 
 .visit-website,
 .send_an_email,
@@ -292,8 +221,6 @@ button {
     align-items: center;
     cursor: pointer;
 }
-
-/* ================== EYE ICON ================== */
 
 .password-field {
     position: relative;

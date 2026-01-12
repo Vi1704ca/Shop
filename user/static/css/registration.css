@@ -1,0 +1,54 @@
+.titles {
+    gap: 1.5vw;
+    margin-bottom: 4vh;
+    font-size: 4vh;
+}
+
+label {
+    font-size: 2.5vh;
+    margin-bottom: 1.7vh;
+}
+
+input {
+    font-size: 2.8vh;
+    padding: 2vh;
+    margin-bottom: 3vh;
+    border-radius: 1vw;
+}
+
+.have-account {
+    font-size: 2.7vh;
+}
+
+.button-registration {
+    margin-top: 4.5vh;
+    gap: 2vw;
+}
+
+button {
+    height: 7vh;
+    border-radius: 10vw;
+    font-size: 2.75vh;
+}
+
+.cancel,
+.decline {
+    padding: 0 4vw;
+    border: 0.3vh solid #0C122A;
+    margin-bottom: 3vh;
+}
+
+.register {
+    padding: 0 4.5vw;
+}
+
+.public-agreement p {
+    font-size: 2.5vh;
+    color: #9EA0AA;
+    margin-top: 0.5vh;
+}
+
+.public-agreement a {
+    color: #B62D11;
+    text-decoration: none;
+}
