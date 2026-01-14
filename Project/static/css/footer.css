@@ -151,6 +151,23 @@ footer {
 
 }
 
+.about-us-footer{
+    position:relative;
+    white-space:nowrap;
+    right:1.5vh;
+}
+.menu-bottom{
+    gap:0.5vh;
+}
+.contacts-footer{
+    position:relative;
+    right:2.5vh;
+}
+.cart-footer{
+    position:relative;
+    right:1.5vh;
+}
+
 
 @media (max-width:768px){
     .review{
@@ -176,6 +193,10 @@ footer {
 
    .menu-top, .menu-bottom{
         justify-content: center;
+   }
+
+   .copyright {
+        font-size: 2.75vh;
    }
 }
 

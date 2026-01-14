@@ -163,7 +163,7 @@ button:hover{
 }
 
 .separator {
-    height: 1px;
+    height: 0.3vh;
     background: #E0E0E0;
     border: none;
     margin: 2vh 0;
@@ -342,4 +342,3 @@ button:hover{
     font-family: var(--fontParagraph);
     font-size: 5vh;
 }
-

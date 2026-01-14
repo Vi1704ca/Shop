@@ -179,7 +179,9 @@ header, main, footer{
 }
 .cart{
     background-image: url('/static/icon/cart.svg');
+    cursor: pointer;
 }
+
 .img-profile{
     background-image: url('/static/icon/profile.svg');
 }
@@ -210,6 +212,7 @@ header, main, footer{
 
 .burger-menu{
     display: none;
+    cursor: pointer;
 }
 
 @media(max-width:768px){
@@ -228,7 +231,7 @@ header, main, footer{
         position:absolute;
         width: auto;
         height: auto;
-
+        right: 6vw;
     } 
 }
 

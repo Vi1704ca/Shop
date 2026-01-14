@@ -16,6 +16,17 @@ input {
     border-radius: 1vw;
 }
 
+.registration-input .password-field .eye,
+.registration .password-field .eye {
+    top: 7.3vh;
+    width: 4vw;
+    height: 4vw;
+}
+
+.close-registration img {
+    margin-bottom: 20vh;
+}
+
 .have-account {
     font-size: 2.7vh;
 }

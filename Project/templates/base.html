@@ -159,70 +159,6 @@
             <iframe id="user-frame" src=""></iframe>
         </div>
 
-            <!-- reset password -->
-
-        <div class="password_reset">
-            <p class="titles">Відновлення пароля</p>
-            <button class="close-password-reset" id="close-registration">
-                <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
-            </button>
-
-            <div class = "write-email">
-                <label class = "email"> Email </label> 
-                <input class = "email" placeholder="Ввведіть Email" required> 
-            </div> 
-
-            <div class="button-password-reset">
-                <button class="cancel">СКАСУВАТИ</button>
-                <button class="send_an_email">НАДІСЛАТИ ЛИСТ</button>
-            </div>
-        </div>
-
-        <!-- -->
-    
-        <div class="password_reset_2">
-            <p class = "titles">Новий пароль</p>
-            <button class="close-password-reset" id="close-registration">
-                <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
-            </button>
-
-            <div class = "write-password password-field">
-                <label>Пароль</label>
-                <input id = "pass" type="password" placeholder="Введіть пароль" name="Пароль" required>
-                <button id = "eye" class = "eye" type="button"></button>
-            </div>
-            <div class = "confpass password-field">
-                <label>Підтвердження пароля</label>
-                <input id = "pass" type="password" placeholder="Повторіть пароль" name="Підтвердження пароля" required>
-                <button id = "eye" class = "eye" type="button"></button>
-            </div>
-
-            <div class="button-password-reset-2">
-                <button class="cancel">СКАСУВАТИ</button>
-                <button class="save_password">ЗБЕРЕГТИ НОВИЙ ПАРОЛЬ</button>
-            </div>
-        </div>
-
-        <!-- -->
-
-        <div class="password_reset_final">
-            <p class = "titles">Новий пароль</p>
-            <button class="close-password-reset-final" id="close-registration">
-                <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
-            </button>
-            
-            <div class = "password-reset-complete-message">
-                <p class = "password-reset-complete-1">Пароль успішно змінено! </p>
-                <p class = "password-reset-complete-2">Тепер ви можете увійти з новим паролем.</p>
-            </div>
-
-            <div class="button-password-reset-final">
-                <button class="save_password_final">УВІЙТИ</button>
-            </div>
-        </div>
-
-    <!-- -->
-
         <footer>
             <div class="ellipse_footer"></div>
             <img class="footer_drones" src="{{ url_for('home.static', filename= 'icon/text_drones.png') }}">
@@ -249,15 +185,16 @@
                 </div>
             
             </div>
+
             <div class="navigation-footer">
                 <div class="menu-top">
-                    <p id = "catalog">КАТАЛОГ</p>
-                    <p>ПРО НАС</p>
-                    <p>КОНТАКТИ</p>
+                    <p class="catalog-footer" id = "catalog">КАТАЛОГ</p>
+                    <p class="about-us-footer">ПРО НАС</p>
+                    <p class="contacts-footer">КОНТАКТИ</p>
                 </div>
                 <div class="menu-bottom">
-                    <p>КОШИК</p>
-                    <p>КАБІНЕТ</p>
+                    <p class="cart-footer">КОШИК</p>
+                    <p class="cabinet-footer">КАБІНЕТ</p>
                 </div>
             </div>
             <hr class="line">

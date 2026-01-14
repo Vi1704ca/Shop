@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
                            modal.classList.remove("active");
                            frame.src = "";
                        }
-                       userFrame.src = "/authorization";
+                       userFrame.src = "/forgot-password";
                        userModal.classList.add("active");
                        hideAllPasswordBlocks();
                    }
