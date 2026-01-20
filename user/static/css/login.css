@@ -133,7 +133,6 @@ button {
 .close-registration,
 .close-registration-complete,
 .close-authorization,
-.close-password-reset,
 .close-password-reset-final {
     position: absolute;
     top: 1rem;

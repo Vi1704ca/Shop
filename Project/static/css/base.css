@@ -68,6 +68,14 @@ body{
    height: 40vh;
 }
 
+#user-modal.new-password iframe {
+   height: 40vh;
+}
+
+#user-modal.password-reset-success iframe {
+   height: 40vh;
+}
+
 #cart-modal.empty iframe {
     font-size: 2.5vh;
     height: 55vh;

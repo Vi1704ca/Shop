@@ -203,3 +203,35 @@ header{
 @media (prefers-reduced-motion: reduce) {
     .button_read { animation: none !important; transition: none !important; }
 }
+
+@media (max-width:768px){
+    .technologies{
+        position:relative;
+        font-size:5vh;
+        bottom:7vh;
+    }
+    .changing-the-world{
+        position:relative;
+        font-size:5vh;
+        left:11vh;
+        bottom:5vh;
+    }
+    .drones{
+        position:absolute;
+        width:70vh;
+        height:70vh;
+        top:20vh;
+        
+    }
+    .catalog_text{
+        position:relative;
+        right:40vh;
+        top:3vh;
+        white-space:nowrap;
+    }
+    .button_catalog{
+        position:absolute;
+        width:20vh;
+        right:36vh;
+    }
+}

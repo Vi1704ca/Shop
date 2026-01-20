@@ -13,13 +13,13 @@
 {% block header %}
     <div class="ellipse"></div>
     <span class="slogan">
-        <p>ТЕХНОЛОГІЇ</p>
-        <p>ЯКІ ЗМІНЮЮТЬ РЕАЛЬНІСТЬ</p>
+        <p class = "technologies">ТЕХНОЛОГІЇ</p>
+        <p class = "changing-the-world">ЯКІ ЗМІНЮЮТЬ РЕАЛЬНІСТЬ</p>
     </span>
     <img class="drones" src="{{ url_for('home.static', filename= 'icon/drones.svg') }}" alt="">
     <div class="catalog">
         <p class="catalog_text">Передові технології в одному місці.
-            <br>
+            <br class = "header-separator">
             Обирай найкраще для найважливішого.</p>
             <button onclick="window.location.href='/shop' "id = "catalog-btn" class="button_catalog">ДО КАТАЛОГУ</button>
     </div>        
