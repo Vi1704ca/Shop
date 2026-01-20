@@ -76,6 +76,8 @@
 .buy-button{
     transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease, background-color 180ms ease;
     animation: buyPop 560ms ease both;
+    position:relative;
+    top:1vh;
 }
 .buy-button:hover{
     transform: translateY(-5px);
@@ -272,8 +274,9 @@
 }
 
 .drone-price{
+    position:relative;
     font-size: 2vh;
-    
+    top:3.6vh;
 }
 
 .card-buy{
