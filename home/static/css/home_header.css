@@ -208,19 +208,19 @@ header{
     .technologies{
         position:relative;
         font-size:5vh;
-        bottom:7vh;
+        left:3vh;
+        bottom:2vh;
     }
     .changing-the-world{
         position:relative;
         font-size:5vh;
-        left:11vh;
-        bottom:5vh;
+        left:16vh;
     }
     .drones{
         position:absolute;
-        width:70vh;
-        height:70vh;
-        top:20vh;
+        width:65vh;
+        height:65vh;
+        top:25vh;
         
     }
     .catalog_text{
@@ -228,10 +228,11 @@ header{
         right:40vh;
         top:3vh;
         white-space:nowrap;
+        font-weight: bold;
     }
     .button_catalog{
         position:absolute;
-        width:20vh;
-        right:36vh;
+        width:25vh;
+        right:30vh;
     }
 }
