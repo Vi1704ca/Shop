@@ -208,31 +208,42 @@ header{
     .technologies{
         position:relative;
         font-size:5vh;
-        left:3vh;
-        bottom:2vh;
+        right:1vh;
+        bottom:5vh;
     }
-    .changing-the-world{
+    .changing{
         position:relative;
         font-size:5vh;
-        left:16vh;
+        right:1vh;
+        bottom:3vh;
     }
     .drones{
         position:absolute;
         width:65vh;
         height:65vh;
         top:25vh;
-        
+        right:4vh;
     }
     .catalog_text{
         position:relative;
         right:40vh;
         top:3vh;
         white-space:nowrap;
-        font-weight: bold;
+        font-weight: 10;
     }
     .button_catalog{
         position:absolute;
-        width:25vh;
-        right:30vh;
+        width:30vh;
+        right:26vh;
+        top:6vh;
+    }
+    .reality{
+        position:absolute;
+       font-size:5vh;
+       left:9%;
+       top:8.5vh;
+    }
+    .slogan{
+        margin-top:2vh;
     }
 }

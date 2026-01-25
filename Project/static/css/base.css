@@ -65,7 +65,7 @@ body{
 }
 
 #user-modal.forgot-password iframe {
-   height: 40vh;
+   height: 35vh;
 }
 
 #user-modal.new-password iframe {

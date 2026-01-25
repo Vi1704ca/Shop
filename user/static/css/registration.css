@@ -45,7 +45,7 @@ button {
 .cancel,
 .decline {
     padding: 0 4vw;
-    border: 0.3vh solid #0C122A;
+    border: 0.5vh solid #0C122A;
     margin-bottom: 3vh;
 }
 
