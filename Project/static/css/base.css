@@ -69,11 +69,12 @@ body{
 }
 
 #user-modal.new-password iframe {
-   height: 40vh;
+   height: 52vh;
+   width: 32vw;
 }
 
 #user-modal.password-reset-success iframe {
-   height: 40vh;
+   height: 32vh;
 }
 
 #cart-modal.empty iframe {
@@ -168,138 +169,6 @@ body{
     padding: 0;
     font-weight: 500;
 }
-
-.eye{ 
-    position:relative;
-    width: 2vh;
-    height: 2vh;
-    background-image: url("/static/icon/eye_off.svg");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: 0;
-    left: 54vh;
-    top: 3.5vh;
-
-}
-
-/* password reset */
-
-.password_reset {
-    position:relative;
-    width: 30.5vw;
-    height: 29.4vh;
-    background-color: #ffffff;
-    padding: 2vh;
-    padding-left: 1.4vw;
-    border-radius: 1.7vh;
-    margin-bottom: 3vh;
-}
-
-.password_reset label{
-    font-family: var(--fontReview);
-    font-weight: 300;
-    font-size: 1.7vh;
-    margin-bottom: 0.7vh;
-}
-
-.password_reset input{
-    display: flex;
-    flex-direction:column;
-    font-weight: 300;
-    font-family: var(--fontReview);
-    font-weight: 400;
-    font-size: 1.8vh;
-    padding: 1.2vh;
-    padding-left: 0.9vw;
-    border-radius: 0.7vh;
-    border: 0.2vh solid #CED0D4;
-    color: #9EA0AA;
-    width: 27vw;
-}
-
-.button-password-reset {
-    margin-top: 5.5vh;
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-}
-
-.send_an_email {
-    font-family: var(--fontReview);
-    font-weight: 500;
-    height: 5.5vh;
-    border-radius: 5vh;
-    font-size: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10vw;
-    background: #0C122A;
-    color: #fff;
-    border: none;
-    padding: 0;
-    font-weight: 500;
-}
-
-/* password reset 2 */
-
-.password_reset_2 {
-    position:relative;
-    width: 30.5vw;
-    height: 39.4vh;
-    background-color: #ffffff;
-    padding: 2vh;
-    padding-left: 1.4vw;
-    border-radius: 1.7vh;
-    margin-bottom: 3vh;
-}
-
-.password_reset_2 label{
-    font-family: var(--fontReview);
-    font-weight: 300;
-    font-size: 1.7vh;
-    margin-bottom: 0.7vh;
-}
-
-.password_reset_2 input{
-    display: flex;
-    flex-direction:column;
-    font-weight: 300;
-    font-family: var(--fontReview);
-    font-weight: 400;
-    font-size: 1.8vh;
-    padding: 1.2vh;
-    padding-left: 0.9vw;
-    border-radius: 0.7vh;
-    border: 0.2vh solid #CED0D4;
-    color: #9EA0AA;
-    width: 27vw;
-}
-
-.button-password-reset-2 {
-    margin-top: 4vh;
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-}
-
-.save_password {
-    font-family: var(--fontReview);
-    font-weight: 500;
-    height: 5.5vh;
-    border-radius: 5vh;
-    font-size: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 14.7vw;
-    background: #0C122A;
-    color: #fff;
-    border: none;
-    padding: 0;
-    font-weight: 500;
-}
-
 /* password reset final */
 
 .password_reset_final {

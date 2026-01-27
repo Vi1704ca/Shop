@@ -118,18 +118,6 @@ button {
     color: #fff;
 }
 
-.registration-complete,
-.password_reset,
-.password_reset_2,
-.password_reset_final {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    background-color: #ffffff;
-}
-
 .close-registration,
 .close-registration-complete,
 .close-authorization,
@@ -157,46 +145,6 @@ button {
     color: black;
 }
 
-.registration-complete .account-created {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-    font-family: var(--fontReview);
-    font-weight: 500;
-    color: #9EA0AA;
-}
-
-.password-reset-complete-message {
-    margin-top: 1.5rem;
-}
-
-.password-reset-complete-message p {
-    font-size: 0.95rem;
-    color: #9EA0AA;
-    font-family: var(--fontReview);
-}
-
-
-
-.visit-website,
-.send_an_email,
-.save_password,
-.save_password_final {
-    height: 2.75rem;
-    border-radius: 999px;
-    font-size: 1rem;
-    font-family: var(--fontReview);
-    font-weight: 500;
-    padding: 0 2rem;
-    background: #0C122A;
-    color: #fff;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
 .password-field {
     position: relative;
     width: 100%;
@@ -204,7 +152,6 @@ button {
 
 .password-field input {
     width: 100%;
-    padding-right: 2.75rem; /* место под глаз */
 }
 
 .eye {
@@ -221,4 +168,10 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.password_reset_final .titles {
+    font-family: var(--fontReview);
+    font-weight: 500;
+    color: black;
 }

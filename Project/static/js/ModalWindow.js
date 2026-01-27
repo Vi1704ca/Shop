@@ -1,294 +1,179 @@
-let openBtn = document.getElementById("open-cart");
-let modal = document.getElementById("cart-modal");
-let frame = document.getElementById("cart-frame");
-let closeBtn = document.getElementById("close-cart");
-let continueBtn = document.querySelector(".continue_shopping");
-let catalogfooterBtn = document.getElementById("catalog");
+document.addEventListener("DOMContentLoaded", function () {
+    const isIframe = window.self !== window.top;
+    const USER_STATUSES = [
+        "authorization",
+        "registration",
+        "registration-success",
+        "forgot-password",
+        "new-password",
+        "password-reset-success"
+    ];
 
-let isIframe = window.self !== window.top;
-
-let openUserBtn = document.querySelectorAll("#open-user"); 
-let userModal = document.getElementById("user-modal");
-let userFrame = document.getElementById("user-frame"); 
-let closeUserBtn = document.querySelectorAll("#close-user");
-
-const USER_STATUSES = [
-    "authorization",
-    "registration",
-    "registration-success",
-    "forgot-password",
-    "new-password",
-    "password-reset-success"
-];
-
-const passwordResetBlock = document.querySelector('.password_reset');
-const newPasswordBlock = document.querySelector('.new-password');
-const passwordResetFinalBlock = document.querySelector('.password_reset_final');
-
-function removeAllUserStatuses() {
-    USER_STATUSES.forEach(status => userModal.classList.remove(status));
-}
-
-function setUserStatus(status) {
-    removeAllUserStatuses();
-    if (status) {
-        userModal.classList.add(status);
-        
-        if (status === 'forgot-password') {
-            hideAllPasswordBlocks();
-            if (passwordResetBlock) passwordResetBlock.style.display = 'block';
-        } else if (status === 'new-password') {
-            hideAllPasswordBlocks();
-            if (newPasswordBlock) newPasswordBlock.style.display = 'block';
-        } else if (status === 'password-reset-success') {
-            hideAllPasswordBlocks();
-            if (passwordResetFinalBlock) passwordResetFinalBlock.style.display = 'block';
-        }
-    }
-}
-
-function hideAllPasswordBlocks() {
-    if (passwordResetBlock) passwordResetBlock.style.display = 'none';
-    if (newPasswordBlock) newPasswordBlock.style.display = 'none';
-    if (passwordResetFinalBlock) passwordResetFinalBlock.style.display = 'none';
-}
-
-function closeCart() {
-    try {
-        window.parent.postMessage({type:"close-cart"}, "*");
-    } catch (e) {
-        try { 
-            window.top.postMessage({type:"close-cart"}, "*"); 
-        } catch (error) {}
-    }
-}
-
-function closeUser() {
-    try {
-        window.parent.postMessage({type:"close-user"}, "*");
-    } catch (e) {
-        try { 
-            window.top.postMessage({type:"close-user"}, "*"); 
-        } catch (error) {}
-    }
-    hideAllPasswordBlocks();
-}
-
-function showPasswordReset() {
-    hideAllPasswordBlocks();
-    if (passwordResetBlock) {
-        passwordResetBlock.style.display = 'block';
-    }
-}
-
-function showNewPassword() {
-    hideAllPasswordBlocks();
-    if (newPasswordBlock) {
-        newPasswordBlock.style.display = 'block';
-    }
-}
-
-function showPasswordResetFinal() {
-    hideAllPasswordBlocks();
-    if (passwordResetFinalBlock) {
-        passwordResetFinalBlock.style.display = 'block';
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    if (closeBtn){
-        closeBtn.addEventListener("click", closeCart);
-    }
-    if (continueBtn){ 
-        continueBtn.addEventListener("click", closeCart);
-    }
-    
-    if (closeUserBtn){
-        closeUserBtn.forEach(btn => {
-            btn.addEventListener("click", closeUser);
-        });
-    }
-    
-    const sendEmailBtn = document.querySelector('.send_an_email');
-    if (sendEmailBtn) {
-        sendEmailBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            showNewPassword();
-        });
-    }
-    
-    const savePasswordBtn = document.querySelector('.save_password');
-    if (savePasswordBtn) {
-        savePasswordBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            showPasswordResetFinal();
-        });
-    }
-    
-    const loginFinalBtn = document.querySelector('.save_password_final');
-    if (loginFinalBtn) {
-        loginFinalBtn.addEventListener('click', function() {
-            closeUser();
-        });
-    }
-    
-    const cancelBtns = document.querySelectorAll('.cancel');
-    cancelBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            showPasswordReset();
-        });
-    });
-    
-    const passwordCloseBtns = document.querySelectorAll('.close-password-reset, .close-password-reset-final');
-    passwordCloseBtns.forEach(btn => {
-        btn.addEventListener('click', closeUser);
-    });
-    
     if (isIframe) {
-        function sendCartStatus() {
-            const items = document.querySelectorAll(".cart-item").length;
-            const isEmpty = items === 0;
-            
+        const sendEmailBtn = document.querySelector('.send_an_email');
+        const savePasswordBtn = document.querySelector('.save_password');
+        const loginFinalBtn = document.querySelector('.save_password_final');
+        const cancelBtns = document.querySelectorAll('.cancel');
+        
+        const closeBtns = document.querySelectorAll('.close-password-reset, .close-password-reset-final, [class*="close_"], [class*="close-"]');
+        
+        const passwordResetBlock = document.querySelector('.password_reset');
+        const newPasswordBlock = document.querySelector('.new-password');
+        const passwordResetFinalBlock = document.querySelector('.password_reset_final');
+
+        function notifyParentStatus(status) {
             try {
-                window.parent.postMessage({
-                    type: "cart-status",
-                    empty: isEmpty
-                }, "*");
+                window.parent.postMessage({ type: "user-status", status: status }, "*");
             } catch (e) {}
         }
-        
-        function sendUserStatus() {
-            const url = window.location.pathname;
-            let status = "";
-            
-            USER_STATUSES.forEach(st => {
-                if (url.includes(st)) status = st;
-            });
-            
-            if (status) {
-                try {
-                    window.parent.postMessage({
-                        type: "user-status",
-                        status: status
-                    }, "*");
-                } catch (e) {}
-            }
+
+        function notifyCloseUser() {
+            try {
+                window.parent.postMessage({ type: "close-user" }, "*");
+            } catch (e) {}
         }
-        
+
+        const url = window.location.pathname;
+        let currentStatus = "";
+        USER_STATUSES.forEach(st => {
+            if (url.includes(st)) currentStatus = st;
+        });
+        if (currentStatus) notifyParentStatus(currentStatus);
+
+        if (sendEmailBtn) {
+            sendEmailBtn.addEventListener('click', function (e) {
+                if (newPasswordBlock) {
+                    hideAllBlocks();
+                    newPasswordBlock.style.display = 'block';
+                }
+                notifyParentStatus('new-password');
+            });
+        }
+
+        if (savePasswordBtn) {
+            savePasswordBtn.addEventListener('click', function (e) {
+                if (passwordResetFinalBlock) {
+                    hideAllBlocks();
+                    passwordResetFinalBlock.style.display = 'block';
+                }
+                notifyParentStatus('password-reset-success');
+            });
+        }
+
+        cancelBtns.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const path = window.location.pathname;
+                if (path.includes('authorization') || path.includes('registration')) {
+                    notifyCloseUser();
+                } else {
+                    if (passwordResetBlock) {
+                        hideAllBlocks();
+                        passwordResetBlock.style.display = 'block';
+                    }
+                    notifyParentStatus('forgot-password');
+                }
+            });
+        });
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                notifyCloseUser();
+            });
+        });
+
+        if (loginFinalBtn) loginFinalBtn.addEventListener('click', notifyCloseUser);
+
+        function hideAllBlocks() {
+            if (passwordResetBlock) passwordResetBlock.style.display = 'none';
+            if (newPasswordBlock) newPasswordBlock.style.display = 'none';
+            if (passwordResetFinalBlock) passwordResetFinalBlock.style.display = 'none';
+        }
+
+        function sendCartStatus() {
+            const items = document.querySelectorAll(".cart-item").length;
+            try {
+                window.parent.postMessage({ type: "cart-status", empty: items === 0 }, "*");
+            } catch (e) {}
+        }
         sendCartStatus();
-        sendUserStatus();
-        
         document.addEventListener("cart-updated", sendCartStatus);
     }
-    
 
     else {
-        if (openBtn) {
-            openBtn.addEventListener("click", () => {
-                if (modal.classList.contains("active")) {
-                    modal.classList.remove("active");
-                    frame.src = "";
-                } else {
-                    if (userModal.classList.contains("active")) {
-                        userModal.classList.remove("active");
-                        userFrame.src = "";
-                        hideAllPasswordBlocks();
-                    }
-                    frame.src = "/cart";
-                    modal.classList.add("active");
-                }
-            });
-        }
+        const modalCart = document.getElementById("cart-modal");
+        const frameCart = document.getElementById("cart-frame");
+        const modalUser = document.getElementById("user-modal");
+        const frameUser = document.getElementById("user-frame");
         
-        if (openUserBtn) {
-            openUserBtn.forEach(openUserBtn => {
-                openUserBtn.addEventListener("click", () => {
-                   if (userModal.classList.contains("active")) {
-                       userModal.classList.remove("active");
-                       userFrame.src = "";
-                       hideAllPasswordBlocks();
-                   } else {
-                       if (modal.classList.contains("active")) {
-                           modal.classList.remove("active");
-                           frame.src = "";
-                       }
-                       userFrame.src = "/forgot-password";
-                       userModal.classList.add("active");
-                       hideAllPasswordBlocks();
-                   }
-               });
-            });
-        }
-        
-        window.addEventListener("message", (event) => {
-            const data = event && event.data;
-            if (!data) return;
-            
-            if (data.type === 'close-cart') {
-                if (modal) {
-                    modal.classList.remove('active');
-                    frame.src = '';
-                }
-            }
-            
-            if (data.type === 'close-user') { 
-                if (userModal) {
-                    userModal.classList.remove('active');
-                    userFrame.src = '';
-                    removeAllUserStatuses();
-                    hideAllPasswordBlocks();
-                }
-            }
-            
-            if (data.type === "cart-status") {
-                if (modal) {
-                    modal.classList.toggle("empty", data.empty);
-                    modal.classList.toggle("filled", !data.empty);
-                }
-            }
-            
-            if (data.type === "user-status") {
-                setUserStatus(data.status);
-            }
-            
-            if (data.type === "show-password-reset") {
-                showPasswordReset();
-            }
-            
-            if (data.type === "show-new-password") {
-                showNewPassword();
-            }
-            
-            if (data.type === "show-password-reset-final") {
-                showPasswordResetFinal();
-            }
-        });
-    }
-    
-    if (catalogfooterBtn) {
-        catalogfooterBtn.addEventListener("click", function() {
-            window.location.href = "/shop";
-        });
-    }
-});
+        const openCartBtn = document.getElementById("open-cart");
+        const closeCartBtn = document.getElementById("close-cart");
+        const openUserBtns = document.querySelectorAll("#open-user");
+        const continueBtn = document.querySelector(".continue_shopping");
 
-window.addEventListener('message', (event) => {
-    const data = event && event.data;
-    if (!data) return;
-    
-    if (data.type === 'close-cart') {
-        if (modal) {
-            modal.classList.remove('active');
-            frame.src = '';
+        function setUserModalStatus(status) {
+            if (!modalUser) return;
+            USER_STATUSES.forEach(st => modalUser.classList.remove(st));
+            if (status) {
+                modalUser.classList.add(status);
+            }
         }
-    }
-    
-    if (data.type === 'close-user') { 
-        if (userModal) {
-            userModal.classList.remove('active');
-            userFrame.src = '';
-            removeAllUserStatuses();
-            hideAllPasswordBlocks();
+
+        function closeCart() {
+            if (modalCart) {
+                modalCart.classList.remove("active");
+                frameCart.src = "";
+            }
         }
+
+        function closeUser() {
+            if (modalUser) {
+                modalUser.classList.remove("active");
+                frameUser.src = "";
+                setUserModalStatus(null); 
+            }
+        }
+
+        if (openCartBtn) {
+            openCartBtn.addEventListener("click", () => {
+                closeUser(); 
+                frameCart.src = "/cart";
+                modalCart.classList.add("active");
+            });
+        }
+
+        if (openUserBtns) {
+            openUserBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    closeCart(); 
+                    frameUser.src = "/authorization"; 
+                    modalUser.classList.add("active");
+                });
+            });
+        }
+
+        if (closeCartBtn) closeCartBtn.addEventListener("click", closeCart);
+        if (continueBtn) continueBtn.addEventListener("click", closeCart);
+
+        window.addEventListener("message", (event) => {
+            const data = event.data;
+            if (!data) return;
+
+            switch (data.type) {
+                case "close-user":
+                    closeUser();
+                    break;
+                case "user-status":
+                    setUserModalStatus(data.status);
+                    break;
+                case "cart-status":
+                    if (modalCart) {
+                        modalCart.classList.toggle("empty", data.empty);
+                        modalCart.classList.toggle("filled", !data.empty);
+                    }
+                    break;
+            }
+        });
     }
 });
