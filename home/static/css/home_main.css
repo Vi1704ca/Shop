@@ -508,13 +508,18 @@
 }
 
 @media(max-width:768px){
+    .menu_drones h1{
+        margin-top: 0;
+        margin-bottom: 5vh;         
+    }
     .cards-container{
         flex-direction: column;
-        margin-bottom: 10vh;
-}
+    }
     .products{
         flex-direction: column;
-        gap: 20vh;
+        gap: 2vh;
+        padding: 0;
+        margin-left: 0;
     }
     .drone-image{
         width:35vh;
@@ -522,26 +527,57 @@
         top:-15vh;
         /* о, имба, спасибо*/
         left: 1.5vw; 
-
     }
     .card-drones{
         margin-bottom: 10vh;
     }
-    .product-price{
-        position:absolute;
-        top:45vh;
+    .product-card{
+        width: 75vw;
+        height: auto;
+        position: relative;
+        padding: 2vh;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .product-image {
+        width: 100%;
+        height: auto;
+        max-width: 40vh;
+        margin: 0 auto 2vh auto;
+        object-fit: contain;
     }
     .product-name{
-        position:absolute;
-        top:30vh;
-        left:2vh;
+        font-size: 2.2vh;
+        margin: 1vh 0;
+        position: static;
+        order: 1;
+    }
+    .product-price{
+        font-size: 2vh;
+        margin: 0.5vh 0;
+        position: static;
+        order: 2;
+    }
+    .product-card > div {
+        order: 2;
+        display: flex;
+        gap: 1vh;
+    }
+    .product_sale {
+        font-size: 2vh;
+        position: static;
+    }
+    .product_discount {
+        font-size: 2vh;
+        position: static;
     }
     .cart-buy{
-        position:relative;
-        width:5.5vh;
-        height:5.5vh; 
-        left:33vh;
-        bottom:2.5vh;
+        position: absolute;
+        width: 5.5vh;
+        height: 5.5vh;
+        bottom: 4vh;
+        right: 3vh;
+        margin: 0;
     }
     .buy-button{
         position:relative;
@@ -550,10 +586,22 @@
         top:2.5vh;
         left:1vh;
     }
-    .product-card{
-        width:75vw;
-    }
 
+    .button_read{
+        width:50vw; 
+        border-width:0.25vh;
+    }
+    .button_read img{
+        margin-left:2.5vw;
+    }
+    .button_catalog_drones{
+        width:50vw;
+        border-width:0.25vh;
+    }
+    .button_catalog_drones img{
+        margin-left:2.5vw;
+    }
+    
 }
 
 @media (min-width:768px){

@@ -205,6 +205,11 @@ header{
 }
 
 @media (max-width:768px){
+    .ellipse{
+        width: 200%;
+        height: 70vh;
+        top: 65vh;
+    }
     .technologies{
         position:relative;
         font-size:5vh;
@@ -236,6 +241,7 @@ header{
         width:30vh;
         right:26vh;
         top:6vh;
+        margin-top:6vh;
     }
     .reality{
         position:absolute;
@@ -245,5 +251,14 @@ header{
     }
     .slogan{
         margin-top:2vh;
+    }
+    .white-arrow-div{
+        background-image: url("../../static/icon/arrow_white.svg"); 
+        background-repeat: repeat;
+        background-size:contain;
+        width:2.2vh;
+        height:2.2vh;
+        margin-left:3vh;
+    
     }
 }
