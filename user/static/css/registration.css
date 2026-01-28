@@ -63,3 +63,14 @@ button {
     color: #B62D11;
     text-decoration: none;
 }
+
+.registration-success{
+    position:relative;
+    width: 30.5vw;
+    height: 23vh;
+    background-color: #ffffff;
+    padding: 2vh;
+    padding-left: 1.4vw;
+    border-radius: 1.7vh;
+    margin-bottom: 3vh;
+}

@@ -77,6 +77,11 @@ body{
    height: 32vh;
 }
 
+#user-modal.registration-success iframe {
+    height: 32vh !important;
+    min-height: 32vh !important;
+}
+
 #cart-modal.empty iframe {
     font-size: 2.5vh;
     height: 55vh;

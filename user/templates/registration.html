@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class = "registration">
+        {% if status == 'form' %}
         <form action="" method="post">
                 <div class = "titles">
                     <a href = "/authorization" class="title-authorization2">Авторизація </a>
@@ -55,9 +56,20 @@
             </div>
         </form>
     </div>
-            {% if message %}
-                <p>{{message}}</p>
-            {% endif %}
+    {% if message %}
+        <p>{{message}}</p>
+    {% endif %}
+    {% elif status == 'registration-success' %}
+        <div class="registration-success">
+            <p class="titles">Реєстрація</p>
+            <button class="close-registration-complete" id="close-user">
+                    <img src="{{ url_for('static', filename='/icon/cross.png') }}" alt="">
+            </button>
+            <p class="account-created">Акаунт успішно створено!</p>
+            <button class="visit-website">ПЕРЕЙТИ НА САЙТ</button>
+        </div>
+    {% endif %}
+
      <script src="{{ url_for('static', filename= 'js/eye.js') }}" ></script>
      <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
 </body>

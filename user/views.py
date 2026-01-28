@@ -10,6 +10,7 @@ from .models import User
 @config_page(rule_name= 'registration.html')
 def render_registration() -> dict:
     message = ''
+    status = 'registration-success'
     if flask.request.method == "POST":
         password = flask.request.form["password"]
         confirm_password = flask.request.form["confirm_password"]
@@ -27,12 +28,13 @@ def render_registration() -> dict:
                 DATABASE.session.add(user)
                 DATABASE.session.commit()
                 message = "Успешная регистрация"
+                status = 'registration-success'
             else:
                 message = "Пароли не совпадают"
         else:
             message = "Пользователь с такой почтой уже зарегистрирован"
     
-    return {'message': message}
+    return {"message": message, "status": status}
 
 def render_authorization():
     
