@@ -240,5 +240,8 @@ header, main, footer{
         height: auto;
         right: 6vw;
     } 
+    .nav-header{
+        width:100%
+    }
 
 }

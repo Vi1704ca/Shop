@@ -10,7 +10,7 @@ from .models import User
 @config_page(rule_name= 'registration.html')
 def render_registration() -> dict:
     message = ''
-    status = 'registration-success'
+    status = 'form'
     if flask.request.method == "POST":
         password = flask.request.form["password"]
         confirm_password = flask.request.form["confirm_password"]

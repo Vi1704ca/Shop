@@ -212,22 +212,20 @@ header{
     }
     .technologies{
         position:relative;
-        font-size:5vh;
+        font-size:5.5vh;
         right:1vh;
-        bottom:5vh;
+        bottom:6vh;
     }
     .changing{
         position:relative;
-        font-size:5vh;
-        right:1vh;
-        bottom:3vh;
+        font-size:5.5vh;
+        bottom:4vh;
     }
     .drones{
         position:absolute;
-        width:65vh;
-        height:65vh;
-        top:25vh;
-        right:4vh;
+        width:67.5vh;
+        height:67.5vh;
+        top:22.5vh;
     }
     .catalog_text{
         position:relative;
@@ -245,9 +243,9 @@ header{
     }
     .reality{
         position:absolute;
-       font-size:5vh;
-       left:9%;
-       top:8.5vh;
+        font-size:5.5vh;
+        top:7.5vh;
+        left:5.5vh;
     }
     .slogan{
         margin-top:2vh;

@@ -522,11 +522,28 @@
         margin-left: 0;
     }
     .drone-image{
-        width:35vh;
-        height:35vh;
-        top:-15vh;
-        /* о, имба, спасибо*/
-        left: 1.5vw; 
+        position:relative;
+        width:45vh;
+        height:45vh;
+        left:5vh;
+        bottom:22vh;
+    }
+    .drone-name{
+        position:relative;
+        left:4vh;
+    }
+    .drone-price{
+        position:relative;
+        left:4vh;
+    }
+    .drone-description{
+        position:relative;
+        left:4vh;
+    }
+    .card-drones{
+        margin: 6vh 0vh;
+        width:80vw;
+        height:68vh;
     }
     .card-drones{
         margin-bottom: 10vh;

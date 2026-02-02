@@ -139,12 +139,6 @@ button {
     height: 2.75vw;
 }
 
-.registration-complete .titles {
-    font-family: var(--fontReview);
-    font-weight: 500;
-    color: black;
-}
-
 .password-field {
     position: relative;
     width: 100%;

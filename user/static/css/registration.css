@@ -1,7 +1,10 @@
 .titles {
-    gap: 1.5vw;
-    margin-bottom: 4vh;
-    font-size: 4vh;
+    font-size: 10vw;
+    margin: 0;
+    font-weight: 500;
+    padding: 2vw;
+    margin-left: 3vw;
+    margin-top: 3vw;
 }
 
 label {
@@ -66,11 +69,44 @@ button {
 
 .registration-success{
     position:relative;
-    width: 30.5vw;
-    height: 23vh;
     background-color: #ffffff;
     padding: 2vh;
     padding-left: 1.4vw;
     border-radius: 1.7vh;
     margin-bottom: 3vh;
+}
+
+.registration-complete .titles {
+    font-family: var(--fontReview);
+    font-weight: 500;
+    color: black;
+}
+
+.visit-website {
+    display: flex;
+    position: absolute;
+    font-family: var(--fontReview);
+    font-weight: 500;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 18vh;
+    padding: 0 4vw;
+    font-size: 7vh;
+    margin-left: 4vw;
+    bottom: -70vh;
+}
+
+.account-created {
+    display: flex;
+    position: absolute;
+    font-family: var(--fontReview);
+    font-size: 7vh;
+    color: #9EA0AA;
+    bottom: -35vh;
+    margin-left: 4.8vw;
+
 }
