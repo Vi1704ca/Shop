@@ -4,8 +4,14 @@ import flask_login
 from Project.db import DATABASE
 from Project.config_page import config_page
 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 from .models import User
+
+import os
+import dotenv
 
 @config_page(rule_name= 'registration.html')
 def render_registration() -> dict:
@@ -56,4 +62,45 @@ def logout():
     return flask.redirect("/")    
 
 def render_resetPassword():
+    return flask.render_template("password_reset.html")
+
+
+dotenv.load_dotenv(dotenv_path=os.path.abspath(os.path.join(__file__, "..", "..", ".env")))
+
+def email_password():
+    if flask.request.method == "POST":
+        receiver_email = flask.request.form["email_pass"]
+        print(receiver_email)
+
+        sender_email = os.getenv("SENDER_EMAIL")
+        password = os.getenv("PASSWORD_APP")
+
+        message = MIMEMultipart()
+        message["From"] = f"DronShop Support <{sender_email}>"
+        message["To"] = receiver_email
+        message["Subject"] = os.getenv("SUBJECT")
+
+        body = """
+        Вітаємо!
+
+        Ви отримали це повідомлення, оскільки ми отримали запит на відновлення доступу до вашого облікового запису в магазині DronShop.
+
+        Для встановлення нового пароля перейдіть за посиланням:
+        https://dronshop.example.com/reset-password?token=12345
+
+        Якщо ви не робили цього запиту, просто проігноруйте цей лист.
+        З повагою, команда DronShop.
+        """
+
+        message.attach(MIMEText(body, "plain"))
+
+        try:
+            server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message.as_string())
+            server.quit()
+            print("Лист успішно відправлено!")
+        except Exception as e:
+            print(f"Помилка: {e}")
+    
     return flask.render_template("password_reset.html")

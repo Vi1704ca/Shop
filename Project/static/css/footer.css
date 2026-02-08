@@ -173,6 +173,7 @@ footer {
     .review{
         flex-direction: column;
         gap: 3vh;
+        margin-bottom:70vh;
     }
     .clients-support-text{
         margin:1vh;
@@ -183,7 +184,6 @@ footer {
     .satisfied-clients-text{
         margin:1vh;
     }
-
     .navigation-footer {
         flex-direction: column;
         align-items: center;

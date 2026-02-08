@@ -109,7 +109,7 @@
                 <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                 <h4>{{ product.product_name }}</h4>
                 <p>Кількість: <span class="count-{{product.id}}">{{ count }}</span></p>
-                <!-- <form action="/delete_product_to_cart" method="post">
+                 <form action="/delete_product_to_cart" method="post">
                    <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
                 </form> 
                 <button type = "button" class="delete" id="{{product.id}}">DELETE</button>

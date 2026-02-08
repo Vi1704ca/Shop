@@ -261,3 +261,10 @@ button:hover {
     width: 2vh; 
     height: 2vh;
 }
+
+@media (max-width:768px){
+    .product-card div{
+        flex-direction: column;
+    }
+
+}

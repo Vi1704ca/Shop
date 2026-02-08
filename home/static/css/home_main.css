@@ -531,14 +531,17 @@
     .drone-name{
         position:relative;
         left:4vh;
+        bottom:12.5vh;
     }
     .drone-price{
         position:relative;
         left:4vh;
+        bottom:2.5vh;
     }
     .drone-description{
         position:relative;
         left:4vh;
+        bottom:12.5vh;
     }
     .card-drones{
         margin: 6vh 0vh;
@@ -598,9 +601,8 @@
     }
     .buy-button{
         position:relative;
-        width:14vh;
-        height:5vh;
-        top:2.5vh;
+        width:20vh;
+        height:6.75vh;
         left:1vh;
     }
 

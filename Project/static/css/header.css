@@ -32,6 +32,7 @@
 
 :root{
     --sizeImageProfile: 2.75vh;
+    --sizeImageProfileMedia : 4.2vh;
     --fontTitle: "font";
     --fontParagraph: "fontforp";
     --fontLinks: 'links';
@@ -219,18 +220,29 @@ header, main, footer{
     .links{
         display:none;
     }
+
+    .profile a div{
+        width: var(--sizeImageProfileMedia);
+        height: var(--sizeImageProfileMedia);
+        background-size: var(--sizeImageProfileMedia);
+    }
+    
     .img-profile{
         position:relative;
-        right:9vh;
+        right:6vh; 
+        width:28vw;
     }
     .cart{
         position:relative;
+        right:8vh;
     }
 
-    .VAY{
-        font-size:1.5vh;
-        width:0.005vh;  
-        height:0.005vh;
+    .cart .VAY{ /*  VAY  */
+        margin-left: 2.75vw;
+        bottom: 0.5vh; 
+        font-size:1.5vh; 
+        width:2.5vh;  
+        height:2.5vh;
     }
 
     .burger-menu{
@@ -241,7 +253,18 @@ header, main, footer{
         right: 6vw;
     } 
     .nav-header{
-        width:100%
+        width:100%;
+        top:2.5vh;
+        height:8.5vh;
     }
-
+    .burger-menu img{
+        width:4.5vh;
+        height: 4.5vh; 
+    }
+    .logo img{
+        position:relative;
+        right:2.5vh;
+        width:20vh;
+        height:10.75vh;
+    }
 }

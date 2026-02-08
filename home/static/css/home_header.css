@@ -214,12 +214,12 @@ header{
         position:relative;
         font-size:5.5vh;
         right:1vh;
-        bottom:6vh;
+        bottom:10vh;
     }
     .changing{
         position:relative;
         font-size:5.5vh;
-        bottom:4vh;
+        bottom:6.75vh;
     }
     .drones{
         position:absolute;
@@ -244,11 +244,11 @@ header{
     .reality{
         position:absolute;
         font-size:5.5vh;
-        top:7.5vh;
+        top:7vh;
         left:5.5vh;
     }
     .slogan{
-        margin-top:2vh;
+        margin-top:0.5vh;
     }
     .white-arrow-div{
         background-image: url("../../static/icon/arrow_white.svg"); 
