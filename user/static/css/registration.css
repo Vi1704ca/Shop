@@ -1,5 +1,5 @@
 .titles {
-    font-size: 10vw;
+    font-size: 5vw;
     margin: 0;
     font-weight: 500;
     padding: 2vw;
@@ -28,6 +28,7 @@ input {
 
 .close-registration img {
     margin-bottom: 20vh;
+    padding: 2vw;
 }
 
 .have-account {
@@ -97,16 +98,15 @@ button {
     padding: 0 4vw;
     font-size: 7vh;
     margin-left: 4vw;
-    bottom: -70vh;
+    bottom: -64vh;
 }
 
 .account-created {
     display: flex;
     position: absolute;
     font-family: var(--fontReview);
-    font-size: 7vh;
+    font-size: 7.8vh;
     color: #9EA0AA;
-    bottom: -35vh;
+    bottom: -27.5vh;
     margin-left: 4.8vw;
-
 }

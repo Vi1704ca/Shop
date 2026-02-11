@@ -170,6 +170,18 @@ footer {
 
 
 @media (max-width:768px){
+    footer{
+        height: 70vh;
+    }
+    .ellipse_footer{
+        width: 200%;
+        height: 70vh;
+        bottom: 55vh;
+    }
+    .footer_drones{
+        width: 90vw;
+        bottom: 45vh;
+    }
     .review{
         flex-direction: column;
         gap: 3vh;
@@ -189,6 +201,8 @@ footer {
         align-items: center;
         gap: 10px;
         white-space: nowrap;
+        padding: 5vh;
+        margin-top: 25vh;
    }
 
    .menu-top, .menu-bottom{

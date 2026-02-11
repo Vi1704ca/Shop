@@ -250,7 +250,7 @@ function initParentLogic() {
                 closeUser();
             } else {
                 closeCart();
-                if (frameUser) frameUser.src = "/forgot-password";
+                if (frameUser) frameUser.src = "/authorization";
                 modalUser?.classList.add("active");
             }
         });
