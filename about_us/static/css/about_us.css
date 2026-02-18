@@ -1,4 +1,71 @@
+
+/* 
+
+Файл во владении Ивана 
+
+*/
+
 .about-us-image{
-    width:200vh;
-    height:200vh;
+    position:absolute;
+    width:45vw;
+    height:55vh;
+    left:25%;
+    margin-bottom:20vh;
+    border-radius:2.5%;
+}
+.about-us-title{
+    margin-right:8vh;
+    margin-top: 20vh;
+    margin-bottom: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 7.5vh;         
+    color: hsl(210, 19%, 84%);      
+    text-align: center; 
+    font-family: var(--fontTitle);
+}
+.about-us-first-text{
+    font-family: var(--fontParagraph);
+    font-size:2.25vh;
+}
+.about-us-second-text{
+    font-family: var(--fontParagraph);
+    font-size:2.25vh;
+    margin-bottom:5vh;
+}
+.our-mission{
+    margin-top:77.5vh;
+    font-family:var(--fontParagraph)
+}
+.our-mission-title{
+    position:relative;
+    font-weight: 200;
+    right:50vh;
+    top:15vh;
+    font-size:7.5vh;
+}
+.about-us-third-text{
+    position:relative;
+    right:50vh;
+    top:20vh;
+}
+.about-us-fourth-text{
+    position:relative;
+    right:50vh;
+    top:20vh;
+}
+.about-us-fifth-text{
+    position:relative;
+    right:50vh;
+    top:20vh;
+}
+.our-mission-image{
+    position:relative;
+    width:50vw;
+    height:60vh;
+    left:35vh; 
+    bottom:20vh;
+    border-radius:2.5%;
 }

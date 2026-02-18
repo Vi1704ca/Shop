@@ -1,9 +1,14 @@
 from Project.config_page import config_page
 from shop.models import Product
+from flask import request
 import random
 
 @config_page(rule_name='home.html')
 def render_home():
+    if request.args.get('action') == 'agreement-reset-password':
+        print("Користувач підтвердив скидання даних. 23233")
+    
+
     #products = Product.query.filter_by(type_product='drone').order_by(Product.product_name).all()
     
     #random.shuffle(products)

@@ -171,22 +171,23 @@ footer {
 
 @media (max-width:768px){
     footer{
-        height: 70vh;
+        height: 90vh;
     }
     .ellipse_footer{
         width: 200%;
         height: 70vh;
-        bottom: 55vh;
+        bottom: 45vh;
     }
     .footer_drones{
         width: 90vw;
-        bottom: 45vh;
+        bottom: 34vh;
     }
     .review{
         flex-direction: column;
         gap: 3vh;
-        margin-bottom:70vh;
+        margin-bottom:45vh;
     }
+
     .clients-support-text{
         margin:1vh;
     }
@@ -201,10 +202,11 @@ footer {
         align-items: center;
         gap: 10px;
         white-space: nowrap;
-        padding: 5vh;
-        margin-top: 25vh;
+        margin-top: 50vh;
    }
-
+   .navigation-footer p {
+        font-size: 2.5vh; 
+   }
    .menu-top, .menu-bottom{
         justify-content: center;
    }
@@ -214,3 +216,4 @@ footer {
    }
 }
 
+/*  */

@@ -86,8 +86,7 @@ def email_password():
         Ви отримали це повідомлення, оскільки ми отримали запит на відновлення доступу до вашого облікового запису в магазині DronShop.
 
         Для встановлення нового пароля перейдіть за посиланням:
-        https://dronshop.example.com/reset-password?token=12345
-
+        http://127.0.0.1:8001/agreement-reset-password
         Якщо ви не робили цього запиту, просто проігноруйте цей лист.
         З повагою, команда DronShop.
         """
@@ -104,3 +103,10 @@ def email_password():
             print(f"Помилка: {e}")
     
     return flask.render_template("password_reset.html")
+
+confirm_reset_password = False
+@config_page(rule_name= 'home.html')
+def agreement_reset_password() -> dict:
+    confirm_reset_password = True
+    print("Користувач погодився на скидання пароля")
+    return {"confirm_reset_password": confirm_reset_password}
