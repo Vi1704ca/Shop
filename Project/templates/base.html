@@ -180,7 +180,9 @@
             <div class="navigation-footer">
                 <div class="menu-top">
                     <p class="catalog-footer" id = "catalog">КАТАЛОГ</p>
-                    <p class="about-us-footer">ПРО НАС</p>
+                    <a href="/about-us">
+                        <p class="about-us-footer">ПРО НАС</p>
+                    </a>
                     <p class="contacts-footer">КОНТАКТИ</p>
                 </div>
                 <div class="menu-bottom">
@@ -198,6 +200,7 @@
         <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
         <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
         <script src="{{ url_for('static', filename= 'js/eye.js') }}" ></script>
+        <script src="{{ url_for('home.static', filename= 'js/ConfirmResetPassword.js') }}" ></script>
         {% block scripts %}{% endblock %}
     </body>
 </html>

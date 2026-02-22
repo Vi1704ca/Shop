@@ -6,7 +6,7 @@ import random
 @config_page(rule_name='home.html')
 def render_home():
     if request.args.get('action') == 'agreement-reset-password':
-        print("Користувач підтвердив скидання даних. 23233")
+        print("Користувач підтвердив скидання даних.")
     
 
     #products = Product.query.filter_by(type_product='drone').order_by(Product.product_name).all()

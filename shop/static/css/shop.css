@@ -267,4 +267,7 @@ button:hover {
         flex-direction: column;
     }
 
+    .image-select img{
+        width: 5vh;
+    }
 }

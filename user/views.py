@@ -68,6 +68,9 @@ def render_resetPassword():
 dotenv.load_dotenv(dotenv_path=os.path.abspath(os.path.join(__file__, "..", "..", ".env")))
 
 def email_password():
+
+    confirm = flask.request.args.get('action') == 'agreement-reset-password'
+
     if flask.request.method == "POST":
         receiver_email = flask.request.form["email_pass"]
         print(receiver_email)
@@ -80,13 +83,15 @@ def email_password():
         message["To"] = receiver_email
         message["Subject"] = os.getenv("SUBJECT")
 
-        body = """
+        reset_link = flask.url_for('home.render_home', _external=True) + '?action=agreement-reset-password'
+
+        body = f"""
         Вітаємо!
 
         Ви отримали це повідомлення, оскільки ми отримали запит на відновлення доступу до вашого облікового запису в магазині DronShop.
 
         Для встановлення нового пароля перейдіть за посиланням:
-        http://127.0.0.1:8001/agreement-reset-password
+        {reset_link}
         Якщо ви не робили цього запиту, просто проігноруйте цей лист.
         З повагою, команда DronShop.
         """
@@ -102,11 +107,8 @@ def email_password():
         except Exception as e:
             print(f"Помилка: {e}")
     
-    return flask.render_template("password_reset.html")
+    return flask.render_template("password_reset.html", confirm_reset_password=confirm)
 
-confirm_reset_password = False
-@config_page(rule_name= 'home.html')
-def agreement_reset_password() -> dict:
-    confirm_reset_password = True
-    print("Користувач погодився на скидання пароля")
-    return {"confirm_reset_password": confirm_reset_password}
+# def agreement_reset_password():
+#    print("Користувач перейшов по посиланню скидання пароля")
+#    return flask.redirect(flask.url_for('home.render_home', action='agreement-reset-password'))

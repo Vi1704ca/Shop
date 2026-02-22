@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('contacts.static', filename = 'css/contacts.css') }}"> 
+{% endblock %} 
+{% block content %}
+    <div class="my-contacts">
+        <h2>Наші контакти</h2>
+        <!--тут телефон-->
+        <img src="" alt="">
+        <p>+38 (067) 123-45-67</p>
+        <!--тут Лист-->
+        <img src="" alt="">
+        <p>info@dronex.com.ua</p>
+        <!--тут человет-->
+        <img src="" alt="">
+        <p>вул. Університетська, 22, м. Дніпро, 49000, Україна</p>
+        <!--тут календать-->
+        <img src="" alt="">
+        <p>Пн–Пт: 10:00 — 18:00, Сб–Нд: вихідні</p>
+    </div>
+
+    <div class="reach-us">
+        <h2>Зв’язатися з нами</h2>
+        <p>Ім’я</p>
+        <input class="my-name" type="text" placeholder="Ваше Ім’я" name="My_name">
+        <p>Телефон</p>
+        <input class="my-number" type="number" placeholder="+ 38 0" name="number">
+        <p>E-mail</p>
+        <input class="my-email" type="email" placeholder="Введіть email" name="email">
+        <p>Повідомлення</p>
+        <input class="my-text" type="email" placeholder="Ваше повідомлення" name="text">
+        <button class="send">Надіслати</button>
+    </div>
+
+    <div class="we-soual">
+        <h2>Ми в соцмережах:</h2>
+        <!--тут фейсбук-->
+        <img src="" alt="">
+        <!--тут телеграм-->
+        <img src="" alt="">
+        <!--тут инстограм-->
+        <img src="" alt="">
+    </div>
+{% endblock %}
+<!-- желательно классы не задавай, мне лично удобнее будет самому задать. не заставляю, делай как хоч -->
