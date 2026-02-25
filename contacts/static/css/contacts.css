@@ -1,0 +1,40 @@
+h2{
+    margin-right:8vh;
+    margin-top: 20vh;
+    margin-bottom: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 7.5vh;         
+    color: hsl(210, 19%, 84%);      
+    text-align: center; 
+    font-family: var(--fontTitle);
+}
+h3{
+    font-family:var(--fontParagraph)
+}
+.my-contacts{
+    font-size:3vh;
+    position:absolute;
+    left:7.5vh;
+    margin-top:50vh;
+    margin-bottom:40vh;
+}
+p{
+    color:grey;
+    font-family:var(--fontParagraph)
+}
+.we-on-social-media{
+    position:relative;
+    top:12.5vh;
+    right:87vh;
+    margin-bottom:20vh;
+}
+.social-media{
+    position:relative;
+    display:flex;
+    top:2.5vh;
+    gap:5vh;
+    margin-bottom:5vh;
+}

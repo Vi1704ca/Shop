@@ -1,7 +1,19 @@
+:root{
+    --fontReview: 'review';
+}
+
+@font-face {
+    font-family: 'review';
+    src: url("/static/fonts/GTWalsheimPro-Regular.ttf");
+}
+
+p {
+    font-family: var(--fontReview);
+}
 
 /* 
 
-Файл во владении Ивана 
+Файл во владении Ивана. Уже нет. 
 
 */
 
@@ -69,9 +81,11 @@
     bottom:20vh;
     border-radius:1.5%;
 }
+
 .team-trust{
     font-family:var(--fontParagraph)
 }
+
 .team-trust-image{
     position:absolute;
     width:45vw;
@@ -100,3 +114,4 @@
     bottom:40vh;
     left:42.5vh;
 }
+

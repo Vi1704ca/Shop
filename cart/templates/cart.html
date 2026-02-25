@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css' ) }}">
 </head>
 <body>
@@ -23,8 +22,12 @@
                         <div class="product-{{product.id}}"> 
                             <div class="cart-item">
                                 <div class="product-info">
-                                    <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}"> <!--alt="{{product.product_name}}"-->
-                                
+                                    {% if product.id == 0 %}
+                                        <img class="product-img-1" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}">
+                                    {% else %}
+                                        <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}">
+                                    {% endif %}
+
                                     <div class="text-block">
                                         <h3 class="drone-name">{{ product.product_name }}</h3>
                                         <div class="price-row">

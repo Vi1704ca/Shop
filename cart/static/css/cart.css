@@ -93,12 +93,18 @@ button:hover{
     gap: 2vh;
 }
 
-.product-img {
+.product-img, .product-img-1{
     width: 12vw;
     height: auto;
     background: #F4F4F4;
     border-radius: 1vh;
     padding: 1vh;
+}
+
+.product-img-1 {
+    width: 14vw;
+    height: 13vh;
+    padding: 2.5vh 1vh;
 }
 
 .text-block h3 {
