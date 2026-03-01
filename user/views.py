@@ -38,7 +38,7 @@ def render_registration() -> dict:
             else:
                 message = "Пароли не совпадают"
         else:
-            message = "Пользователь с такой почтой уже зарегистрирован"
+            message = "Користувач із такою електронною поштою вже зареєстрований. Будь ласка, створіть нове ім'я та пароль"
     
     return {"message": message, "status": status}
 

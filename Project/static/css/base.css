@@ -95,6 +95,9 @@ body{
     display:none;
 }
 
+.background-modal.active {
+    display: block;
+}
 
 #cart-modal.empty iframe {
     font-size: 2.5vh;

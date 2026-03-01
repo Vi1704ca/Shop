@@ -2,6 +2,22 @@
     --fontReview: 'review';
 }
 
+/* animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
 @font-face {
     font-family: 'review';
     src: url("/static/fonts/GTWalsheimPro-Regular.ttf");
@@ -24,6 +40,7 @@ p {
     left:25%;
     margin-bottom:20vh;
     border-radius:1.5%;
+    animation: zoomIn 1.5s ease-out forwards;
 }
 .about-us-title{
     margin-right:8vh;
@@ -37,19 +54,23 @@ p {
     color: hsl(210, 19%, 84%);      
     text-align: center; 
     font-family: var(--fontTitle);
+    animation: slideUp 1s ease-out;
 }
 .about-us-first-text{
     font-family: var(--fontParagraph);
     font-size:2.25vh;
+    animation: fadeIn 1.2s ease-out;
 }
 .about-us-second-text{
     font-family: var(--fontParagraph);
     font-size:2.25vh;
     margin-bottom:5vh;
+    animation: fadeIn 1.4s ease-out;
 }
 .our-mission{
     margin-top:77.5vh;
-    font-family:var(--fontParagraph)
+    font-family:var(--fontParagraph);
+    animation: fadeIn 1.6s ease-out;
 }
 .our-mission-title{
     position:relative;
@@ -57,21 +78,25 @@ p {
     right:50vh;
     top:15vh;
     font-size:7.5vh;
+    animation: slideUp 1s ease-out 0.5s forwards;
 }
 .about-us-third-text{
     position:relative;
     right:50vh;
     top:20vh;
+    animation: fadeIn 1.2s ease-out 0.6s forwards;
 }
 .about-us-fourth-text{
     position:relative;
     right:50vh;
     top:20vh;
+    animation: fadeIn 1.3s ease-out 0.7s forwards;
 }
 .about-us-fifth-text{
     position:relative;
     right:50vh;
     top:20vh;
+    animation: fadeIn 1.4s ease-out 0.8s forwards;
 }
 .our-mission-image{
     position:relative;
@@ -80,6 +105,7 @@ p {
     left:35vh; 
     bottom:20vh;
     border-radius:1.5%;
+    animation: zoomIn 1.5s ease-out 0.5s forwards;
 }
 
 .team-trust{
@@ -93,6 +119,7 @@ p {
     right:110vh;
     bottom:20vh;
     border-radius:1.5%;
+    animation: zoomIn 1.5s ease-out 1s forwards;
 }
 .team-trust-title{
     position:relative;
@@ -100,6 +127,7 @@ p {
     top:5vh;
     font-weight:200;
     font-size:7.5vh;
+    animation: slideUp 1s ease-out 1.2s forwards;
 }
 .team-trust-second-title{
     position:relative;
@@ -108,10 +136,12 @@ p {
     font-weight:200;
     font-size:7.5vh;
     margin-bottom:55vh;
+    animation: slideUp 1s ease-out 1.4s forwards;
 }
 .about-us-sixth-text, .about-us-seventh-text, .about-us-eighth-text{
     position:relative;
     bottom:40vh;
     left:42.5vh;
+    animation: fadeIn 1.5s ease-out 1.6s forwards;
 }
 

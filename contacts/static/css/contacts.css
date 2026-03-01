@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'links';
+    src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
+}
+
+
+:root{
+
+    --fontButton: 'links';
+}
+
 h2{
     margin-right:8vh;
     margin-top: 20vh;
@@ -18,8 +29,6 @@ h3{
     font-size:3vh;
     position:absolute;
     left:7.5vh;
-    margin-top:50vh;
-    margin-bottom:40vh;
 }
 p{
     color:grey;
@@ -27,9 +36,8 @@ p{
 }
 .we-on-social-media{
     position:relative;
-    top:12.5vh;
     right:87vh;
-    margin-bottom:20vh;
+    bottom:20vh;
 }
 .social-media{
     position:relative;
@@ -37,4 +45,60 @@ p{
     top:2.5vh;
     gap:5vh;
     margin-bottom:5vh;
+}
+.reach-placeholder{
+    color:black;
+}
+.my-name{
+    width:30vw;
+    height:5vh;
+}
+.my-email{
+    width:30vw;
+    height:5vh;
+}
+.my-number{
+    width:30vw;
+    height:5vh;
+}
+.my-text{
+    max-width:30vw;
+    max-height:15vh;
+    
+}
+.reach-us{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    left:40vh;
+    gap:2vh;
+}
+.reach-us-title{
+    font-size:3.5vh;
+}
+.send{
+    margin-top:2.5vh;
+    font-size: 3.5vh;  
+    font-family: var(--fontButton); /* Не знаешь какой тут шрифт нужен? */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1.5vw;
+    width: 16vw;
+    height: 8vh;
+    border-radius: 5vh;
+    border: 0.2vw solid black;
+    background-color: black;
+    color: white;
+    padding: 1.5vh 3vw 1.5vh 3vw; 
+}
+input {
+    font-size: 2vh;
+    padding: 2vh;
+    margin-bottom: 3vh;
+}
+textarea {
+    font-size: 2vh;
+    padding: 2vh;
+    margin-bottom: 3vh;
 }

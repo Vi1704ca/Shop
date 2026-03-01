@@ -305,3 +305,22 @@ function initParentLogic() {
     
     initInitialState();
 }
+
+//! тут логика фона
+const modal = document.getElementById("user-frame");
+const btnOpen = document.getElementById("open-user");
+const btnClose = document.getElementById("close-user");
+
+btnOpen.addEventListener('click', () => {
+    modal.classList.add("active");
+});
+
+btnClose.addEventListener('click', () => {
+    modal.classList.remove("active");
+})
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+});

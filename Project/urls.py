@@ -1,4 +1,4 @@
-import home, shop, user, cart, about_us, contacts
+import home, shop, user, cart, about_us, contacts, order
 
 home.home.add_url_rule(rule = '/', view_func = home.render_home)
 cart.cart.add_url_rule(rule = '/cart', view_func = cart.render_cart)
@@ -59,3 +59,7 @@ contacts.contacts.add_url_rule(
     methods = ["GET", "POST"]
 )
 
+order.order.add_url_rule(
+    rule = "/order",
+    view_func = order.render_order,
+)
