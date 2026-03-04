@@ -1,12 +1,10 @@
 @font-face {
-    font-family: 'links';
-    src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
+    font-family: "button";
+    src: url("../fonts/GTWalsheimPro-Bold.ttf");
 }
 
-
 :root{
-
-    --fontButton: 'links';
+    --fontButton: 'button';
 }
 
 h2{
@@ -28,7 +26,7 @@ h3{
 .my-contacts{
     font-size:3vh;
     position:absolute;
-    left:7.5vh;
+    left:10vh;
 }
 p{
     color:grey;
@@ -78,8 +76,8 @@ p{
 }
 .send{
     margin-top:2.5vh;
-    font-size: 3.5vh;  
-    font-family: var(--fontButton); /* Не знаешь какой тут шрифт нужен? */
+    font-size: 2.5vh;  
+    font-family: var(--fontButton);
     align-items: center;
     justify-content: center;
     display: flex;
@@ -87,10 +85,11 @@ p{
     width: 16vw;
     height: 8vh;
     border-radius: 5vh;
-    border: 0.2vw solid black;
-    background-color: black;
+    border: 0.2vw solid #0C122A;
+    background-color: #0C122A;
     color: white;
     padding: 1.5vh 3vw 1.5vh 3vw; 
+    letter-spacing: 0.1vw;
 }
 input {
     font-size: 2vh;
@@ -101,4 +100,13 @@ textarea {
     font-size: 2vh;
     padding: 2vh;
     margin-bottom: 3vh;
+}
+.img-contacts{
+    position:relative;
+    right:3.75vh;
+    top:3.25vh;
+}
+.our-contacts-text{
+    position:relative;
+    right:3vh;
 }

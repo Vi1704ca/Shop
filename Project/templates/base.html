@@ -60,7 +60,7 @@
             {% endblock %}
             
         </header>
-        <div class = "background-modal"></div>
+        <div class = "background-modal" style="display: none;"></div>
         <main>       
             {% block content %} {% endblock %}
             
@@ -183,7 +183,9 @@
                     <a href="/about-us">
                         <p class="about-us-footer">ПРО НАС</p>
                     </a>
-                    <p class="contacts-footer">КОНТАКТИ</p>
+                    <a href="/contacts">
+                        <p class="contacts-footer">КОНТАКТИ</p>
+                    </a>
                 </div>
                 <div class="menu-bottom">
                     <p class="cart-footer">КОШИК</p>
@@ -197,7 +199,8 @@
 
         </footer>
 
-        <script src="{{ url_for('static', filename= 'js/ModalWindow.js') }}"> </script>
+        <script src="{{ url_for('static', filename= 'js/ModalWindow_user.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/ModalWindow_cart.js') }}"></script>
         <script src="{{ url_for('shop.static', filename= 'js/addProductIdToCookies.js') }}" ></script>
         <script src="{{ url_for('static', filename= 'js/eye.js') }}" ></script>
         <script src="{{ url_for('home.static', filename= 'js/ConfirmResetPassword.js') }}" ></script>

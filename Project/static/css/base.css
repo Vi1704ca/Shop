@@ -39,13 +39,13 @@ body{
 }
 
 /* user modal styles */
+/* base styles for user modal iframe */
 #user-modal iframe {
+    transition: all 0.3s ease;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 30vw;
-    height: 50vh;
     border: none;
     border-radius: 2vh;
     background: #fff;
@@ -53,6 +53,8 @@ body{
     z-index: 1000;
 }
 
+/* each status explicitly sets its own size (width/height) so
+   adding/removing the class on the parent updates it cleanly */
 #user-modal.authorization iframe {
     width: 30vw;
     height: 50vh;
@@ -65,19 +67,22 @@ body{
 }
 
 #user-modal.forgot-password iframe {
-   height: 35vh;
+    width: 30vw;
+    height: 35vh !important;
 }
 
 #user-modal.new-password iframe {
-   height: 52vh;
-   width: 32vw;
+    width: 32vw !important;
+    height: 52vh !important;
 }
 
 #user-modal.password-reset-success iframe {
-   height: 32vh;
+    width: 30vw;
+    height: 32vh;
 }
 
 #user-modal.registration-success iframe {
+    width: 30vw;
     height: 32vh !important;
     min-height: 32vh !important;
 }
@@ -86,18 +91,15 @@ body{
     position:fixed;
     top:0;
     left:0;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color:rgba(12, 18, 42, 0.7);
     width:100%;
     height:100%;
     z-index:100;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display:none;
 }
 
-.background-modal.active {
-    display: block;
-}
 
 #cart-modal.empty iframe {
     font-size: 2.5vh;

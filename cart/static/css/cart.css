@@ -246,6 +246,7 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 0.2vw;
 }
 
 .move-to-bin {
@@ -321,6 +322,7 @@ button:hover{
     flex-direction: row; 
     margin-left: 60vw;
     margin-top: 3.5vh;
+    letter-spacing: 0.2vw;
 }
 
 .empty-cart-div {

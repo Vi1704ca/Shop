@@ -3,7 +3,7 @@ import Project
 def main():
     try:
         Project.execute()
-        Project.project.run(debug = True, port= 8001)
+        Project.project.run(debug = True, port= 8005)
     except Exception as e:
         print(e)
 
