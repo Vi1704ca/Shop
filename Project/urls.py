@@ -1,4 +1,4 @@
-import home, shop, user, cart, about_us, contacts, order
+import home, shop, user, cart, about_us, contacts, order, cabinet, products
 
 home.home.add_url_rule(rule = '/', view_func = home.render_home)
 cart.cart.add_url_rule(rule = '/cart', view_func = cart.render_cart)
@@ -62,4 +62,20 @@ contacts.contacts.add_url_rule(
 order.order.add_url_rule(
     rule = "/order",
     view_func = order.render_order,
+)
+
+cabinet.cabinet.add_url_rule(
+    rule = "/cabinet",
+    view_func = cabinet.render_cabinet,
+    methods = ["GET", "POST"]
+)
+
+products.products.add_url_rule(
+    rule = "/drone-info",
+    view_func = products.render_drone
+)
+
+products.products.add_url_rule(
+    rule = "/thermalI-info",
+    view_func = products.render_thermalI
 )

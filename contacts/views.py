@@ -14,9 +14,9 @@ def render_contacts():
 
     if flask.request.method == "POST":
 
-        name_user = flask.request.form("name")
-        telephone_user = flask.request.form("number") 
-        email_user = flask.request.form("email")
+        name_user = flask.request.form["name"]
+        telephone_user = flask.request.form.get("number")
+        email_user = flask.request.form["email"]
         user_msg= request.form.get("text")
         sender_email = os.getenv("SENDER_EMAIL")
 

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('products.static', filename = 'css/products.css') }}"> 
+{% endblock %}
+
+{% block content %}
+    <div class = "main-drone">
+        <h1>DJI MINI 4 PRO</h1>
+        <div class = "main-drone-description">
+            <p>100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери,</p>
+            <p>нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване</p>
+            <p>зондування перешкод 0,1-Lux Nightscape, передача відео O4+</p>
+        </div>
+        <img class="main-drone-image" src="{{ url_for('products.static', filename= 'images/main-drone.png') }}" alt="">
+    </div>
+    <div class = "camera-drone-description">
+        <h2>ВОЛОДІЙТЕ КОЖНИМ КУТОМ</h2>
+        <div class="camera-drone-description-text">
+            <div class="camera-drone-description1">
+                <p>Представляємо вдосконалену систему з трьома камерами, де кожен об'єктив має свої</p>
+                <p>переваги, створюючи виняткові зображення - від широких ширококутних пейзажів до</p>
+                <p>детальних телефото-знімків крупним планом. Усі три камери оснащені функцією Dual</p>
+                <p>Native ISO Fusion, яка бездоганно поєднує переваги високих і низьких значень ISO для</p>
+                <p>захоплення приголомшливих деталей, яких неможливо досягти за допомогою традиційних</p>
+                <p>рішень.</p>
+            </div>
+            <div class="camera-drone-description2">
+                <p>Крім того, ви можете розкрити свій творчий потенціал завдяки можливості створення</p>
+                <p>знімків у форматі RAW з високою роздільною здатністю (до 5 кадрів), а також</p>
+                <p>функціям, як «Вільні панорами» та «Фокусування на об'єкті», які доступні на всіх камерах.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "camera-description">
+        <img class="camera-drone-image" src="{{ url_for('products.static', filename= 'images/dronescamera.png') }}" alt="">
+        <h2>ОСНОВНА КАМЕРА 4/3 CMOS HASSELBLAD HASSELBLAD</h2>
+        <div class="camera-description-text">
+            <div class="camera-description1">
+                <p>У ретельно розробленій 4/3 CMOS-камері Hasselblad використовується абсолютно </p>
+                <p>новий 100-мегапіксельний сенсор і відома технологія Hasselblad Natural Color</p>
+                <p>Solution (HNCS), що забезпечує виняткову точність передачі кольору.</p>
+            </div>
+            <div class="camera-description2">
+                <p>Вона створює захоплюючі 100-мегапіксельні зображення з високою деталізацією та</p>
+                <p>чіткістю, пропонуючи безпрецедентну гнучкість у пост-обробці. Конструкція</p>
+                <p>об'єктива була перероблена відповідно до вимог 100-мегапіксельної матриці, що</p>
+                <p>забезпечує неймовірну різкість.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "time-description">
+        <img class="fly-drone-image" src="{{ url_for('products.static', filename= 'images/fly-drone.png') }}" alt="">
+        <h2>51-ХВ ЧАС ПОЛЬОТУ</h2>
+        <div class="fly-description-text">
+            <div class="fly-description1">
+                <p>Аеродинамічний дизайн Mavic 4 Pro, ефективна силова установка та акумуляторна</p>
+                <p>батарея ємністю 95 Вт-год забезпечують тривалість польоту до 51 хвилини,</p>
+                <p>максимальну швидкість до 90 км/год та дальність польоту до 41 км (25,4 милі) [2].</p>
+            </div>
+            <div class="fly-description2">
+                <p>Незалежно від того, чи ви розвідуєте місцевість, відпрацьовуєте маневри, робите</p> 
+                <p>затримки в часі або панорамні фото за допомогою телеоб'єктива, достатня</p> 
+                <p>тривалість польоту дозволяє вам діяти легко і впевнено.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

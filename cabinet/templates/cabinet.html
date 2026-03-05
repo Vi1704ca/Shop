@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('cabinet.static', filename = 'cabinet.css') }}"> 
+{% endblock %} 
+{% block content %}
+    <div class = "navigation">
+        <h2 class = "private-cabinet">ОСОБИСТИЙ КАБІНЕТ</h2>
+
+        <a href="">КОНТАКТНІ ДАНІ</a>
+        <a href="">МОЇ ЗАМОВЛЕННЯ</a>
+        <a href="">АДРЕСА ДОСТАВКИ</a>
+        <hr class = "separator">
+        <a href="/">ВИЙТИ</a>
+    </div>
+
+    <div class = "contacts-info-form">
+        <h3 class = "contacts-info-title">Контактні дані</h3>
+        <form action="" methods = "POST">
+        <p class = "contacts-info-secname">Прізвище</p>
+        <input type="text" placeholder="Ваше Прізвище">
+
+        <p class = "contacts-info-name">По батькові</p>
+        <input type="text" placeholder="По батькові">
+
+        <p class = "contacts-info-birthdate">Дата народження</p>
+        <input type="text" placeholder="DD/MM/YYYY">
+
+        <p class = "contacts-info-telephone">Телефон</p>
+        <input type="text" placeholder="+38 0">
+
+        <p class = "contacts-info-email">E-mail</p>
+        <input type="text" placeholder="Ваш E-mail">
+
+        <button class = "contacts-info-button" type = "submit">Зберегти дані</button>
+        </form>
+    </div>
+{% endblock %} 
