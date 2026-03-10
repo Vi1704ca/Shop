@@ -55,7 +55,6 @@ button:hover {
     cursor: pointer;
 }
 
-
 header{
     height: 100vh;
     background-color: hsl(210, 19%, 84%);
@@ -99,7 +98,6 @@ header{
     height: 3.2vh;
     margin: 55vh 0vw 0vh 64vw;  
 }
-
 
 .catalog_text{
     display: flex;

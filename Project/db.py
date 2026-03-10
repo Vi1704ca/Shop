@@ -7,6 +7,7 @@ project.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///data.db'
 
 project.app_context().push()
 
+
 DATABASE = flask_sqlalchemy.SQLAlchemy(app = project)
 MIGRATE = flask_migrate.Migrate(
     app = project,

@@ -6,6 +6,7 @@ from .login_manager import *
 
 from user.models import User
 from shop.models import Product
+from cabinet.models import Profile 
 
 project.register_blueprint(blueprint= home.home)
 project.register_blueprint(blueprint= shop.shop)

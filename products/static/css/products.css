@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "font";
+    src: url("../fonts/GTWalsheimPro-UltraBold.ttf");
+}
+
+@font-face {
+    font-family: "button";
+    src: url("../fonts/GTWalsheimPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: "fontforp";
+    src: url("../fonts/GTWalsheimPro-Light.ttf");
+}
+
+@font-face {
+    font-family: 'links';
+    src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
+}
+
+@font-face {
+    font-family: 'review';
+    src: url("../fonts/GTWalsheimPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'drones';
+    src: url("../fonts/GTWalsheimPro-UltraLight.ttf");
+}
+
+:root{
+    --fontButton: 'button';
+    --sizeImageDrone: 100vh;
+    --fontTitle: "font";
+    --fontParagraph: "fontforp";
+    --fontLinks: 'links';
+    --fontReview: 'review';
+    --fontDrones: 'drones';
+}
+
+header{
+    height: 100vh;
+    background-color: hsl(210, 19%, 84%);
+    margin-bottom: 200px;
+}
+
+.ellipse{
+    position: absolute;
+    top: 64vh;
+    width: 110%;
+    height: 90vh;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    z-index: 0;
+}
+
+.main-drone h1{
+    font-family: var(--fontReview);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vh;
+    color: #FFFFFF;
+    margin-top: 50vh;
+    letter-spacing: 0.2vw;
+    font-weight: bold;
+}
+
+.main-drone-image{
+    position: absolute;
+    width: var(--sizeImageDrone);
+    height: var(--sizeImageDrone);
+    top: 23vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-drone-description{
+    width: 50vw;
+    height: 3.2vh;
+    display: flex;
+    font-size: 1.8vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}

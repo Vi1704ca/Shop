@@ -43,6 +43,32 @@ main {
     font-family: 'button';
 }
 
+.ellipse_footer{
+    display: none;
+}
+
+.review{
+    display: none;
+}
+
+.review h1{
+    display: none;
+}
+
+.review p{
+    display: none;
+}
+
+.navigation-footer p {
+    display: none;
+}
+
+.footer_drones{
+    width: 291.07vh;
+    height: 51.8vh;
+    display: block
+}
+
 @font-face {
     font-family: 'review';
     src: url("../fonts/GTWalsheimPro-Regular.ttf");

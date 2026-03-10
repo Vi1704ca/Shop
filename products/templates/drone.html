@@ -4,16 +4,33 @@
     <link rel="stylesheet" href="{{ url_for('products.static', filename = 'css/products.css') }}"> 
 {% endblock %}
 
-{% block content %}
+{% block header %}
+    <div class="ellipse"></div>
     <div class = "main-drone">
         <h1>DJI MINI 4 PRO</h1>
         <div class = "main-drone-description">
             <p>100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери,</p>
             <p>нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване</p>
-            <p>зондування перешкод 0,1-Lux Nightscape, передача відео O4+</p>
+            <p>зондування перешкод 0,1-Lux Nightscape, передача відео O4+.</p>
         </div>
         <img class="main-drone-image" src="{{ url_for('products.static', filename= 'images/main-drone.png') }}" alt="">
     </div>
+
+    <div class="main-drone-order">
+        <img class="small-main-drone-image" src="{{ url_for('products.static', filename= 'images/main-drone.png') }}" alt="">
+        <h5>DJI MINI 4 Pro</h5>
+        <div>
+            <p class="price">29 900 ₴</p>
+            <p class="discount">29 900 ₴ </p>
+        </div>
+        <button class =  "cart-buy">
+            <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+        </button>
+        <button class="main-drone-order-button">ЗАМОВИТИ</button>
+    </div>
+{% endblock %}
+
+{% block content %}
     <div class = "camera-drone-description">
         <h2>ВОЛОДІЙТЕ КОЖНИМ КУТОМ</h2>
         <div class="camera-drone-description-text">
@@ -66,5 +83,58 @@
                 <p>тривалість польоту дозволяє вам діяти легко і впевнено.</p>
             </div>
         </div>
+    </div>
+
+    <div class = "memory-description">
+        <h2>ДО 512 ГБ ВБУДОВАНОЇ ПАМ'ЯТІ</h2>
+        <div class="memory-description-text">
+            <div class="memory-description1">
+                <p>Стандартна версія DJI Mavic 4 Pro поставляється з 64 ГБ вбудованої пам'яті [14], тому ви</p>
+                <p>можете відразу ж почати зйомку без зовнішньої карти пам'яті. Mavic 4 Pro 512GB в</p>
+                <p>комплектації Creator Combo має 512 ГБ високошвидкісної вбудованої пам'яті [15],</p>
+            </div>
+            <div class="memory-information">
+                <div class="coding">
+                    <h3>ALL-I 4:2:2</h3>
+                    <p>Кодування</p>
+                </div>
+                <div class="refuge">
+                    <h3>512 GB</h3>
+                    <p>UFS Сховище</p>
+                </div>
+                <div class="storage">
+                    <h3>64 GB</h3>
+                    <p>eMMC Storage</p>
+                </div>
+            </div>
+        </div>
+        <img class="memory-drone-image" src="{{ url_for('products.static', filename= 'images/memory-drone.png') }}" alt="">
+    </div>
+
+    <div class="menu_drones"> 
+        <h1>СХОЖІ ТОВАРИ</h1>
+            <div class = 'products' id="products">
+            {% if list_product %}
+                {% for product in list_product %}
+                    <div class = 'product-card' id = "product-{{product.id}}"> 
+                        <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
+                        <h2 class = 'product-name'>{{product.product_name}}</h2>
+
+                        {% if product.discount != None %}
+                        <div>
+                            <span class = 'product_sale'>{{product.price}} ₴</span>
+                            <span class = 'product_discount'>{{product.discount}} ₴</span>
+                        </div>
+                        {% else %}
+                            <span class = 'product-price'>{{product.price}} ₴</span>
+                        {% endif %}
+                        <button class =  "cart-buy" id="{{product.id}}">
+                            <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <button class="button_catalog_drones"><a href="/shop">ДИВИТИСЬ ВСІ</a><img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}"></button>
     </div>
 {% endblock %}

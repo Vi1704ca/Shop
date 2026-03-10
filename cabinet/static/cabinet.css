@@ -1,5 +1,85 @@
-
-
+.navigation{
+    position:relative;
+    font-family:var(--fontReview);
+    top:28vh;
+}
 .private-cabinet{
+    position:relative;
+    font-size:5vh;
+    right:75vh;
+}
+
+.cabinet-links{
+    margin-top:4.5vh;
+    display:flex;
+    flex-direction: column;
+    gap:4.5vh;
+    position:relative;
+    font-size:2.25vh;
+    right:75vh;
+}
+.cabinet-link{
+    color:rgba(158, 160, 170, 1);
+    font-family: var(--fontReview);
+    letter-spacing: 0.05vw;
+    font-weight: 500; 
+}
+.contacts-info-title{
+    font-family: var(--fontReview);
+    font-size: 4vh; 
+    font-weight: 400; 
+}
+.contacts-info-form{
+    display:flex;
+    flex-direction: column;
+    gap:2.5vh;
+    font-family:var(--fontReview);
+    position:relative;
+    left:35vh;
+    bottom:11vh;
+}
+
+.navigation a:hover {
+    color: rgba(12, 18, 42, 1) 
+} /* когда мне обьясняют то что я уже знаю, ощущаю себя */
+
+#contacts-info{
+    color: rgba(12, 18, 42, 1) 
+}
+
+p{
+    font-size:2.5vh;
+    margin-top:1.5vh;
+    margin-bottom:1vh;
+    font-family: var(--fontReview)
+}
+input{
+    width:37.5vw;
+    height:6vh;
+    border:0.3vh solid #CED0D4;
+    border-radius:0.5vh;
+    padding:1vh 0.75vw;
+    font-family: var(--fontReview);
+    font-size:2.25vh;
+    margin-bottom:1.25vh;
+}
+.contacts-info-button{
     font-family: var(--fontParagraph);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 11vw;
+    height: 5.5vh;
+    border-radius: 5vh;
+    background-color: white;
+    margin-top: 3vh; 
+    border:  0.3vh solid rgba(158, 160, 170, 1) ;
+    color: rgba(158, 160, 170, 1);
+    font-size: 2vh;
+    font-weight:bold;
+}
+
+.separator{
+    color: rgba(205, 213, 221, 1);
+    border:0.1vh solid rgba(205, 213, 221, 1);
 }

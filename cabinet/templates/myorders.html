@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('cabinet.static', filename = 'cabinet.css') }}"> 
+{% endblock %} 
+{% block content %}
+    <div class = "navigation">
+        <h1 class = "private-cabinet">ОСОБИСТИЙ КАБІНЕТ</h2>
+        <div class = "cabinet-links">
+            <a class = "cabinet-link" href="">КОНТАКТНІ ДАНІ</a>
+            <a class = "cabinet-link" href="">МОЇ ЗАМОВЛЕННЯ</a>
+            <a class = "cabinet-link" href="">АДРЕСА ДОСТАВКИ</a>
+            <hr class = "separator">
+            <a class = "cabinet-link" href="/">ВИЙТИ</a>
+        </div>
+    </div>
+    <h1 class = "my-orders">Мої замовлення</h1>
+    <div class = "my-order">
+        <p class = "parcel-count">№30349 від 20.04.2023</p>
+        <p class = "product-registration">Оформлення</p>
+        <p class = "shipment-count">Номер відправлення</p>
+        <p class = "shipment-number">20030040050000</p>
+        <p class = "order-sum">Сума замовлення</p>
+        <p class = "order-sum-number">25 830.00 ₴</p>
+        <img class = "drone-first-img" src="" alt=""> <!--  Дрон  -->
+        <p class = "shipment-count-number">Номер відправлення : 20030040050000</p>
+        <img class = "copy" src="" alt=""> <!--  Копирование  -->
+    </div>
+    <div class = "order-stages">
+        <p class = "issued">Оформлено</p>
+        <img class = "truck-image6" src="" alt=""> <!--  Грузовик  -->
+        <p class = "getting-ready">Збирається</p>
+        <p class = "on-its-way">У дорозі</p>
+        <p class = "delivered">Доставлено</p>
+        <p class = "rejected">Отримано</p>
+    </div>
+    <div class = "info-about-order">
+        <div class = "address">
+            <p class = "order-info-title">Інформація про замовлення</p>
+            <p class = "delivering-address-title">Адреса доставки</p>
+            <p class = "new-post-station">Нова пошта до відділення</p>
+            <p class = "delivering-address">Дніпро, відділення №1 : вул.Маршала</p>
+            <p class = "delivering-address">Малиновського, 114</p>
+        </div>
+        <div class = "recipient">
+            <p class = "recipient-title">Отримувач</p>
+            <p class = "recipient-name">Анастасія Павленко</p>
+            <p class = "recipient-number">+380 99 123 45 68</p>
+        </div>
+        <div class = "order-main-info">
+            <p class = "order-photo">Фото</p>
+            <img class = "drone-second-image" src="" alt=""> <!--  Дрон  -->
+            <p class = "order-name">Назва</p>
+            <p class = "name">DJI Mini 4K</p>
+            <p class = "order-cost">Ціна</p>
+            <p class = "cost">2̶9̶ ̶9̶0̶0̶ ̶₴̶</p>
+            <p class = "cost-w-sale">2̶8̶ ̶9̶8̶5̶ ̶₴̶</p>
+            <p class = "order-amount">Кількість</p>
+            <p class = "amount">1</p>
+            <p class = "order-sum">Сума</p>
+            <p class = "sum">28 985 ₴</p>
+        </div>
+        <div class = "payment">
+            <p class = "order-payment">Оплата</p>
+            <p class = "payment-method">Накладений платіж</p>
+            <p class = "devilering-payment">Доставка</p>
+            <p class = "delivering-payment-method">За умовами перевізника</p>
+            <p class = "general-sum">Загальна сума</p>
+            <p class = "general-sum-number">29 900 ₴</p>
+            <p class = "saved">Заощаджено</p>
+            <p class = "saved-sum">1005 ₴</p>
+            <p class = "together">Разом</p>
+            <p class = "together-number">28 985₴</p>
+            <button class = "decline">Скасувати</button>
+        </div>
+        <div class = "idk">
+            <p class = "parcel-second-count">№30349 від 20.04.2023</p>
+            <p class = "done">Виконано</p>
+            <p class = "shipment-second-count">Номер відправлення</p>
+            <p class = "shipment-second-number">20030040050000</p>
+            <p class = "order-second-sum">Сума замовлення</p>
+            <p class = "order-sum-number">25 830.00 ₴</p>
+            <img class = "thermal-imager" src="" alt=""> <!--  Тепловизор  -->
+            <img class = "thermal-imager" src="" alt=""> <!--  Тепловизор  -->
+        </div>
+    </div>
+{% endblock %}

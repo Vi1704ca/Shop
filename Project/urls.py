@@ -79,3 +79,9 @@ products.products.add_url_rule(
     rule = "/thermalI-info",
     view_func = products.render_thermalI
 )
+
+cabinet.cabinet.add_url_rule(
+    rule = "/cabinet-my-orders", 
+    view_func = cabinet.render_cabinet_myorders,
+    methods = ["GET", "POST"]
+)

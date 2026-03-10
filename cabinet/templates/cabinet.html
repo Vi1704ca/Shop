@@ -1,38 +1,41 @@
-
 {% extends "base.html" %}
 {% block links %}
-    <link rel="stylesheet" href="{{ url_for('cabinet.static', filename = 'cabinet.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('cabinet.static', filename = 'my-order.css') }}"> 
 {% endblock %} 
 {% block content %}
     <div class = "navigation">
-        <h2 class = "private-cabinet">ОСОБИСТИЙ КАБІНЕТ</h2>
-
-        <a href="">КОНТАКТНІ ДАНІ</a>
-        <a href="">МОЇ ЗАМОВЛЕННЯ</a>
-        <a href="">АДРЕСА ДОСТАВКИ</a>
-        <hr class = "separator">
-        <a href="/">ВИЙТИ</a>
+        <h1 class = "private-cabinet">ОСОБИСТИЙ КАБІНЕТ</h2>
+        <div class = "cabinet-links">
+            <a class = "cabinet-link" id = "contacts-info" href="">КОНТАКТНІ ДАНІ</a>
+            <a class = "cabinet-link" href="">МОЇ ЗАМОВЛЕННЯ</a>
+            <a class = "cabinet-link" href="">АДРЕСА ДОСТАВКИ</a>
+            <hr class = "separator">
+            <a class = "cabinet-link" href="/">ВИЙТИ</a>
+        </div>
     </div>
-
     <div class = "contacts-info-form">
         <h3 class = "contacts-info-title">Контактні дані</h3>
-        <form action="" methods = "POST">
+        <form action="" methods = "post">
+
         <p class = "contacts-info-secname">Прізвище</p>
-        <input type="text" placeholder="Ваше Прізвище">
+        <input type="text" placeholder="Ваше Прізвище" name = "last_name">
+
+        <p class = "contacts-info-secname">Ім'я</p>
+        <input type="text" placeholder="Ваше Ім'я" name = "first_name">
 
         <p class = "contacts-info-name">По батькові</p>
-        <input type="text" placeholder="По батькові">
+        <input type="text" placeholder="По батькові" name = "middle_name">
 
         <p class = "contacts-info-birthdate">Дата народження</p>
-        <input type="text" placeholder="DD/MM/YYYY">
+        <input type="date" placeholder="DD/MM/YYYY" name = "birth_date">
 
         <p class = "contacts-info-telephone">Телефон</p>
-        <input type="text" placeholder="+38 0">
+        <input type="tel" placeholder="+38 0" name = "phone_number" required>
 
         <p class = "contacts-info-email">E-mail</p>
-        <input type="text" placeholder="Ваш E-mail">
+        <input type="email" placeholder="Ваш E-mail" name = "email" required>
 
-        <button class = "contacts-info-button" type = "submit">Зберегти дані</button>
+        <button class = "contacts-info-button" type = "submit">ЗБЕРЕГТИ ЗМІНИ</button>
         </form>
     </div>
-{% endblock %} 
+{% endblock %}

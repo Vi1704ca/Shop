@@ -8,13 +8,10 @@
     <link rel="stylesheet" href="{{ url_for('shop.static', filename= 'css/shop.css') }}">
 {% endblock %}
 
-
 {% block content %}
     <h1 class="catalog">КАТАЛОГ</h1>
-    <!-- Якщо користувач є адміном то він може додавати новий продукт до БД -->
     {% if current_user.is_admin %}
         <div>
-            <!-- форма створення нового товару -->
             <form action="/shop?type=add" method="post" enctype="multipart/form-data">
                 <input type="text" name="product_name" placeholder="">
                 <input type="number" name="price" placeholder="">
@@ -31,27 +28,6 @@
             {% endif %}
         </div>
     {% endif %}
-    <!-- Фільтрування по типу продукта -->
-    <!-- <form action="/shop?type=filter" method="post">
-        <select name="type_product" id="">
-            <option value="all">Всі</option>
-            {% for type in list_types %}
-                <option value="{{ type }}">{{ type }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Фільтрувати</button>
-    </form>     -->
-
-    
-    <!-- <select name="type_product" id="select">
-        <option value="all">Всі</option>
-        {% for type in list_types %}
-            <option value="{{ type }}">{{ type }}</option>
-        {% endfor %}
-    </select> 
-    <button id="filter" type="button">Фільтрувати</button>-->
-    <!-- Відображення продукту і його зображення  -->
-
 
     <div class = "sorting">
         <button class = "all-select" data-type="all">Всі</button>
@@ -67,11 +43,9 @@
         </button>
     </div>
 
-    <!-- ТУТ ПИШЕТ МАСТЕР ЦСС, или же просто Иван -->
     <div class = 'products' id="products">
         {% if list_product %}
             {% for product in list_product %}
-            <!--  <div id="product-1">  -->
                 <div class = 'product-card' id = "product-{{product.id}}"> 
                     <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                     <p class = 'product_name'>{{product.product_name}}</p>
@@ -87,14 +61,8 @@
                     <button class =  "cart-buy" id="{{product.id}}">
                         <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
                     </button>
-                    <!-- <p>Кількість продукту: {{product.count}}</p> -->
-                    <!-- <p>Опис продукту: {{product.description}}</p>  -->
-                    
-                    <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
-                    <!-- <button type="button" class="buy" id="{{product.id}}">Купити</button>-->
     
                     {% if current_user.is_admin %}  
-                        <!-- <a href="/delete_product?id={{product.id}}">DELETE</a> -->
                         <button type="button" id="delete" value="{{product.id}}">Видалити</button>
                     {% endif %}
                 </div>
