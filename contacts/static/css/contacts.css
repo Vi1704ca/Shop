@@ -3,11 +3,11 @@
     src: url("../fonts/GTWalsheimPro-Bold.ttf");
 }
 
-:root{
+:root {
     --fontButton: 'button';
 }
 
-h2{
+h2 {
     margin-right:8vh;
     margin-top: 20vh;
     margin-bottom: 7.5vh;
@@ -20,69 +20,69 @@ h2{
     text-align: center; 
     font-family: var(--fontTitle);
 }
-h3{
-    font-family:var(--fontParagraph)
+
+h3 {
+    font-family:var(--fontParagraph);
+    font-size: 3vh;         
 }
-.my-contacts{
+
+.our-contacts-text{
+    font-size: 3.5vh; 
+    margin-bottom: 3.5vh;
+}
+
+.my-contacts {
     font-size:3vh;
     position:absolute;
     left:10vh;
 }
-p{
+
+p {
     color:grey;
     font-family:var(--fontParagraph)
 }
-.we-on-social-media{
+
+.we-on-social-media {
     position:relative;
-    right:87vh;
-    bottom:20vh;
+    top: 7vh;
+    right: 1.5vw;
+    font-size: 2.5vh;   
 }
-.social-media{
+
+.social-media {
     position:relative;
     display:flex;
     top:2.5vh;
     gap:5vh;
     margin-bottom:5vh;
 }
-.reach-placeholder{
+
+.reach-placeholder {
     color:black;
 }
-.my-name{
-    width:30vw;
-    height:5vh;
-}
-.my-email{
-    width:30vw;
-    height:5vh;
-}
-.my-number{
-    width:30vw;
-    height:5vh;
-}
-.my-text{
-    max-width:30vw;
-    max-height:15vh;
-    
-}
-.reach-us{
+
+.reach-us {
     display:flex;
     flex-direction: column;
     position:relative;
     left:40vh;
     gap:2vh;
 }
-.reach-us-title{
+
+.reach-us-title {
     font-size:3.5vh;
+    margin-bottom: 3vh;
 }
-.send{
+
+.send {
     margin-top:2.5vh;
-    font-size: 2.5vh;  
+    font-size: 2.2vh;  
     font-family: var(--fontButton);
     align-items: center;
     justify-content: center;
     display: flex;
     gap: 1.5vw;
-    width: 16vw;
+    width: 13vw;
     height: 8vh;
     border-radius: 5vh;
     border: 0.2vw solid #0C122A;
@@ -90,23 +90,61 @@ p{
     color: white;
     padding: 1.5vh 3vw 1.5vh 3vw; 
     letter-spacing: 0.1vw;
+    cursor: pointer;
 }
+
 input {
     font-size: 2vh;
     padding: 2vh;
     margin-bottom: 3vh;
+    width: 40vw;
+    height: 5.5vh;
+    border-radius: 0.5vh;
+    border: 0.3vh solid rgba(206, 208, 212, 1);
 }
-textarea {
-    font-size: 2vh;
-    padding: 2vh;
+
+input:focus {
+    outline: none;
+}
+
+.my-text {
+    font-size: 2.2vh;
+    padding: 1.5vh 2vh;
     margin-bottom: 3vh;
+    border-radius: 0.5vh;
+    border: 0.3vh solid rgba(206, 208, 212, 1);
+    width: 40vw;
+    height: 12vh;
+    color: rgba(12, 18, 42, 1);
+    font-family: var(--fontParagraph);
 }
+
+.my-text::placeholder {
+    color: rgba(12, 18, 42, 1);
+    opacity: 1;
+    font-weight: bold;
+}
+
+form p {
+    font-size: 2.3vh;
+    margin-bottom: 1vh;
+    font-family:var(--fontParagraph);
+}
+
 .img-contacts{
     position:relative;
     right:3.75vh;
     top:3.25vh;
+    width: 3.5vh;
+    height: 3.5vh;
 }
 .our-contacts-text{
     position:relative;
     right:3vh;
+}
+
+.social-media img{
+    width: 3.5vh;
+    height: 3.5vh;
+    cursor: pointer;
 }

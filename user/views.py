@@ -43,19 +43,19 @@ def render_registration() -> dict:
     return {"message": message, "status": status}
 
 def render_authorization():
-    
     if flask.request.method == "POST":
-        username_form = flask.request.form["username"]
+        email_form = flask.request.form["email"]
         password_form = flask.request.form["password"]
 
-        list_users = User.query.all()
-        for user in list_users:
-            if user.username == username_form and user.password == password_form:
-                flask_login.login_user(user)
-    if not flask_login.current_user.is_authenticated:
-        return flask.render_template("authorization.html")
-    else:
-        return flask.redirect("/")
+        user = User.query.filter_by(email=email_form).first()
+
+        if user and user.password == password_form:
+            flask_login.login_user(user)
+            return "success"
+
+        return "error"
+
+    return flask.render_template("authorization.html")
 
 def logout():
     flask.session.clear()

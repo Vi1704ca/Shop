@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// --- ВНУТРИ IFRAME ---
 function initIframeLogic() {
     const sendEmailBtn = document.querySelector('.send_email');
     const savePasswordBtn = document.querySelector('.save_password');
@@ -32,7 +31,6 @@ function initIframeLogic() {
     const passwordResetFinalBlock = document.querySelector('.password_reset_final');
     const authorizationBlock = document.querySelector('.authorization');
     
-    // История для кнопки назад
     let historyStack = ['authorization'];
     let currentStatus = 'authorization';
     
@@ -68,7 +66,6 @@ function initIframeLogic() {
         }
     }
     
-    // Обработчик кнопки "Назад"
     if (backBtn) {
         backBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -76,12 +73,9 @@ function initIframeLogic() {
             console.log('Назад. Текущий статус:', currentStatus, 'History:', historyStack);
             
             if (historyStack.length > 1) {
-                // Убираем текущий статус
                 historyStack.pop();
-                // Берем предыдущий
                 const previousStatus = historyStack[historyStack.length - 1];
                 
-                // Показываем соответствующий блок
                 switch(previousStatus) {
                     case 'authorization':
                         showBlock(authorizationBlock, 'authorization', false);
@@ -96,7 +90,6 @@ function initIframeLogic() {
                         showBlock(passwordResetFinalBlock, 'password-reset-success', false);
                         break;
                     case 'registration':
-                        // Если есть блок регистрации
                         const registrationBlock = document.querySelector('.registration');
                         if (registrationBlock) {
                             showBlock(registrationBlock, 'registration', false);
@@ -106,14 +99,12 @@ function initIframeLogic() {
                         showBlock(authorizationBlock, 'authorization', false);
                 }
             } else {
-                // Если в истории только один элемент - закрываем окно
                 console.log('Закрываем окно');
                 notifyCloseUser();
             }
         });
     }
     
-    // Обработчик "Забыли пароль?"
     if (forgotLink) {
         forgotLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -137,7 +128,6 @@ function initIframeLogic() {
         });
     }
     
-    // Обработчик для кнопок cancel (кроме user-back)
     cancelBtns.forEach(btn => {
         if (btn.id !== 'user-back') {
             btn.addEventListener('click', (e) => {
@@ -169,7 +159,6 @@ function initIframeLogic() {
         loginFinalBtn.addEventListener('click', notifyCloseUser);
     }
     
-    // Определяем начальный статус из URL
     const url = window.location.pathname;
     if (url.includes('forgot-password')) {
         showBlock(passwordResetBlock, 'forgot-password');
@@ -258,9 +247,37 @@ function initIframeLogic() {
     sendInitialStatus();
     sendCartStatus();
     document.addEventListener("cart-updated", sendCartStatus);
+
+    const loginForm = document.querySelector('.authorization form');
+    
+    if (loginForm) {
+        loginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+        
+            const formData = new FormData(loginForm);
+        
+            try {
+                const response = await fetch("/authorization", {
+                    method: "POST",
+                    body: formData
+                });
+            
+                const result = await response.text();
+            
+                if (result.trim() === "success") {
+                    notifyCloseUser();       
+                    window.location.reload();
+                } else {
+                    console.log("Ошибка авторизации");
+                }
+            
+            } catch (error) {
+                console.error("Ошибка запроса:", error);
+            }
+        });
+    }
 }
 
-// --- СНАРУЖИ (РОДИТЕЛЬ) ---
 function initParentLogic() {
     const modalCart = document.getElementById("cart-modal");
     const frameCart = document.getElementById("cart-frame");
@@ -368,6 +385,9 @@ function initParentLogic() {
         switch (data.type) {
             case "close-user":
                 closeUser();
+                break;
+            case "authorization-success":
+                window.location.reload();
                 break;
                 
             case "close-cart":

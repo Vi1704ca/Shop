@@ -4,21 +4,33 @@
 {% endblock %} 
 {% block content %}
     <h2>КОНТАКТИ</h2>
-    <div class="my-contacts">
-        <h3 class = "our-contacts-text">Наші контакти</h3>
-        <div class = "our-contacts">
-        <!-- тут человет -->
-        <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/phone.svg') }}" alt=""> 
-        <p>+38 (067) 123-45-67</p>
-        <!-- тут человет -->
-        <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/mail.svg') }}" alt="">
-        <p>info@dronex.com.ua</p>
-        <!-- тут человет-->
-        <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/address.svg') }}" alt="">
-        <p>вул. Університетська, 22, м. Дніпро, 49000, Україна</p>
-        <!-- тут человет -->
-        <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/calendar.svg') }}" alt="">
-        <p>Пн–Пт: 10:00 — 18:00, Сб–Нд: вихідні</p>
+    <div class="contacts-container">
+        <div class="my-contacts">
+            <h3 class = "our-contacts-text">Наші контакти</h3>
+            <div class = "our-contacts">
+            <!-- тут человет -->
+            <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/phone.svg') }}" alt=""> 
+            <p>+38 (067) 123-45-67</p>
+            <!-- тут человет -->
+            <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/mail.svg') }}" alt="">
+            <p>info@dronex.com.ua</p>
+            <!-- тут человет-->
+            <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/address.svg') }}" alt="">
+            <p>вул. Університетська, 22, м. Дніпро, 49000, Україна</p>
+            <!-- тут человет -->
+            <img class = "img-contacts" src="{{ url_for('contacts.static', filename='icon/calendar.svg') }}" alt="">
+            <p>Пн–Пт: 10:00 — 18:00, Сб–Нд: вихідні</p>
+        </div>
+        <div class="we-on-social-media">
+            <h3>Ми в соцмережах:</h3>
+            <div class = "social-media">
+                <!-- тут человет -->
+                <img src="{{ url_for('contacts.static', filename='icon/facebook.svg') }}" alt="">
+                <!-- тут человет -->
+                <img src="{{ url_for('contacts.static', filename='icon/telegram.svg') }}" alt="">
+                <!-- тут человет -->
+                <img src="{{ url_for('contacts.static', filename='icon/instagram.svg') }}" alt="">
+            </div>
         </div>
     </div>
 
@@ -32,20 +44,9 @@
             <p class = "reach-placeholder">E-mail</p>
             <input class="my-email" type="email" placeholder="Введіть email" name="email">
             <p class = "reach-placeholder">Повідомлення</p>
-            <textarea class="my-text" placeholder="Bаше повідомлення" name="text"></textarea>
+            <textarea class="my-text" placeholder="Ваше повідомлення" name="text"></textarea>
             <button class="send" type = "submit">НАДІСЛАТИ</button>
         </form>
     </div>
-
-    <div class="we-on-social-media">
-        <h3>Ми в соцмережах:</h3>
-        <div class = "social-media">
-        <!-- тут человет -->
-        <img src="{{ url_for('contacts.static', filename='icon/facebook.svg') }}" alt="">
-        <!-- тут человет -->
-        <img src="{{ url_for('contacts.static', filename='icon/telegram.svg') }}" alt="">
-        <!-- тут человет -->
-        <img src="{{ url_for('contacts.static', filename='icon/instagram.svg') }}" alt="">
-        </div>
-    </div>
+    
 {% endblock %}

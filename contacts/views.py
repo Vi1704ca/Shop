@@ -18,12 +18,11 @@ def render_contacts():
         telephone_user = flask.request.form.get("number")
         email_user = flask.request.form["email"]
         user_msg= request.form.get("text")
-        sender_email = os.getenv("SENDER_EMAIL")
 
-        message = f"Ім'я : {name_user}, Номер : {telephone_user}, Email : {email_user}, Текст : {user_msg}"
+        message = f"Ім'я користувача : {name_user},\n Номер телефону : {telephone_user},\n Електронна пошта : {email_user},\n Повідомлення : {user_msg}"
       
         msg = MIMEText(message)
-        msg["Subject"] = "Повідомлення"
+        msg["Subject"] = "Повідомлення від користувача"
         msg["From"] = email_user 
         msg["To"] = os.getenv("SENDER_EMAIL") 
         msg["Reply-To"] = email_user
@@ -31,6 +30,6 @@ def render_contacts():
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server :
             server.login(os.getenv("SENDER_EMAIL"), os.getenv("PASSWORD_APP") )
             server.send_message(msg)
-        return "Повідомлення відправлене."
+            # тут робити повідомлення про успішну відправку
     return flask.render_template(template_name_or_list="contacts.html")
 
