@@ -63,10 +63,12 @@ main {
     display: none;
 }
 
-.footer_drones{
-    width: 291.07vh;
-    height: 51.8vh;
-    display: block
+footer .footer_drones {
+    background-image: url("../icon/Drones.png");
+    background-repeat: no-repeat;
+    background-position: center;    
+    background-size: contain;
+    
 }
 
 @font-face {

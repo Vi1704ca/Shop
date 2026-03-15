@@ -1,0 +1,38 @@
+.navigation{
+    margin-top: 25vh;
+    position:relative;
+    font-family:var(--fontReview);
+}
+.cabinet-links{
+    margin-top:4.5vh;
+    display:flex;
+    flex-direction: column;
+    gap:4.5vh;
+    position:relative;
+    font-size:2.25vh;
+    right:75vh;
+}
+.private-cabinet{
+    position:relative;
+    font-size:5vh;
+    right:75vh;
+}
+p{
+    font-family: var(--fontReview);
+    font-size:2.5vh;
+}
+.address-order-button{
+    font-family: var(--fontParagraph);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 11vw;
+    height: 5.5vh;
+    border-radius: 5vh;
+    background-color: white;
+    margin-top: 3vh; 
+    border:  0.3vh solid rgba(158, 160, 170, 1) ;
+    color: rgba(158, 160, 170, 1);
+    font-size: 2vh;
+    font-weight:bold;
+}

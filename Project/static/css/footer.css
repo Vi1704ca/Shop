@@ -17,6 +17,11 @@
     color:#BAC2CB; 
     z-index: -2;
     user-select: none;
+    background-image: url(" ../../home/static/icon/text_drones.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 20vh;
 }
 
 .navigation-footer{

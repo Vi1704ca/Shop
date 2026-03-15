@@ -3,7 +3,7 @@ from .models import Profile
 from Project.db import DATABASE
 
 def render_cabinet():
-    if flask.request.method == "GET":
+    if flask.request.method == "POST":
         last_name = flask.request.form.get("last_name")
         first_name = flask.request.form.get("first_name")
         middle_name = flask.request.form.get("middle_name")
@@ -26,3 +26,5 @@ def render_cabinet():
 
 def render_cabinet_myorders():
     return flask.render_template(template_name_or_list="myorders.html")
+def render_cabinet_address_order():
+    return flask.render_template(template_name_or_list="address-order.html")

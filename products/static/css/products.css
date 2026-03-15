@@ -39,9 +39,8 @@
 }
 
 header{
-    height: 100vh;
+    height: 92vh;
     background-color: hsl(210, 19%, 84%);
-    margin-bottom: 200px;
 }
 
 .ellipse{
@@ -54,6 +53,117 @@ header{
     z-index: 0;
 }
 
+.main-drone-order {
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    background-color: #FFFFFF;
+    border-radius: 1.3vh;
+    padding: 0.7vw;
+    width: 15vw;
+    height: 18vh;
+    top: 26.7vh;
+    left: 33vw;
+}
+
+.main-drone-order-description {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    gap: 0.7vw;
+}
+
+.small-main-drone-description {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1vh;
+}
+
+.small-main-drone-description h5 {
+    font-family: var(--fontReview);
+    font-size: 1.8vh;
+    color: #0C122A;
+    font-weight: 500;
+    margin-top: 0.9vh;
+    letter-spacing: 0.07vw;
+}
+
+.small-main-drone-image {
+    width: 4vw;
+    height: 8vh;
+}
+
+.small-drone-price {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-family: var(--fontParagraph);
+    font-size: 1.7vh;
+}
+
+.price {
+    text-decoration: line-through;
+    color: #000000;
+    font-weight: 600;
+}
+
+.discount {
+    color: #B62D11;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-drone-order-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.cart-buy {
+    display: flex;
+    width: 2.75vw;
+    height: 5.5vh;
+    background-color: transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.1vw solid #0C122A;  
+    padding: 1vw;
+    margin-top: 1.5vh; 
+    margin-left: 0.5vw;
+}
+
+.img-cart {
+    position: relative;
+    object-fit: contain; 
+    width: 2vh; 
+    height: 2vh;
+}
+
+.main-drone-order-button {
+    font-family: var(--fontReview);
+    height: 5vh;
+    width: 9vw;
+    border-radius: 5vh;
+    font-size: 1.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1vw;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+    margin-top: 1.75vh;
+}
+
+.arrow {
+    width: 1.3vh;
+    margin-left: 0.5vw;
+}
+
 .main-drone h1{
     font-family: var(--fontReview);
     display: flex;
@@ -61,7 +171,7 @@ header{
     align-items: center;
     font-size: 6vh;
     color: #FFFFFF;
-    margin-top: 50vh;
+    margin-top: -8vh;
     letter-spacing: 0.2vw;
     font-weight: bold;
 }
@@ -73,17 +183,276 @@ header{
     top: 23vh;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .main-drone-description{
     width: 50vw;
     height: 3.2vh;
     display: flex;
-    font-size: 1.8vh; 
+    font-size: 1.7vh; 
     color: #0C122A;
     font-family: var(--fontParagraph);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 4vh;
+    font-weight: 500;
+}
+
+.camera-drone-description {
+    margin-top: 12vh;
+}
+
+.camera-drone-description h2 {
+    font-family: var(--fontReview);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+}
+
+.camera-drone-description-text {
+    margin-bottom: 8vh;
+}
+
+.camera-drone-description1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    margin-top: 6vh;
+    letter-spacing: 3%;
+    line-height: 100%;
+}
+
+.camera-drone-description2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    margin-top: 7vh;
+    letter-spacing: 3%;
+    line-height: 100%;
+}
+
+.camera-drone-image {
+    width: 50vw;
+    height: 60vh;
+}
+
+.camera-description {
+    margin-top: 14vh;
+}
+
+.camera-description h2 {
+    font-family: var(--fontReview);
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+    right: 13vw;
+    bottom: 38vh
+}
+
+.camera-description1 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    margin-top: 4.5vh;
+    right: 13vw;
+    bottom: 38vh
+}
+
+.camera-description2 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    margin-top: 4vh;
+    right: 13vw;
+    bottom: 38vh
+}
+
+.drones-camera-image {
+    position: relative;
+    width: 30vw;
+    height: 47vh;
+    border-radius: 1vh;
+    left: 25vw;
+}
+
+.time-description {
+    margin-top: -10vh;
+}
+
+.time-description h2 {
+    font-family: var(--fontReview);
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+    left: 25.4vw;
+    bottom: 35vh
+}
+
+.fly-description1 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    margin-top: 4.5vh;
+    left: 25.4vw;
+    bottom: 36.5vh
+}
+
+.fly-description2 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    margin-top: 4.5vh;
+    left: 25.4vw;
+    bottom: 36.5vh
+}
+
+.fly-drone-image {
+    position: relative;
+    width: 30vw;
+    height: 47vh;
+    border-radius: 1vh;
+    right: 6vw;
+}
+
+.memory-description {
+    margin-top: -4vh;
+}
+
+.memory-description h2{
+    font-family: var(--fontReview);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+}
+
+.memory-description {
+    width: 50vw;
+    height: 3.2vh;
+    display: flex;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+    font-weight: 500;
+}
+
+.memory-information{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
     margin-top: 5vh;
+    flex-direction: row;
+}
+
+.memory-information h3{
+    font-family: var(--fontButton);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.8vh;
+    color: #6D717F;
+    letter-spacing: 0.1vw;
+    font-weight: 600;
+}
+
+.memory-information p{
+    display: flex;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-top: 1.5vh;
+}
+
+.memory-drone-image {
+    display: flex;
+    position: relative;
+    width: 50vw;
+    height: 60vh;
+    border-radius: 1vh;
+    padding: 0;
+    margin: 0;
 }

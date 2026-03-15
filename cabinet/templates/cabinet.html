@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block links %}
-    <link rel="stylesheet" href="{{ url_for('cabinet.static', filename = 'my-order.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('cabinet.static', filename = 'cabinet.css') }}"> 
 {% endblock %} 
 {% block content %}
     <div class = "navigation">
         <h1 class = "private-cabinet">ОСОБИСТИЙ КАБІНЕТ</h2>
         <div class = "cabinet-links">
             <a class = "cabinet-link" id = "contacts-info" href="">КОНТАКТНІ ДАНІ</a>
-            <a class = "cabinet-link" href="">МОЇ ЗАМОВЛЕННЯ</a>
-            <a class = "cabinet-link" href="">АДРЕСА ДОСТАВКИ</a>
+            <a class = "cabinet-link" href="/cabinet-my-orders">МОЇ ЗАМОВЛЕННЯ</a>
+            <a class = "cabinet-link" href="/address-orders">АДРЕСА ДОСТАВКИ</a>
             <hr class = "separator">
             <a class = "cabinet-link" href="/">ВИЙТИ</a>
         </div>

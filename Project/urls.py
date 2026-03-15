@@ -60,8 +60,8 @@ contacts.contacts.add_url_rule(
 )
 
 order.order.add_url_rule(
-    rule = "/order",
-    view_func = order.render_order,
+    rule = "/success",
+    view_func = order.render_success,
 )
 
 cabinet.cabinet.add_url_rule(
@@ -84,4 +84,13 @@ cabinet.cabinet.add_url_rule(
     rule = "/cabinet-my-orders", 
     view_func = cabinet.render_cabinet_myorders,
     methods = ["GET", "POST"]
+)
+cabinet.cabinet.add_url_rule(
+    rule = "/address-orders",
+    view_func = cabinet.render_cabinet_address_order 
+)
+
+order.order.add_url_rule(
+    rule = "/products-orders",
+    view_func = order.render_order
 )
