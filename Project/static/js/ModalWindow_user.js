@@ -9,7 +9,7 @@ const USER_STATUSES = [
 
 document.addEventListener("DOMContentLoaded", function () {
     const isIframe = window.self !== window.top;
-    
+
     if (isIframe) {
         initIframeLogic();
     } else {
@@ -21,6 +21,7 @@ function initIframeLogic() {
     const sendEmailBtn = document.querySelector('.send_email');
     const savePasswordBtn = document.querySelector('.save_password');
     const loginFinalBtn = document.querySelector('.save_password_final');
+    const visitWebsiteBtn = document.querySelector('.visit-website');
     const cancelBtns = document.querySelectorAll('.cancel');
     const closeBtns = document.querySelectorAll('#close-user, #close-cart');
     const backBtn = document.getElementById('user-back');
@@ -47,7 +48,14 @@ function initIframeLogic() {
     }
     
     function hideAllBlocks() {
-        const blocks = [passwordResetBlock, newPasswordBlock, passwordResetFinalBlock, authorizationBlock];
+        const blocks = [
+            passwordResetBlock, 
+            newPasswordBlock, 
+            passwordResetFinalBlock, 
+            authorizationBlock,
+            document.querySelector('.registration'),
+            document.querySelector('.registration-success')
+        ];
         blocks.forEach(block => {
             if (block) block.style.display = 'none';
         });
@@ -55,27 +63,104 @@ function initIframeLogic() {
     
     function showBlock(block, status, addToHistory = true) {
         hideAllBlocks();
-        if (block) {
-            block.style.display = 'block';
-            currentStatus = status;
-            if (addToHistory) {
-                historyStack.push(status);
-                console.log('History:', historyStack);
+        
+        if (status === 'registration-success') {
+            const registrationBlock = document.querySelector('.registration');
+            if (registrationBlock) {
+                registrationBlock.style.display = 'block';
             }
-            notifyParentStatus(status);
+        } else if (block) {
+            block.style.display = 'block';
+        }
+        
+        currentStatus = status;
+        if (addToHistory) {
+            historyStack.push(status);
+            console.log('History:', historyStack);
+        }
+        notifyParentStatus(status);
+    }
+    
+    const currentUrl = window.location.href;
+    
+    function determineAndShowInitialBlock() {
+        const successBlock = document.querySelector('.registration-success');
+
+        if (successBlock) {
+            const registrationBlock = document.querySelector('.registration');
+            if (registrationBlock) {
+                showBlock(registrationBlock, 'registration-success');
+                historyStack = ['authorization', 'registration', 'registration-success'];
+                return;
+            }
+        }
+
+        if (currentUrl.includes('agreement-reset-password')) {
+            showBlock(newPasswordBlock, 'new-password');
+            historyStack = ['forgot-password', 'new-password'];
+        } else if (currentUrl.includes('forgot-password')) {
+            showBlock(passwordResetBlock, 'forgot-password');
+            historyStack = ['forgot-password'];
+        } else if (currentUrl.includes('new-password')) {
+            showBlock(newPasswordBlock, 'new-password');
+            historyStack = ['forgot-password', 'new-password'];
+        } else if (currentUrl.includes('registration')) {
+            const registrationBlock = document.querySelector('.registration');
+            if (registrationBlock) {
+                showBlock(registrationBlock, 'registration');
+                historyStack = ['authorization', 'registration'];
+            } else {
+                showBlock(authorizationBlock, 'authorization');
+                historyStack = ['authorization'];
+            }
+        } else {
+            showBlock(authorizationBlock, 'authorization');
+            historyStack = ['authorization'];
         }
     }
+    
+    function checkForRegistrationSuccess() {
+        const registrationSuccessBlock = document.querySelector('.registration-success');
+        const accountCreatedBlock = document.querySelector('.account-created');
+
+        if (registrationSuccessBlock || accountCreatedBlock) {
+            notifyParentStatus('registration-success');
+            return true;
+        }
+
+        const bodyText = document.body.innerText;
+        if (bodyText.includes('Акаунт успішно створено')) {
+            notifyParentStatus('registration-success');
+            return true;
+        }
+        return false;
+    }
+    
+    const observer = new MutationObserver(function(mutations) {
+        let shouldCheck = false;
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                shouldCheck = true;
+            }
+        });
+        if (shouldCheck) {
+            checkForRegistrationSuccess();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
     
     if (backBtn) {
         backBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            console.log('Назад. Текущий статус:', currentStatus, 'History:', historyStack);
-            
+
             if (historyStack.length > 1) {
                 historyStack.pop();
                 const previousStatus = historyStack[historyStack.length - 1];
-                
+
                 switch(previousStatus) {
                     case 'authorization':
                         showBlock(authorizationBlock, 'authorization', false);
@@ -99,11 +184,57 @@ function initIframeLogic() {
                         showBlock(authorizationBlock, 'authorization', false);
                 }
             } else {
-                console.log('Закрываем окно');
                 notifyCloseUser();
             }
         });
     }
+    
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#close-user, .close-registration-complete, .close-password-reset, .close-password-reset-final')) {
+            e.preventDefault();
+            notifyCloseUser();
+        }
+
+        if (e.target.closest('.visit-website') || e.target.closest('.save_password_final')) {
+            e.preventDefault();
+            notifyCloseUser();
+        }
+
+        const registrationLink = e.target.closest('a[href="/registration"]');
+        if (registrationLink) {
+            e.preventDefault();
+            window.parent.postMessage({ type: "load-registration" }, "*");
+        }
+
+        const authorizationLink = e.target.closest('a[href="/authorization"]');
+        if (authorizationLink) {
+            e.preventDefault();
+            window.parent.postMessage({ type: "load-authorization" }, "*");
+        }
+
+        const forgotPasswordLink = e.target.closest('a[href="/forgot-password"]');
+        if (forgotPasswordLink) {
+            e.preventDefault();
+            window.parent.postMessage({ type: "load-forgot-password" }, "*");
+        }
+
+        if (e.target.closest('.cancel')) {
+            e.preventDefault();
+            const btn = e.target.closest('.cancel');
+            if (btn.id !== 'user-back') {
+                if (currentStatus === 'forgot-password' ||
+                    currentStatus === 'new-password' ||
+                    currentStatus === 'password-reset-success' ||
+                    currentStatus === 'registration-success') {
+                    notifyCloseUser();
+                } else if (currentStatus === 'registration') {
+                    notifyCloseUser();
+                } else {
+                    notifyCloseUser();
+                }
+            }
+        }
+    });
     
     if (forgotLink) {
         forgotLink.addEventListener('click', (e) => {
@@ -132,6 +263,11 @@ function initIframeLogic() {
         if (btn.id !== 'user-back') {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+
+                if (currentStatus === 'forgot-password' || currentStatus === 'new-password' || currentStatus === 'password-reset-success') {
+                    return;
+                }
+
                 const path = window.location.pathname;
                 if (path.includes('authorization') || path.includes('registration')) {
                     notifyCloseUser();
@@ -144,81 +280,28 @@ function initIframeLogic() {
         }
     });
     
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (btn.id === 'close-cart') {
-                notifyCloseCart();
-            } else {
-                notifyCloseUser();
-            }
-        });
-    });
-    
-    if (loginFinalBtn) {
-        loginFinalBtn.addEventListener('click', notifyCloseUser);
-    }
-    
-    const url = window.location.pathname;
-    if (url.includes('forgot-password')) {
-        showBlock(passwordResetBlock, 'forgot-password');
-        historyStack = ['forgot-password'];
-    } else if (url.includes('new-password')) {
-        showBlock(newPasswordBlock, 'new-password');
-        historyStack = ['forgot-password', 'new-password'];
-    } else {
-        showBlock(authorizationBlock, 'authorization');
-        historyStack = ['authorization'];
-    }
-    
-    function checkForRegistrationSuccess() {
-        const successIndicators = [
-            document.querySelector('.success-message'),
-            document.querySelector('.registration-success'),
-            document.querySelector('.success-registration'),
-            document.querySelector('[data-registration-success="true"]'),
-            document.querySelector('[data-status="success"]'),
-            () => {
-                const bodyText = document.body.innerText;
-                return bodyText.includes('Успешная регистрация') || 
-                       bodyText.includes('Регистрация успешна');
-            }
-        ];
-        
-        let hasSuccess = false;
-        
-        successIndicators.forEach(indicator => {
-            if (typeof indicator === 'function') {
-                if (indicator()) hasSuccess = true;
-            } else if (indicator && indicator.offsetParent !== null) {
-                hasSuccess = true;
-            }
-        });
-        
-        if (hasSuccess) {
-            setTimeout(() => {
-                notifyParentStatus('registration-success');
-            }, 100);
-        }
-        
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('registration_success') || 
-            urlParams.has('success') || 
-            window.location.hash.includes('success')) {
-            setTimeout(() => {
-                notifyParentStatus('registration-success');
-            }, 50);
-        }
-    }
-    
     function sendInitialStatus() {
-        const url = window.location.pathname;
-        let currentStatus = USER_STATUSES.find(st => url.includes(st));
-        
-        if (url.includes('registration')) {
+        const fullUrl = window.location.href;
+        const urlParams = new URLSearchParams(window.location.search);
+
+        let currentStatus = null;
+
+        if (fullUrl.includes('agreement-reset-password') || urlParams.get('action') === 'agreement-reset-password') {
+            currentStatus = 'new-password';
+        } else if (window.location.pathname.includes('registration')) {
+            currentStatus = 'registration';
+        } else if (window.location.pathname.includes('forgot-password')) {
+            currentStatus = 'forgot-password';
+        } else if (window.location.pathname.includes('authorization')) {
+            currentStatus = 'authorization';
+        } else {
+            currentStatus = USER_STATUSES.find(st => window.location.pathname.includes(st));
+        }
+
+        if (window.location.pathname.includes('registration')) {
             checkForRegistrationSuccess();
         }
-        
+
         if (currentStatus) {
             notifyParentStatus(currentStatus);
         }
@@ -229,26 +312,22 @@ function initIframeLogic() {
         window.parent.postMessage({ type: "cart-status", empty: items === 0 }, "*");
     }
     
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.type === 'childList' || mutation.type === 'attributes') {
-                checkForRegistrationSuccess();
-            }
-        });
-    });
-    
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['class', 'style', 'data-*']
-    });
-    
+    setTimeout(() => {
+        checkForRegistrationSuccess();
+        determineAndShowInitialBlock();
+    }, 100);
+
     sendInitialStatus();
     sendCartStatus();
     document.addEventListener("cart-updated", sendCartStatus);
 
     const loginForm = document.querySelector('.authorization form');
+    
+    window.addEventListener('load', () => {
+        checkForRegistrationSuccess();
+        determineAndShowInitialBlock();
+        showBlock(authorizationBlock, 'authorization');
+    });
     
     if (loginForm) {
         loginForm.addEventListener('submit', async function(e) {
@@ -276,6 +355,14 @@ function initIframeLogic() {
             }
         });
     }
+    
+    const registrationForm = document.querySelector('.registration form');
+    if (registrationForm) {
+        console.log('Registration form found');
+        registrationForm.addEventListener('submit', (e) => {
+            console.log('Registration form submitted');
+        });
+    }
 }
 
 function initParentLogic() {
@@ -284,26 +371,36 @@ function initParentLogic() {
     const modalUser = document.getElementById("user-modal");
     const frameUser = document.getElementById("user-frame");
     const backgroundModal = document.querySelector('.background-modal');
-    
+
     const openCartBtn = document.getElementById("open-cart");
     const closeCartBtn = document.getElementById("close-cart");
     const openUserBtns = document.querySelectorAll("#open-user");
     const continueBtn = document.querySelector(".continue_shopping");
+
+    console.log('[ModalWindow_user] initParentLogic - DOM elements found:', {
+        modalCart: !!modalCart,
+        frameCart: !!frameCart,
+        modalUser: !!modalUser,
+        frameUser: !!frameUser,
+        backgroundModal: !!backgroundModal,
+        openCartBtn: !!openCartBtn,
+        openUserBtns: openUserBtns.length
+    });
     
     function setUserModalStatus(status) {
         if (!modalUser) return;
         USER_STATUSES.forEach(st => modalUser.classList.remove(st));
-        
+
         if (status) {
             modalUser.classList.add(status);
             adjustIframeHeight(status);
         }
     }
-    
+
     function adjustIframeHeight(status) {
-        const iframe = modalUser.querySelector('iframe');
+        const iframe = modalUser?.querySelector('iframe');
         if (!iframe) return;
-        
+
         if (status === 'registration-success' || status === 'password-reset-success') {
             iframe.style.height = '32vh';
             iframe.classList.add('success-state-height');
@@ -363,6 +460,49 @@ function initParentLogic() {
             }
         });
     });
+
+    document.addEventListener("click", (e) => {
+        if (window.self === window.top) {
+            const registrationLink = e.target.closest('a[href="/registration"], a[href*="registration"]');
+            if (registrationLink) {
+                e.preventDefault();
+                if (modalUser?.classList.contains("active")) {
+                    closeUser();
+                } else {
+                    closeCart();
+                    if (frameUser) frameUser.src = "/registration";
+                    modalUser?.classList.add("active");
+                    if (backgroundModal) backgroundModal.style.display = 'block';
+                }
+            }
+
+            const authorizationLink = e.target.closest('a[href="/authorization"], a[href*="authorization"]');
+            if (authorizationLink) {
+                e.preventDefault();
+                if (modalUser?.classList.contains("active")) {
+                    closeUser();
+                } else {
+                    closeCart();
+                    if (frameUser) frameUser.src = "/authorization";
+                    modalUser?.classList.add("active");
+                    if (backgroundModal) backgroundModal.style.display = 'block';
+                }
+            }
+
+            const forgotPasswordLink = e.target.closest('a[href="/forgot-password"], a[href*="forgot-password"]');
+            if (forgotPasswordLink) {
+                e.preventDefault();
+                if (modalUser?.classList.contains("active")) {
+                    closeUser();
+                } else {
+                    closeCart();
+                    if (frameUser) frameUser.src = "/forgot-password";
+                    modalUser?.classList.add("active");
+                    if (backgroundModal) backgroundModal.style.display = 'block';
+                }
+            }
+        }
+    });
     
     if (closeCartBtn) {
         closeCartBtn.addEventListener("click", (e) => {
@@ -381,7 +521,7 @@ function initParentLogic() {
     window.addEventListener("message", (event) => {
         const data = event.data;
         if (!data) return;
-        
+
         switch (data.type) {
             case "close-user":
                 closeUser();
@@ -389,15 +529,42 @@ function initParentLogic() {
             case "authorization-success":
                 window.location.reload();
                 break;
-                
+
             case "close-cart":
                 closeCart();
                 break;
-                
+
             case "user-status":
                 setUserModalStatus(data.status);
                 break;
-                
+
+            case "load-registration":
+                if (frameUser) {
+                    setTimeout(() => {
+                        frameUser.src = "/registration";
+                    }, 50);
+                }
+                setUserModalStatus('registration');
+                break;
+
+            case "load-authorization":
+                if (frameUser) {
+                    setTimeout(() => {
+                        frameUser.src = "/authorization";
+                    }, 50);
+                }
+                setUserModalStatus('authorization');
+                break;
+
+            case "load-forgot-password":
+                if (frameUser) {
+                    setTimeout(() => {
+                        frameUser.src = "/forgot-password";
+                    }, 50);
+                }
+                setUserModalStatus('forgot-password');
+                break;
+
             case "cart-status":
                 if (modalCart) {
                     modalCart.classList.toggle("empty", data.empty);
@@ -416,43 +583,34 @@ function initParentLogic() {
     
     function initInitialState() {
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('show') && urlParams.get('show') === 'registration-success') {
-            setUserModalStatus('registration-success');
+    
+        if (urlParams.get('action') === 'agreement-reset-password') {
+            if (modalUser && frameUser) {
+                modalUser.classList.add("active");
+                
+                if (backgroundModal) {
+                    backgroundModal.style.display = 'block';
+                }
+                setUserModalStatus('new-password'); 
+                
+                const token = urlParams.get('token');
+                let url = "/forgot-password?action=agreement-reset-password";
+                if (token) {
+                    url += `&token=${encodeURIComponent(token)}`;
+                }
+                frameUser.src = url;
+                
+                frameUser.onload = () => {
+                    setTimeout(() => {
+                        console.log('[ModalWindow_user] iframe loaded, ensuring new-password status');
+                        setUserModalStatus('new-password');
+                    }, 100);
+                };
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
         }
     }
-    
     initInitialState();
 }
 
-//! тут логика фона
-const modal = document.getElementById("user-modal");
-const btnOpen = document.getElementById("open-user");
-const btnClose = document.getElementById("close-user");
-const backgroundModal = document.querySelector('.background-modal');
 
-if (btnOpen) {
-    btnOpen.addEventListener('click', () => {
-        modal.classList.add("active");
-        if (backgroundModal) {
-            backgroundModal.style.display = 'block';
-        }
-    });
-}
-
-if (btnClose) {
-    btnClose.addEventListener('click', () => {
-        modal.classList.remove("active");
-        if (backgroundModal) {
-            backgroundModal.style.display = 'none';
-        }
-    });
-}
-
-if (modal && backgroundModal) {
-    window.addEventListener('click', (e) => {
-        if (e.target === modal || e.target === backgroundModal) {
-            modal.classList.remove("active");
-            backgroundModal.style.display = 'none';
-        }
-    });
-}

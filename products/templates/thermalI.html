@@ -4,6 +4,158 @@
     <link rel="stylesheet" href="{{ url_for('products.static', filename = 'css/products.css') }}"> 
 {% endblock %}
 
+{% block header %}
+    <div class="ellipse"></div>
+    <div class = "main-drone">
+        <div class = "title-thermal">
+            <h1>ТЕПЛОВІЗОР PULSAR</h1>
+            <h1>TELOS LRF XQ35</h1>
+        </div>
+        <div class = "main-drone-description">
+            <p>Pulsar Telos LRF XQ35 – тепловізійний монокуляр з лазерним далекоміром. Перед</p>
+            <p>вами наймолодший представник інноваційної лінійки продуктів від світового</p>
+            <p>гіганта індустрії Yukon Advanced Optics Worldwide із заявленою дальністю</p>
+            <p>виявлення в 1300 метрів.</p>
+        </div>
+        <img class="main-drone-image" src="{{ url_for('products.static', filename= 'images/main-drone.png') }}" alt="">
+    </div>
+
+    <div class="main-drone-order">
+        <div class = "main-drone-order-description">
+            <img class="small-main-drone-image" src="{{ url_for('products.static', filename= 'images/main-drone.png') }}" alt="">
+            <div class = "small-main-drone-description">
+                <div class = "title-mini-thermal">
+                    <h5>PULSAR TELOS LRF</h5>
+                    <h5>XQ35</h5>
+                </div>
+                <div class = "small-drone-price">
+                    <span class="price">29 900 ₴</span>
+                    <span class="discount">29 900 ₴</span>
+                </div>
+            </div>
+        </div>
+        <div class = "main-drone-order-buttons">
+            <button class =  "cart-buy-drone" id = "2">
+                <img class = "img-cart-drone" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+            </button>
+            <button class="main-drone-order-button">ЗАМОВИТИ
+                <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
+            </button>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    
+    <div class = "camera-thermal-description">
+        <div class = "camera-title">
+            <h2>МАЙБУТНЄ</h2>
+            <h2>ГОТОВЕ. МОДЕРНІЗОВАНА</h2>
+            <h2>ПРОДУКТИВНІСТЬ</h2>
+        </div>
+        <div class="camera-drone-description-text">
+            <div class="camera-drone-description1">
+                <p>Бездоганна якість термографічної картинки дозволить точно ідентифікувати ціль, а </p>
+                <p>лазерний далекомір допоможе дізнатися точну відстань до неї. Під капотом традиційний </p>
+                <p>набір мультимедійних опцій по запису відео, високошвидкісний модуль Wi-Fi, великий </p>
+                <p>набір колірних палітр, режим PIP і багато іншого.</p>
+            </div>
+            <div class="camera-drone-description2">
+                <p>Крім того, ви можете розкрити свій творчий потенціал завдяки можливості створення</p>
+                <p>знімків у форматі RAW з високою роздільною здатністю (до 5 кадрів), а також</p>
+                <p>функціям, як «Вільні панорами» та «Фокусування на об'єкті», які доступні на всіх камерах.</p>
+            </div>
+        </div>
+        <img class="camera-drone-image" src="{{ url_for('products.static', filename= 'images/camera-drone.png') }}" alt="">
+    </div>
+
+    <div class = "camera-description">
+        <img class="drones-camera-image" src="{{ url_for('products.static', filename= 'images/drones-camera.png') }}" alt="">
+        <h2>ОСНОВНА КАМЕРА 4/3 CMOS</h2>
+        <h2>HASSELBLAD HASSELBLAD</h2>
+        <div class="camera-description-text">
+            <div class="camera-description1">
+                <p>У ретельно розробленій 4/3 CMOS-камері Hasselblad використовується абсолютно </p>
+                <p>новий 100-мегапіксельний сенсор і відома технологія Hasselblad Natural Color</p>
+                <p>Solution (HNCS), що забезпечує виняткову точність передачі кольору.</p>
+            </div>
+            <div class="camera-description2">
+                <p>Вона створює захоплюючі 100-мегапіксельні зображення з високою деталізацією та</p>
+                <p>чіткістю, пропонуючи безпрецедентну гнучкість у пост-обробці. Конструкція</p>
+                <p>об'єктива була перероблена відповідно до вимог 100-мегапіксельної матриці, що</p>
+                <p>забезпечує неймовірну різкість.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "time-description">
+        <img class="fly-drone-image" src="{{ url_for('products.static', filename= 'images/fly-drone.png') }}" alt="">
+        <h2>51-ХВ ЧАС ПОЛЬОТУ</h2>
+        <div class="fly-description-text">
+            <div class="fly-description1">
+                <p>Аеродинамічний дизайн Mavic 4 Pro, ефективна силова установка та акумуляторна</p>
+                <p>батарея ємністю 95 Вт-год забезпечують тривалість польоту до 51 хвилини,</p>
+                <p>максимальну швидкість до 90 км/год та дальність польоту до 41 км (25,4 милі) [2].</p>
+            </div>
+            <div class="fly-description2">
+                <p>Незалежно від того, чи ви розвідуєте місцевість, відпрацьовуєте маневри, робите</p> 
+                <p>затримки в часі або панорамні фото за допомогою телеоб'єктива, достатня</p> 
+                <p>тривалість польоту дозволяє вам діяти легко і впевнено.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "memory-description">
+        <h2>ДО 512 ГБ ВБУДОВАНОЇ ПАМ'ЯТІ</h2>
+        <div class="memory-description-text">
+            <p>Стандартна версія DJI Mavic 4 Pro поставляється з 64 ГБ вбудованої пам'яті [14], тому ви</p>
+            <p>можете відразу ж почати зйомку без зовнішньої карти пам'яті. Mavic 4 Pro 512GB в</p>
+            <p>комплектації Creator Combo має 512 ГБ високошвидкісної вбудованої пам'яті [15],</p>
+        </div>
+        <div class="memory-information">
+            <div class="coding">
+                <h3>ALL-I 4:2:2</h3>
+                <p>Кодування</p>
+            </div>
+            <div class="refuge">
+                <div class = "gb">
+                    <h3>512 <h4>GB</h4></h3>
+                </div>
+                <p>UFS Сховище</p>
+            </div>
+            <div class="storage">
+                <div class = "gb">
+                    <h3>64 <h4>GB</h4></h3>
+                </div>
+                <p>eMMC Storage</p>
+            </div>
+        </div>
+        <img class="memory-drone-image" src="{{ url_for('products.static', filename= 'images/memory-drone.png') }}" alt="">
+    </div>
+
+    <div class="menu_drones"> 
+        <h1>СХОЖІ ТОВАРИ</h1>
+            <div class = 'products' id="products">
+            {% if list_product %}
+                {% for product in list_product %}
+                    <div class = 'product-card' id = "product-{{product.id}}"> 
+                        <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
+                        <h2 class = 'product-name'>{{product.product_name}}</h2>
+
+                        {% if product.discount != None %}
+                        <div>
+                            <span class = 'product_sale'>{{product.price}} ₴</span>
+                            <span class = 'product_discount'>{{product.discount}} ₴</span>
+                        </div>
+                        {% else %}
+                            <span class = 'product-price'>{{product.price}} ₴</span>
+                        {% endif %}
+                        <button class =  "cart-buy" id="{{product.id}}">
+                            <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <button class="button_catalog_drones"><a href="/shop">ДИВИТИСЬ ВСІ</a><img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}"></button>
+    </div>
 {% endblock %}

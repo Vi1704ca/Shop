@@ -1,22 +1,39 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
+    const action = urlParams.get('action');
+    const token = urlParams.get('token');
 
-    if (urlParams.get('action') === 'agreement-reset-password') {
-        console.log("agreement-reset-password parameter detected, opening modal");
-
+    if (action === 'agreement-reset-password') {
         const userModal = document.getElementById('user-modal');
         const userFrame = document.getElementById('user-frame');
+        const backgroundModal = document.querySelector('.background-modal');
+
         if (userModal) {
             userModal.classList.add('active');
+            userModal.classList.add('new-password'); 
         }
 
+        if (backgroundModal) {
+            backgroundModal.style.display = 'block';
+        }
 
         if (userFrame) {
             userFrame.style.display = 'block';
+            let iframeUrl = '/forgot-password?action=agreement-reset-password';
+            if (token) {
+                iframeUrl += `&token=${token}`;
+            }
+            userFrame.src = iframeUrl;
 
-            userFrame.src = '/forgot-password?action=agreement-reset-password';
+            userFrame.onload = () => {
+                setTimeout(() => {
+                    userModal.className = 'active new-password';
+                   // console.log("Статус new-password встановлено для форми");
+                }, 100);
+            };
         }
-        
-        window.history.replaceState({}, document.title, window.location.pathname);
+
+        const cleanUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
     }
 });

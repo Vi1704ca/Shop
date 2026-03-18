@@ -8,32 +8,40 @@
         <div class = "cabinet-links">
             <a class = "cabinet-link" href="">КОНТАКТНІ ДАНІ</a>
             <a class = "cabinet-link" href="/cabinet-my-orders">МОЇ ЗАМОВЛЕННЯ</a>
-            <a class = "cabinet-link" href="/address-orders">АДРЕСА ДОСТАВКИ</a>
+            <a class = "cabinet-link" id = "a-address-order" href="/address-orders">АДРЕСА ДОСТАВКИ</a>
             <hr class = "separator">
             <a class = "cabinet-link" href="/">ВИЙТИ</a>
         </div>
     </div>
-    <h1 class = "address-order">Адреса доставки</h1>
-    <div class = "station">
-        <p class = "station-address">м. Київ, відділення №3: вул. Жулянська, 11</p>
-        <img class = "station-pencil" src="" alt=""> <!-- Тут карандашик -->
+    <div class = "main-info">
+        <h1 class = "address-order">Адреса доставки</h1>
+        <div class = "station">
+            <div class = "station-elements">
+            <input type="radio" class = "radio" checked>
+            <img class = "station-pencil" src="{{ url_for('cabinet.static', filename='/icons/pencil.svg') }}" alt=""> <!-- Тут карандашик -->
+            <p class = "station-address">м. Київ, відділення №3: вул. Жулянська, 11</p>
+            </div>
+        </div>
+        <div class = "form">
+            <div class = "top-form">
+                <input type="radio" class = "radio" checked>
+                <p class = "form-address"> м. Дніпро. відділення №1: вул. Маршала Малиновського, 114</p>
+                <img class = "pencil" src="{{ url_for('cabinet.static', filename='/icons/greypencil.svg') }}" alt="">
+            </div>
+            <form action="">
+            <p class = "placeholder">Місто</p>
+            <input type="text" placeholder = "Назва міста">
+            <p class = "placeholder">Вулиця</p>
+            <input type="text" placeholder = "Назва вулиці">
+            <p class = "placeholder">Будинок</p>
+            <input type="text" placeholder = "Номер будинку">
+            <p class = "placeholder"></p>
+            <input type="text" placeholder = "Номер квартири">
+            <p class = "placeholder">Під'їзд</p>
+            <input type="text" placeholder = "Номер під'їзду">
+            <button class = "address-order-button" type="submit">ЗБЕРЕГТИ ЗМІНИ</button>
+            </form>
+        </div>
+        <button class = "add-address">+ ДОДАТИ АДРЕСУ</button>
     </div>
-    <div class = "form">
-        <p class = "form-address"> м. Дніпро. відділення №1: вул. Маршала Малиновського, 114</p>
-        <img src="" alt="">
-        <form action="">
-        <p class = "city">Місто</p>
-        <input type="text" placeholder = "Назва міста">
-        <p class = "street">Вулиця</p>
-        <input type="text" placeholder = "Назва вулиці">
-        <p class = "house">Будинок</p>
-        <input type="text" placeholder = "Номер будинку">
-        <p class = "Квартира"></p>
-        <input type="text" placeholder = "Номер квартири">
-        <p class = "entrance">Під'їзд</p>
-        <input type="text" placeholder = "Номер під'їзду">
-        <button class = "address-order-button" type="submit">ЗБЕРЕГТИ ЗМІНИ</button>
-        </form>
-    </div>
-    <button>+ ДОДАТИ АДРЕСУ</button>
 {% endblock %}

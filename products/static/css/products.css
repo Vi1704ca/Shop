@@ -120,7 +120,7 @@ header{
     gap: 1vw;
 }
 
-.cart-buy {
+.cart-buy-drone {
     display: flex;
     width: 2.75vw;
     height: 5.5vh;
@@ -134,7 +134,7 @@ header{
     margin-left: 0.5vw;
 }
 
-.img-cart {
+.img-cart-drone {
     position: relative;
     object-fit: contain; 
     width: 2vh; 
@@ -385,7 +385,7 @@ header{
 }
 
 .memory-description {
-    margin-top: -4vh;
+    margin-top: -5vh;
 }
 
 .memory-description h2{
@@ -400,7 +400,7 @@ header{
     font-weight: 400;
 }
 
-.memory-description {
+.memory-description-text {
     width: 50vw;
     height: 3.2vh;
     display: flex;
@@ -410,8 +410,8 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30vh;
     font-weight: 500;
+    margin-top: 4vh;
 }
 
 .memory-information{
@@ -419,8 +419,8 @@ header{
     position: relative;
     justify-content: center;
     align-items: center;
-    gap: 10vw;
-    margin-top: 5vh;
+    gap: 14vw;
+    margin-top: 5.5vh;
     flex-direction: row;
 }
 
@@ -430,7 +430,7 @@ header{
     position: relative;
     justify-content: center;
     align-items: center;
-    font-size: 4.8vh;
+    font-size: 4.5vh;
     color: #6D717F;
     letter-spacing: 0.1vw;
     font-weight: 600;
@@ -438,13 +438,27 @@ header{
 
 .memory-information p{
     display: flex;
-    font-size: 1.7vh; 
+    font-size: 1.6vh; 
     color: #0C122A;
     font-family: var(--fontParagraph);
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    margin-top: 1.5vh;
+    margin-top: 2vh;
+}
+
+.gb h4 {
+    font-family: var(--fontReview);
+    position: relative;
+    top: 2.6vh;
+    left: 0.5vw;
+    font-size: 1.6vh;
+    color: #6D717F;
+}
+
+.gb {
+    display: flex;
+    flex-direction: row;
 }
 
 .memory-drone-image {
@@ -453,6 +467,227 @@ header{
     width: 50vw;
     height: 60vh;
     border-radius: 1vh;
-    padding: 0;
+    margin-top: 4.5vh;
+}
+
+.menu_drones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 15vh;
+}
+
+.menu_drones h1{
+    font-family: var(--fontTitle);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.5vh;         
+    color: hsl(210, 19%, 84%);      
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.catalog_drones {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 90%;
+    gap: 4vw;
     margin: 0;
+    padding: 0 2vw;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+}
+
+.catalog_drone {
+    display: flex;
+    background: white;
+    padding: 1.2vw;
+    border-radius: 12px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 54vh; 
+    width: 23%;
+
+}
+
+.catalog_drone:hover{
+    transform: translateY(-6px);
+    box-shadow: none;
+    background-color: #f4f4f4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catalog_drone { transition: none !important; }
+    .catalog_drone:hover { transform: none !important; }
+}
+
+.menu_drones h2{
+    margin-top: 0.5vh;
+    margin-bottom: 4.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 3vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+}
+
+.catalog_drones p{
+    margin-top: 0.5vh;
+    margin-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 2vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+}
+
+.drone {
+    width: 15vw;
+    height: auto;
+    margin-top: 4.5vh;
+    margin-bottom: 2.7vh;
+}
+.button_catalog_drones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;  
+    gap: 1.2vw;
+    width: 16vw;
+    height: 8vh;
+    border-radius: 5vh;
+    padding: 1.5vh 3vw 1.5vh 3vw; 
+    background-color: #0C122A;
+    border: none;
+    color: #ffffff;
+    margin-bottom: 11vh;
+    margin-top: 7vh;
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+}
+
+.button_catalog_drones a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: var(--fontParagraph);
+    font-weight: 600;
+}
+
+.button_catalog_drones:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(12,18,42,0.12);
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button_catalog_drones, .buy-button { animation: none !important; transition: none !important; }
+}
+
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75vw;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 1vw;
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+.product-card {
+    display: flex;
+    background: white;
+    padding: 1.2vw;
+    border-radius: 12px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 54vh; 
+    width: 23%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    background-color: #f4f4f4;
+}
+
+.product-image {
+    display: flex;
+    margin: 0 auto 3vh auto;
+    width: 32vh; 
+    height: 32vh;
+    object-fit: contain; 
+    border-radius: 8px;
+}
+
+.product-price {
+    font-size: 2vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+    margin-right: 1vw;
+}
+
+.product_sale {
+    font-size: 2vh;         
+    color: hsl(0, 0%, 0%);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+    text-decoration: line-through;
+    margin-right: 1vw;
+}
+
+.product_discount {
+    font-size: 2vh;         
+    color: rgb(255, 0, 0);      
+    text-align: left; 
+    font-family: var(--fontParagraph);
+    font-weight: 700;
+}
+
+.cart-buy {
+    display: flex;
+    width: 2vh;
+    height: 2vh;
+    background-color: transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.15vw solid #0C122A;  
+    padding: 1.25vw;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+    margin-left: 13vw; 
+    margin-top: -10vh;
+    margin-bottom: 2vh;
+}
+
+.cart-buy:hover{
+    color: grey;
+}
+.product-card:hover .cart-buy {
+    opacity: 1;
+    visibility: visible;
+}
+
+.img-cart {
+    position: relative;
+    object-fit: contain; 
+    width: 2vh; 
+    height: 2vh;
 }

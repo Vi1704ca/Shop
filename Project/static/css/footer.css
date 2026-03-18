@@ -12,7 +12,6 @@
 .footer_drones{
     position: absolute;
     bottom: 45vh;
-    font-family: var(--fontDrones);
     width: 60vw;
     color:#BAC2CB; 
     z-index: -2;
@@ -81,6 +80,7 @@
     align-items: center;
     text-align: center;
     user-select: none;
+    font-family: var(--fontReview);
 }
 
 .navigation-footer{

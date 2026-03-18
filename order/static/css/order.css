@@ -44,32 +44,32 @@ main {
 }
 
 .ellipse_footer{
+    visibility: hidden;
     display: none;
 }
 
-.review{
-    display: none;
+.review, .navigation-footer{
+    visibility: hidden;
+    position: absolute;
+    display: none !important;
 }
 
-.review h1{
-    display: none;
+.footer_drones {
+    background-image: url("../icon/Subtract.svg") !important;
+    width: 32vw !important;
+    height: 12vh !important;
+    background-size: cover !important;
+    bottom: 15vh !important;
 }
 
-.review p{
-    display: none;
+footer {
+    height:25vh !important;
 }
 
-.navigation-footer p {
-    display: none;
+.line, .footer_drones, .copyright {
+    bottom: 25vh !important;
 }
 
-footer .footer_drones {
-    background-image: url("../icon/Drones.png");
-    background-repeat: no-repeat;
-    background-position: center;    
-    background-size: contain;
-    
-}
 
 @font-face {
     font-family: 'review';

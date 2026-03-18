@@ -28,8 +28,8 @@
             </div>
         </div>
         <div class = "main-drone-order-buttons">
-            <button class =  "cart-buy" id = "2">
-                <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
+            <button class =  "cart-buy-drone" id = "2">
+                <img class = "img-cart-drone" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
             </button>
             <button class="main-drone-order-button">ЗАМОВИТИ
                 <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
@@ -97,7 +97,7 @@
 
     <div class = "memory-description">
         <h2>ДО 512 ГБ ВБУДОВАНОЇ ПАМ'ЯТІ</h2>
-        <div class="memory-description">
+        <div class="memory-description-text">
             <p>Стандартна версія DJI Mavic 4 Pro поставляється з 64 ГБ вбудованої пам'яті [14], тому ви</p>
             <p>можете відразу ж почати зйомку без зовнішньої карти пам'яті. Mavic 4 Pro 512GB в</p>
             <p>комплектації Creator Combo має 512 ГБ високошвидкісної вбудованої пам'яті [15],</p>
@@ -108,11 +108,15 @@
                 <p>Кодування</p>
             </div>
             <div class="refuge">
-                <h3>512 GB</h3>
+                <div class = "gb">
+                    <h3>512 <h4>GB</h4></h3>
+                </div>
                 <p>UFS Сховище</p>
             </div>
             <div class="storage">
-                <h3>64 GB</h3>
+                <div class = "gb">
+                    <h3>64 <h4>GB</h4></h3>
+                </div>
                 <p>eMMC Storage</p>
             </div>
         </div>

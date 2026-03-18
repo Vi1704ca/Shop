@@ -5,8 +5,12 @@ import random
 
 @config_page(rule_name='home.html')
 def render_home():
-    if request.args.get('action') == 'agreement-reset-password':
-        print("Користувач підтвердив скидання даних.")
+    action = request.args.get('action')
+    
+    if action == 'agreement-reset-password':
+        # Здесь можно провести валидацию токена, если он есть в URL
+        # Например: token = request.args.get('token')
+        print("Користувач перейшов за посиланням з email.")
     
 
     #products = Product.query.filter_by(type_product='drone').order_by(Product.product_name).all()

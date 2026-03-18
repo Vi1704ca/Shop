@@ -35,13 +35,11 @@ body{
     border: none;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     border-radius: 20px;
-    z-index: 1000;
+    z-index: 2000;
 }
 
-/* user modal styles */
-/* base styles for user modal iframe */
 #user-modal iframe {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, opacity 0.2s ease;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -53,8 +51,6 @@ body{
     z-index: 1000;
 }
 
-/* each status explicitly sets its own size (width/height) so
-   adding/removing the class on the parent updates it cleanly */
 #user-modal.authorization iframe {
     width: 30vw;
     height: 50vh;
@@ -131,113 +127,4 @@ body{
 
 #cart-modal iframe::-webkit-scrollbar-thumb:hover {
     background: #333333;
-}
-
-
-/* registration complete */
-
-.registration-complete{
-    position:relative;
-    width: 30.5vw;
-    height: 23vh;
-    background-color: #ffffff;
-    padding: 2vh;
-    padding-left: 1.4vw;
-    border-radius: 1.7vh;
-    margin-bottom: 3vh;
-}
-
-.close-registration img, .close-registration-complete img,  .close-authorization img, .close-password-reset img, .close-password-reset-final img {
-    width: 1.3vh;
-    cursor: pointer;
-}
-
-.close-registration, .close-registration-complete,  .close-authorization, .close-password-reset, .close-password-reset-final{ 
-    position: absolute;
-    display: flex;
-    background-color: transparent;
-    border: none;
-    left: 28.8vw;
-    top: 2vh;
-}
-
-.registration-complete .titles{
-    color:black;
-    font-family: var(--fontReview);
-    font-weight: 500;
-}
-
-.registration-complete .account-created {
-    margin-top: 2vh;
-    position:relative;  
-    font-size:1.7vh;
-    font-family: var(--fontReview);
-    font-weight: 500;
-    margin-bottom: 4.8vh;
-    color: #9EA0AA;
-}
-
-.visit-website {
-    font-family: var(--fontReview);
-    font-weight: 500;
-    height: 5.5vh;
-    border-radius: 5vh;
-    font-size: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 11vw;
-    background: #0C122A;
-    color: #fff;
-    border: none;
-    padding: 0;
-    font-weight: 500;
-}
-/* password reset final */
-
-.password_reset_final {
-    position:relative;
-    width: 30.5vw;
-    height: 25.7vh;
-    background-color: #ffffff;
-    padding: 2vh;
-    padding-left: 1.4vw;
-    border-radius: 1.7vh;
-    margin-bottom: 3vh;
-}
-
-.password-reset-complete-message p{ 
-    font-size:1.5vh;
-    color: #9EA0AA;
-    font-family: var(--fontReview);
-    font-weight: 400;
-    font-size: 1.7vh;
-}
-
-.password-reset-complete-message{
-    margin-top: 2.5vh;
-}
-
-.button-password-reset-final {
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-}
-
-.save_password_final {
-    font-family: var(--fontReview);
-    font-weight: 500;
-    height: 5.5vh;
-    border-radius: 5vh;
-    font-size: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6.5vw;
-    background: #0C122A;
-    color: #fff;
-    border: none;
-    padding: 0;
-    font-weight: 500;
 }

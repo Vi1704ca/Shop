@@ -1,79 +1,107 @@
-let openBtn = document.getElementById("open-cart");
-let modal = document.getElementById("cart-modal");
-let frame = document.getElementById("cart-frame");
-let closeBtn = document.getElementById("close-cart");
-let continueBtn = document.querySelector(".continue_shopping");
-let isIframe = window.self !== window.top;
-
-
 function closeCart() {
     try {
-        window.parent.postMessage({type:"close-cart"}, "*");
+        window.parent.postMessage({ type: "close-cart" }, "*");
     } catch (e) {
-        try { 
-            window.top.postMessage({type:"close-cart"}, "*"); 
+        try {
+            window.top.postMessage({ type: "close-cart" }, "*" );
         } catch (error) {}
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    if (closeBtn){
-        closeBtn.addEventListener("click", closeCart);
+function initCartModal() {
+    const openBtn = document.getElementById("open-cart");
+    const modal = document.getElementById("cart-modal");
+    const frame = document.getElementById("cart-frame");
+    const closeBtn = document.getElementById("close-cart");
+    const continueBtn = document.querySelector(".continue_shopping");
+    const isIframe = window.self !== window.top;
+
+    console.debug("[ModalWindow_cart] init", {
+        openBtn: !!openBtn,
+        modal: !!modal,
+        frame: !!frame,
+        isIframe,
+    });
+
+    function tryCloseCart() {
+        if (modal) {
+            modal.classList.remove("active");
+        }
+        if (frame) {
+            frame.src = "";
+        }
     }
-    if (continueBtn){ 
-        continueBtn.addEventListener("click", closeCart);
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            closeCart();
+        });
     }
-    
+
+    if (continueBtn) {
+        continueBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            closeCart();
+        });
+    }
+
     if (isIframe) {
         function sendCartStatus() {
             const items = document.querySelectorAll(".cart-item").length;
             const isEmpty = items === 0;
-            
+
             try {
                 window.parent.postMessage({
                     type: "cart-status",
-                    empty: isEmpty
+                    empty: isEmpty,
                 }, "*");
             } catch (e) {}
         }
-        
+
         sendCartStatus();
         document.addEventListener("cart-updated", sendCartStatus);
-    }
-    
-    else {
-        openBtn.addEventListener("click", () => {
-            if (modal.classList.contains("active")) {
-                modal.classList.remove("active");
-                frame.src = "";
-            } else {
-                frame.src = "/cart";
-                modal.classList.add("active");
-            }
+    } else {
+        document.addEventListener("click", (e) => {
+            const openBtnClicked = e.target.closest("#open-cart");
+            if (!openBtnClicked) return;
+
+            e.preventDefault();
+            if (!modal || !frame) return;
+
+            frame.src = "/cart";
+            modal.classList.add("active");
         });
-        
+
         window.addEventListener("message", (event) => {
             const data = event && event.data;
             if (!data) return;
-            
-            if (data.type === 'close-cart') {
-                modal.classList.remove('active');
-                frame.src = '';
+
+            if (data.type === "close-cart") {
+                tryCloseCart();
             }
-            
-            if (data.type === "cart-status") {
+
+            if (data.type === "cart-status" && modal) {
                 modal.classList.toggle("empty", data.empty);
                 modal.classList.toggle("filled", !data.empty);
             }
         });
     }
-});
+}
 
-window.addEventListener('message', (event) => {
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCartModal);
+} else {
+    initCartModal();
+}
+
+window.addEventListener("message", (event) => {
     const data = event && event.data;
-    if (!data) return;
-    if (data.type === 'close-cart') {
-        modal.classList.remove('active');
-        frame.src = '';
-    }
+    if (!data || data.type !== "close-cart") return;
+
+    const modal = document.getElementById("cart-modal");
+    const frame = document.getElementById("cart-frame");
+
+    if (modal) modal.classList.remove("active");
+    if (frame) frame.src = "";
 });

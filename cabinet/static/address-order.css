@@ -21,18 +21,104 @@ p{
     font-family: var(--fontReview);
     font-size:2.5vh;
 }
+a{
+    color:grey;
+}
+a:hover{
+    color:black;
+}
+#a-address-order{
+    color:black;
+}
 .address-order-button{
     font-family: var(--fontParagraph);
     align-items: center;
     justify-content: center;
     display: flex;
-    width: 11vw;
+    width: 11.5vw;
     height: 5.5vh;
     border-radius: 5vh;
     background-color: white;
     margin-top: 3vh; 
-    border:  0.3vh solid rgba(158, 160, 170, 1) ;
-    color: rgba(158, 160, 170, 1);
+    border:  0.3vh solid black;
+    color: black;
     font-size: 2vh;
     font-weight:bold;
+}
+h1, h2, h3{
+    font-family:var(--fontReview)
+}
+input {
+    font-size: 2vh;
+    padding: 2vh;
+    margin-bottom: 3vh;
+    width: 40vw;
+    height: 5.5vh;
+    border-radius: 0.5vh;
+    border: 0.3vh solid rgba(206, 208, 212, 1);
+}
+.main-info{
+    position:relative;
+    bottom:38.5vh;
+    left:20vh;
+}
+.placeholder{
+    margin-bottom:1vh;
+    margin-top:1.5vh;
+}
+.form{
+    border:0.275vh solid  black;
+    padding:2.75vh;
+}
+.station{
+    border:0.275vh solid  grey;
+    margin-bottom:2.5vh;
+    margin-top:2.5vh;
+    padding:0.25vh;
+    padding-bottom:0vh;
+}
+.station-elements{
+    position:relative;
+    top:2.75vh;
+    left:0.58vh;
+}
+.add-address{
+        position:relative;
+        font-family: var(--fontParagraph);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 11.5vw;
+        height: 5.5vh;
+        margin-top:3.75vh; 
+        border-radius: 5vh;
+        background-color: white;
+        border:  0.3vh solid rgba(158, 160, 170, 1) ;
+        color: rgba(158, 160, 170, 1);
+        font-size: 2vh;
+        font-weight:bold;
+}
+.radio{
+    accent-color:black;
+    width:3.5vh;
+    height:3.5vh;
+}
+.form-address{
+    position:relative;
+    bottom:6.5vh;
+    left:5vh;
+}
+.station-address{
+    position:relative;
+    bottom:6.5vh;
+    left:5vh;
+}
+.station-pencil{
+    position:relative;
+    left:80vh;
+}
+.pencil{
+    position:absolute;
+    left:85vh;
+    top:23vh;
 }
