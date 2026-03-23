@@ -91,6 +91,6 @@ cabinet.cabinet.add_url_rule(
 )
 
 order.order.add_url_rule(
-    rule = "/products-orders",
+    rule = "/orders",
     view_func = order.render_order
 )

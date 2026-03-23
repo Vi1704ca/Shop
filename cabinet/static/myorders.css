@@ -1,3 +1,184 @@
-#my-orders-link{
+#myorders-link{
     color:black;
 }
+a:hover{
+    color:black;
+}
+.navigation{
+    position:relative;
+    font-family:var(--fontReview);
+    top:28vh;
+}
+.private-cabinet{
+    position:relative;
+    font-size:5vh;
+    right:75vh;
+}
+
+.cabinet-links{
+    margin-top:4.5vh;
+    display:flex;
+    flex-direction: column;
+    gap:4.5vh;
+    position:relative;
+    font-size:2.25vh;
+    right:75vh;
+}
+.cabinet-link{
+    color:rgba(158, 160, 170, 1);
+    font-family: var(--fontReview);
+    letter-spacing: 0.05vw;
+    font-weight: 500; 
+}
+p{
+    font-family:var(--fontReview)
+}
+h1{
+    font-family:var(--fontReview)
+}
+.my-orders{
+    position:relative;
+    right:10vh;
+    bottom:9.5vh;
+}
+.main{
+    border: 0.2vh solid grey;
+    padding:2vh;
+    width:50vw;
+}
+.parcel-count{
+    color:grey;
+    margin-bottom:1vh;
+    margin-left:2.5vh;
+}
+.product-registration{
+    margin-left:2.5vh;
+    margin-bottom:3vh;
+}
+.shipment-count{
+    position:relative;
+    color:grey;
+    left:35vh;
+    bottom:9vh;
+    margin-bottom:1vh;
+}
+.shipment-number{
+    position:relative;
+    left:35vh;
+    bottom:9vh;
+}
+.main{
+    position:relative;
+    left:26.25vh;
+    bottom:5vh;
+}
+.order-sum{
+    color:grey;
+    position:relative;
+    left:62.5vh;
+    bottom:15vh;
+    margin-bottom:1vh;
+}
+.order-sum-number{
+    position:relative;
+    left:62.5vh;
+    bottom:15vh;
+}
+.shipment-count-text{
+    position:relative;
+    color:grey;
+    bottom:20vh;
+    margin-left:2.5vh
+}
+.shipment-count-number{
+    position:relative;
+    bottom:22.35vh;
+    margin-left:2.5vh;
+    left:22.5vh;
+}
+.copy{
+    position:relative;
+    left:43vh;
+    bottom:24.75vh;
+}
+.drone-first-img{
+    position:relative;
+    left:77.5vh;
+    bottom:22.5vh;
+    width:10vw;
+    height:10vh;
+}
+.galochka{
+    position:relative;
+    left:97.5vh;
+    bottom:25.5vh;
+}
+.order-stages .order-line .line{
+    right:5vh;
+    top:20vh;
+    position:absolute;
+    background-color:#CDD5DD;
+    width:95vh;
+    height:0.95vh;
+    border-radius:25%;
+}
+.truck-image{
+    position:relative;
+    bottom:23.25vh;
+    left:7.5vh;
+    z-index:2;
+}
+.issued{
+    position:relative;
+}
+.completed-line{
+    background-color:black;
+    position:absolute;
+    width:5vh;
+    height:1vh;
+    top:20vh;
+    right:95vh;
+    z-index:1;
+    border-radius:25%;
+}
+.last-stages{
+    position:relative;
+    left:3.5vh;
+    bottom:22.5vh;
+    display:flex;
+    flex-direction:row;
+    gap:10vh;
+}
+.status{
+    width:2.15vh;
+    height:2.15vh;
+    background-color:white;
+    border:0.1vh solid #CDD5DD;
+    border-radius:50%;
+
+}
+.statuses{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    gap:8.25vw;
+    left:30vh;
+    bottom:29.5vh;
+}
+.order-info-title{
+    color:grey;
+    position:relative;
+    bottom:20vh;
+    left:2vh;
+}
+.delivering-address-title{
+    position:relative;
+    color:grey;
+    bottom:15vh;
+    left:2vh;
+}
+.new-post-station{
+    
+}
+
+

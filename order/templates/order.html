@@ -6,10 +6,54 @@
 
 {% block content %}
     <div class="order">
-        <h2>Успіх!</h2>
-        <p>Ваше замовлення №21718 прийнято та відправлено на обробку. </p>
-        <p>Ми сповістимо Вас щойно замовлення буде відправлено.</p>
-        <p>Дякуємо за довіру!</p>
-        <a href="/"><button class="main-page" type = "button">На головну</button></a>
+            <h2>Ваші контактні дані</h2>
+        <form action="" method="post">
+            <p>Прізвище</p> 
+            <input type="text" placeholder="Ваше Прізвище" name="Прізвище"required>
+            <p>Ім’я</p>
+            <input type="text" placeholder="Ваше Ім’я" name="Ім’я" required>
+            <p>По батькові</p>
+            <input type="text" placeholder="По батькові" name="По батькові" required>
+            <p>Телефон</p>
+            <input type="tel" placeholder="+ 38 0" name="Телефон" required>
+            <p>E-mail</p>
+            <input type="text" placeholder="Ваш E-mail" name="E-mail" required>
+            <p>Коментар до замовлення</p>
+            <textarea name="Коментар до замовлення" id=""></textarea>
+        </form>
+    </div>
+    <div class="shipping">
+        <input type="radio">Нова Пошта до відділення<img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="">
+        <input type="text" placeholder = "Місто">
+        <p>Вінниця  Одеса  Харків  Дніпро  Київ  Львів</p>
+        <input type="text" placeholder = "Місто">
+    </div>
+    <div class="shipping2">
+        <input type="radio">Експрес-доставка по Києву
+        <input type="radio">Нова Пошта кур’єром<img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="">
+    </div>
+    <div class="pay">
+        <h2>Оплата</h2>
+        <input type="radio">Оплата при отриманні<img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="">
+    </div>
+    <div class="pay2">
+        <input type="radio">Оплатити зараз<img src="{{ url_for('order.static', filename='icon/Visa.svg') }}" alt=""><img src="{{ url_for('order.static', filename='icon/GooglePay.svg') }}" alt=""><img src="{{ url_for('order.static', filename='icon/ApplePay.svg') }}" alt=""><img src="{{ url_for('order.static', filename='icon/Mastercart.svg') }}" alt="">
+        <input type="radio">Карткою онлайн
+        <input type="radio">Privat Pay
+        <input type="radio">Apple Pay
+        <input type="radio">Google pay
+        <a href="/"><button class="to_return" type = "button">Повернутись</button></a>
+    </div>
+    <div class="go_checkout">
+        <h2>Замовлення</h2>
+        <p>Загальна сума:</p>
+        <p>29 900 ₴ </p>
+        <p>Заощаджено:</p>
+        <p>- 1 005 ₴ </p>
+        <p>Доставка:</p>
+        <p>За тирифом перевізника</p>
+        <p>Зі знижкою:</p>
+        <p>28 985 ₴ </p>
+        <button class="go_checkou2" type="button">Підтвердити замовлення</button>
     </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 import flask
 
 def render_order():
-    return flask.render_template('order1.html')
+    return flask.render_template('order.html')
 
 def render_success():
-    return flask.render_template('order.html')
+    return flask.render_template('success.html')

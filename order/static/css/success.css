@@ -1,0 +1,84 @@
+main {
+    background-color: #CDD5DD;
+}
+
+.order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #CDD5DD;
+    min-height: 100vh;
+}
+
+.order h2{
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-family: 'button';
+
+}
+
+.order p{
+    font-size: 16px;
+    margin: 5px 0;
+    line-height: 1.5;
+    color: #3D4155;
+    font-family: 'review';
+}
+
+.main-page {
+    margin-top: 30px;
+    background-color: #0C122A;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: bold;
+    text-transform: uppercase;
+    font-family: 'button';
+}
+
+.ellipse_footer{
+    visibility: hidden;
+    display: none;
+}
+
+.review, .navigation-footer{
+    visibility: hidden;
+    position: absolute;
+    display: none !important;
+}
+
+.footer_drones {
+    background-image: url("../icon/Subtract.svg") !important;
+    width: 25vw !important;
+    height: 9vh !important;
+    background-size: contain !important; 
+    background-repeat: no-repeat !important;
+    background-position: center !important; 
+    bottom: 15vh !important;
+}
+
+footer {
+    height:35vh !important;
+}
+
+.line, .copyright {
+    margin-bottom: 1vh !important;
+}
+
+
+@font-face {
+    font-family: 'review';
+    src: url("../fonts/GTWalsheimPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "button";
+    src: url("../fonts/GTWalsheimPro-Bold.ttf");
+}

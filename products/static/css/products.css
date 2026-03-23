@@ -31,6 +31,7 @@
 :root{
     --fontButton: 'button';
     --sizeImageDrone: 100vh;
+    --sizeImageThermal: 70vh;
     --fontTitle: "font";
     --fontParagraph: "fontforp";
     --fontLinks: 'links';
@@ -39,7 +40,7 @@
 }
 
 header{
-    height: 92vh;
+    height: 100vh;
     background-color: hsl(210, 19%, 84%);
 }
 
@@ -176,14 +177,14 @@ header{
     font-weight: bold;
 }
 
-.main-drone-image{
+.main-drone-image {
     position: absolute;
     width: var(--sizeImageDrone);
     height: var(--sizeImageDrone);
     top: 23vh;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin-bottom: 0;
 }
 
 .main-drone-description{
@@ -198,10 +199,6 @@ header{
     align-items: center;
     margin-top: 4vh;
     font-weight: 500;
-}
-
-.camera-drone-description {
-    margin-top: 12vh;
 }
 
 .camera-drone-description h2 {
@@ -469,6 +466,443 @@ header{
     border-radius: 1vh;
     margin-top: 4.5vh;
 }
+
+/* thermal */
+
+.main-thermal-order {
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    background-color: #FFFFFF;
+    border-radius: 1.3vh;
+    padding: 0.7vw;
+    width: 15vw;
+    height: 19vh;
+    top: 18vh;
+    left: 33vw;
+}
+
+.main-thermal-order-description {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    gap: 0.7vw;
+}
+
+.small-main-thermal-description {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1vh;
+}
+
+.small-main-thermal-description h5 {
+    font-family: var(--fontReview);
+    font-size: 1.8vh;
+    color: #0C122A;
+    font-weight: 500;
+    margin-top: 0.9vh;
+    letter-spacing: 0.07vw;
+}
+
+.small-main-thermal-image {
+    width: 4vw;
+    height: 8vh;
+}
+
+.small-thermal-price {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-family: var(--fontParagraph);
+    font-size: 1.7vh;
+}
+
+.price {
+    text-decoration: line-through;
+    color: #000000;
+    font-weight: 600;
+}
+
+.discount {
+    color: #B62D11;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-thermal-order-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.cart-buy-thermal {
+    display: flex;
+    width: 2.75vw;
+    height: 5.5vh;
+    background-color: transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.1vw solid #0C122A;  
+    padding: 1vw;
+    margin-top: 1.5vh; 
+    margin-left: 0.5vw;
+}
+
+.img-cart-thermal {
+    position: relative;
+    object-fit: contain; 
+    width: 2vh; 
+    height: 2vh;
+}
+
+.main-thermal-order-button {
+    font-family: var(--fontReview);
+    height: 5vh;
+    width: 9vw;
+    border-radius: 5vh;
+    font-size: 1.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1vw;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+    margin-top: 1.75vh;
+}
+
+.arrow {
+    width: 1.3vh;
+    margin-left: 0.5vw;
+}
+
+.main-thermal h1{
+    font-family: var(--fontReview);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vh;
+    color: #FFFFFF;
+    margin-top: 0vh;
+    letter-spacing: 0.2vw;
+    font-weight: 900;
+    flex-direction: column;
+}
+
+.main-thermal-image {
+    position: absolute;
+    width: var(--sizeImageThermal);
+    height: var(--sizeImageThermal);
+    top: 37vh;
+    left: 33vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.main-thermal-description{
+    width: 50vw;
+    height: 3.2vh;
+    display: flex;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+    font-weight: 500;
+}
+
+.camera-thermal-description {
+    margin-top: 7vh;
+}
+
+.camera-thermal-description h2 {
+    font-family: var(--fontReview);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+}
+
+.camera-thermal-description-text {
+    margin-bottom: 8vh;
+}
+
+.camera-thermal-description1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    margin-top: 6vh;
+    letter-spacing: 3%;
+    line-height: 100%;
+}
+
+.camera-thermal-description2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    margin-top: 4.5vh;
+    letter-spacing: 3%;
+    line-height: 100%;
+}
+
+.camera-thermal-description3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    margin-top: 4vh;
+    letter-spacing: 3%;
+    line-height: 100%;
+}
+
+.camera-thermal-image {
+    width: 50vw;
+    height: 60vh;
+}
+
+.device-description {
+    margin-top: 14vh;
+}
+
+.device-description h2 {
+    font-family: var(--fontReview);
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+    right: 13vw;
+    bottom: 38vh
+}
+
+.device-description1 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    margin-top: 4.5vh;
+    right: 13vw;
+    bottom: 38vh
+}
+
+.device-description2 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    margin-top: 7.5vh;
+    right: 13vw;
+    bottom: 38vh
+}
+
+.thermal-device-image {
+    position: relative;
+    width: 38vw;
+    height: 47vh;
+    border-radius: 1vh;
+    left: 25vw;
+}
+
+.brightness-description {
+    margin-top: -10vh;
+}
+
+.brightness-description h2 {
+    font-family: var(--fontReview);
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+    left: 25.4vw;
+    bottom: 40vh
+}
+
+.brightness-description1 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    left: 25.4vw;
+    bottom: 37vh
+}
+
+.brightness-description2 {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: left;
+    font-weight: 500;
+    width: 50vw;
+    height: 3.2vh;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    letter-spacing: 3%;
+    line-height: 100%;
+    left: 25.4vw;
+    bottom: 30.5vh
+}
+
+.brightness-image {
+    position: relative;
+    width: 30vw;
+    height: 47vh;
+    border-radius: 1vh;
+    right: 6vw;
+}
+
+.scale-description {
+    margin-top: -5vh;
+}
+
+.scale-description h2{
+    font-family: var(--fontReview);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.8vh;
+    color: #000000;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+}
+
+.scale-description-text {
+    width: 50vw;
+    height: 3.2vh;
+    display: flex;
+    font-size: 1.7vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-top: 4vh;
+}
+
+.scale-information{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14vw;
+    margin-top: 5.5vh;
+    flex-direction: row;
+}
+
+.scale-information .gray{
+    font-family: var(--fontButton);
+    position: relative;
+    font-size: 3.2vh;
+    color: #6D717F;
+    letter-spacing: 0.1vw;
+    font-weight: 600;
+
+}
+
+.scale-information p{
+    font-size: 1.6vh; 
+    color: #0C122A;
+    font-family: var(--fontParagraph);
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.temperature p, .time .scale-time-description, .laser .laser-description {
+    margin-top: 4vh;
+    display: flex;
+}
+
+.scale-information h4 {
+    font-family: var(--fontReview);
+    position: relative;
+    top: 2.6vh;
+    left: 0.5vw;
+    font-size: 1.6vh;
+    color: #6D717F;
+}
+
+.temp h4, .meters h4  {
+    display: flex;
+    flex-direction: row;
+}
+
+.scale-drone-image {
+    display: flex;
+    position: relative;
+    width: 50vw;
+    height: 60vh;
+    border-radius: 1vh;
+    margin-top: 4.5vh;
+}
+
+/* catalog */
 
 .menu_drones {
     display: flex;
