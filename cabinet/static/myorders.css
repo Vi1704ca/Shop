@@ -44,7 +44,8 @@ h1{
 .main{
     border: 0.2vh solid grey;
     padding:2vh;
-    width:50vw;
+    width:60vw;
+    padding-left:0vh;
 }
 .parcel-count{
     color:grey;
@@ -103,22 +104,22 @@ h1{
 }
 .drone-first-img{
     position:relative;
-    left:77.5vh;
+    left:97.5vh;
     bottom:22.5vh;
     width:10vw;
     height:10vh;
 }
 .galochka{
     position:relative;
-    left:97.5vh;
+    left:120vh;
     bottom:25.5vh;
 }
 .order-stages .order-line .line{
-    right:5vh;
+    left:2.5vh;
     top:20vh;
     position:absolute;
     background-color:#CDD5DD;
-    width:95vh;
+    width:120vh;
     height:0.95vh;
     border-radius:25%;
 }
@@ -134,10 +135,10 @@ h1{
 .completed-line{
     background-color:black;
     position:absolute;
-    width:5vh;
+    width:7.5vh;
     height:1vh;
     top:20vh;
-    right:95vh;
+    right:116.5vh;
     z-index:1;
     border-radius:25%;
 }
@@ -147,7 +148,7 @@ h1{
     bottom:22.5vh;
     display:flex;
     flex-direction:row;
-    gap:10vh;
+    gap:15.5vh;
 }
 .status{
     width:2.15vh;
@@ -155,14 +156,13 @@ h1{
     background-color:white;
     border:0.1vh solid #CDD5DD;
     border-radius:50%;
-
 }
 .statuses{
     position:relative;
     display:flex;
     flex-direction:row;
-    gap:8.25vw;
-    left:30vh;
+    gap:23.5vh;
+    left:35vh;
     bottom:29.5vh;
 }
 .order-info-title{
@@ -178,7 +178,42 @@ h1{
     left:2vh;
 }
 .new-post-station{
-    
+    position: relative;
+    bottom:14vh;
+    left:2vh;
 }
-
+.delivering-address{
+    position: relative;
+    bottom:12vh;
+    left:2vh;
+}
+.recipient-title{
+    position:relative;
+    color:grey;
+    left:2vh;
+    bottom:8.5vh;
+}
+.recipient-name-number{
+    position:relative;
+    left:2vh;
+    bottom:7.5vh;
+}   
+.recipient-info{
+    display:flex;
+    flex-direction:column;
+    gap:1.5vh;
+}
+.keys{
+    position:relative;
+    display:flex;
+    color:grey;
+    gap:10vh;
+    left:49.5vh;
+    bottom:34vh;
+}
+.values{
+    position:relative;
+    display:flex;
+    gap:3.5vh;
+}
 

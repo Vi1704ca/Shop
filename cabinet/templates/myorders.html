@@ -58,21 +58,27 @@
             </div>
             <div class = "recipient">
                 <p class = "recipient-title">Отримувач</p>
-                <p class = "recipient-name">Анастасія Павленко</p>
-                <p class = "recipient-number">+380 99 123 45 68</p>
+                <div class = "recipient-info">
+                    <p class = "recipient-name-number">Анастасія Павленко</p>
+                    <p class = "recipient-name-number">+380 99 123 45 68</p>
+                </div>
             </div>
             <div class = "order-main-info">
-                <p class = "order-photo">Фото</p>
-                <img class = "drone-second-image" src="{{ url_for('cabinet.static', filename='/icons/drone.svg') }}" alt=""> <!--  Дрон  -->
-                <p class = "order-name">Назва</p>
-                <p class = "name">DJI Mini 4K</p>
-                <p class = "order-cost">Ціна</p>
-                <p class = "cost">2̶9̶ 9̶0̶0̶ ₴̶</p>
+                <div class = "keys">
+                    <p class = "order-photo">Фото</p>
+                    <p class = "order-name">Назва</p>
+                    <p class = "order-cost">Ціна</p>
+                    <p class = "order-amount">Кількість</p>
+                    <p class = "order-sum-cost">Сума</p>
+                </div>
+                <div class = "values">
+                    <img class = "drone-second-image" src="{{ url_for('cabinet.static', filename='/icons/drone.svg') }}" alt=""> <!--  Дрон  -->
+                    <p class = "name">DJI Mini 4K</p>
+                    <p class = "cost">2̶9̶ 9̶0̶0̶ ₴̶</p>
+                    <p class = "amount">1</p>
+                    <p class = "sum">28 985 ₴</p>
+                </div>
                 <p class = "cost-w-sale">2̶8̶ 9̶8̶5̶ ₴̶</p>
-                <p class = "order-amount">Кількість</p>
-                <p class = "amount">1</p>
-                <p class = "order-sum">Сума</p>
-                <p class = "sum">28 985 ₴</p>
             </div>
             <div class = "payment">
                 <p class = "order-payment">Оплата</p>
@@ -100,4 +106,3 @@
         </div>
     </div>
 {% endblock %}
-
