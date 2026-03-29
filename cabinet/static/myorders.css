@@ -215,5 +215,55 @@ h1{
     position:relative;
     display:flex;
     gap:3.5vh;
+    bottom:30vh;
+    left:52.5vh;
 }
-
+.drone-second-image{
+    position:relative;
+    right:4vh;
+    bottom:3.5vh;
+}
+.sum{
+    position:relative;
+    left:20vh;
+    bottom:1.5vh;
+}
+.amount{
+    position:relative;
+    left:10vh;
+    bottom:1vh;
+}
+.cost-w-sale{
+    color:red;
+    position:relative;
+    left:79vh;
+    bottom:36.5vh;
+}
+.cost{
+    position:relative;
+    bottom:2vh;
+    left:2vh;
+}
+.name{
+    position:relative;
+    bottom:1vh;
+}
+.payment-keys{
+    color:grey;
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+}
+.payment-values{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:1.5vh;
+    left:20vh;
+    bottom:18vh;
+}
+.payment-dict{
+    position:relative;
+    left:49.25vh;
+    bottom:30vh;
+}

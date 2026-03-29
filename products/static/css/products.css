@@ -28,6 +28,10 @@
     src: url("../fonts/GTWalsheimPro-UltraLight.ttf");
 }
 
+button {
+    cursor: pointer;
+}
+
 :root{
     --fontButton: 'button';
     --sizeImageDrone: 100vh;

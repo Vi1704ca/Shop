@@ -46,7 +46,12 @@
     <div class = 'products' id="products">
         {% if list_product %}
             {% for product in list_product %}
-                <div class = 'product-card' id = "product-{{product.id}}"> 
+            <div class = 'product-card' id = "product-{{product.id}}"> 
+                    {% if product.type_product == "drone" %}
+                        <a href="/drone-info">
+                    {% elif product.type_product == "thermal imager" %}
+                        <a href="/thermalI-info">
+                    {% endif %}
                     <img class="product-image" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" >
                     <p class = 'product_name'>{{product.product_name}}</p>
                     
@@ -58,10 +63,11 @@
                     {% else %}
                         <p class = 'product_price'>{{product.price}} ₴</p>
                     {% endif %}
+                </a>
                     <button class =  "cart-buy" id="{{product.id}}">
                         <img class = "img-cart" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
                     </button>
-    
+           
                     {% if current_user.is_admin %}  
                         <button type="button" id="delete" value="{{product.id}}">Видалити</button>
                     {% endif %}

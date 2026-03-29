@@ -72,34 +72,26 @@ s = URLSafeTimedSerializer(os.getenv("SECRET_KEY", "your-secret-key"))
 print(f"DEBUG: SECRET_KEY loaded: {os.getenv('SECRET_KEY', 'your-secret-key')[:10]}...")
 
 def email_password():
-    # Перевіряємо action з URL
     confirm = flask.request.args.get('action') == 'agreement-reset-password'
     token_from_url = flask.request.args.get('token')
     
     print(f"DEBUG: confirm={confirm}, token_from_url={token_from_url}")
     
-    # Проверяем токен для доступа к странице нового пароля
     if confirm and not token_from_url:
         print("DEBUG: No token provided, redirecting to authorization")
-        # Если пытаются зайти на /forgot-password?action=agreement-reset-password без токена
         return flask.redirect('/authorization')
     
-    # Проверяем токен для доступа к странице нового пароля
     if confirm and not token_from_url:
         print("DEBUG: No token provided, redirecting to authorization")
-        # Если пытаются зайти на /forgot-password?action=agreement-reset-password без токена
         return flask.redirect('/authorization')
     
     if confirm and token_from_url:
-        # Проверяем валидность токена
         try:
-            email = s.loads(token_from_url, salt='password-reset-salt', max_age=1800)  # 30 минут
+            email = s.loads(token_from_url, salt='password-reset-salt', max_age=1800)  
             print(f"DEBUG: Token valid for email: {email}")
-            # Токен валиден, показываем форму нового пароля
+
         except Exception as e:
             print(f"DEBUG: Token invalid: {e}, token: {token_from_url}")
-            # ВРЕМЕННО ОТКЛЮЧЕНО для отладки
-            # return flask.redirect('/authorization')
             print("DEBUG: Token validation disabled for debugging")
     
     if flask.request.method == "POST":
@@ -107,8 +99,6 @@ def email_password():
 
         if form_source == "send-email":
             receiver_email = flask.request.form.get("email_pass")
-            
-            # Створюємо токен, який "зашиває" в себе email
             token = s.dumps(receiver_email, salt='password-reset-salt')
             print(f"DEBUG: Generated token for email {receiver_email}: {token}")
             
@@ -120,9 +110,7 @@ def email_password():
             message["To"] = receiver_email
             message["Subject"] = "Відновлення пароля"
     
-            # Додаємо токен у посилання (на головну сторінку, а не на forgot-password)
             reset_link = f"{flask.request.host_url.rstrip('/')}/?action=agreement-reset-password&token={token}"
-    
             body = f"Для встановлення нового пароля перейдіть за посиланням:\n{reset_link}"
             message.attach(MIMEText(body, "plain"))
     
@@ -136,7 +124,6 @@ def email_password():
                 print(f"Помилка: {e}")
                 
         elif form_source == "save-new-password":
-            # Пробуємо отримати токен з форми або з URL
             token = flask.request.form.get('token') or flask.request.args.get('token') or token_from_url
             new_password = flask.request.form.get("new_password")
             confirm_p = flask.request.form.get("confirm_new_password")
@@ -164,17 +151,14 @@ def email_password():
                 return flask.render_template("password_reset.html", confirm_reset_password=True, error="Пароль повинен мати мінімум 3 символи"), 400
 
             try:
-                # Перевіряємо токен (діє 30 хвилин)
                 email = s.loads(token, salt='password-reset-salt', max_age=1800)
                 print(f"DEBUG: Token successfully decoded for email: {email}")
                 
-                # Оновлюємо пароль
                 user = User.query.filter_by(email=email).first()
                 if user:
-                    user.password = new_password  # В реальному приложенню хешуйте пароль
+                    user.password = new_password 
                     DATABASE.session.commit()
                     print(f"Пароль для {email} успішно оновлено!")
-                    # Повертаємо success сторінку
                     return flask.render_template("password_reset.html", 
                                                confirm_reset_password=False, 
                                                show_success=True), 200

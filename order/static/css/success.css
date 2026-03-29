@@ -1,3 +1,10 @@
+
+
+.nav-header {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
 main {
     background-color: #CDD5DD;
 }

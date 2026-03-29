@@ -7,6 +7,7 @@
 {% block content %}
     <div class="order">
             <h2>Ваші контактні дані</h2>
+            <h2>оформити замовленя</h2>
         <form action="" method="post">
             <p>Прізвище</p> 
             <input type="text" placeholder="Ваше Прізвище" name="Прізвище"required>
@@ -46,6 +47,12 @@
     </div>
     <div class="go_checkout">
         <h2>Замовлення</h2>
+        <img src="{{ url_for('order.static', filename='icon/drome.jpg') }}" alt="">
+        <p>DJI Mini 4K</p>
+        <p>28 985₴</p>
+        <img src="{{ url_for('order.static', filename='icon/delivery.thermal imgee.jpg') }}" alt="">
+        <p>Тепловізор ARMASIGHT Q14</p>
+        <p>29 990 ₴ </p>
         <p>Загальна сума:</p>
         <p>29 900 ₴ </p>
         <p>Заощаджено:</p>

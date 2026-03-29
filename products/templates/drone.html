@@ -31,9 +31,9 @@
             <button class =  "cart-buy-drone" id = "2">
                 <img class = "img-cart-drone" src="{{ url_for('shop.static', filename='images/icon/cart-img.svg') }}" alt="КОРЗИНА">
             </button>
-            <button class="main-drone-order-button">ЗАМОВИТИ
+            <a href="/orders"> <button class="main-drone-order-button">ЗАМОВИТИ
                 <img class="arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt="">
-            </button>
+            </button></a>
         </div>
     </div>
 {% endblock %}

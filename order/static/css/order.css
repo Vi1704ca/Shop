@@ -1,52 +1,70 @@
-.order, .shipping, .shipping2, .pay, .pay2{
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    align-items: flex-start;
+}
+
+.order, .shipping, .shipping2, .pay, .pay2 {
     flex: 2;
-    background-color: #fff;
+    background: #fff;
     margin-bottom: 20px;
 }
 
-.go_checkout{
+.go_checkout {
     flex: 1;
     position: sticky;
     top: 20px;
     padding: 24px;
-    border: 1px;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
-    background-color: #fff;
+    background: #fff;
 }
 
-h2{
+h2 {
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #0C122A;
+    color: #1a202c;
 }
 
-p{
-    margin: 10px;
+p {
+    margin: 10px 0 5px 0;
     font-size: 14px;
     font-weight: 500;
-    color: #0C122A;
+    color: #4a5568;
 }
 
-textarea{
-    width: 100;
-    padding: 12px;
+input[type="text"], 
+input[type="tel"], 
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 10px;
 }
 
-textarea{
+textarea {
     height: 100px;
     resize: none;
 }
 
 .shipping, .shipping2, .pay, .pay2 {
-    border: 1px;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 15px;
     margin-bottom: 12px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #000;
 }
 
 img {
@@ -55,19 +73,27 @@ img {
     margin-left: 10px;
 }
 
-.shipping p{
+.shipping p {
     font-size: 12px;
-    color: #0C122A;
+    color: #718096;
+    text-decoration: underline;
+    cursor: pointer;
     word-spacing: 10px;
 }
 
 .to_return {
     background: none;
-    border: 1px;
+    border: 1px solid #1a202c;
     border-radius: 25px;
     padding: 12px 30px;
     font-weight: 600;
+    cursor: pointer;
     margin-top: 20px;
+    transition: 0.3s;
+}
+
+.to_return:hover {
+    background: #f7fafc;
 }
 
 .go_checkout h2 {
@@ -82,3 +108,34 @@ img {
     margin: 8px 0;
 }
 
+.go_checkout p:nth-child(even) {
+    font-weight: bold;
+}
+
+
+.go_checkout p:nth-last-child(2) {
+    color: #e53e3e;
+    font-size: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+
+.go_checkou2 {
+    width: 100%;
+    background: #0f172a;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.go_checkou2:hover {
+    background: #1e293b;
+}

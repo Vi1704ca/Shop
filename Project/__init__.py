@@ -1,5 +1,5 @@
 from .urls import *
-from .settings import project
+from .settings import project, status_order
 from .db import *
 from .loadenv import execute
 from .login_manager import *

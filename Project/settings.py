@@ -3,6 +3,7 @@ import os
 import mimetypes
 
 mimetypes.add_type("text/javascript", ".js", True)
+status_order = {"status_order": "success"}
 
 project = flask.Flask(
     import_name = "Project",

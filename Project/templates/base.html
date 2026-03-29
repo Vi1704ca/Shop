@@ -20,13 +20,16 @@
         </div>
 
         <header>
-
             <nav class="nav-header">
+                {% if status_order == "success" %}
+                <a href="">ПРОДОВЖИТИ ПОКУПКИ</a>
+                {% else %}
                 <span class="links">
                     <a class = "links__catalog" href="/shop">КАТАЛОГ</a>
                     <a class = "links__about_us" href="/about-us">ПРО НАС</a>
                     <a class = "links__contacts" href="/contacts">КОНТАКТИ</a>
                 </span>
+                {% endif %}
 
                 <div class="logo">
                     <a href = "/">
