@@ -44,8 +44,13 @@ h1{
 .main{
     border: 0.2vh solid grey;
     padding:2vh;
+    padding-bottom:0vh;
     width:60vw;
+    height:90vh;
     padding-left:0vh;
+    position:relative;
+    left:26.25vh;
+    bottom:5vh;
 }
 .parcel-count{
     color:grey;
@@ -67,11 +72,6 @@ h1{
     position:relative;
     left:35vh;
     bottom:9vh;
-}
-.main{
-    position:relative;
-    left:26.25vh;
-    bottom:5vh;
 }
 .order-sum{
     color:grey;
@@ -266,4 +266,41 @@ h1{
     position:relative;
     left:49.25vh;
     bottom:30vh;
+}
+.decline{
+    position:relative;
+    left:48.75vh;
+    bottom:50vh;
+    font-size: 3vh;  
+    font-family: var(--fontReview);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1.5vw;
+    width: 10vw;
+    height: 7.15vh;
+    border-radius: 5vh;
+    border: 0.15vw solid black;
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 30px;
+    padding: 0.25vh 0.5vw 0.25vh 0.5vw; 
+}
+.payment-separator{
+    position:relative;
+    background-color: grey;
+    width:40vh;
+    height:0.15vh;
+    transform: rotate(90deg);
+    bottom:62vh;
+    left:23.5vh;
+}
+.not-main{
+    border: 0.2vh solid grey;
+    padding:2vh;
+    padding-bottom:0vh;
+    position:relative;
+    width:60vw;
+    left:26.25vh;
+    height:10vh;
 }

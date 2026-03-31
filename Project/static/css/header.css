@@ -148,7 +148,7 @@ header, main, footer{
     z-index: 100;
 }
 
-.links{
+.links, .continue-shopping{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,10 +156,18 @@ header, main, footer{
     font-family: var(--fontLinks);
 }
 
-.links a{
+.links a, .continue-shopping{
     font-family: var(--fontLinks);
     font-size: 1.75vh;
     color: #9EA0AA;
+}
+
+.continue-shopping {
+    letter-spacing: 1.5px;
+}
+
+.continue-shopping:hover{
+    color: #0C122A;
 }
 
 .links a:hover{

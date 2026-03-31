@@ -6,24 +6,40 @@
 
 {% block content %}
     <div class="order">
-            <h2>Ваші контактні дані</h2>
-            <h2>оформити замовленя</h2>
-        <form action="" method="post">
-            <p>Прізвище</p> 
-            <input type="text" placeholder="Ваше Прізвище" name="Прізвище"required>
-            <p>Ім’я</p>
-            <input type="text" placeholder="Ваше Ім’я" name="Ім’я" required>
-            <p>По батькові</p>
-            <input type="text" placeholder="По батькові" name="По батькові" required>
-            <p>Телефон</p>
-            <input type="tel" placeholder="+ 38 0" name="Телефон" required>
-            <p>E-mail</p>
-            <input type="text" placeholder="Ваш E-mail" name="E-mail" required>
-            <p>Коментар до замовлення</p>
-            <textarea name="Коментар до замовлення" id=""></textarea>
+            <h2 class = "title_order">ОФОРМИТИ ЗАМОВЛЕННЯ</h2>
+            <hr>
+            <h2 class = "title_order2">Ваші контактні дані</h2>
+            <form action="" method="post">
+                <div>
+                    <label>Прізвище</label> 
+                    <input type="text" placeholder="Ваше Прізвище" name="Прізвище"required>
+                </div>
+                <div>
+                    <label>Ім’я</label>
+                    <input type="text" placeholder="Ваше Ім’я" name="Ім’я" required>
+                </div>
+                <div>
+                    <label>По батькові</label>
+                    <input type="text" placeholder="По батькові" name="По батькові" required>
+                </div>
+                <div>
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="+ 38 0" name="Телефон" required>
+                </div>
+                <div>
+                    <label>E-mail</label>
+                    <input type="text" placeholder="Ваш E-mail" name="E-mail" required>
+                </div>
+                <div>
+                    <label>Коментар до замовлення</label>
+                    <textarea name="Коментар до замовлення" id="">Що б ви хотіли уточнити</textarea>
+                </div>
         </form>
+            <hr class = "hr2">
     </div>
+
     <div class="shipping">
+        <h2>Доставка</h2>
         <input type="radio">Нова Пошта до відділення<img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="">
         <input type="text" placeholder = "Місто">
         <p>Вінниця  Одеса  Харків  Дніпро  Київ  Львів</p>
@@ -61,6 +77,6 @@
         <p>За тирифом перевізника</p>
         <p>Зі знижкою:</p>
         <p>28 985 ₴ </p>
-        <button class="go_checkou2" type="button">Підтвердити замовлення</button>
+        <button class="go_checkout2" type="button">Підтвердити замовлення</button>
     </div>
 {% endblock %}

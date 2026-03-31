@@ -1,141 +1,121 @@
-.content-wrapper {
+@font-face {
+    font-family: "font";
+    src: url("../fonts/GTWalsheimPro-UltraBold.ttf");
+}
+
+@font-face {
+    font-family: "button";
+    src: url("../fonts/GTWalsheimPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: "fontforp";
+    src: url("../fonts/GTWalsheimPro-Light.ttf");
+}
+
+@font-face {
+    font-family: 'links';
+    src: url("../fonts/GTWalsheimProSchoolbook-Medium2.ttf");
+}
+
+@font-face {
+    font-family: 'review';
+    src: url("../fonts/GTWalsheimPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'drones';
+    src: url("../fonts/GTWalsheimPro-UltraLight.ttf");
+}
+
+button {
+    cursor: pointer;
+}
+
+:root{
+    --fontButton: 'button';
+    --fontTitle: "font";
+    --fontParagraph: "fontforp";
+    --fontLinks: 'links';
+    --fontReview: 'review';
+    --fontDrones: 'drones';
+}
+
+.title_order {
+    position: absolute;
+    font-size: 3vh;
+    font-family: var(--fontParagraph);
+    letter-spacing: 0.03vw;
+    font-weight: 400;
+    top: 20vh;
+    left: 5.3vw;
+}
+
+.order hr {
+    position: relative;
+    width: 43vw;
+    top: 28.5vh;
+    right: 23vw;
+    border: 0.001vw solid #CDD5DD;
+}
+
+.order .hr2 {
+    position: relative;
+    width: 43vw;
+    top: 37vh;
+    right: 23vw;
+    border: 0.001vw solid #CDD5DD;
+}
+
+.title_order2 {
+    position: absolute;
+    font-size: 2.5vh;
+    font-family: var(--fontParagraph);
+    letter-spacing: 0.03vw;
+    font-weight: 400;
+    top: 31vh;
+    left: 5.5vw;
+}
+
+form{
+    position: relative;
+    top: 37vh;
+    right: 23vw;
+}
+
+form div {
     display: flex;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: left;
 }
 
-.order, .shipping, .shipping2, .pay, .pay2 {
-    flex: 2;
-    background: #fff;
-    margin-bottom: 20px;
+label{
+    font-size: 1.8vh;
+    margin-bottom: 0.8vh;
+    font-family: var(--fontParagraph);
 }
 
-.go_checkout {
-    flex: 1;
-    position: sticky;
-    top: 20px;
-    padding: 24px;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    background: #fff;
-}
-
-h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #1a202c;
-}
-
-p {
-    margin: 10px 0 5px 0;
-    font-size: 14px;
-    font-weight: 500;
-    color: #4a5568;
-}
-
-input[type="text"], 
-input[type="tel"], 
-textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+input {
+    font-size: 1.8vh;
+    padding: 1.3vh;
+    margin-bottom: 3vh;
+    width: 43vw;
+    border-radius: 0.3vw;
+    border: 0.1vw solid #CED0D4;
+    color: #9EA0AA;
+    font-family: var(--fontReview);
 }
 
 textarea {
-    height: 100px;
+    font-size: 1.8vh;
+    padding: 1.3vh;
+    margin-bottom: 3vh;
+    width: 80%;
+    height: 12vh;
+    border-radius: 0.3vw;
+    border: 0.1vw solid #CED0D4;
+    color: #9EA0AA;
+    font-family: var(--fontParagraph);
     resize: none;
 }
 
-.shipping, .shipping2, .pay, .pay2 {
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 12px;
-}
-
-input[type="radio"] {
-    margin-right: 10px;
-    accent-color: #000;
-}
-
-img {
-    height: 24px;
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
-.shipping p {
-    font-size: 12px;
-    color: #718096;
-    text-decoration: underline;
-    cursor: pointer;
-    word-spacing: 10px;
-}
-
-.to_return {
-    background: none;
-    border: 1px solid #1a202c;
-    border-radius: 25px;
-    padding: 12px 30px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.to_return:hover {
-    background: #f7fafc;
-}
-
-.go_checkout h2 {
-    font-size: 18px;
-    margin-top: 0;
-}
-
-.go_checkout p {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    margin: 8px 0;
-}
-
-.go_checkout p:nth-child(even) {
-    font-weight: bold;
-}
-
-
-.go_checkout p:nth-last-child(2) {
-    color: #e53e3e;
-    font-size: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-}
-
-
-.go_checkou2 {
-    width: 100%;
-    background: #0f172a;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    padding: 16px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.go_checkou2:hover {
-    background: #1e293b;
-}

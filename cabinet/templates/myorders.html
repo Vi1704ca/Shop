@@ -97,11 +97,15 @@
                         <p class = "together-number">28 985₴</p>
                     </div>
                 </div>
-                <button class = "decline">Скасувати</button>
+                <hr class = "payment-separator">
+                <button type="click" class = "decline">СКАСУВАТИ</button>
             </div>
         <div>
     </div>
-    <p class = "parcel-second-count">№30349 від 20.04.2023</p>
+        </div>
+    </div>
+<div class = "not-main">
+<p class = "parcel-second-count">№30349 від 20.04.2023</p>
     <p class = "done">Виконано</p>
     <p class = "shipment-second-count">Номер відправлення</p>
     <p class = "shipment-second-number">20030040050000</p>
@@ -109,6 +113,5 @@
     <p class = "order-sum-number">25 830.00 ₴</p>
     <img class = "thermal-imager" src="{{ url_for('cabinet.static', filename='/icons/thermal-imager.svg') }}" alt=""> <!--  Тепловизор  -->
     <img class = "thermal-imager" src="{{ url_for('cabinet.static', filename='/icons/thermal-imager.svg') }}" alt=""> <!--  Тепловизор  -->
-        </div>
-    </div>
-{% endblock %}
+</div>
+    {% endblock %}
