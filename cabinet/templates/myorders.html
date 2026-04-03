@@ -8,7 +8,7 @@
         <div class = "cabinet-links">
             <a class = "cabinet-link" href="/cabinet">КОНТАКТНІ ДАНІ</a> 
             <a class = "cabinet-link" id = "myorders-link" href="">МОЇ ЗАМОВЛЕННЯ</a>
-            <a class = "cabinet-link" href="">АДРЕСА ДОСТАВКИ</a>
+            <a class = "cabinet-link" href="/address-orders">АДРЕСА ДОСТАВКИ</a>
             <hr class = "separator">
             <a class = "cabinet-link" href="/">ВИЙТИ</a>
         </div>
@@ -105,13 +105,24 @@
         </div>
     </div>
 <div class = "not-main">
-<p class = "parcel-second-count">№30349 від 20.04.2023</p>
-    <p class = "done">Виконано</p>
-    <p class = "shipment-second-count">Номер відправлення</p>
-    <p class = "shipment-second-number">20030040050000</p>
-    <p class = "order-second-sum">Сума замовлення</p>
-    <p class = "order-sum-number">25 830.00 ₴</p>
-    <img class = "thermal-imager" src="{{ url_for('cabinet.static', filename='/icons/thermal-imager.svg') }}" alt=""> <!--  Тепловизор  -->
-    <img class = "thermal-imager" src="{{ url_for('cabinet.static', filename='/icons/thermal-imager.svg') }}" alt=""> <!--  Тепловизор  -->
+    <div class = "non-circle">
+        <div class = "not-main-first">
+            <p class = "parcel-second-count">№30349 від 20.04.2023</p>
+            <p class = "done">Виконано</p>
+        </div>
+        <div class = "not-main-second">
+            <p class = "shipment-second-count">Номер відправлення</p>
+            <p class = "shipment-second-number">20030040050000</p>
+        </div>
+        <div class = "not-main-third">
+            <p class = "order-second-sum">Сума замовлення</p>
+            <p class = "">25 830.00 ₴</p>
+        </div>
+        <img class = "thermal-imager" src="{{ url_for('cabinet.static', filename='/icons/thermal-imager.svg') }}" alt=""> <!--  Тепловизор  -->
+        <img class = "thermal-imager" src="{{ url_for('cabinet.static', filename='/icons/thermal-imager.svg') }}" alt=""> <!--  Тепловизор  -->
+        <img class = "second-galochka" src="{{ url_for('cabinet.static', filename='/icons/galochka.svg') }}" alt="">
+    </div>
+    <div class = "circle"></div>
 </div>
+
     {% endblock %}

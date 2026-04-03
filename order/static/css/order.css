@@ -69,7 +69,7 @@ button {
 
 .title_order2 {
     position: absolute;
-    font-size: 2.5vh;
+    font-size: 3vh;
     font-family: var(--fontParagraph);
     letter-spacing: 0.03vw;
     font-weight: 400;
@@ -119,3 +119,49 @@ textarea {
     resize: none;
 }
 
+.delivery {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery .post_office1 {
+    position: absolute;
+    top: 30vh;
+    right: 23vw;
+}
+
+.delivery h2{
+    position: absolute;
+    font-size: 3vh;
+    font-family: var(--fontParagraph);
+    letter-spacing: 0.03vw;
+    font-weight: 300;
+    top: 112vh;
+    left: 5.5vw;
+}
+
+.delivery label {
+    font-size: 1.8vh;
+    margin-bottom: 0.8vh;
+    font-family: var(--fontParagraph);
+}
+
+.post_office1 {
+    font-size: 1.8vh;
+    padding: 1.3vh;
+    margin-bottom: 3vh;
+    width: 43vw;
+    border: 0.1vw solid #CED0D4;
+    color: #9EA0AA;
+    font-family: var(--fontReview);
+}
+
+.pay h2 {
+    position: absolute;
+    font-size: 3vh;
+    font-family: var(--fontParagraph);
+    letter-spacing: 0.03vw;
+    font-weight: 400;
+    top: 130vh;
+    left: 5.5vw;
+}

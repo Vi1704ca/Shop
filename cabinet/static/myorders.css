@@ -42,7 +42,7 @@ h1{
     bottom:9.5vh;
 }
 .main{
-    border: 0.2vh solid grey;
+    border: 0.2vh solid #E7E7EA;
     padding:2vh;
     padding-bottom:0vh;
     width:60vw;
@@ -289,18 +289,72 @@ h1{
 .payment-separator{
     position:relative;
     background-color: grey;
-    width:40vh;
+    width:50vh;
     height:0.15vh;
     transform: rotate(90deg);
-    bottom:62vh;
-    left:23.5vh;
+    bottom:60vh;
+    left:20vh;
 }
 .not-main{
-    border: 0.2vh solid grey;
+    display:flex;
+    border: 0.2vh solid #E7E7EA;
     padding:2vh;
     padding-bottom:0vh;
     position:relative;
     width:60vw;
     left:26.25vh;
     height:10vh;
+    gap:2vw;
+}
+.parcel-second-count{
+    color:grey;
+}
+.shipment-second-count{
+    color:grey;
+}
+.order-second-sum{
+    color:grey;
+}
+.not-main-first{
+    display:flex;
+    flex-direction:column;
+    gap:0.5vh;
+}
+.not-main-second{
+    display:flex;
+    flex-direction:column;
+    gap:0.5vh;
+}
+.not-main-third{
+    display:flex;
+    flex-direction:column;
+    gap:0.5vh;
+}
+.circle{
+    position:relative;
+    right:101vh;
+    top:1.5vh;
+    background-color: #4DBC4B;
+    border-radius:50%;
+    width:2.5vh;
+    height:2.5vh;
+}
+.thermal-imager{
+    position:relative;
+    left:20vh;
+    bottom:1vh;
+}
+.second-galochka{
+    width:5vh;
+    height:5vh;
+    position:relative;
+    left:17.5vh;
+    top:0.5vh;
+    transform:rotate(180deg)
+}
+.non-circle{
+    display:flex;
+    position:relative;
+    left:6.5vh;
+    gap:3vh;
 }

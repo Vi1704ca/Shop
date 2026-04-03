@@ -262,6 +262,97 @@ button:hover {
     height: 2vh;
 }
 
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.product-card {
+    display: flex;
+    background: white;
+    padding: 1.2vw;
+    border-radius: 12px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 54vh; 
+    width: 23%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.sorting button:hover {
+    background-color: #F4F4F4;
+    cursor: pointer;
+    animation: bounce 0.5s;
+}
+
+.page-number:hover, .page-return:hover, .page-next:hover {
+    background-color: #F4F4F4;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.page-number.active {
+    background-color: #F4F4F4;
+    color: #000;
+    animation: pulse 1s infinite;
+}
+
+.cart-buy {
+    display: flex;
+    width: 2vh;
+    height: 2vh;
+    background-color: transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.15vw solid #0C122A;  
+    padding: 1.25vw;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; 
+    margin-left: 17vw; 
+    margin-top: -6vh;
+    margin-bottom: 2vh;
+}
+
+.cart-buy:hover {
+    color: grey;
+    transform: scale(1.2);
+}
+
 @media (max-width:768px){
     .product-card div{
         flex-direction: column;
@@ -271,3 +362,4 @@ button:hover {
         width: 5vh;
     }
 }
+

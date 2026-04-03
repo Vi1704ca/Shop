@@ -105,3 +105,14 @@ window.addEventListener("message", (event) => {
     if (modal) modal.classList.remove("active");
     if (frame) frame.src = "";
 });
+
+document.querySelector(".make-an-order").addEventListener("click", (e) => {
+    e.preventDefault();
+    try {
+        window.parent.postMessage({ type: "navigate", url: "/orders" }, "*");
+    } catch (err) {
+        try {
+            window.top.postMessage({ type: "navigate", url: "/orders" }, "*");
+        } catch (error) {}
+    }
+});

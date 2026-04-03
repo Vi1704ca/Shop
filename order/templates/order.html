@@ -38,14 +38,24 @@
             <hr class = "hr2">
     </div>
 
-    <div class="shipping">
+    <div class="delivery">
         <h2>Доставка</h2>
-        <input type="radio">Нова Пошта до відділення<img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="">
-        <input type="text" placeholder = "Місто">
-        <p>Вінниця  Одеса  Харків  Дніпро  Київ  Львів</p>
-        <input type="text" placeholder = "Місто">
+        <div сlass = "post_office1">
+            <label for="post">Нова Пошта до поштомату</label>
+            <img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="" for="post">
+            <input type="radio" class = "post_office1" id="post"> 
+        </div>
+        
+        <div class = "post_office2">
+            <input type="radio" class = "post_office2" id="post">
+            <label for="post">Нова Пошта до відділення</label>
+            <img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="" for="post">
+            <input type="text" placeholder = "Місто">
+            <p>Вінниця  Одеса  Харків  Дніпро  Київ  Львів</p>
+            <input type="text" placeholder = "Місто">
+        </div>
     </div>
-    <div class="shipping2">
+    <div class="delivery2">
         <input type="radio">Експрес-доставка по Києву
         <input type="radio">Нова Пошта кур’єром<img src="{{ url_for('order.static', filename='icon/delivery.svg') }}" alt="">
     </div>
